@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chef.io/automate/api_tokens/
+docs: https://docs.chef.io/automate/api_tokens/
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  api_key_header: api-token
+  oauth2_flows: []
+  note: >-
+    Chef Automate API tokens are the only supported way to authenticate against
+    the Chef Automate API. A token is presented in the `api-token` request
+    header on every call. Tokens are issued and governed through Chef Automate
+    IAM v2 (see the tokens, policies and rules services); an admin token grants
+    full access and additional tokens can be scoped through IAM policies.
+schemes:
+- name: ApiToken
+  type: apiKey
+  in: header
+  parameter_name: api-token
+  description: >-
+    Chef Automate API token supplied in the `api-token` HTTP header. Created via
+    the Automate UI, the IAM v2 Tokens API (Tokens_CreateToken), or the
+    `chef-automate iam token create` CLI. Access is authorized by IAM v2
+    policies that reference the token as a member.
+  sources:
+  - https://docs.chef.io/automate/api_tokens/
+  - openapi/chef-software-iam-v2-tokens-openapi.json

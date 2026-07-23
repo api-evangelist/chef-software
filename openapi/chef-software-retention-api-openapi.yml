@@ -1,0 +1,395 @@
+swagger: '2.0'
+info:
+  title: external/applications/applications.proto ApplicationsService retention API
+  version: version not set
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: retention
+paths:
+  /api/v0/retention/service_groups/delete_disconnected_services/config:
+    get:
+      summary: Show 'Remove Disconnected Services' Configuration
+      description: 'Displays configuration for the task that deletes services marked as disconnected
+
+        after ''threshold''. Threshold is a string that follows Elasticsearch''s date math expressions.
+
+        This job is disabled if running is set to false.
+
+
+        Authorization Action:
+
+        ```
+
+        retention:serviceGroups:get
+
+        ```'
+      operationId: ApplicationsService_GetDeleteDisconnectedServicesConfig
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/chef.automate.api.applications.PeriodicJobConfig'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/grpc.gateway.runtime.Error'
+      tags:
+      - retention
+    post:
+      summary: Change 'Remove Disconnected Services' Configuration
+      description: 'Updates configuration information for the task that deletes services marked as disconnected
+
+        after ''threshold''. Threshold is a string that follows Elasticsearch''s date math expressions.
+
+        This job can be disabled by setting `"running": false`.
+
+
+        The frequency of the job''s execution can be modified by changing the
+
+        ''recurrence''. This setting is a string
+
+        [as defined in section 4.3.10 of RFC 2445](https://www.ietf.org/rfc/rfc2445.txt).
+
+        By default, the task runs every 60 seconds. It is not recommended to change
+
+        the recurrence.
+
+
+        Example:
+
+        ```
+
+        service_groups/delete_disconnected_services/config" -d
+
+        ''{
+
+        "threshold": "1d",
+
+        "running":true,
+
+        "recurrence": "FREQ=SECONDLY;DTSTART=20200612T182166Z;INTERVAL=60"
+
+        }''
+
+        ```
+
+
+        Authorization Action:
+
+        ```
+
+        retention:serviceGroups:update
+
+        ```'
+      operationId: ApplicationsService_UpdateDeleteDisconnectedServicesConfig
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/chef.automate.api.applications.UpdateDeleteDisconnectedServicesConfigRes'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/grpc.gateway.runtime.Error'
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/chef.automate.api.applications.PeriodicJobConfig'
+      tags:
+      - retention
+  /api/v0/retention/service_groups/delete_disconnected_services/run:
+    post:
+      operationId: ApplicationsService_RunDeleteDisconnectedServicesJob
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/chef.automate.api.applications.RunDeleteDisconnectedServicesJobResponse'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/grpc.gateway.runtime.Error'
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/chef.automate.api.applications.RunDeleteDisconnectedServicesJobReq'
+      tags:
+      - retention
+  /api/v0/retention/service_groups/disconnected_services/config:
+    get:
+      summary: Show 'Disconnected Services' configuration
+      description: 'Returns the configuration for the task that marks services as disconnected. The `threshold` setting defines the period of time between the last report from a node and the moment when Chef Automate marks it as disconnected. `Threshold` is a string that follows Elasticsearch''s date math expressions.
+
+        This task is always enabled, cannot be disabled. Because this task runs continuously, the response does not return information about its status.
+
+
+        Authorization Action:
+
+        ```
+
+        retention:serviceGroups:get
+
+        ```'
+      operationId: ApplicationsService_GetDisconnectedServicesConfig
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/chef.automate.api.applications.PeriodicMandatoryJobConfig'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/grpc.gateway.runtime.Error'
+      tags:
+      - retention
+    post:
+      summary: Change 'Disconnected Services' Configuration
+      description: 'Changes the configuration for the task that marks services as disconnected.
+
+
+        The periodic task to check for disconnected services can be enabled or
+
+        disabled by setting the ''running'' setting to `true` or `false`, respectively.
+
+        When disabled, no services will be marked disconnected, regardless of the
+
+        time that has elapsed since the last health check. It is not recommened to
+
+        disable the job.
+
+
+        The frequency of the job''s execution can be modified by changing the
+
+        ''recurrence''. This setting is a string
+
+        [as defined in section 4.3.10 of RFC 2445](https://www.ietf.org/rfc/rfc2445.txt).
+
+        By default, the task runs every 60 seconds. It is not recommended to change
+
+        the recurrence.
+
+
+        When enabled, services are marked disconnected when the time elapsed since
+
+        Automate last received a health check exceeds ''threshold''. Threshold is a
+
+        string that follows Elasticsearch''s date math expressions.
+
+
+
+        Example:
+
+        ```
+
+        /retention/service_groups/disconnected_services/config
+
+        ''{
+
+        "threshold": "15m",
+
+        "running": true,
+
+        "recurrence": "FREQ=SECONDLY;DTSTART=20200612T182166Z;INTERVAL=60"
+
+        }''
+
+        ```
+
+
+        Authorization Action:
+
+        ```
+
+        retention:serviceGroups:update
+
+        ```'
+      operationId: ApplicationsService_UpdateDisconnectedServicesConfig
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/chef.automate.api.applications.UpdateDisconnectedServicesConfigRes'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/grpc.gateway.runtime.Error'
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/chef.automate.api.applications.PeriodicMandatoryJobConfig'
+      tags:
+      - retention
+  /api/v0/retention/service_groups/disconnected_services/run:
+    post:
+      summary: Runs the job to mark services as disconnected immediately.
+      description: 'Authorization Action:
+
+        ```
+
+        retention:serviceGroups:update
+
+        ```'
+      operationId: ApplicationsService_RunDisconnectedServicesJob
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/chef.automate.api.applications.RunDisconnectedServicesJobResponse'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/grpc.gateway.runtime.Error'
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/chef.automate.api.applications.RunDisconnectedServicesJobReq'
+      tags:
+      - retention
+definitions:
+  chef.automate.api.applications.RunDeleteDisconnectedServicesJobReq:
+    type: object
+  chef.automate.api.applications.RunDisconnectedServicesJobResponse:
+    type: object
+  chef.automate.api.applications.RunDeleteDisconnectedServicesJobResponse:
+    type: object
+  chef.automate.api.applications.PeriodicJobConfig:
+    type: object
+    properties:
+      running:
+        type: boolean
+        description: Enable/disable the job. `false` is disabled, `true` is enabled.
+      threshold:
+        type: string
+        description: 'The `threshold` setting used by periodic jobs for evaluating services.
+
+          Threshold is a string that follows Elasticsearch''s date math expressions. For more information, see the simpledatemath package under `lib/`.'
+      recurrence:
+        type: string
+        description: 'A recurrence rule that determines how often, at what interval, and when to
+
+          initially start a scheduled job.
+
+
+          If the field is omitted from the request or is set to an emtpy string, no
+
+          change will be made to the current value. Otherwise, the value should match
+
+          the  [recurrence rule format defined in section 4.3.10 of RFC 2445](https://www.ietf.org/rfc/rfc2445.txt).
+
+
+          It is not recommended to change this value from the default setting of a
+
+          60 second interval. This configuration option is provided only for
+
+          consistency with other data lifecyle APIs.'
+      job_info:
+        $ref: '#/definitions/chef.automate.api.applications.PeriodicJobInfo'
+    description: Periodic job configuration.
+  chef.automate.api.applications.UpdateDisconnectedServicesConfigRes:
+    type: object
+  google.protobuf.Any:
+    type: object
+    properties:
+      type_url:
+        type: string
+        description: "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+      value:
+        type: string
+        format: byte
+        description: Must be a valid serialized protocol buffer of the above specified type.
+    description: "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(&foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\n Example 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\n Example 4: Pack and unpack a message in Go\n\n     foo := &pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := &pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n====\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": <string>,\n      \"lastName\": <string>\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
+  chef.automate.api.applications.PeriodicJobInfo:
+    type: object
+    properties:
+      last_enqueued_at:
+        type: string
+        format: date-time
+      last_started_at:
+        type: string
+        format: date-time
+      last_ended_at:
+        type: string
+        format: date-time
+      last_elapsed:
+        type: string
+      next_due_at:
+        type: string
+        format: date-time
+    description: 'PeriodicJobInfo gives information about the last and next scheduled
+
+      executions of a periodic job.'
+  grpc.gateway.runtime.Error:
+    type: object
+    properties:
+      error:
+        type: string
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      details:
+        type: array
+        items:
+          $ref: '#/definitions/google.protobuf.Any'
+  chef.automate.api.applications.RunDisconnectedServicesJobReq:
+    type: object
+  chef.automate.api.applications.PeriodicMandatoryJobConfig:
+    type: object
+    properties:
+      threshold:
+        type: string
+        description: 'The `threshold` setting used by periodic jobs for evaluating services.
+
+          Threshold is a string that follows Elasticsearch''s date math expressions. For more information, see the simpledatemath package under `lib/`.'
+      running:
+        type: boolean
+        description: 'Enable/disable the job. `false` is disabled, `true` is enabled. It is not
+
+          recommended to disable this job.'
+      recurrence:
+        type: string
+        description: 'A recurrence rule that determines how often, at what interval, and when to
+
+          initially start a scheduled job.
+
+
+          If the field is omitted from the request or is set to an emtpy string, no
+
+          change will be made to the current value. Otherwise, the value should match
+
+          the  [recurrence rule format defined in section 4.3.10 of RFC 2445](https://www.ietf.org/rfc/rfc2445.txt).
+
+
+          It is not recommended to change this value from the default setting of a
+
+          60 second interval. This configuration option is provided only for
+
+          consistency with other data lifecyle APIs.'
+      job_info:
+        $ref: '#/definitions/chef.automate.api.applications.PeriodicJobInfo'
+        description: 'Information about the last and next scheduled executions of the job. This
+
+          is only used in a response context.'
+    description: 'Configuration for a periodic job. Initially Jobs using this message type
+
+      were designed such that they could not be disabled, but that has been
+
+      changed to make the various data lifecycle APIs consistent with each other.
+
+      Thus, there is a `running` field which will disable the job if set to false.
+
+      That is not recommended.'
+  chef.automate.api.applications.UpdateDeleteDisconnectedServicesConfigRes:
+    type: object

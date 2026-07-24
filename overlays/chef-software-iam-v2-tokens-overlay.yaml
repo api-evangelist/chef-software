@@ -1,0 +1,26 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Chef Automate IAM Tokens
+  version: 1.0.0
+extends: openapi/chef-software-iam-v2-tokens-openapi.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: chef-software
+    x-apievangelist-service: iam-v2-tokens
+    x-apievangelist-auth: api-token header
+    description: >-
+      Chef Automate IAM v2 Tokens API. Create, list, read, update and delete API
+      tokens used to authenticate against the Chef Automate API. All calls require
+      an admin (or suitably IAM-authorized) api-token header.
+- target: $.securityDefinitions
+  update:
+    ApiToken:
+      type: apiKey
+      in: header
+      name: api-token
+      description: Chef Automate API token supplied in the api-token header.
+- target: $
+  update:
+    security:
+    - ApiToken: []

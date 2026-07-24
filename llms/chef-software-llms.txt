@@ -1,0 +1,53 @@
+# Chef Software
+
+> Chef Software is the DevOps automation company behind Chef Infra, Chef InSpec, Chef Habitat, and Chef Automate (part of Progress Software). Chef pioneered infrastructure-as-code and continuous compliance. The Chef Automate API is a REST surface (generated from gRPC via grpc-gateway) for compliance, node management, configuration management, secrets, data/event feeds, and IAM. Authentication is via an API token in the `api-token` header.
+
+## APIs
+
+- [Chef Automate API](https://docs.chef.io/automate/api/): REST API for compliance reporting, node management, config management, secrets, data feeds, and IAM v2.
+- [Chef Infra Server API](https://docs.chef.io/): Cookbook, node, role, environment and data-bag management on the Chef Infra Server.
+
+## Specs
+
+- [IAM v2 Tokens](openapi/chef-software-iam-v2-tokens-openapi.json)
+- [IAM v2 Users](openapi/chef-software-iam-v2-users-openapi.json)
+- [IAM v2 Teams](openapi/chef-software-iam-v2-teams-openapi.json)
+- [IAM v2 Policies](openapi/chef-software-iam-v2-policy-openapi.json)
+- [IAM v2 Rules](openapi/chef-software-iam-v2-rules-openapi.json)
+- [Nodes](openapi/chef-software-nodes-nodes-openapi.json)
+- [Node Manager](openapi/chef-software-nodes-manager-manager-openapi.json)
+- [Secrets](openapi/chef-software-secrets-secrets-openapi.json)
+- [Compliance Reporting](openapi/chef-software-compliance-reporting-reporting-openapi.json)
+- [Compliance Scanner Jobs](openapi/chef-software-compliance-scanner-jobs-jobs-openapi.json)
+- [Compliance Profiles](openapi/chef-software-compliance-profiles-profiles-openapi.json)
+- [Config Management](openapi/chef-software-cfgmgmt-cfgmgmt-openapi.json)
+- [Applications](openapi/chef-software-applications-applications-openapi.json)
+- [Data Feed](openapi/chef-software-data_feed-data_feed-openapi.json)
+- [Event Feed](openapi/chef-software-event_feed-event_feed-openapi.json)
+- [Infra Proxy](openapi/chef-software-infra_proxy-infra_proxy-openapi.json)
+
+## Docs
+
+- [Chef Documentation](https://docs.chef.io/)
+- [Chef Automate API](https://docs.chef.io/automate/api/)
+- [API Tokens / Authentication](https://docs.chef.io/automate/api_tokens/)
+- [Getting Started / Install](https://docs.chef.io/automate/install/)
+- [Chef InSpec](https://docs.chef.io/inspec/)
+- [Chef Habitat](https://docs.chef.io/habitat/)
+
+## Packages
+
+- [chef (RubyGems)](https://rubygems.org/gems/chef)
+- [inspec (RubyGems)](https://rubygems.org/gems/inspec)
+- [ohai (RubyGems)](https://rubygems.org/gems/ohai)
+- [chef-cli (RubyGems)](https://rubygems.org/gems/chef-cli)
+- [berkshelf (RubyGems)](https://rubygems.org/gems/berkshelf)
+
+## Optional
+
+- [GitHub Organization](https://github.com/chef)
+- [Blog](https://www.chef.io/blog)
+- [Community & Support](https://community.chef.io/)
+- [Status](https://status.chef.io)
+- [Pricing](https://www.chef.io/pricing)
+- [Progress Trust Center](https://www.progress.com/trust-center)

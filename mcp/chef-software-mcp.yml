@@ -1,0 +1,326 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: openapi/ (Chef Automate grpc-gateway swagger specs)
+note: >-
+  No official hosted Chef Automate MCP server was found (searched the chef GitHub
+  org, npm @modelcontextprotocol, and the MCP registry, 2026-07-18). This is a
+  candidate tool list derived one-tool-per-operation from the marquee Chef Automate
+  API services, exposed via an OpenAPI-to-MCP bridge over an authenticated Automate
+  deployment (api-token header).
+server:
+  name: chef-automate
+  transport: http
+tools:
+  - name: Tokens_ListTokens
+    description: GET /apis/iam/v2/tokens
+    source_operation: openapi/chef-software-iam-v2-tokens-openapi.json#Tokens_ListTokens
+  - name: Tokens_CreateToken
+    description: POST /apis/iam/v2/tokens
+    source_operation: openapi/chef-software-iam-v2-tokens-openapi.json#Tokens_CreateToken
+  - name: Tokens_GetToken
+    description: GET /apis/iam/v2/tokens/{id}
+    source_operation: openapi/chef-software-iam-v2-tokens-openapi.json#Tokens_GetToken
+  - name: Tokens_DeleteToken
+    description: DELETE /apis/iam/v2/tokens/{id}
+    source_operation: openapi/chef-software-iam-v2-tokens-openapi.json#Tokens_DeleteToken
+  - name: Tokens_UpdateToken
+    description: PUT /apis/iam/v2/tokens/{id}
+    source_operation: openapi/chef-software-iam-v2-tokens-openapi.json#Tokens_UpdateToken
+  - name: Users_UpdateSelf
+    description: PUT /apis/iam/v2/self/{id}
+    source_operation: openapi/chef-software-iam-v2-users-openapi.json#Users_UpdateSelf
+  - name: Users_ListUsers
+    description: GET /apis/iam/v2/users
+    source_operation: openapi/chef-software-iam-v2-users-openapi.json#Users_ListUsers
+  - name: Users_CreateUser
+    description: POST /apis/iam/v2/users
+    source_operation: openapi/chef-software-iam-v2-users-openapi.json#Users_CreateUser
+  - name: Users_GetUser
+    description: GET /apis/iam/v2/users/{id}
+    source_operation: openapi/chef-software-iam-v2-users-openapi.json#Users_GetUser
+  - name: Users_DeleteUser
+    description: DELETE /apis/iam/v2/users/{id}
+    source_operation: openapi/chef-software-iam-v2-users-openapi.json#Users_DeleteUser
+  - name: Users_UpdateUser
+    description: PUT /apis/iam/v2/users/{id}
+    source_operation: openapi/chef-software-iam-v2-users-openapi.json#Users_UpdateUser
+  - name: Teams_ListTeams
+    description: GET /apis/iam/v2/teams
+    source_operation: openapi/chef-software-iam-v2-teams-openapi.json#Teams_ListTeams
+  - name: Teams_CreateTeam
+    description: POST /apis/iam/v2/teams
+    source_operation: openapi/chef-software-iam-v2-teams-openapi.json#Teams_CreateTeam
+  - name: Teams_GetTeam
+    description: GET /apis/iam/v2/teams/{id}
+    source_operation: openapi/chef-software-iam-v2-teams-openapi.json#Teams_GetTeam
+  - name: Teams_DeleteTeam
+    description: DELETE /apis/iam/v2/teams/{id}
+    source_operation: openapi/chef-software-iam-v2-teams-openapi.json#Teams_DeleteTeam
+  - name: Teams_UpdateTeam
+    description: PUT /apis/iam/v2/teams/{id}
+    source_operation: openapi/chef-software-iam-v2-teams-openapi.json#Teams_UpdateTeam
+  - name: Teams_GetTeamMembership
+    description: GET /apis/iam/v2/teams/{id}/users
+    source_operation: openapi/chef-software-iam-v2-teams-openapi.json#Teams_GetTeamMembership
+  - name: Teams_AddTeamMembers
+    description: POST /apis/iam/v2/teams/{id}/users:add
+    source_operation: openapi/chef-software-iam-v2-teams-openapi.json#Teams_AddTeamMembers
+  - name: Teams_RemoveTeamMembers
+    description: POST /apis/iam/v2/teams/{id}/users:remove
+    source_operation: openapi/chef-software-iam-v2-teams-openapi.json#Teams_RemoveTeamMembers
+  - name: Teams_GetTeamsForMember
+    description: GET /apis/iam/v2/users/{membership_id}/teams
+    source_operation: openapi/chef-software-iam-v2-teams-openapi.json#Teams_GetTeamsForMember
+  - name: Policies_IntrospectAllProjects
+    description: GET /apis/iam/v2/introspect_projects
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_IntrospectAllProjects
+  - name: Policies_ListPolicies
+    description: GET /apis/iam/v2/policies
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_ListPolicies
+  - name: Policies_CreatePolicy
+    description: POST /apis/iam/v2/policies
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_CreatePolicy
+  - name: Policies_GetPolicy
+    description: GET /apis/iam/v2/policies/{id}
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_GetPolicy
+  - name: Policies_DeletePolicy
+    description: DELETE /apis/iam/v2/policies/{id}
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_DeletePolicy
+  - name: Policies_UpdatePolicy
+    description: PUT /apis/iam/v2/policies/{id}
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_UpdatePolicy
+  - name: Policies_ListPolicyMembers
+    description: GET /apis/iam/v2/policies/{id}/members
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_ListPolicyMembers
+  - name: Policies_ReplacePolicyMembers
+    description: PUT /apis/iam/v2/policies/{id}/members
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_ReplacePolicyMembers
+  - name: Policies_AddPolicyMembers
+    description: POST /apis/iam/v2/policies/{id}/members:add
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_AddPolicyMembers
+  - name: Policies_RemovePolicyMembers
+    description: POST /apis/iam/v2/policies/{id}/members:remove
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_RemovePolicyMembers
+  - name: Policies_GetPolicyVersion
+    description: GET /apis/iam/v2/policy_version
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_GetPolicyVersion
+  - name: Policies_ListProjects
+    description: GET /apis/iam/v2/projects
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_ListProjects
+  - name: Policies_CreateProject
+    description: POST /apis/iam/v2/projects
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_CreateProject
+  - name: Policies_GetProject
+    description: GET /apis/iam/v2/projects/{id}
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_GetProject
+  - name: Policies_DeleteProject
+    description: DELETE /apis/iam/v2/projects/{id}
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_DeleteProject
+  - name: Policies_UpdateProject
+    description: PUT /apis/iam/v2/projects/{id}
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_UpdateProject
+  - name: Policies_ListRoles
+    description: GET /apis/iam/v2/roles
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_ListRoles
+  - name: Policies_CreateRole
+    description: POST /apis/iam/v2/roles
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_CreateRole
+  - name: Policies_GetRole
+    description: GET /apis/iam/v2/roles/{id}
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_GetRole
+  - name: Policies_DeleteRole
+    description: DELETE /apis/iam/v2/roles/{id}
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_DeleteRole
+  - name: Policies_UpdateRole
+    description: PUT /apis/iam/v2/roles/{id}
+    source_operation: openapi/chef-software-iam-v2-policy-openapi.json#Policies_UpdateRole
+  - name: NodesService_Create
+    description: POST /api/v0/nodes
+    source_operation: openapi/chef-software-nodes-nodes-openapi.json#NodesService_Create
+  - name: NodesService_BulkCreate
+    description: POST /api/v0/nodes/bulk-create
+    source_operation: openapi/chef-software-nodes-nodes-openapi.json#NodesService_BulkCreate
+  - name: NodesService_BulkDelete
+    description: POST /api/v0/nodes/delete
+    source_operation: openapi/chef-software-nodes-nodes-openapi.json#NodesService_BulkDelete
+  - name: NodesService_BulkDeleteById
+    description: POST /api/v0/nodes/delete/ids
+    source_operation: openapi/chef-software-nodes-nodes-openapi.json#NodesService_BulkDeleteById
+  - name: NodesService_Read
+    description: GET /api/v0/nodes/id/{id}
+    source_operation: openapi/chef-software-nodes-nodes-openapi.json#NodesService_Read
+  - name: NodesService_Delete
+    description: DELETE /api/v0/nodes/id/{id}
+    source_operation: openapi/chef-software-nodes-nodes-openapi.json#NodesService_Delete
+  - name: NodesService_Update
+    description: PUT /api/v0/nodes/id/{id}
+    source_operation: openapi/chef-software-nodes-nodes-openapi.json#NodesService_Update
+  - name: NodesService_Rerun
+    description: GET /api/v0/nodes/rerun/id/{id}
+    source_operation: openapi/chef-software-nodes-nodes-openapi.json#NodesService_Rerun
+  - name: NodesService_List
+    description: POST /api/v0/nodes/search
+    source_operation: openapi/chef-software-nodes-nodes-openapi.json#NodesService_List
+  - name: SecretsService_Create
+    description: POST /api/v0/secrets
+    source_operation: openapi/chef-software-secrets-secrets-openapi.json#SecretsService_Create
+  - name: SecretsService_Read
+    description: GET /api/v0/secrets/id/{id}
+    source_operation: openapi/chef-software-secrets-secrets-openapi.json#SecretsService_Read
+  - name: SecretsService_Delete
+    description: DELETE /api/v0/secrets/id/{id}
+    source_operation: openapi/chef-software-secrets-secrets-openapi.json#SecretsService_Delete
+  - name: SecretsService_Update
+    description: PATCH /api/v0/secrets/id/{id}
+    source_operation: openapi/chef-software-secrets-secrets-openapi.json#SecretsService_Update
+  - name: SecretsService_List
+    description: POST /api/v0/secrets/search
+    source_operation: openapi/chef-software-secrets-secrets-openapi.json#SecretsService_List
+  - name: ReportingService_SetAssetConfig
+    description: PUT /api/v0/compliance/reporting/assets/config
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_SetAssetConfig
+  - name: ReportingService_GetAssetConfig
+    description: GET /api/v0/compliance/reporting/assets/config/search
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_GetAssetConfig
+  - name: ReportingService_AssetCount
+    description: POST /api/v0/compliance/reporting/assets/count
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_AssetCount
+  - name: ReportingService_ListAsset
+    description: POST /api/v0/compliance/reporting/assets/search
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ListAsset
+  - name: ReportingService_ListControlItems
+    description: POST /api/v0/compliance/reporting/controls
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ListControlItems
+  - name: ReportingService_ListControlItemsRange
+    description: POST /api/v0/compliance/reporting/controls/search
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ListControlItemsRange
+  - name: ReportingService_ReadNodeHeader
+    description: POST /api/v0/compliance/reporting/nodeheader/id/{id}
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ReadNodeHeader
+  - name: ReportingService_ReadNode
+    description: GET /api/v0/compliance/reporting/nodes/id/{id}
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ReadNode
+  - name: ReportingService_ListNodes
+    description: POST /api/v0/compliance/reporting/nodes/search
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ListNodes
+  - name: ReportingService_ListProfiles
+    description: POST /api/v0/compliance/reporting/profiles
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ListProfiles
+  - name: ReportingService_ListReportIds
+    description: POST /api/v0/compliance/reporting/report-ids
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ListReportIds
+  - name: ReportingService_ListControlInfo
+    description: POST /api/v0/compliance/reporting/reportcontrols/id/{id}
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ListControlInfo
+  - name: ReportingService_ExportReportManager
+    description: POST /api/v0/compliance/reporting/reportmanager/export
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ExportReportManager
+  - name: ReportingService_ListReports
+    description: POST /api/v0/compliance/reporting/reports
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ListReports
+  - name: ReportingService_ReadReport
+    description: POST /api/v0/compliance/reporting/reports/id/{id}
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ReadReport
+  - name: ReportingService_ListSuggestions
+    description: POST /api/v0/compliance/reporting/suggestions
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_ListSuggestions
+  - name: ReportingService_GetVersion
+    description: GET /api/v0/compliance/reporting/version
+    source_operation: openapi/chef-software-compliance-reporting-reporting-openapi.json#ReportingService_GetVersion
+  - name: JobsService_Create
+    description: POST /api/v0/compliance/scanner/jobs
+    source_operation: openapi/chef-software-compliance-scanner-jobs-jobs-openapi.json#JobsService_Create
+  - name: JobsService_Read
+    description: GET /api/v0/compliance/scanner/jobs/id/{id}
+    source_operation: openapi/chef-software-compliance-scanner-jobs-jobs-openapi.json#JobsService_Read
+  - name: JobsService_Delete
+    description: DELETE /api/v0/compliance/scanner/jobs/id/{id}
+    source_operation: openapi/chef-software-compliance-scanner-jobs-jobs-openapi.json#JobsService_Delete
+  - name: JobsService_Update
+    description: PUT /api/v0/compliance/scanner/jobs/id/{id}
+    source_operation: openapi/chef-software-compliance-scanner-jobs-jobs-openapi.json#JobsService_Update
+  - name: JobsService_Rerun
+    description: GET /api/v0/compliance/scanner/jobs/rerun/id/{id}
+    source_operation: openapi/chef-software-compliance-scanner-jobs-jobs-openapi.json#JobsService_Rerun
+  - name: JobsService_List
+    description: POST /api/v0/compliance/scanner/jobs/search
+    source_operation: openapi/chef-software-compliance-scanner-jobs-jobs-openapi.json#JobsService_List
+  - name: DatafeedService_GlobalDataFeedConfig
+    description: GET /api/v0/datafeed/config
+    source_operation: openapi/chef-software-data_feed-data_feed-openapi.json#DatafeedService_GlobalDataFeedConfig
+  - name: DatafeedService_AddDestination
+    description: POST /api/v0/datafeed/destination
+    source_operation: openapi/chef-software-data_feed-data_feed-openapi.json#DatafeedService_AddDestination
+  - name: DatafeedService_EnableDestination
+    description: PATCH /api/v0/datafeed/destination/enable/{id}
+    source_operation: openapi/chef-software-data_feed-data_feed-openapi.json#DatafeedService_EnableDestination
+  - name: DatafeedService_GetDestination
+    description: GET /api/v0/datafeed/destination/{id}
+    source_operation: openapi/chef-software-data_feed-data_feed-openapi.json#DatafeedService_GetDestination
+  - name: DatafeedService_DeleteDestination
+    description: DELETE /api/v0/datafeed/destination/{id}
+    source_operation: openapi/chef-software-data_feed-data_feed-openapi.json#DatafeedService_DeleteDestination
+  - name: DatafeedService_UpdateDestination
+    description: PATCH /api/v0/datafeed/destination/{id}
+    source_operation: openapi/chef-software-data_feed-data_feed-openapi.json#DatafeedService_UpdateDestination
+  - name: DatafeedService_ListDestinations
+    description: POST /api/v0/datafeed/destinations
+    source_operation: openapi/chef-software-data_feed-data_feed-openapi.json#DatafeedService_ListDestinations
+  - name: DatafeedService_TestDestination
+    description: POST /api/v0/datafeed/destinations/test
+    source_operation: openapi/chef-software-data_feed-data_feed-openapi.json#DatafeedService_TestDestination
+  - name: ApplicationsService_DeleteDisconnectedServices
+    description: POST /api/v0/applications/delete_disconnected_services
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_DeleteDisconnectedServices
+  - name: ApplicationsService_DeleteServicesByID
+    description: POST /api/v0/applications/delete_services_by_id
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_DeleteServicesByID
+  - name: ApplicationsService_GetDisconnectedServices
+    description: GET /api/v0/applications/disconnected_services
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_GetDisconnectedServices
+  - name: ApplicationsService_GetServiceGroups
+    description: GET /api/v0/applications/service-groups
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_GetServiceGroups
+  - name: ApplicationsService_GetServicesBySG
+    description: GET /api/v0/applications/service-groups/{service_group_id}
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_GetServicesBySG
+  - name: ApplicationsService_GetServiceGroupsHealthCounts
+    description: GET /api/v0/applications/service_groups_health_counts
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_GetServiceGroupsHealthCounts
+  - name: ApplicationsService_GetServices
+    description: GET /api/v0/applications/services
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_GetServices
+  - name: ApplicationsService_GetServicesDistinctValues
+    description: GET /api/v0/applications/services-distinct-values
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_GetServicesDistinctValues
+  - name: ApplicationsService_GetServicesStats
+    description: GET /api/v0/applications/stats
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_GetServicesStats
+  - name: ApplicationsService_GetServicesUsageCount
+    description: GET /api/v0/applications/telemetry/services/count
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_GetServicesUsageCount
+  - name: ApplicationsService_UpdateTelemetryReported
+    description: PUT /api/v0/applications/telemetry/services/count/updated
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_UpdateTelemetryReported
+  - name: ApplicationsService_GetVersion
+    description: GET /api/v0/applications/version
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_GetVersion
+  - name: ApplicationsService_GetDeleteDisconnectedServicesConfig
+    description: GET /api/v0/retention/service_groups/delete_disconnected_services/config
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_GetDeleteDisconnectedServicesConfig
+  - name: ApplicationsService_UpdateDeleteDisconnectedServicesConfig
+    description: POST /api/v0/retention/service_groups/delete_disconnected_services/config
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_UpdateDeleteDisconnectedServicesConfig
+  - name: ApplicationsService_RunDeleteDisconnectedServicesJob
+    description: POST /api/v0/retention/service_groups/delete_disconnected_services/run
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_RunDeleteDisconnectedServicesJob
+  - name: ApplicationsService_GetDisconnectedServicesConfig
+    description: GET /api/v0/retention/service_groups/disconnected_services/config
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_GetDisconnectedServicesConfig
+  - name: ApplicationsService_UpdateDisconnectedServicesConfig
+    description: POST /api/v0/retention/service_groups/disconnected_services/config
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_UpdateDisconnectedServicesConfig
+  - name: ApplicationsService_RunDisconnectedServicesJob
+    description: POST /api/v0/retention/service_groups/disconnected_services/run
+    source_operation: openapi/chef-software-applications-applications-openapi.json#ApplicationsService_RunDisconnectedServicesJob

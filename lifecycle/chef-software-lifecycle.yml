@@ -1,0 +1,27 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chef.io/automate/ + https://status.chef.io
+versioning:
+  scheme: uri-path
+  current: v2
+  notes: >-
+    Chef Automate IAM is versioned in the path (`/apis/iam/v2/...`). The legacy
+    IAM v1 surface has been removed; some endpoints are unavailable in Automate
+    3.x and earlier. Automate itself ships continuously-dated product releases
+    documented in the release notes.
+  docs: https://docs.chef.io/release_notes/
+deprecation:
+  policy_documented: true
+  notes: >-
+    Chef publishes end-of-life / support-lifecycle policy for its products and
+    documents removed API surfaces (e.g. IAM v1) in the Automate docs and release
+    notes. No RFC 8594 Sunset/Deprecation response headers are advertised on the
+    Automate API.
+  policy_url: https://docs.chef.io/versions/
+status_page: https://status.chef.io
+release_notes:
+- product: Chef Automate
+  url: https://docs.chef.io/automate/
+- product: Chef Infra Client
+  url: https://docs.chef.io/release_notes/client/
+deprecated_operations: []

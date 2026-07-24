@@ -1,23 +1,552 @@
 aid: chef-software
 name: Chef Software
-description: Chef Software is a company surfaced as a portfolio company of battery-ventures and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Chef Software is the DevOps automation company behind Chef Infra, Chef InSpec,
+  Chef Habitat, and Chef Automate, now part of Progress Software. Chef pioneered
+  infrastructure-as-code, letting teams define, deploy, and continuously enforce
+  the configuration, compliance, and security posture of servers and applications
+  across data centers and cloud at any scale. Chef Automate exposes a REST API
+  (generated from gRPC service definitions via grpc-gateway) for managing
+  compliance reporting, node management, configuration management, secrets, data
+  feeds, event feeds, IAM (users, teams, tokens, policies, rules), and the
+  application service catalog. Authentication is via API tokens presented in the
+  api-token HTTP header. Chef also ships a deep open-source ecosystem of Ruby
+  client tooling (chef-client, InSpec, Ohai, Berkshelf, chef-cli, knife)
+  distributed on RubyGems, all developed in the open on the chef GitHub org.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.chef.io/hubfs/chef-logo.svg
 url: https://raw.githubusercontent.com/api-evangelist/chef-software/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - battery-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- DevOps
+- Infrastructure Automation
+- Configuration Management
+- Compliance
+- Security
+- Infrastructure as Code
+- Cloud
+- Continuous Compliance
+- Node Management
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: chef-software:chef-software-applicationsservice-api
+  name: Chef Software ApplicationsService API
+  description: The ApplicationsService API from Chef Software — 2 operation(s) for applicationsservice.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - ApplicationsService
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-applicationsservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-authorization-api
+  name: Chef Software Authorization API
+  description: The Authorization API from Chef Software — 2 operation(s) for authorization.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - Authorization
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-authorization-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-cds-api
+  name: Chef Software Cds API
+  description: The Cds API from Chef Software — 4 operation(s) for cds.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - Cds
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-cds-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-chefingester-api
+  name: Chef Software ChefIngester API
+  description: The ChefIngester API from Chef Software — 6 operation(s) for chefingester.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - ChefIngester
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-chefingester-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-comp-assets-api
+  name: Chef Software Comp_Assets API
+  description: The Comp_Assets API from Chef Software — 4 operation(s) for comp_assets.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - Comp_Assets
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-comp-assets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-configmgmt-api
+  name: Chef Software ConfigMgmt API
+  description: The ConfigMgmt API from Chef Software — 23 operation(s) for configmgmt.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - ConfigMgmt
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-configmgmt-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-datafeedservice-api
+  name: Chef Software DatafeedService API
+  description: The DatafeedService API from Chef Software — 6 operation(s) for datafeedservice.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - DatafeedService
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-datafeedservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-datalifecycle-api
+  name: Chef Software DataLifecycle API
+  description: The DataLifecycle API from Chef Software — 15 operation(s) for datalifecycle.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - DataLifecycle
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-datalifecycle-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-eventfeedservice-api
+  name: Chef Software EventFeedService API
+  description: The EventFeedService API from Chef Software — 4 operation(s) for eventfeedservice.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - EventFeedService
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-eventfeedservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-hidden-api
+  name: Chef Software hidden API
+  description: The hidden API from Chef Software — 5 operation(s) for hidden.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - hidden
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-hidden-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-infraproxy-api
+  name: Chef Software InfraProxy API
+  description: The InfraProxy API from Chef Software — 36 operation(s) for infraproxy.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - InfraProxy
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-infraproxy-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-jobscheduler-api
+  name: Chef Software JobScheduler API
+  description: The JobScheduler API from Chef Software — 4 operation(s) for jobscheduler.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - JobScheduler
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-jobscheduler-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-jobsservice-api
+  name: Chef Software JobsService API
+  description: The JobsService API from Chef Software — 4 operation(s) for jobsservice.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - JobsService
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-jobsservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-nodemanagerservice-api
+  name: Chef Software NodeManagerService API
+  description: The NodeManagerService API from Chef Software — 9 operation(s) for nodemanagerservice.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - NodeManagerService
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-nodemanagerservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-nodesservice-api
+  name: Chef Software NodesService API
+  description: The NodesService API from Chef Software — 7 operation(s) for nodesservice.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - NodesService
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-nodesservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-policies-api
+  name: Chef Software policies API
+  description: The policies API from Chef Software — 6 operation(s) for policies.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - policies
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-policies-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-profilesservice-api
+  name: Chef Software ProfilesService API
+  description: The ProfilesService API from Chef Software — 5 operation(s) for profilesservice.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - ProfilesService
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-profilesservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-projects-api
+  name: Chef Software projects API
+  description: The projects API from Chef Software — 2 operation(s) for projects.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - projects
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-projects-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-reportingservice-api
+  name: Chef Software ReportingService API
+  description: The ReportingService API from Chef Software — 12 operation(s) for reportingservice.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - ReportingService
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-reportingservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-reportmanagerservice-api
+  name: Chef Software ReportManagerService API
+  description: >-
+    The ReportManagerService API from Chef Software — 1 operation(s) for reportmanagerservice.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - ReportManagerService
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-reportmanagerservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-retention-api
+  name: Chef Software retention API
+  description: The retention API from Chef Software — 4 operation(s) for retention.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - retention
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-retention-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-roles-api
+  name: Chef Software roles API
+  description: The roles API from Chef Software — 2 operation(s) for roles.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - roles
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-roles-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-rules-api
+  name: Chef Software rules API
+  description: The rules API from Chef Software — 4 operation(s) for rules.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - rules
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-rules-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-secretsservice-api
+  name: Chef Software SecretsService API
+  description: The SecretsService API from Chef Software — 3 operation(s) for secretsservice.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - SecretsService
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-secretsservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-service-groups-api
+  name: Chef Software service_groups API
+  description: The service_groups API from Chef Software — 9 operation(s) for service_groups.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - service_groups
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-service-groups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-statsservice-api
+  name: Chef Software StatsService API
+  description: The StatsService API from Chef Software — 6 operation(s) for statsservice.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - StatsService
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-statsservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-teams-api
+  name: Chef Software teams API
+  description: The teams API from Chef Software — 6 operation(s) for teams.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - teams
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-teams-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-tokens-api
+  name: Chef Software tokens API
+  description: The tokens API from Chef Software — 2 operation(s) for tokens.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - tokens
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-tokens-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-users-api
+  name: Chef Software users API
+  description: The users API from Chef Software — 3 operation(s) for users.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - users
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-users-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-usersettingsservice-api
+  name: Chef Software UserSettingsService API
+  description: The UserSettingsService API from Chef Software — 1 operation(s) for usersettingsservice.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - UserSettingsService
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-usersettingsservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+common:
+- type: DeveloperPortal
+  url: https://docs.chef.io/
+- type: Documentation
+  url: https://docs.chef.io/
+- type: APIReference
+  url: https://docs.chef.io/automate/api/
+- type: GettingStarted
+  url: https://docs.chef.io/automate/install/
+- type: Authentication
+  url: authentication/chef-software-authentication.yml
+- type: Blog
+  url: https://www.chef.io/blog
+- type: Support
+  url: https://community.chef.io/
+- type: GitHubOrganization
+  url: https://github.com/chef
+- type: Pricing
+  url: https://www.chef.io/pricing
+- type: SignUp
+  url: https://www.chef.io/pricing
+- type: TermsOfService
+  url: https://www.chef.io/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.chef.io/privacy-policy
+- type: StatusPage
+  url: https://status.chef.io
+- type: Compliance
+  url: https://www.progress.com/trust-center
+- type: TrustCenter
+  url: security/chef-software-trust-center.yml
+- type: Security
+  url: security/chef-software-vulnerability-disclosure.yml
+- type: VulnerabilityDisclosure
+  url: security/chef-software-vulnerability-disclosure.yml
+- type: Packages
+  url: packages/chef-software-packages.yml
+- type: SDKs
+  url: packages/chef-software-packages.yml
+- type: CLI
+  url: cli/chef-software-cli.yml
+- type: MCPServer
+  url: mcp/chef-software-mcp.yml
+- type: LLMsTxt
+  url: llms/chef-software-llms.txt
+- type: Protobuf
+  url: grpc/chef-software-iam-v2-tokens.proto
+- type: Conventions
+  url: conventions/chef-software-conventions.yml
+- type: ErrorCatalog
+  url: errors/chef-software-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/chef-software-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/chef-software-lifecycle.yml
+- type: Conformance
+  url: conformance/chef-software-conformance.yml
+- type: DataModel
+  url: data-model/chef-software-data-model.yml
+- type: DomainSecurity
+  url: security/chef-software-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/chef-software-agentic-access.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: ChangeLog
+  url: changelog/chef-software-changelog.yml
+- type: Webhooks
+  url: asyncapi/chef-software-data-feed-webhooks.yml
+- type: Overlay
+  url: overlays/chef-software-iam-v2-tokens-overlay.yaml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

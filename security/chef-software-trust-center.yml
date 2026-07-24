@@ -1,0 +1,15 @@
+generated: '2026-07-18'
+method: searched
+probe: false
+source: https://www.progress.com/trust-center
+url: https://www.progress.com/trust-center
+note: >-
+  Chef Software is part of Progress Software; security, privacy and compliance are
+  governed under the Progress Trust Center.
+certifications:
+- SOC 2
+- ISO 27001
+- HIPAA
+evidence:
+- source: https://www.progress.com/trust-center
+  keywords: [soc 2, iso/iec 27001, hipaa, isms, trust center]

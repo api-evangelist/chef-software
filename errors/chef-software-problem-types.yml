@@ -1,0 +1,60 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/ (grpc.gateway.runtime.Error default responses)
+format: grpc-gateway
+note: >-
+  The Chef Automate API is generated with grpc-gateway. Every operation declares a
+  `default` response whose schema is `grpc.gateway.runtime.Error` (fields: `error`
+  string, `code` int32, `message` string, `details[]`). HTTP status is mapped from
+  the gRPC status code via the standard grpc-gateway mapping; the API does not use
+  RFC 9457 application/problem+json. The `code` field carries the canonical gRPC
+  status code and `message` a human-readable description.
+envelope:
+  media_type: application/json
+  schema: grpc.gateway.runtime.Error
+  fields:
+    error: Human-readable error string.
+    code: Canonical gRPC status code (int32).
+    message: Human-readable message.
+    details: Array of typed error detail objects (google.protobuf.Any).
+problems:
+- grpc_code: 3
+  http_status: 400
+  name: INVALID_ARGUMENT
+  title: Invalid argument
+  remediation: Correct the malformed field or request body and retry.
+- grpc_code: 16
+  http_status: 401
+  name: UNAUTHENTICATED
+  title: Missing or invalid api-token
+  remediation: Supply a valid Chef Automate API token in the `api-token` header.
+- grpc_code: 7
+  http_status: 403
+  name: PERMISSION_DENIED
+  title: Not authorized by IAM policy
+  remediation: Grant the token's subject an IAM v2 policy that allows the action.
+- grpc_code: 5
+  http_status: 404
+  name: NOT_FOUND
+  title: Resource not found
+  remediation: Verify the resource id exists in this Automate deployment.
+- grpc_code: 6
+  http_status: 409
+  name: ALREADY_EXISTS
+  title: Resource already exists
+  remediation: Use a unique id, or update the existing resource instead.
+- grpc_code: 8
+  http_status: 429
+  name: RESOURCE_EXHAUSTED
+  title: Rate or resource limit exceeded
+  remediation: Back off and retry.
+- grpc_code: 13
+  http_status: 500
+  name: INTERNAL
+  title: Internal server error
+  remediation: Retry; if persistent, check Automate service logs.
+- grpc_code: 14
+  http_status: 503
+  name: UNAVAILABLE
+  title: Service unavailable
+  remediation: The backing service is down or restarting; retry with backoff.

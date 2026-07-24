@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/ + https://www.progress.com/trust-center
+note: >-
+  Standards conformance for the Chef Automate API, derived from the grpc-gateway
+  swagger specs and Progress (Chef's parent) published compliance posture.
+standards:
+- id: openapi-swagger-2.0
+  conforms: true
+  evidence: All 24 external API specs are Swagger 2.0 documents.
+- id: grpc
+  conforms: true
+  evidence: API is generated from gRPC service definitions (protos in grpc/).
+- id: grpc-gateway
+  conforms: true
+  evidence: REST surface generated via grpc-gateway; error schema grpc.gateway.runtime.Error.
+- id: oauth2
+  conforms: false
+  evidence: Authentication is api-token header, not OAuth2.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use grpc.gateway.runtime.Error, not application/problem+json.
+- id: soc2
+  conforms: true
+  evidence: Progress (parent) maintains SOC 2 compliance (trust center).
+- id: iso-27001
+  conforms: true
+  evidence: Progress maintains an ISMS certified to ISO/IEC 27001 (trust center).
+- id: hipaa
+  conforms: true
+  evidence: Progress enables HIPAA-subject customers (trust center).
+compliance_program:
+  url: https://www.progress.com/trust-center
+  certifications: [SOC 2, ISO 27001, HIPAA]

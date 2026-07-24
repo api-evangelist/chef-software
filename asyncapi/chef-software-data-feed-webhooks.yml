@@ -1,0 +1,46 @@
+generated: '2026-07-18'
+method: derived
+spec_type: Webhooks
+source: openapi/chef-software-data_feed-data_feed-openapi.json
+note: >-
+  Chef Automate does not publish an AsyncAPI document. It does expose an outbound
+  webhook / data-forwarding surface: the Data Feed service pushes Automate node
+  and compliance data to registered external destinations (e.g. Splunk, ServiceNow,
+  ELK, S3-compatible, generic HTTPS webhooks). This artifact captures that webhook
+  destination surface; there is no inbound event subscription/streaming API.
+destinations_api:
+  base_path: /api/v0/datafeed
+  operations:
+  - operationId: DatafeedService_AddDestination
+    method: POST
+    path: /api/v0/datafeed/destination
+    summary: Register an outbound data-feed destination (webhook target).
+  - operationId: DatafeedService_ListDestinations
+    method: POST
+    path: /api/v0/datafeed/destinations
+    summary: List configured destinations.
+  - operationId: DatafeedService_GetDestination
+    method: GET
+    path: /api/v0/datafeed/destination/{id}
+    summary: Get a destination.
+  - operationId: DatafeedService_UpdateDestination
+    method: PATCH
+    path: /api/v0/datafeed/destination/{id}
+    summary: Update a destination.
+  - operationId: DatafeedService_EnableDestination
+    method: PATCH
+    path: /api/v0/datafeed/destination/enable/{id}
+    summary: Enable or disable a destination.
+  - operationId: DatafeedService_DeleteDestination
+    method: DELETE
+    path: /api/v0/datafeed/destination/{id}
+    summary: Delete a destination.
+  - operationId: DatafeedService_TestDestination
+    method: POST
+    path: /api/v0/datafeed/destinations/test
+    summary: Test connectivity/authentication to a destination.
+  - operationId: DatafeedService_GlobalDataFeedConfig
+    method: GET
+    path: /api/v0/datafeed/config
+    summary: Read the global data-feed configuration.
+docs: https://docs.chef.io/automate/datafeed/

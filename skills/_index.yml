@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/ (Chef Automate API operationIds)
+skills:
+- file: chef-software-manage-api-tokens.md
+  name: Manage Chef Automate API tokens
+  api: openapi/chef-software-iam-v2-tokens-openapi.json
+  operations: [Tokens_CreateToken, Tokens_ListTokens, Tokens_GetToken, Tokens_UpdateToken, Tokens_DeleteToken]
+- file: chef-software-read-compliance-reports.md
+  name: Read Chef Automate compliance reports
+  api: openapi/chef-software-compliance-reporting-reporting-openapi.json
+  operations: [ReportingService_ListReports, ReportingService_ReadReport, ReportingService_ListNodes, ReportingService_ReadNode, ReportingService_ListControlItems]
+- file: chef-software-schedule-compliance-scan.md
+  name: Schedule a Chef Automate compliance scan
+  api: openapi/chef-software-compliance-scanner-jobs-jobs-openapi.json
+  operations: [JobsService_Create, JobsService_List, JobsService_Read, JobsService_Rerun, JobsService_Delete]
+- file: chef-software-configure-data-feed.md
+  name: Configure a Chef Automate data-feed destination
+  api: openapi/chef-software-data_feed-data_feed-openapi.json
+  operations: [DatafeedService_AddDestination, DatafeedService_TestDestination, DatafeedService_ListDestinations, DatafeedService_UpdateDestination, DatafeedService_DeleteDestination]

@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chef.io/release_notes/
+note: >-
+  Chef publishes dated release notes per product. Chef Automate ships continuous
+  product releases; the Ruby client tooling versions below were captured from the
+  RubyGems API on 2026-07-18 and are the current published versions.
+scheme: semver (per product)
+current_versions:
+- product: Chef Infra Client
+  version: 19.3.15
+  release_notes: https://docs.chef.io/release_notes/client/
+- product: Chef InSpec
+  version: 7.1.7
+  release_notes: https://github.com/inspec/inspec/blob/main/CHANGELOG.md
+- product: Ohai
+  version: 19.1.40
+  release_notes: https://github.com/chef/ohai/blob/main/CHANGELOG.md
+- product: chef-cli
+  version: 6.1.34
+- product: Berkshelf
+  version: 8.1.23
+entries: []

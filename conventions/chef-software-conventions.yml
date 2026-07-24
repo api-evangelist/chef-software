@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/ + https://docs.chef.io/automate/api/
+note: >-
+  Cross-cutting request/response semantics for the Chef Automate API, derived from
+  the grpc-gateway swagger specs and the Automate API documentation. Chef Automate
+  does not document an idempotency-key mechanism, so no Idempotency contract is
+  asserted here (writes are not fabricated as idempotent).
+authentication:
+  style: api-key
+  header: api-token
+  docs: https://docs.chef.io/automate/api_tokens/
+  ref: authentication/chef-software-authentication.yml
+base_path:
+  scheme: uri-path
+  patterns:
+  - /api/v0/...        # config-mgmt, compliance, nodes, secrets, data-feed, event-feed
+  - /apis/iam/v2/...   # IAM v2 users, teams, tokens, policies, rules
+content_type: application/json
+pagination:
+  style: varies-by-service
+  notes: >-
+    List operations that paginate accept `page`/`per_page` or `pagination`
+    request fields and echo totals in the response; many list endpoints (e.g.
+    IAM ListTokens, ListUsers) return the full collection without pagination.
+error_envelope:
+  media_type: application/json
+  schema: grpc.gateway.runtime.Error
+  ref: errors/chef-software-problem-types.yml
+authorization:
+  model: IAM v2 (policies + rules)
+  notes: >-
+    Every action is authorized by IAM v2 policies that bind subjects (users,
+    teams, tokens) to allowed actions on resources; introspection endpoints let a
+    caller discover which actions its token may perform.
+versioning:
+  scheme: uri-path
+  iam_version: v2
+  ref: lifecycle/chef-software-lifecycle.yml
+idempotency:
+  supported: false
+  notes: No idempotency-key header or documented replay-safety contract.
+rate_limit_signal:
+  documented: false

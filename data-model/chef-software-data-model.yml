@@ -1,0 +1,94 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/ (Chef Automate grpc-gateway swagger definitions)
+note: >-
+  Entity graph derived from the Chef Automate IAM v2 and node/compliance API
+  surfaces. IAM is the core authorization domain: policies bind members
+  (users, teams, tokens) to statements over resources, and rules project
+  project-membership. Nodes are the managed-infrastructure domain and carry
+  compliance reports.
+entities:
+- name: User
+  service: iam-v2-users
+  id_field: id
+  relationships:
+  - type: belongs_to_many
+    target: Team
+    via: membership
+- name: Team
+  service: iam-v2-teams
+  id_field: id
+  relationships:
+  - type: has_many
+    target: User
+    via: members
+- name: Token
+  service: iam-v2-tokens
+  id_field: id
+  relationships:
+  - type: referenced_by
+    target: Policy
+    via: members
+- name: Policy
+  service: iam-v2-policy
+  id_field: id
+  relationships:
+  - type: has_many
+    target: Statement
+    via: statements
+  - type: references
+    target: [User, Team, Token]
+    via: members
+- name: Rule
+  service: iam-v2-rules
+  id_field: id
+  relationships:
+  - type: belongs_to
+    target: Project
+    via: project_id
+- name: Project
+  service: iam-v2-policy
+  id_field: id
+  relationships:
+  - type: has_many
+    target: Rule
+    via: rules
+- name: Node
+  service: nodes
+  id_field: id
+  relationships:
+  - type: belongs_to
+    target: NodeManager
+    via: manager_id
+  - type: has_many
+    target: ComplianceReport
+    via: node_id
+- name: NodeManager
+  service: nodes-manager
+  id_field: id
+- name: Secret
+  service: secrets
+  id_field: id
+- name: ComplianceReport
+  service: compliance-reporting
+  id_field: id
+  relationships:
+  - type: belongs_to
+    target: Node
+    via: node_id
+  - type: has_many
+    target: ComplianceProfile
+    via: profiles
+- name: ComplianceProfile
+  service: compliance-profiles
+  id_field: name
+- name: ScanJob
+  service: compliance-scanner-jobs
+  id_field: id
+  relationships:
+  - type: references
+    target: Node
+    via: nodes
+- name: DataFeedDestination
+  service: data-feed
+  id_field: id

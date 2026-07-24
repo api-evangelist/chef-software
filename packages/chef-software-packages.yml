@@ -1,0 +1,60 @@
+generated: '2026-07-18'
+method: searched
+source: https://rubygems.org / https://github.com/chef
+note: >-
+  Chef's client-side ecosystem is Ruby, distributed on RubyGems and developed in
+  the open on the chef GitHub org. Versions and download counts captured from the
+  RubyGems API on 2026-07-18. Chef Habitat's `hab` binary and the Chef Automate
+  server are distributed as native builds / Omnitruck installers rather than
+  language packages, so they are catalogued in cli/ rather than here.
+packages:
+- language: ruby
+  registry: rubygems
+  name: chef
+  url: https://rubygems.org/gems/chef
+  install: gem install chef
+  version: 19.3.15
+  downloads: 26625012
+  source: https://github.com/chef/chef
+  official: true
+  description: Chef Infra Client - the core infrastructure automation agent.
+- language: ruby
+  registry: rubygems
+  name: inspec
+  url: https://rubygems.org/gems/inspec
+  install: gem install inspec
+  version: 7.1.7
+  downloads: 27367240
+  source: https://github.com/inspec/inspec
+  official: true
+  description: Chef InSpec - compliance-as-code auditing and testing framework.
+- language: ruby
+  registry: rubygems
+  name: ohai
+  url: https://rubygems.org/gems/ohai
+  install: gem install ohai
+  version: 19.1.40
+  downloads: 74708015
+  source: https://github.com/chef/ohai
+  official: true
+  description: Ohai - system profiling / node attribute detection used by Chef Infra.
+- language: ruby
+  registry: rubygems
+  name: chef-cli
+  url: https://rubygems.org/gems/chef-cli
+  install: gem install chef-cli
+  version: 6.1.34
+  downloads: 1740706
+  source: https://github.com/chef/chef-cli
+  official: true
+  description: Chef Workstation CLI for authoring and testing cookbooks and policies.
+- language: ruby
+  registry: rubygems
+  name: berkshelf
+  url: https://rubygems.org/gems/berkshelf
+  install: gem install berkshelf
+  version: 8.1.23
+  downloads: 8506485
+  source: https://github.com/chef/berkshelf
+  official: true
+  description: Berkshelf - cookbook dependency manager for Chef Infra.

@@ -1,0 +1,50 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chef.io/
+note: >-
+  Chef ships several first-party CLIs. The Automate server is operated with the
+  `chef-automate` CLI (deploy, IAM, token, backup). Cookbook/policy authoring uses
+  the Chef Workstation `chef` / `chef-cli` and `knife` commands. Compliance is run
+  with `inspec`, and Chef Habitat with `hab`.
+clis:
+- name: chef-automate
+  description: Operate and administer a Chef Automate deployment, including IAM and API tokens.
+  install:
+  - "curl https://packages.chef.io/files/current/latest/chef-automate-cli/chef-automate_linux_amd64.zip | gunzip - > chef-automate && chmod +x chef-automate"
+  docs: https://docs.chef.io/automate/cli_chef_automate/
+  command_groups:
+  - group: deploy
+    commands: [deploy, upgrade, status, backup, restore]
+  - group: iam
+    commands: [iam token create, iam token list, iam admin-access restore, iam version]
+  - group: applications
+    commands: [applications show-svcs, applications delete-svcs-by-id]
+- name: knife
+  description: Command-line tool for interacting with a Chef Infra Server (nodes, cookbooks, roles, environments, data bags).
+  install: gem install chef
+  docs: https://docs.chef.io/workstation/knife/
+  command_groups:
+  - group: nodes
+    commands: [node list, node show, node edit, node delete]
+  - group: cookbooks
+    commands: [cookbook upload, cookbook list, cookbook download]
+  - group: bootstrap
+    commands: [bootstrap]
+- name: inspec
+  description: Run compliance and security audits (compliance-as-code) against systems and cloud APIs.
+  install: gem install inspec
+  docs: https://docs.chef.io/inspec/
+  command_groups:
+  - group: exec
+    commands: [exec, check, shell, detect]
+  - group: profile
+    commands: [init profile, archive, json, vendor]
+- name: hab
+  description: Chef Habitat CLI for application packaging, build, and runtime supervision.
+  install: "curl https://raw.githubusercontent.com/habitat-sh/habitat/main/components/hab/install.sh | sudo bash"
+  docs: https://docs.chef.io/habitat/
+  command_groups:
+  - group: pkg
+    commands: [pkg build, pkg install, pkg export, pkg upload]
+  - group: svc
+    commands: [svc load, svc start, svc status, svc stop]

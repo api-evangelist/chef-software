@@ -475,6 +475,8 @@ apis:
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/chef-software/overview
 - type: DeveloperPortal
   url: https://docs.chef.io/
 - type: Documentation

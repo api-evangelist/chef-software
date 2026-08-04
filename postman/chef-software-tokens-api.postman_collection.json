@@ -1,0 +1,781 @@
+{
+  "info": {
+    "_postman_id": "480b933c-b7a8-4fa3-b521-4922605427e2",
+    "name": "external/applications/applications.proto ApplicationsService tokens API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:39.000Z",
+    "updatedAt": "2026-07-28T01:20:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-480b933c-b7a8-4fa3-b521-4922605427e2"
+  },
+  "item": [
+    {
+      "name": "apis",
+      "item": [
+        {
+          "name": "iam",
+          "item": [
+            {
+              "name": "v2",
+              "item": [
+                {
+                  "name": "tokens",
+                  "item": [
+                    {
+                      "name": "{id}",
+                      "item": [
+                        {
+                          "name": "Gets a token",
+                          "id": "d47465aa-d24b-4425-b9a7-c3f47a4b3aaa",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/tokens/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "tokens",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "2625765a-a098-4526-ab27-4870804c4aae",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) ID of the token."
+                                }
+                              ]
+                            },
+                            "description": "Returns the details for a token.\n\nAuthorization Action:\n```\niam:tokens:get\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "3853fed8-b0c5-40c8-8b46-c94ebd3c759b",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/tokens/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "tokens",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"token\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"value\": \"<string>\",\n    \"active\": \"<boolean>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\",\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:39.000Z",
+                              "updatedAt": "2026-07-28T01:20:39.000Z",
+                              "uid": "35240-3853fed8-b0c5-40c8-8b46-c94ebd3c759b"
+                            },
+                            {
+                              "id": "285af5b9-a2b9-4ac6-bcfe-3ece82046815",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/tokens/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "tokens",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:39.000Z",
+                              "updatedAt": "2026-07-28T01:20:39.000Z",
+                              "uid": "35240-285af5b9-a2b9-4ac6-bcfe-3ece82046815"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:39.000Z",
+                          "updatedAt": "2026-07-28T01:20:39.000Z",
+                          "uid": "35240-d47465aa-d24b-4425-b9a7-c3f47a4b3aaa"
+                        },
+                        {
+                          "name": "Deletes a token",
+                          "id": "f1f34576-0a6b-4330-baac-7b82d7661af0",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/tokens/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "tokens",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "f097442d-8f5f-45c6-b892-f6fe18e1cee2",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) ID of the token."
+                                }
+                              ]
+                            },
+                            "description": "Deletes a token and remove it from any policies.\n\nAuthorization Action:\n```\niam:tokens:delete\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "25be5878-7aeb-4179-9932-2009972b017a",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/tokens/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "tokens",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:20:39.000Z",
+                              "updatedAt": "2026-07-28T01:20:39.000Z",
+                              "uid": "35240-25be5878-7aeb-4179-9932-2009972b017a"
+                            },
+                            {
+                              "id": "c490788e-362f-4d49-b632-f3a963ec5021",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/tokens/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "tokens",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:39.000Z",
+                              "updatedAt": "2026-07-28T01:20:39.000Z",
+                              "uid": "35240-c490788e-362f-4d49-b632-f3a963ec5021"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:39.000Z",
+                          "updatedAt": "2026-07-28T01:20:39.000Z",
+                          "uid": "35240-f1f34576-0a6b-4330-baac-7b82d7661af0"
+                        },
+                        {
+                          "name": "Updates a token",
+                          "id": "3b933c1e-e47a-4418-9e3a-9c769374c9a2",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/tokens/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "tokens",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "198d0fdc-3baa-4edc-a315-87c597680b19",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) Unique ID. Cannot be changed."
+                                }
+                              ]
+                            },
+                            "description": "This operation overwrites all fields excepting ID, timestamps, and value,\nincluding those omitted from the request, so be sure to specify all properties.\nProperties that you do not include are reset to empty values.\n\nAuthorization Action:\n```\niam:tokens:update\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "28946dd5-1e14-4bec-96b1-2478cabede36",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/tokens/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "tokens",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"token\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"value\": \"<string>\",\n    \"active\": \"<boolean>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\",\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:39.000Z",
+                              "updatedAt": "2026-07-28T01:20:39.000Z",
+                              "uid": "35240-28946dd5-1e14-4bec-96b1-2478cabede36"
+                            },
+                            {
+                              "id": "2ad8380e-5f42-4fac-b291-f92bcada9335",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/tokens/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "tokens",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:39.000Z",
+                              "updatedAt": "2026-07-28T01:20:39.000Z",
+                              "uid": "35240-2ad8380e-5f42-4fac-b291-f92bcada9335"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:39.000Z",
+                          "updatedAt": "2026-07-28T01:20:39.000Z",
+                          "uid": "35240-3b933c1e-e47a-4418-9e3a-9c769374c9a2"
+                        }
+                      ],
+                      "id": "e5cb1ffd-f4d4-47a1-b638-926e04d16539",
+                      "createdAt": "2026-07-28T01:20:39.000Z",
+                      "updatedAt": "2026-07-28T01:20:39.000Z",
+                      "uid": "35240-e5cb1ffd-f4d4-47a1-b638-926e04d16539"
+                    },
+                    {
+                      "name": "Lists all tokens",
+                      "id": "0be8e377-3f68-4ee0-bd3c-aa35090f343d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/tokens",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "tokens"
+                          ]
+                        },
+                        "description": "Lists all tokens, both admin and non-admin.\n\nAuthorization Action:\n```\niam:tokens:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "55bec68a-72a8-4fb0-b5e8-aec31991d475",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/tokens",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "tokens"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"tokens\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"created_at\": \"<string>\",\n      \"updated_at\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"created_at\": \"<string>\",\n      \"updated_at\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:39.000Z",
+                          "updatedAt": "2026-07-28T01:20:39.000Z",
+                          "uid": "35240-55bec68a-72a8-4fb0-b5e8-aec31991d475"
+                        },
+                        {
+                          "id": "633ab97d-0aa2-4241-a706-0d67b107c9ec",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/tokens",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "tokens"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:39.000Z",
+                          "updatedAt": "2026-07-28T01:20:39.000Z",
+                          "uid": "35240-633ab97d-0aa2-4241-a706-0d67b107c9ec"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:39.000Z",
+                      "updatedAt": "2026-07-28T01:20:39.000Z",
+                      "uid": "35240-0be8e377-3f68-4ee0-bd3c-aa35090f343d"
+                    },
+                    {
+                      "name": "Creates a token",
+                      "id": "b677a605-99e3-452d-82b0-84a98353cb8e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"value\": \"<string>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/tokens",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "tokens"
+                          ]
+                        },
+                        "description": "Creates a token.\nActive defaults to true when not specified.\nValue is auto-generated when not specified.\n\nNote that this creates *non-admin* tokens that may then be assigned permissions via policies just like users or teams (unless you have already created policies that encompass all tokens using `tokens:*``).\n\nYou cannot create admin tokens via the REST API.\nAdmin tokens can only be created by specifying the `--admin` flag to this chef-automate sub-command:\n```\nchef-automate iam token create <your-token-name> --admin`\n```\n\nAuthorization Action:\n```\niam:tokens:create\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "935ab05d-553c-460b-8550-bdf1cb6cac8e",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"value\": \"<string>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/tokens",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "tokens"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"token\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"value\": \"<string>\",\n    \"active\": \"<boolean>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\",\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                          "createdAt": "2026-07-28T01:20:39.000Z",
+                          "updatedAt": "2026-07-28T01:20:39.000Z",
+                          "uid": "35240-935ab05d-553c-460b-8550-bdf1cb6cac8e"
+                        },
+                        {
+                          "id": "f2e3312c-bc8a-4251-b1f8-0e30d3a821db",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"value\": \"<string>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/tokens",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "tokens"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:39.000Z",
+                          "updatedAt": "2026-07-28T01:20:39.000Z",
+                          "uid": "35240-f2e3312c-bc8a-4251-b1f8-0e30d3a821db"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:39.000Z",
+                      "updatedAt": "2026-07-28T01:20:39.000Z",
+                      "uid": "35240-b677a605-99e3-452d-82b0-84a98353cb8e"
+                    }
+                  ],
+                  "id": "33e383ff-ab68-4564-8ad5-1649e144f1a4",
+                  "createdAt": "2026-07-28T01:20:39.000Z",
+                  "updatedAt": "2026-07-28T01:20:39.000Z",
+                  "uid": "35240-33e383ff-ab68-4564-8ad5-1649e144f1a4"
+                }
+              ],
+              "id": "bdcb6c8f-c908-49aa-bcf6-85f22099b1b0",
+              "createdAt": "2026-07-28T01:20:39.000Z",
+              "updatedAt": "2026-07-28T01:20:39.000Z",
+              "uid": "35240-bdcb6c8f-c908-49aa-bcf6-85f22099b1b0"
+            }
+          ],
+          "id": "648379a6-4a9b-414f-8796-cc6398b13134",
+          "createdAt": "2026-07-28T01:20:39.000Z",
+          "updatedAt": "2026-07-28T01:20:39.000Z",
+          "uid": "35240-648379a6-4a9b-414f-8796-cc6398b13134"
+        }
+      ],
+      "id": "a6530764-3e89-4fb4-aff4-3d98fe7707be",
+      "createdAt": "2026-07-28T01:20:39.000Z",
+      "updatedAt": "2026-07-28T01:20:39.000Z",
+      "uid": "35240-a6530764-3e89-4fb4-aff4-3d98fe7707be"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

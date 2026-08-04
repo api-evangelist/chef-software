@@ -1,0 +1,717 @@
+{
+  "info": {
+    "_postman_id": "46492cd0-def0-4176-bf4d-51c9eeaf36d5",
+    "name": "external/applications/applications.proto ApplicationsService JobScheduler API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:06.000Z",
+    "updatedAt": "2026-07-28T01:20:06.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-46492cd0-def0-4176-bf4d-51c9eeaf36d5"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "retention",
+              "item": [
+                {
+                  "name": "nodes",
+                  "item": [
+                    {
+                      "name": "delete-nodes",
+                      "item": [
+                        {
+                          "name": "config",
+                          "item": [
+                            {
+                              "name": "Job Scheduler Configure Delete Nodes Scheduler",
+                              "id": "72a47698-01d9-4fa1-a98d-d48d24f4ec69",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"every\": \"<string>\",\n  \"threshold\": \"<string>\",\n  \"running\": \"<boolean>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/retention/nodes/delete-nodes/config",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "retention",
+                                    "nodes",
+                                    "delete-nodes",
+                                    "config"
+                                  ]
+                                }
+                              },
+                              "response": [
+                                {
+                                  "id": "89d5e92a-3244-49ac-8e0b-bcb0b2af6846",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"every\": \"<string>\",\n  \"threshold\": \"<string>\",\n  \"running\": \"<boolean>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/retention/nodes/delete-nodes/config",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "retention",
+                                        "nodes",
+                                        "delete-nodes",
+                                        "config"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{}",
+                                  "createdAt": "2026-07-28T01:20:06.000Z",
+                                  "updatedAt": "2026-07-28T01:20:06.000Z",
+                                  "uid": "35240-89d5e92a-3244-49ac-8e0b-bcb0b2af6846"
+                                },
+                                {
+                                  "id": "582fd264-1aa8-4332-a653-11b41dd9b72e",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"every\": \"<string>\",\n  \"threshold\": \"<string>\",\n  \"running\": \"<boolean>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/retention/nodes/delete-nodes/config",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "retention",
+                                        "nodes",
+                                        "delete-nodes",
+                                        "config"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:06.000Z",
+                                  "updatedAt": "2026-07-28T01:20:06.000Z",
+                                  "uid": "35240-582fd264-1aa8-4332-a653-11b41dd9b72e"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:06.000Z",
+                              "updatedAt": "2026-07-28T01:20:06.000Z",
+                              "uid": "35240-72a47698-01d9-4fa1-a98d-d48d24f4ec69"
+                            }
+                          ],
+                          "id": "a7fc3190-6890-4996-aed3-4c2c35641337",
+                          "createdAt": "2026-07-28T01:20:06.000Z",
+                          "updatedAt": "2026-07-28T01:20:06.000Z",
+                          "uid": "35240-a7fc3190-6890-4996-aed3-4c2c35641337"
+                        }
+                      ],
+                      "id": "d3f69290-6796-462e-97c7-0e96e382e490",
+                      "createdAt": "2026-07-28T01:20:06.000Z",
+                      "updatedAt": "2026-07-28T01:20:06.000Z",
+                      "uid": "35240-d3f69290-6796-462e-97c7-0e96e382e490"
+                    },
+                    {
+                      "name": "missing-nodes-deletion",
+                      "item": [
+                        {
+                          "name": "config",
+                          "item": [
+                            {
+                              "name": "Job Scheduler Configure Missing Nodes For Deletion Scheduler",
+                              "id": "e9067ac9-e33b-4384-a8dd-2831393f2fa4",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"every\": \"<string>\",\n  \"threshold\": \"<string>\",\n  \"running\": \"<boolean>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/retention/nodes/missing-nodes-deletion/config",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "retention",
+                                    "nodes",
+                                    "missing-nodes-deletion",
+                                    "config"
+                                  ]
+                                }
+                              },
+                              "response": [
+                                {
+                                  "id": "f20d8f5b-b8d3-46fb-ad24-958bc39b6f30",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"every\": \"<string>\",\n  \"threshold\": \"<string>\",\n  \"running\": \"<boolean>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/retention/nodes/missing-nodes-deletion/config",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "retention",
+                                        "nodes",
+                                        "missing-nodes-deletion",
+                                        "config"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{}",
+                                  "createdAt": "2026-07-28T01:20:06.000Z",
+                                  "updatedAt": "2026-07-28T01:20:06.000Z",
+                                  "uid": "35240-f20d8f5b-b8d3-46fb-ad24-958bc39b6f30"
+                                },
+                                {
+                                  "id": "b882c960-04d1-44b8-8c2e-c1a9857ddd50",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"every\": \"<string>\",\n  \"threshold\": \"<string>\",\n  \"running\": \"<boolean>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/retention/nodes/missing-nodes-deletion/config",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "retention",
+                                        "nodes",
+                                        "missing-nodes-deletion",
+                                        "config"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:06.000Z",
+                                  "updatedAt": "2026-07-28T01:20:06.000Z",
+                                  "uid": "35240-b882c960-04d1-44b8-8c2e-c1a9857ddd50"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:06.000Z",
+                              "updatedAt": "2026-07-28T01:20:06.000Z",
+                              "uid": "35240-e9067ac9-e33b-4384-a8dd-2831393f2fa4"
+                            }
+                          ],
+                          "id": "4e34b2a8-c76e-4106-a2fa-3a1d498bcf25",
+                          "createdAt": "2026-07-28T01:20:06.000Z",
+                          "updatedAt": "2026-07-28T01:20:06.000Z",
+                          "uid": "35240-4e34b2a8-c76e-4106-a2fa-3a1d498bcf25"
+                        }
+                      ],
+                      "id": "d377eb0c-98e4-4ce3-903e-e2bcf71fb2b5",
+                      "createdAt": "2026-07-28T01:20:06.000Z",
+                      "updatedAt": "2026-07-28T01:20:06.000Z",
+                      "uid": "35240-d377eb0c-98e4-4ce3-903e-e2bcf71fb2b5"
+                    },
+                    {
+                      "name": "missing-nodes",
+                      "item": [
+                        {
+                          "name": "config",
+                          "item": [
+                            {
+                              "name": "Job Scheduler Configure Nodes Missing Scheduler",
+                              "id": "df465524-88d9-4abb-8e38-47df2bfe2465",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"every\": \"<string>\",\n  \"threshold\": \"<string>\",\n  \"running\": \"<boolean>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/retention/nodes/missing-nodes/config",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "retention",
+                                    "nodes",
+                                    "missing-nodes",
+                                    "config"
+                                  ]
+                                }
+                              },
+                              "response": [
+                                {
+                                  "id": "00d05c72-21e4-4327-a192-f59b01ba29f5",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"every\": \"<string>\",\n  \"threshold\": \"<string>\",\n  \"running\": \"<boolean>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/retention/nodes/missing-nodes/config",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "retention",
+                                        "nodes",
+                                        "missing-nodes",
+                                        "config"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{}",
+                                  "createdAt": "2026-07-28T01:20:06.000Z",
+                                  "updatedAt": "2026-07-28T01:20:06.000Z",
+                                  "uid": "35240-00d05c72-21e4-4327-a192-f59b01ba29f5"
+                                },
+                                {
+                                  "id": "3257d435-c2da-43b9-bfb1-523daeb534fe",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"every\": \"<string>\",\n  \"threshold\": \"<string>\",\n  \"running\": \"<boolean>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/retention/nodes/missing-nodes/config",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "retention",
+                                        "nodes",
+                                        "missing-nodes",
+                                        "config"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:06.000Z",
+                                  "updatedAt": "2026-07-28T01:20:06.000Z",
+                                  "uid": "35240-3257d435-c2da-43b9-bfb1-523daeb534fe"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:06.000Z",
+                              "updatedAt": "2026-07-28T01:20:06.000Z",
+                              "uid": "35240-df465524-88d9-4abb-8e38-47df2bfe2465"
+                            }
+                          ],
+                          "id": "2c051ca6-2711-422b-9b47-da41e732d445",
+                          "createdAt": "2026-07-28T01:20:06.000Z",
+                          "updatedAt": "2026-07-28T01:20:06.000Z",
+                          "uid": "35240-2c051ca6-2711-422b-9b47-da41e732d445"
+                        }
+                      ],
+                      "id": "a5675e30-9237-42a5-b565-ad29ba7604cf",
+                      "createdAt": "2026-07-28T01:20:06.000Z",
+                      "updatedAt": "2026-07-28T01:20:06.000Z",
+                      "uid": "35240-a5675e30-9237-42a5-b565-ad29ba7604cf"
+                    },
+                    {
+                      "name": "status",
+                      "item": [
+                        {
+                          "name": "Job Scheduler Get Status Job Scheduler",
+                          "id": "a0592819-f2c7-4049-8b50-61977db24705",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/retention/nodes/status",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "retention",
+                                "nodes",
+                                "status"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "010150da-6e32-438f-82d9-32b8c19a46ad",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/retention/nodes/status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "retention",
+                                    "nodes",
+                                    "status"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"running\": \"<boolean>\",\n  \"jobs\": [\n    {\n      \"running\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"every\": \"<string>\",\n      \"last_run\": \"<string>\",\n      \"next_run\": \"<string>\",\n      \"last_elapsed\": \"<string>\",\n      \"started_on\": \"<string>\",\n      \"threshold\": \"<string>\"\n    },\n    {\n      \"running\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"every\": \"<string>\",\n      \"last_run\": \"<string>\",\n      \"next_run\": \"<string>\",\n      \"last_elapsed\": \"<string>\",\n      \"started_on\": \"<string>\",\n      \"threshold\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:06.000Z",
+                              "updatedAt": "2026-07-28T01:20:06.000Z",
+                              "uid": "35240-010150da-6e32-438f-82d9-32b8c19a46ad"
+                            },
+                            {
+                              "id": "481e1247-7a0e-4ede-a3d7-9c440155c1cc",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/retention/nodes/status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "retention",
+                                    "nodes",
+                                    "status"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:06.000Z",
+                              "updatedAt": "2026-07-28T01:20:06.000Z",
+                              "uid": "35240-481e1247-7a0e-4ede-a3d7-9c440155c1cc"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:06.000Z",
+                          "updatedAt": "2026-07-28T01:20:06.000Z",
+                          "uid": "35240-a0592819-f2c7-4049-8b50-61977db24705"
+                        }
+                      ],
+                      "id": "127154c9-9a3c-40a1-b1d1-160ebfe80750",
+                      "createdAt": "2026-07-28T01:20:06.000Z",
+                      "updatedAt": "2026-07-28T01:20:06.000Z",
+                      "uid": "35240-127154c9-9a3c-40a1-b1d1-160ebfe80750"
+                    }
+                  ],
+                  "id": "10cf40a1-516e-4200-b355-e03afdcae1fe",
+                  "createdAt": "2026-07-28T01:20:06.000Z",
+                  "updatedAt": "2026-07-28T01:20:06.000Z",
+                  "uid": "35240-10cf40a1-516e-4200-b355-e03afdcae1fe"
+                }
+              ],
+              "id": "c672f4e4-055f-4200-8fa2-606e45cfd77e",
+              "createdAt": "2026-07-28T01:20:06.000Z",
+              "updatedAt": "2026-07-28T01:20:06.000Z",
+              "uid": "35240-c672f4e4-055f-4200-8fa2-606e45cfd77e"
+            }
+          ],
+          "id": "191a0052-a40f-4843-a2a3-b859ed3f43b5",
+          "createdAt": "2026-07-28T01:20:06.000Z",
+          "updatedAt": "2026-07-28T01:20:06.000Z",
+          "uid": "35240-191a0052-a40f-4843-a2a3-b859ed3f43b5"
+        }
+      ],
+      "id": "fa664bc1-5b8c-4fd4-9e39-c724f3b7510e",
+      "createdAt": "2026-07-28T01:20:06.000Z",
+      "updatedAt": "2026-07-28T01:20:06.000Z",
+      "uid": "35240-fa664bc1-5b8c-4fd4-9e39-c724f3b7510e"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

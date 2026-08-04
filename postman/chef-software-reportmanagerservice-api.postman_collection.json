@@ -1,0 +1,169 @@
+{
+  "info": {
+    "_postman_id": "947e34e6-b9ee-48af-8487-b89cf2861bf6",
+    "name": "external/applications/applications.proto ApplicationsService ReportManagerService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:14.000Z",
+    "updatedAt": "2026-07-28T01:20:14.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-947e34e6-b9ee-48af-8487-b89cf2861bf6"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "reportmanager",
+              "item": [
+                {
+                  "name": "requests",
+                  "item": [
+                    {
+                      "name": "List Download Report Requests",
+                      "id": "79fb5149-e1c7-4e37-a440-c20059ebb06f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/reportmanager/requests",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "reportmanager",
+                            "requests"
+                          ]
+                        },
+                        "description": "Returns the details of the download report requests placed by the user.\n\nAuthorization Action:\n```\nreportmanager:requests:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "aa8db251-e940-4f5b-9356-3c2a96c191c8",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/reportmanager/requests",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "reportmanager",
+                                "requests"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": [\n    {\n      \"acknowledgement_id\": \"<string>\",\n      \"status\": \"<string>\",\n      \"report_size\": \"<int64>\",\n      \"err_message\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"ended_at\": \"<dateTime>\",\n      \"duration\": \"<string>\",\n      \"report_type\": \"<string>\"\n    },\n    {\n      \"acknowledgement_id\": \"<string>\",\n      \"status\": \"<string>\",\n      \"report_size\": \"<int64>\",\n      \"err_message\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"ended_at\": \"<dateTime>\",\n      \"duration\": \"<string>\",\n      \"report_type\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:15.000Z",
+                          "updatedAt": "2026-07-28T01:20:15.000Z",
+                          "uid": "35240-aa8db251-e940-4f5b-9356-3c2a96c191c8"
+                        },
+                        {
+                          "id": "292e6bd8-8ec5-4b9b-8236-000992051483",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/reportmanager/requests",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "reportmanager",
+                                "requests"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:15.000Z",
+                          "updatedAt": "2026-07-28T01:20:15.000Z",
+                          "uid": "35240-292e6bd8-8ec5-4b9b-8236-000992051483"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:15.000Z",
+                      "updatedAt": "2026-07-28T01:20:15.000Z",
+                      "uid": "35240-79fb5149-e1c7-4e37-a440-c20059ebb06f"
+                    }
+                  ],
+                  "id": "1cc28ee7-9805-4576-b913-1ccbefe2f1f7",
+                  "createdAt": "2026-07-28T01:20:15.000Z",
+                  "updatedAt": "2026-07-28T01:20:15.000Z",
+                  "uid": "35240-1cc28ee7-9805-4576-b913-1ccbefe2f1f7"
+                }
+              ],
+              "id": "e5c730c5-9619-4e69-9231-92ffc0067fe6",
+              "createdAt": "2026-07-28T01:20:15.000Z",
+              "updatedAt": "2026-07-28T01:20:15.000Z",
+              "uid": "35240-e5c730c5-9619-4e69-9231-92ffc0067fe6"
+            }
+          ],
+          "id": "7ccff38d-7ad5-4399-946d-480bb26cf071",
+          "createdAt": "2026-07-28T01:20:15.000Z",
+          "updatedAt": "2026-07-28T01:20:15.000Z",
+          "uid": "35240-7ccff38d-7ad5-4399-946d-480bb26cf071"
+        }
+      ],
+      "id": "579eba2a-1384-4269-bdf8-50caa41d670b",
+      "createdAt": "2026-07-28T01:20:15.000Z",
+      "updatedAt": "2026-07-28T01:20:15.000Z",
+      "uid": "35240-579eba2a-1384-4269-bdf8-50caa41d670b"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

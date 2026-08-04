@@ -1,0 +1,622 @@
+{
+  "info": {
+    "_postman_id": "dfd9397c-6c62-4f4f-9d31-7161a1d33b69",
+    "name": "external/applications/applications.proto ApplicationsService Cds API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:36.000Z",
+    "updatedAt": "2026-07-28T01:19:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-dfd9397c-6c62-4f4f-9d31-7161a1d33b69"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "beta",
+          "item": [
+            {
+              "name": "content",
+              "item": [
+                {
+                  "name": "credentials",
+                  "item": [
+                    {
+                      "name": "SubmitCredentials",
+                      "id": "71892dfc-e45f-4fec-8591-105d2e669a02",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"client_id\": \"<string>\",\n  \"client_secret\": \"<string>\",\n  \"tenant_specific_url\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/beta/content/credentials",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "beta",
+                            "content",
+                            "credentials"
+                          ]
+                        },
+                        "description": "Submit a Chef Cloud Credentials to enable content\n\nAuthorization Action:\n```\ncontent:credentials:add\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "4b5ecc64-2e51-4c50-91de-cf27fcc83289",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"client_id\": \"<string>\",\n  \"client_secret\": \"<string>\",\n  \"tenant_specific_url\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/beta/content/credentials",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "beta",
+                                "content",
+                                "credentials"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T01:19:36.000Z",
+                          "updatedAt": "2026-07-28T01:19:36.000Z",
+                          "uid": "35240-4b5ecc64-2e51-4c50-91de-cf27fcc83289"
+                        },
+                        {
+                          "id": "076dd985-aaeb-4968-a453-decdd34e641d",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"client_id\": \"<string>\",\n  \"client_secret\": \"<string>\",\n  \"tenant_specific_url\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/beta/content/credentials",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "beta",
+                                "content",
+                                "credentials"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:36.000Z",
+                          "updatedAt": "2026-07-28T01:19:36.000Z",
+                          "uid": "35240-076dd985-aaeb-4968-a453-decdd34e641d"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:36.000Z",
+                      "updatedAt": "2026-07-28T01:19:36.000Z",
+                      "uid": "35240-71892dfc-e45f-4fec-8591-105d2e669a02"
+                    }
+                  ],
+                  "id": "236b90dd-03ca-4472-9b8d-362c47b5ee60",
+                  "createdAt": "2026-07-28T01:19:36.000Z",
+                  "updatedAt": "2026-07-28T01:19:36.000Z",
+                  "uid": "35240-236b90dd-03ca-4472-9b8d-362c47b5ee60"
+                },
+                {
+                  "name": "enabled",
+                  "item": [
+                    {
+                      "name": "IsContentEnabled",
+                      "id": "51f00f9b-68a0-4970-95ec-4e002eb47586",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/beta/content/enabled",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "beta",
+                            "content",
+                            "enabled"
+                          ]
+                        },
+                        "description": "Check if the content is enable for this Automate instance. \n\nAuthorization Action:\n```\ncontent:credentials:enabled\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "9d4532c4-4d34-489d-90be-99e03bf22c72",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/beta/content/enabled",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "beta",
+                                "content",
+                                "enabled"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"is_content_enabled\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T01:19:36.000Z",
+                          "updatedAt": "2026-07-28T01:19:36.000Z",
+                          "uid": "35240-9d4532c4-4d34-489d-90be-99e03bf22c72"
+                        },
+                        {
+                          "id": "890011bc-b4f0-42ec-91f9-92667e0a3763",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/beta/content/enabled",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "beta",
+                                "content",
+                                "enabled"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:36.000Z",
+                          "updatedAt": "2026-07-28T01:19:36.000Z",
+                          "uid": "35240-890011bc-b4f0-42ec-91f9-92667e0a3763"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:36.000Z",
+                      "updatedAt": "2026-07-28T01:19:36.000Z",
+                      "uid": "35240-51f00f9b-68a0-4970-95ec-4e002eb47586"
+                    }
+                  ],
+                  "id": "a3b2bc56-8089-4ab8-afc8-5d79e7d0d32e",
+                  "createdAt": "2026-07-28T01:19:36.000Z",
+                  "updatedAt": "2026-07-28T01:19:36.000Z",
+                  "uid": "35240-a3b2bc56-8089-4ab8-afc8-5d79e7d0d32e"
+                },
+                {
+                  "name": "install",
+                  "item": [
+                    {
+                      "name": "InstallContentItem",
+                      "id": "9dccd823-bafb-4790-a974-b6be1bedfb6c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"request_user\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/beta/content/install",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "beta",
+                            "content",
+                            "install"
+                          ]
+                        },
+                        "description": "Installs a content item from its ID\n\nAuthorization Action:\n```\ncontent:items:install\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "c4255699-b2fe-4078-a8ba-287fad387a9d",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"request_user\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/beta/content/install",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "beta",
+                                "content",
+                                "install"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T01:19:36.000Z",
+                          "updatedAt": "2026-07-28T01:19:36.000Z",
+                          "uid": "35240-c4255699-b2fe-4078-a8ba-287fad387a9d"
+                        },
+                        {
+                          "id": "2be7fb63-2827-4597-a895-e079d3a2851a",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"request_user\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/beta/content/install",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "beta",
+                                "content",
+                                "install"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:36.000Z",
+                          "updatedAt": "2026-07-28T01:19:36.000Z",
+                          "uid": "35240-2be7fb63-2827-4597-a895-e079d3a2851a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:36.000Z",
+                      "updatedAt": "2026-07-28T01:19:36.000Z",
+                      "uid": "35240-9dccd823-bafb-4790-a974-b6be1bedfb6c"
+                    }
+                  ],
+                  "id": "4d50db30-8cc7-419f-b5e7-428720e3007e",
+                  "createdAt": "2026-07-28T01:19:36.000Z",
+                  "updatedAt": "2026-07-28T01:19:36.000Z",
+                  "uid": "35240-4d50db30-8cc7-419f-b5e7-428720e3007e"
+                },
+                {
+                  "name": "items",
+                  "item": [
+                    {
+                      "name": "ListContentItems",
+                      "id": "3c52d248-4ec9-4e59-b542-a4fd7a57f2db",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/beta/content/items",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "beta",
+                            "content",
+                            "items"
+                          ]
+                        },
+                        "description": "Returns a list of metadata for each CDS content. Provides a description and current \nstate of each content item.\n\nAuthorization Action:\n```\ncontent:items:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "7c829448-98cb-46f9-b559-ef4ffeb5665d",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/beta/content/items",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "beta",
+                                "content",
+                                "items"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"type\": \"<string>\",\n      \"version\": \"<string>\",\n      \"platforms\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"can_be_installed\": \"<boolean>\",\n      \"filename\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"type\": \"<string>\",\n      \"version\": \"<string>\",\n      \"platforms\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"can_be_installed\": \"<boolean>\",\n      \"filename\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:36.000Z",
+                          "updatedAt": "2026-07-28T01:19:36.000Z",
+                          "uid": "35240-7c829448-98cb-46f9-b559-ef4ffeb5665d"
+                        },
+                        {
+                          "id": "100f1d43-31b3-4f82-9211-ac5d5e85f969",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/beta/content/items",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "beta",
+                                "content",
+                                "items"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:36.000Z",
+                          "updatedAt": "2026-07-28T01:19:36.000Z",
+                          "uid": "35240-100f1d43-31b3-4f82-9211-ac5d5e85f969"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:36.000Z",
+                      "updatedAt": "2026-07-28T01:19:36.000Z",
+                      "uid": "35240-3c52d248-4ec9-4e59-b542-a4fd7a57f2db"
+                    }
+                  ],
+                  "id": "0eae8577-aea0-4576-bc54-48dfa5c83a8f",
+                  "createdAt": "2026-07-28T01:19:36.000Z",
+                  "updatedAt": "2026-07-28T01:19:36.000Z",
+                  "uid": "35240-0eae8577-aea0-4576-bc54-48dfa5c83a8f"
+                }
+              ],
+              "id": "fcb50599-162a-4052-bd6a-564fc8a53721",
+              "createdAt": "2026-07-28T01:19:36.000Z",
+              "updatedAt": "2026-07-28T01:19:36.000Z",
+              "uid": "35240-fcb50599-162a-4052-bd6a-564fc8a53721"
+            }
+          ],
+          "id": "ae1d3864-ac80-480e-b540-bafa1d7d4a24",
+          "createdAt": "2026-07-28T01:19:36.000Z",
+          "updatedAt": "2026-07-28T01:19:36.000Z",
+          "uid": "35240-ae1d3864-ac80-480e-b540-bafa1d7d4a24"
+        }
+      ],
+      "id": "6228f3fb-5f03-4dc6-a28d-21b203dfb19d",
+      "createdAt": "2026-07-28T01:19:36.000Z",
+      "updatedAt": "2026-07-28T01:19:36.000Z",
+      "uid": "35240-6228f3fb-5f03-4dc6-a28d-21b203dfb19d"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

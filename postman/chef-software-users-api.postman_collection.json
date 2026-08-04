@@ -1,0 +1,976 @@
+{
+  "info": {
+    "_postman_id": "4a88d49e-2288-4036-9b72-7d9982c7f0f9",
+    "name": "external/applications/applications.proto ApplicationsService users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:40.000Z",
+    "updatedAt": "2026-07-28T01:20:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4a88d49e-2288-4036-9b72-7d9982c7f0f9"
+  },
+  "item": [
+    {
+      "name": "apis",
+      "item": [
+        {
+          "name": "iam",
+          "item": [
+            {
+              "name": "v2",
+              "item": [
+                {
+                  "name": "self",
+                  "item": [
+                    {
+                      "name": "{id}",
+                      "item": [
+                        {
+                          "name": "Update self (as user)",
+                          "id": "6e6f7247-c431-4104-b1ce-6521848261ce",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"password\": \"<string>\",\n  \"previous_password\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/self/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "self",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "a38c3ad9-6388-41be-99f1-f26e197c3e30",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) ID of the user. Cannot be changed. Used to sign in."
+                                }
+                              ]
+                            },
+                            "description": "Updates a local user's own name or password.\nIf changing the password, both \"password\" and \"previous_password\" are required.\n\nAuthorization Action:\n```\niam:usersSelf:update\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "e931998f-57fc-4f18-810e-a799c53bc339",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"password\": \"<string>\",\n  \"previous_password\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/self/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "self",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"user\": {\n    \"name\": \"<string>\",\n    \"id\": \"<string>\",\n    \"membership_id\": \"<string>\"\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:40.000Z",
+                              "updatedAt": "2026-07-28T01:20:40.000Z",
+                              "uid": "35240-e931998f-57fc-4f18-810e-a799c53bc339"
+                            },
+                            {
+                              "id": "c6ce9b1b-1e92-4b1a-a134-de64ddb79c22",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"password\": \"<string>\",\n  \"previous_password\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/self/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "self",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:40.000Z",
+                              "updatedAt": "2026-07-28T01:20:40.000Z",
+                              "uid": "35240-c6ce9b1b-1e92-4b1a-a134-de64ddb79c22"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:40.000Z",
+                          "updatedAt": "2026-07-28T01:20:40.000Z",
+                          "uid": "35240-6e6f7247-c431-4104-b1ce-6521848261ce"
+                        }
+                      ],
+                      "id": "4e54504a-0510-4ab0-937e-61dc96b412be",
+                      "createdAt": "2026-07-28T01:20:40.000Z",
+                      "updatedAt": "2026-07-28T01:20:40.000Z",
+                      "uid": "35240-4e54504a-0510-4ab0-937e-61dc96b412be"
+                    }
+                  ],
+                  "id": "7f8357dc-5dcd-45d0-865f-f4abd8c42537",
+                  "createdAt": "2026-07-28T01:20:40.000Z",
+                  "updatedAt": "2026-07-28T01:20:40.000Z",
+                  "uid": "35240-7f8357dc-5dcd-45d0-865f-f4abd8c42537"
+                },
+                {
+                  "name": "users",
+                  "item": [
+                    {
+                      "name": "{id}",
+                      "item": [
+                        {
+                          "name": "Get a user",
+                          "id": "fcd29817-b460-449f-8896-f85497f8e427",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/users/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "users",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "d591680e-71b6-4381-8be6-3fca9daaa43e",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) ID of the user."
+                                }
+                              ]
+                            },
+                            "description": "Returns the details for a local user.\n\nAuthorization Action:\n```\niam:users:get\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "5a5ae8f5-8262-4f8f-9b8d-ee96e1d38611",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/users/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "users",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"user\": {\n    \"name\": \"<string>\",\n    \"id\": \"<string>\",\n    \"membership_id\": \"<string>\"\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:40.000Z",
+                              "updatedAt": "2026-07-28T01:20:40.000Z",
+                              "uid": "35240-5a5ae8f5-8262-4f8f-9b8d-ee96e1d38611"
+                            },
+                            {
+                              "id": "64c7bdaf-1304-4b96-bb7b-926832a29a13",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/users/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "users",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:40.000Z",
+                              "updatedAt": "2026-07-28T01:20:40.000Z",
+                              "uid": "35240-64c7bdaf-1304-4b96-bb7b-926832a29a13"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:40.000Z",
+                          "updatedAt": "2026-07-28T01:20:40.000Z",
+                          "uid": "35240-fcd29817-b460-449f-8896-f85497f8e427"
+                        },
+                        {
+                          "name": "Delete a user",
+                          "id": "f88f66bd-bfb4-4f1b-90d2-e552d3f46275",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/users/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "users",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "0daba56c-3e2a-463b-bedb-00cc685770a7",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) ID of the user."
+                                }
+                              ]
+                            },
+                            "description": "Deletes a local user.\n\nAuthorization Action:\n```\niam:users:delete\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "602e65e3-e75d-4488-b312-ce35153a93e2",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/users/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "users",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:20:40.000Z",
+                              "updatedAt": "2026-07-28T01:20:40.000Z",
+                              "uid": "35240-602e65e3-e75d-4488-b312-ce35153a93e2"
+                            },
+                            {
+                              "id": "2e2be39a-aed6-4ab9-9cda-87e28ef806ea",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/users/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "users",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:40.000Z",
+                              "updatedAt": "2026-07-28T01:20:40.000Z",
+                              "uid": "35240-2e2be39a-aed6-4ab9-9cda-87e28ef806ea"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:40.000Z",
+                          "updatedAt": "2026-07-28T01:20:40.000Z",
+                          "uid": "35240-f88f66bd-bfb4-4f1b-90d2-e552d3f46275"
+                        },
+                        {
+                          "name": "Update a user",
+                          "id": "2ebe6ed6-cfc9-47b0-8667-837bd5606246",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/users/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "users",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "02ec50de-9a3d-4099-a96b-5d4b7b559a68",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) ID of the user. Cannot be changed. Used to sign in."
+                                }
+                              ]
+                            },
+                            "description": "Updates a local user's name or password.\n\nAuthorization Action:\n```\niam:users:update\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "49570578-127a-4c67-aaca-02e7f9ab2efc",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/users/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "users",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"user\": {\n    \"name\": \"<string>\",\n    \"id\": \"<string>\",\n    \"membership_id\": \"<string>\"\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:40.000Z",
+                              "updatedAt": "2026-07-28T01:20:40.000Z",
+                              "uid": "35240-49570578-127a-4c67-aaca-02e7f9ab2efc"
+                            },
+                            {
+                              "id": "6a7b74f9-3ab6-452f-ba0e-3a73237aca55",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/users/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "users",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:40.000Z",
+                              "updatedAt": "2026-07-28T01:20:40.000Z",
+                              "uid": "35240-6a7b74f9-3ab6-452f-ba0e-3a73237aca55"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:40.000Z",
+                          "updatedAt": "2026-07-28T01:20:40.000Z",
+                          "uid": "35240-2ebe6ed6-cfc9-47b0-8667-837bd5606246"
+                        }
+                      ],
+                      "id": "d1844131-f311-44c9-a692-933fce3e1eed",
+                      "createdAt": "2026-07-28T01:20:40.000Z",
+                      "updatedAt": "2026-07-28T01:20:40.000Z",
+                      "uid": "35240-d1844131-f311-44c9-a692-933fce3e1eed"
+                    },
+                    {
+                      "name": "List all users",
+                      "id": "394878b4-d8fd-43bd-9528-1ec89f1446e3",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/users",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "users"
+                          ]
+                        },
+                        "description": "Lists all local users.\n\nAuthorization Action:\n```\niam:users:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "f80afea4-c28c-41a6-a1c1-fd467bf9d36f",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/users",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "users"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"users\": [\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\",\n      \"membership_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\",\n      \"membership_id\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:40.000Z",
+                          "updatedAt": "2026-07-28T01:20:40.000Z",
+                          "uid": "35240-f80afea4-c28c-41a6-a1c1-fd467bf9d36f"
+                        },
+                        {
+                          "id": "962a7a84-ef08-491e-8a09-4b23e477d938",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/users",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "users"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:40.000Z",
+                          "updatedAt": "2026-07-28T01:20:40.000Z",
+                          "uid": "35240-962a7a84-ef08-491e-8a09-4b23e477d938"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:40.000Z",
+                      "updatedAt": "2026-07-28T01:20:40.000Z",
+                      "uid": "35240-394878b4-d8fd-43bd-9528-1ec89f1446e3"
+                    },
+                    {
+                      "name": "Create a user",
+                      "id": "9864ec5d-173d-4cac-9c99-24488e333cfe",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/users",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "users"
+                          ]
+                        },
+                        "description": "Creates a local user that can sign in to Automate and be a member of IAM teams\nand IAM policies.\n\nAuthorization Action:\n```\niam:users:create\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "3e7fd0a2-063b-4c66-81f9-55807ce2f95c",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/users",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "users"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"user\": {\n    \"name\": \"<string>\",\n    \"id\": \"<string>\",\n    \"membership_id\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-07-28T01:20:40.000Z",
+                          "updatedAt": "2026-07-28T01:20:40.000Z",
+                          "uid": "35240-3e7fd0a2-063b-4c66-81f9-55807ce2f95c"
+                        },
+                        {
+                          "id": "1fc8b46f-0113-4aa0-a8e4-121c505c9772",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/users",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "users"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:40.000Z",
+                          "updatedAt": "2026-07-28T01:20:40.000Z",
+                          "uid": "35240-1fc8b46f-0113-4aa0-a8e4-121c505c9772"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:40.000Z",
+                      "updatedAt": "2026-07-28T01:20:40.000Z",
+                      "uid": "35240-9864ec5d-173d-4cac-9c99-24488e333cfe"
+                    }
+                  ],
+                  "id": "f680c466-47df-4938-a2bd-b936bcddba9d",
+                  "createdAt": "2026-07-28T01:20:40.000Z",
+                  "updatedAt": "2026-07-28T01:20:40.000Z",
+                  "uid": "35240-f680c466-47df-4938-a2bd-b936bcddba9d"
+                }
+              ],
+              "id": "3dd985d4-80e4-4578-8807-925607c2818b",
+              "createdAt": "2026-07-28T01:20:40.000Z",
+              "updatedAt": "2026-07-28T01:20:40.000Z",
+              "uid": "35240-3dd985d4-80e4-4578-8807-925607c2818b"
+            }
+          ],
+          "id": "826c5822-e732-4b8f-ade9-d1a473a89c6f",
+          "createdAt": "2026-07-28T01:20:40.000Z",
+          "updatedAt": "2026-07-28T01:20:40.000Z",
+          "uid": "35240-826c5822-e732-4b8f-ade9-d1a473a89c6f"
+        }
+      ],
+      "id": "de76d0de-eae5-476c-afa9-892d9c0feedd",
+      "createdAt": "2026-07-28T01:20:40.000Z",
+      "updatedAt": "2026-07-28T01:20:40.000Z",
+      "uid": "35240-de76d0de-eae5-476c-afa9-892d9c0feedd"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

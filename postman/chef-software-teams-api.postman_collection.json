@@ -1,0 +1,1471 @@
+{
+  "info": {
+    "_postman_id": "7b18886a-2371-47c2-b115-b61b46a9bad0",
+    "name": "external/applications/applications.proto ApplicationsService teams API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:37.000Z",
+    "updatedAt": "2026-07-28T01:20:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7b18886a-2371-47c2-b115-b61b46a9bad0"
+  },
+  "item": [
+    {
+      "name": "apis",
+      "item": [
+        {
+          "name": "iam",
+          "item": [
+            {
+              "name": "v2",
+              "item": [
+                {
+                  "name": "teams",
+                  "item": [
+                    {
+                      "name": "{id}",
+                      "item": [
+                        {
+                          "name": "users",
+                          "item": [
+                            {
+                              "name": "Gets local team membership",
+                              "id": "82e2630b-d735-48da-81d3-e18fdbba338a",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/teams/:id/users",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "teams",
+                                    ":id",
+                                    "users"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "f8e1de9f-ac36-430f-9512-6b8ac93b07ce",
+                                      "key": "id",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Lists all users of a local team. Users are listed by their membership_id.\n\nAuthorization Action:\n```\niam:teamUsers:list\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "962f8545-c2ea-4bea-a0c6-21ee8db81bcc",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/teams/:id/users",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "teams",
+                                        ":id",
+                                        "users"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"membership_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:38.000Z",
+                                  "updatedAt": "2026-07-28T01:20:38.000Z",
+                                  "uid": "35240-962f8545-c2ea-4bea-a0c6-21ee8db81bcc"
+                                },
+                                {
+                                  "id": "fa53bc98-d678-4a00-973b-b0af3aa5fa8c",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/teams/:id/users",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "teams",
+                                        ":id",
+                                        "users"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:38.000Z",
+                                  "updatedAt": "2026-07-28T01:20:38.000Z",
+                                  "uid": "35240-fa53bc98-d678-4a00-973b-b0af3aa5fa8c"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:38.000Z",
+                              "updatedAt": "2026-07-28T01:20:38.000Z",
+                              "uid": "35240-82e2630b-d735-48da-81d3-e18fdbba338a"
+                            }
+                          ],
+                          "id": "b8cd8518-552d-420a-bd5f-208c843e2e99",
+                          "createdAt": "2026-07-28T01:20:38.000Z",
+                          "updatedAt": "2026-07-28T01:20:38.000Z",
+                          "uid": "35240-b8cd8518-552d-420a-bd5f-208c843e2e99"
+                        },
+                        {
+                          "name": "users:add",
+                          "item": [
+                            {
+                              "name": "Adds local team membership",
+                              "id": "70ddcd0d-cc36-471b-a3f8-a27710d5e97a",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"membership_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/teams/:id/users:add",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "teams",
+                                    ":id",
+                                    "users:add"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "a6f72826-b65f-4911-be19-094bead06bc1",
+                                      "key": "id",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Adds a list of users to a local team. Users are added by their membership_id.\nThe request currently does not validate that membership_id maps to a real user.\n\nThe membership_id for users can be found via GET /apis/apis/iam/v2/users/<user_id>.\n\nAuthorization Action:\n```\niam:teamUsers:create\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "056f91c1-1433-4b08-a453-8b2e5ab930e5",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"membership_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/teams/:id/users:add",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "teams",
+                                        ":id",
+                                        "users:add"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"membership_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:38.000Z",
+                                  "updatedAt": "2026-07-28T01:20:38.000Z",
+                                  "uid": "35240-056f91c1-1433-4b08-a453-8b2e5ab930e5"
+                                },
+                                {
+                                  "id": "cc7aa54d-367c-4189-a01f-6ff2710995d0",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"membership_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/teams/:id/users:add",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "teams",
+                                        ":id",
+                                        "users:add"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:38.000Z",
+                                  "updatedAt": "2026-07-28T01:20:38.000Z",
+                                  "uid": "35240-cc7aa54d-367c-4189-a01f-6ff2710995d0"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:38.000Z",
+                              "updatedAt": "2026-07-28T01:20:38.000Z",
+                              "uid": "35240-70ddcd0d-cc36-471b-a3f8-a27710d5e97a"
+                            }
+                          ],
+                          "id": "16421394-e79e-43bc-9309-918246f12677",
+                          "createdAt": "2026-07-28T01:20:38.000Z",
+                          "updatedAt": "2026-07-28T01:20:38.000Z",
+                          "uid": "35240-16421394-e79e-43bc-9309-918246f12677"
+                        },
+                        {
+                          "name": "users:remove",
+                          "item": [
+                            {
+                              "name": "Removes local team membership",
+                              "id": "aca9e18f-f46c-45da-bb81-edfe95dd653f",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"membership_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/teams/:id/users:remove",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "teams",
+                                    ":id",
+                                    "users:remove"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "59e87ccd-b98d-44f1-98fc-5a9e3fd3bcae",
+                                      "key": "id",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Removes a list of users from a local team. Users are removed by their membership_id.\nThe request currently does not validate that membership_id maps to a real user.\n\nThe membership_id for users can be found via GET /apis/apis/iam/v2/users/<user_id>.\n\nAuthorization Action:\n```\niam:teamUsers:delete\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "d5e7e667-deb1-4d4f-9b31-b640fcd4c873",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"membership_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/teams/:id/users:remove",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "teams",
+                                        ":id",
+                                        "users:remove"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"membership_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:38.000Z",
+                                  "updatedAt": "2026-07-28T01:20:38.000Z",
+                                  "uid": "35240-d5e7e667-deb1-4d4f-9b31-b640fcd4c873"
+                                },
+                                {
+                                  "id": "4b73a0a7-3d81-4726-a807-ca2d02886e8f",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"membership_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/teams/:id/users:remove",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "teams",
+                                        ":id",
+                                        "users:remove"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:38.000Z",
+                                  "updatedAt": "2026-07-28T01:20:38.000Z",
+                                  "uid": "35240-4b73a0a7-3d81-4726-a807-ca2d02886e8f"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:38.000Z",
+                              "updatedAt": "2026-07-28T01:20:38.000Z",
+                              "uid": "35240-aca9e18f-f46c-45da-bb81-edfe95dd653f"
+                            }
+                          ],
+                          "id": "2db1b3c3-4956-400b-b865-20e51e7455af",
+                          "createdAt": "2026-07-28T01:20:38.000Z",
+                          "updatedAt": "2026-07-28T01:20:38.000Z",
+                          "uid": "35240-2db1b3c3-4956-400b-b865-20e51e7455af"
+                        },
+                        {
+                          "name": "Get a team",
+                          "id": "d98df018-20e6-4b33-b50f-e81f86002936",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/teams/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "teams",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "4f910e32-4d17-4d37-9acd-e295e31b5d2b",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Returns the details for a team.\n\nAuthorization Action:\n```\niam:teams:get\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "f682da08-1939-4317-941c-cf130ff37fc4",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/teams/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "teams",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"team\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:38.000Z",
+                              "updatedAt": "2026-07-28T01:20:38.000Z",
+                              "uid": "35240-f682da08-1939-4317-941c-cf130ff37fc4"
+                            },
+                            {
+                              "id": "ee2820f8-2660-444f-82c1-511ae13faa6b",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/teams/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "teams",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:38.000Z",
+                              "updatedAt": "2026-07-28T01:20:38.000Z",
+                              "uid": "35240-ee2820f8-2660-444f-82c1-511ae13faa6b"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:38.000Z",
+                          "updatedAt": "2026-07-28T01:20:38.000Z",
+                          "uid": "35240-d98df018-20e6-4b33-b50f-e81f86002936"
+                        },
+                        {
+                          "name": "Deletes a local team",
+                          "id": "734fe32b-9156-4419-b6c6-dd59e62d9b01",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/teams/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "teams",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "070d9f9d-f048-40da-b60d-c20e3751ea96",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Deletes a local team and removes it from any policies.\n\nAuthorization Action:\n```\niam:teams:delete\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "bbae724b-641b-45f0-9d66-fd6ee7571b28",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/teams/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "teams",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"team\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:38.000Z",
+                              "updatedAt": "2026-07-28T01:20:38.000Z",
+                              "uid": "35240-bbae724b-641b-45f0-9d66-fd6ee7571b28"
+                            },
+                            {
+                              "id": "f7c32fc8-0ce3-4b39-a1ad-49b5a697851a",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/teams/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "teams",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:38.000Z",
+                              "updatedAt": "2026-07-28T01:20:38.000Z",
+                              "uid": "35240-f7c32fc8-0ce3-4b39-a1ad-49b5a697851a"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:38.000Z",
+                          "updatedAt": "2026-07-28T01:20:38.000Z",
+                          "uid": "35240-734fe32b-9156-4419-b6c6-dd59e62d9b01"
+                        },
+                        {
+                          "name": "Updates a local team",
+                          "id": "99be631d-ac72-4482-922b-3b9b895c2575",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/teams/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "teams",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "74aafbcf-772b-4b60-8d5e-7674ae631318",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Updates a local team.\n\nAuthorization Action:\n```\niam:teams:update\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "a23e1111-8393-431e-8009-bbe38a950e48",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/teams/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "teams",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"team\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:38.000Z",
+                              "updatedAt": "2026-07-28T01:20:38.000Z",
+                              "uid": "35240-a23e1111-8393-431e-8009-bbe38a950e48"
+                            },
+                            {
+                              "id": "a333a308-5700-4ce4-aa4b-caf9c89d2ed4",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/teams/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "teams",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:38.000Z",
+                              "updatedAt": "2026-07-28T01:20:38.000Z",
+                              "uid": "35240-a333a308-5700-4ce4-aa4b-caf9c89d2ed4"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:38.000Z",
+                          "updatedAt": "2026-07-28T01:20:38.000Z",
+                          "uid": "35240-99be631d-ac72-4482-922b-3b9b895c2575"
+                        }
+                      ],
+                      "id": "a844d2b1-54ee-4a6f-8369-2286571a2a3f",
+                      "createdAt": "2026-07-28T01:20:38.000Z",
+                      "updatedAt": "2026-07-28T01:20:38.000Z",
+                      "uid": "35240-a844d2b1-54ee-4a6f-8369-2286571a2a3f"
+                    },
+                    {
+                      "name": "Lists all local teams",
+                      "id": "73cce327-babd-4f1b-b287-d4e74d742e1c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/teams",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "teams"
+                          ]
+                        },
+                        "description": "Lists all local teams.\n\nAuthorization Action:\n```\niam:teams:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "d282f8d3-90fb-4036-84a8-624906316855",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/teams",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "teams"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"teams\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:38.000Z",
+                          "updatedAt": "2026-07-28T01:20:38.000Z",
+                          "uid": "35240-d282f8d3-90fb-4036-84a8-624906316855"
+                        },
+                        {
+                          "id": "accc4ccf-9424-421b-9755-c19594515a0c",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/teams",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "teams"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:38.000Z",
+                          "updatedAt": "2026-07-28T01:20:38.000Z",
+                          "uid": "35240-accc4ccf-9424-421b-9755-c19594515a0c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:38.000Z",
+                      "updatedAt": "2026-07-28T01:20:38.000Z",
+                      "uid": "35240-73cce327-babd-4f1b-b287-d4e74d742e1c"
+                    },
+                    {
+                      "name": "Creates a local team",
+                      "id": "3f0c561b-5679-478c-8d9b-1112d18e7566",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/teams",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "teams"
+                          ]
+                        },
+                        "description": "Creates a local team that is used to group local users as members of IAM policies.\n\nAuthorization Action:\n```\niam:teams:create\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "d83bd1b4-bf11-42a0-b2c2-9cade17ae956",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/teams",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "teams"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"team\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                          "createdAt": "2026-07-28T01:20:38.000Z",
+                          "updatedAt": "2026-07-28T01:20:38.000Z",
+                          "uid": "35240-d83bd1b4-bf11-42a0-b2c2-9cade17ae956"
+                        },
+                        {
+                          "id": "23be8401-ad66-4598-a3ea-33e7d3acdc32",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/teams",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "teams"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:38.000Z",
+                          "updatedAt": "2026-07-28T01:20:38.000Z",
+                          "uid": "35240-23be8401-ad66-4598-a3ea-33e7d3acdc32"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:38.000Z",
+                      "updatedAt": "2026-07-28T01:20:38.000Z",
+                      "uid": "35240-3f0c561b-5679-478c-8d9b-1112d18e7566"
+                    }
+                  ],
+                  "id": "59ce63ed-d7b3-431c-a595-47583f6d4d50",
+                  "createdAt": "2026-07-28T01:20:38.000Z",
+                  "updatedAt": "2026-07-28T01:20:38.000Z",
+                  "uid": "35240-59ce63ed-d7b3-431c-a595-47583f6d4d50"
+                },
+                {
+                  "name": "users",
+                  "item": [
+                    {
+                      "name": "{membership_id}",
+                      "item": [
+                        {
+                          "name": "teams",
+                          "item": [
+                            {
+                              "name": "Gets team membership for a user",
+                              "id": "4482e5d2-7d23-49a9-9676-a1fd4d1f6b18",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/users/:membership_id/teams",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "users",
+                                    ":membership_id",
+                                    "teams"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "024ff7f8-510a-4014-8d3f-7824f8258a8f",
+                                      "key": "membership_id",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Lists all local teams for a specific user. You must use their membership_id in the request URL.\n\nAuthorization Action:\n```\niam:userTeams:get\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "a82b98d9-9536-47b0-ba1c-b46ec9c56c0a",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/users/:membership_id/teams",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "users",
+                                        ":membership_id",
+                                        "teams"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "membership_id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"teams\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:38.000Z",
+                                  "updatedAt": "2026-07-28T01:20:38.000Z",
+                                  "uid": "35240-a82b98d9-9536-47b0-ba1c-b46ec9c56c0a"
+                                },
+                                {
+                                  "id": "c701e41b-7d78-410f-8ec1-2811f1337670",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/users/:membership_id/teams",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "users",
+                                        ":membership_id",
+                                        "teams"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "membership_id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:38.000Z",
+                                  "updatedAt": "2026-07-28T01:20:38.000Z",
+                                  "uid": "35240-c701e41b-7d78-410f-8ec1-2811f1337670"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:38.000Z",
+                              "updatedAt": "2026-07-28T01:20:38.000Z",
+                              "uid": "35240-4482e5d2-7d23-49a9-9676-a1fd4d1f6b18"
+                            }
+                          ],
+                          "id": "e0a6a3f9-3d73-4d86-80a9-c56bdad24707",
+                          "createdAt": "2026-07-28T01:20:38.000Z",
+                          "updatedAt": "2026-07-28T01:20:38.000Z",
+                          "uid": "35240-e0a6a3f9-3d73-4d86-80a9-c56bdad24707"
+                        }
+                      ],
+                      "id": "c1e31785-f629-48e6-8e2b-dfcc53a45a60",
+                      "createdAt": "2026-07-28T01:20:38.000Z",
+                      "updatedAt": "2026-07-28T01:20:38.000Z",
+                      "uid": "35240-c1e31785-f629-48e6-8e2b-dfcc53a45a60"
+                    }
+                  ],
+                  "id": "20bca608-b0af-431d-8b02-0281277ccf13",
+                  "createdAt": "2026-07-28T01:20:38.000Z",
+                  "updatedAt": "2026-07-28T01:20:38.000Z",
+                  "uid": "35240-20bca608-b0af-431d-8b02-0281277ccf13"
+                }
+              ],
+              "id": "60057736-791c-448c-9aa0-5e683c39af1b",
+              "createdAt": "2026-07-28T01:20:38.000Z",
+              "updatedAt": "2026-07-28T01:20:38.000Z",
+              "uid": "35240-60057736-791c-448c-9aa0-5e683c39af1b"
+            }
+          ],
+          "id": "3d683940-6374-47a2-81f8-ff411b49c6ce",
+          "createdAt": "2026-07-28T01:20:38.000Z",
+          "updatedAt": "2026-07-28T01:20:38.000Z",
+          "uid": "35240-3d683940-6374-47a2-81f8-ff411b49c6ce"
+        }
+      ],
+      "id": "01c4e5df-3262-4a97-b635-5120f341c0a6",
+      "createdAt": "2026-07-28T01:20:38.000Z",
+      "updatedAt": "2026-07-28T01:20:38.000Z",
+      "uid": "35240-01c4e5df-3262-4a97-b635-5120f341c0a6"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

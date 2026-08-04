@@ -1,0 +1,365 @@
+{
+  "info": {
+    "_postman_id": "c797fbab-9c47-46ee-9402-4dcecd008f58",
+    "name": "external/applications/applications.proto ApplicationsService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:34.000Z",
+    "updatedAt": "2026-07-28T01:19:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c797fbab-9c47-46ee-9402-4dcecd008f58"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "applications",
+              "item": [
+                {
+                  "name": "telemetry",
+                  "item": [
+                    {
+                      "name": "services",
+                      "item": [
+                        {
+                          "name": "count",
+                          "item": [
+                            {
+                              "name": "updated",
+                              "item": [
+                                {
+                                  "name": "Applications Service Update Telemetry Reported",
+                                  "id": "763e4da9-5906-49e7-bdc8-8711e472bec8",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"last_telemetry_reported_at\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/applications/telemetry/services/count/updated",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "applications",
+                                        "telemetry",
+                                        "services",
+                                        "count",
+                                        "updated"
+                                      ]
+                                    }
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "5a2f0d46-b92f-4063-9988-94084d5be685",
+                                      "name": "A successful response.",
+                                      "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"last_telemetry_reported_at\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/applications/telemetry/services/count/updated",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "applications",
+                                            "telemetry",
+                                            "services",
+                                            "count",
+                                            "updated"
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{}",
+                                      "createdAt": "2026-07-28T01:19:34.000Z",
+                                      "updatedAt": "2026-07-28T01:19:34.000Z",
+                                      "uid": "35240-5a2f0d46-b92f-4063-9988-94084d5be685"
+                                    },
+                                    {
+                                      "id": "29873063-ca09-4676-875f-185bde7b6d68",
+                                      "name": "An unexpected error response.",
+                                      "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"last_telemetry_reported_at\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/applications/telemetry/services/count/updated",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "applications",
+                                            "telemetry",
+                                            "services",
+                                            "count",
+                                            "updated"
+                                          ]
+                                        }
+                                      },
+                                      "status": "Internal Server Error",
+                                      "code": 500,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                      "createdAt": "2026-07-28T01:19:34.000Z",
+                                      "updatedAt": "2026-07-28T01:19:34.000Z",
+                                      "uid": "35240-29873063-ca09-4676-875f-185bde7b6d68"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:19:34.000Z",
+                                  "updatedAt": "2026-07-28T01:19:34.000Z",
+                                  "uid": "35240-763e4da9-5906-49e7-bdc8-8711e472bec8"
+                                }
+                              ],
+                              "id": "d1785bc6-162d-47ef-a1ff-2454e0b3440c",
+                              "createdAt": "2026-07-28T01:19:34.000Z",
+                              "updatedAt": "2026-07-28T01:19:34.000Z",
+                              "uid": "35240-d1785bc6-162d-47ef-a1ff-2454e0b3440c"
+                            },
+                            {
+                              "name": "Applications Service Get Services Usage Count",
+                              "id": "94fcb9a4-d516-4251-9db3-9f88493e8ae2",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/applications/telemetry/services/count",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "applications",
+                                    "telemetry",
+                                    "services",
+                                    "count"
+                                  ]
+                                }
+                              },
+                              "response": [
+                                {
+                                  "id": "faa14d84-f39a-4fce-af98-092499d2d0df",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/applications/telemetry/services/count",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "applications",
+                                        "telemetry",
+                                        "services",
+                                        "count"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"total_services\": \"<int64>\",\n  \"days_since_last_post\": \"<int64>\"\n}",
+                                  "createdAt": "2026-07-28T01:19:34.000Z",
+                                  "updatedAt": "2026-07-28T01:19:34.000Z",
+                                  "uid": "35240-faa14d84-f39a-4fce-af98-092499d2d0df"
+                                },
+                                {
+                                  "id": "789cbeba-20d7-4e68-884f-6b69dc585339",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/applications/telemetry/services/count",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "applications",
+                                        "telemetry",
+                                        "services",
+                                        "count"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:19:34.000Z",
+                                  "updatedAt": "2026-07-28T01:19:34.000Z",
+                                  "uid": "35240-789cbeba-20d7-4e68-884f-6b69dc585339"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:19:34.000Z",
+                              "updatedAt": "2026-07-28T01:19:34.000Z",
+                              "uid": "35240-94fcb9a4-d516-4251-9db3-9f88493e8ae2"
+                            }
+                          ],
+                          "id": "02f9a71d-6610-42c7-bd54-e0fd65e46cb5",
+                          "createdAt": "2026-07-28T01:19:34.000Z",
+                          "updatedAt": "2026-07-28T01:19:34.000Z",
+                          "uid": "35240-02f9a71d-6610-42c7-bd54-e0fd65e46cb5"
+                        }
+                      ],
+                      "id": "8c518443-c8ea-44f7-b4db-64b10229d221",
+                      "createdAt": "2026-07-28T01:19:34.000Z",
+                      "updatedAt": "2026-07-28T01:19:34.000Z",
+                      "uid": "35240-8c518443-c8ea-44f7-b4db-64b10229d221"
+                    }
+                  ],
+                  "id": "7059ef42-da37-46c4-bb0f-9549e70aa483",
+                  "createdAt": "2026-07-28T01:19:34.000Z",
+                  "updatedAt": "2026-07-28T01:19:34.000Z",
+                  "uid": "35240-7059ef42-da37-46c4-bb0f-9549e70aa483"
+                }
+              ],
+              "id": "3402b0f8-6b18-41cd-b945-21b1e1ea1e1c",
+              "createdAt": "2026-07-28T01:19:34.000Z",
+              "updatedAt": "2026-07-28T01:19:34.000Z",
+              "uid": "35240-3402b0f8-6b18-41cd-b945-21b1e1ea1e1c"
+            }
+          ],
+          "id": "c6d86a2b-54b9-4b34-9dfa-a22994dfbcb4",
+          "createdAt": "2026-07-28T01:19:34.000Z",
+          "updatedAt": "2026-07-28T01:19:34.000Z",
+          "uid": "35240-c6d86a2b-54b9-4b34-9dfa-a22994dfbcb4"
+        }
+      ],
+      "id": "99a18775-1572-452a-8442-33b9c74ac577",
+      "createdAt": "2026-07-28T01:19:34.000Z",
+      "updatedAt": "2026-07-28T01:19:34.000Z",
+      "uid": "35240-99a18775-1572-452a-8442-33b9c74ac577"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

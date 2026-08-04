@@ -1,0 +1,2206 @@
+{
+  "info": {
+    "_postman_id": "2add856a-5ca4-4f5c-b4f7-0638dccad9dd",
+    "name": "external/applications/applications.proto ApplicationsService ReportingService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:13.000Z",
+    "updatedAt": "2026-07-28T01:20:13.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2add856a-5ca4-4f5c-b4f7-0638dccad9dd"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "compliance",
+              "item": [
+                {
+                  "name": "reporting",
+                  "item": [
+                    {
+                      "name": "controls",
+                      "item": [
+                        {
+                          "name": "search",
+                          "item": [
+                            {
+                              "name": "List Controls Search",
+                              "id": "d354de22-e5fd-43c3-817e-b354d13b476e",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"page_number\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/controls/search",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "controls",
+                                    "search"
+                                  ]
+                                },
+                                "description": "Lists controls from the last run, with optional filtering.\nSupports filtering,pagination but not sorting.\nLimited to 100 results by default.\nGets the summary of each control.\n\nThe API supports date range filters when `end_time` is the current time\nand `start_time` is any time in last 90 days. In case, the `end_time` is any\ndate other than the current date, the API would return data only for the `end_time`.\n\nExample:\n```\n{\"filters\":\n[\n{\"type\":\"start_time\",\"values\":[\"2019-09-09T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-09-11T23:59:59Z\"]}\n],\n\"page_number\":1, \"size\": 3,\n}\n```\n\nAuthorization Action:\n```\ncompliance:controlItems:list\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "e5605537-eab4-41aa-b5aa-5e45928253da",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"page_number\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/controls/search",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "controls",
+                                        "search"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"control_items\": [\n    {\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"profile\": {\n        \"name\": \"<string>\",\n        \"title\": \"<string>\",\n        \"id\": \"<string>\",\n        \"version\": \"<string>\",\n        \"status\": \"<string>\"\n      },\n      \"impact\": \"<float>\",\n      \"end_time\": \"<dateTime>\",\n      \"control_summary\": {\n        \"total\": \"<integer>\",\n        \"passed\": {\n          \"total\": \"<integer>\"\n        },\n        \"skipped\": {\n          \"total\": \"<integer>\"\n        },\n        \"failed\": {\n          \"total\": \"<integer>\",\n          \"minor\": \"<integer>\",\n          \"major\": \"<integer>\",\n          \"critical\": \"<integer>\"\n        },\n        \"waived\": {\n          \"total\": \"<integer>\"\n        }\n      },\n      \"waivers\": [\n        {\n          \"waived_str\": \"<string>\",\n          \"expiration_date\": \"<string>\",\n          \"justification\": \"<string>\",\n          \"waiver_summary\": {\n            \"total\": \"<integer>\",\n            \"passed\": {\n              \"total\": \"<integer>\"\n            },\n            \"skipped\": {\n              \"total\": \"<integer>\"\n            },\n            \"failed\": {\n              \"total\": \"<integer>\",\n              \"minor\": \"<integer>\",\n              \"major\": \"<integer>\",\n              \"critical\": \"<integer>\"\n            },\n            \"waived\": {\n              \"total\": \"<integer>\"\n            }\n          }\n        },\n        {\n          \"waived_str\": \"<string>\",\n          \"expiration_date\": \"<string>\",\n          \"justification\": \"<string>\",\n          \"waiver_summary\": {\n            \"total\": \"<integer>\",\n            \"passed\": {\n              \"total\": \"<integer>\"\n            },\n            \"skipped\": {\n              \"total\": \"<integer>\"\n            },\n            \"failed\": {\n              \"total\": \"<integer>\",\n              \"minor\": \"<integer>\",\n              \"major\": \"<integer>\",\n              \"critical\": \"<integer>\"\n            },\n            \"waived\": {\n              \"total\": \"<integer>\"\n            }\n          }\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"profile\": {\n        \"name\": \"<string>\",\n        \"title\": \"<string>\",\n        \"id\": \"<string>\",\n        \"version\": \"<string>\",\n        \"status\": \"<string>\"\n      },\n      \"impact\": \"<float>\",\n      \"end_time\": \"<dateTime>\",\n      \"control_summary\": {\n        \"total\": \"<integer>\",\n        \"passed\": {\n          \"total\": \"<integer>\"\n        },\n        \"skipped\": {\n          \"total\": \"<integer>\"\n        },\n        \"failed\": {\n          \"total\": \"<integer>\",\n          \"minor\": \"<integer>\",\n          \"major\": \"<integer>\",\n          \"critical\": \"<integer>\"\n        },\n        \"waived\": {\n          \"total\": \"<integer>\"\n        }\n      },\n      \"waivers\": [\n        {\n          \"waived_str\": \"<string>\",\n          \"expiration_date\": \"<string>\",\n          \"justification\": \"<string>\",\n          \"waiver_summary\": {\n            \"total\": \"<integer>\",\n            \"passed\": {\n              \"total\": \"<integer>\"\n            },\n            \"skipped\": {\n              \"total\": \"<integer>\"\n            },\n            \"failed\": {\n              \"total\": \"<integer>\",\n              \"minor\": \"<integer>\",\n              \"major\": \"<integer>\",\n              \"critical\": \"<integer>\"\n            },\n            \"waived\": {\n              \"total\": \"<integer>\"\n            }\n          }\n        },\n        {\n          \"waived_str\": \"<string>\",\n          \"expiration_date\": \"<string>\",\n          \"justification\": \"<string>\",\n          \"waiver_summary\": {\n            \"total\": \"<integer>\",\n            \"passed\": {\n              \"total\": \"<integer>\"\n            },\n            \"skipped\": {\n              \"total\": \"<integer>\"\n            },\n            \"failed\": {\n              \"total\": \"<integer>\",\n              \"minor\": \"<integer>\",\n              \"major\": \"<integer>\",\n              \"critical\": \"<integer>\"\n            },\n            \"waived\": {\n              \"total\": \"<integer>\"\n            }\n          }\n        }\n      ]\n    }\n  ],\n  \"control_summary_totals\": {\n    \"total\": \"<integer>\",\n    \"passed\": {\n      \"total\": \"<integer>\"\n    },\n    \"skipped\": {\n      \"total\": \"<integer>\"\n    },\n    \"failed\": {\n      \"total\": \"<integer>\",\n      \"minor\": \"<integer>\",\n      \"major\": \"<integer>\",\n      \"critical\": \"<integer>\"\n    },\n    \"waived\": {\n      \"total\": \"<integer>\"\n    }\n  }\n}",
+                                  "createdAt": "2026-07-28T01:20:14.000Z",
+                                  "updatedAt": "2026-07-28T01:20:14.000Z",
+                                  "uid": "35240-e5605537-eab4-41aa-b5aa-5e45928253da"
+                                },
+                                {
+                                  "id": "9fbeb984-0c77-4950-a813-daa16f753aa4",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"page_number\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/controls/search",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "controls",
+                                        "search"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:14.000Z",
+                                  "updatedAt": "2026-07-28T01:20:14.000Z",
+                                  "uid": "35240-9fbeb984-0c77-4950-a813-daa16f753aa4"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-d354de22-e5fd-43c3-817e-b354d13b476e"
+                            }
+                          ],
+                          "id": "8a1f563f-691f-4568-90ca-0ef04b69997c",
+                          "createdAt": "2026-07-28T01:20:14.000Z",
+                          "updatedAt": "2026-07-28T01:20:14.000Z",
+                          "uid": "35240-8a1f563f-691f-4568-90ca-0ef04b69997c"
+                        },
+                        {
+                          "name": "List Controls",
+                          "id": "6093b2b8-4686-4109-adc0-ae65d4a6a105",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"page_number\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/compliance/reporting/controls",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "compliance",
+                                "reporting",
+                                "controls"
+                              ]
+                            },
+                            "description": "Lists controls from the last run, with optional filtering.\nSupports filtering,pagination but not sorting.\nLimited to 100 results by default.\n\nAuthorization Action:\n```\ncompliance:controlItems:list\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "73ee6c31-a02c-496a-ba32-1753ced53267",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"page_number\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/controls",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "controls"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"control_items\": [\n    {\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"profile\": {\n        \"name\": \"<string>\",\n        \"title\": \"<string>\",\n        \"id\": \"<string>\",\n        \"version\": \"<string>\",\n        \"status\": \"<string>\"\n      },\n      \"impact\": \"<float>\",\n      \"end_time\": \"<dateTime>\",\n      \"control_summary\": {\n        \"total\": \"<integer>\",\n        \"passed\": {\n          \"total\": \"<integer>\"\n        },\n        \"skipped\": {\n          \"total\": \"<integer>\"\n        },\n        \"failed\": {\n          \"total\": \"<integer>\",\n          \"minor\": \"<integer>\",\n          \"major\": \"<integer>\",\n          \"critical\": \"<integer>\"\n        },\n        \"waived\": {\n          \"total\": \"<integer>\"\n        }\n      },\n      \"waivers\": [\n        {\n          \"waived_str\": \"<string>\",\n          \"expiration_date\": \"<string>\",\n          \"justification\": \"<string>\",\n          \"waiver_summary\": {\n            \"total\": \"<integer>\",\n            \"passed\": {\n              \"total\": \"<integer>\"\n            },\n            \"skipped\": {\n              \"total\": \"<integer>\"\n            },\n            \"failed\": {\n              \"total\": \"<integer>\",\n              \"minor\": \"<integer>\",\n              \"major\": \"<integer>\",\n              \"critical\": \"<integer>\"\n            },\n            \"waived\": {\n              \"total\": \"<integer>\"\n            }\n          }\n        },\n        {\n          \"waived_str\": \"<string>\",\n          \"expiration_date\": \"<string>\",\n          \"justification\": \"<string>\",\n          \"waiver_summary\": {\n            \"total\": \"<integer>\",\n            \"passed\": {\n              \"total\": \"<integer>\"\n            },\n            \"skipped\": {\n              \"total\": \"<integer>\"\n            },\n            \"failed\": {\n              \"total\": \"<integer>\",\n              \"minor\": \"<integer>\",\n              \"major\": \"<integer>\",\n              \"critical\": \"<integer>\"\n            },\n            \"waived\": {\n              \"total\": \"<integer>\"\n            }\n          }\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"profile\": {\n        \"name\": \"<string>\",\n        \"title\": \"<string>\",\n        \"id\": \"<string>\",\n        \"version\": \"<string>\",\n        \"status\": \"<string>\"\n      },\n      \"impact\": \"<float>\",\n      \"end_time\": \"<dateTime>\",\n      \"control_summary\": {\n        \"total\": \"<integer>\",\n        \"passed\": {\n          \"total\": \"<integer>\"\n        },\n        \"skipped\": {\n          \"total\": \"<integer>\"\n        },\n        \"failed\": {\n          \"total\": \"<integer>\",\n          \"minor\": \"<integer>\",\n          \"major\": \"<integer>\",\n          \"critical\": \"<integer>\"\n        },\n        \"waived\": {\n          \"total\": \"<integer>\"\n        }\n      },\n      \"waivers\": [\n        {\n          \"waived_str\": \"<string>\",\n          \"expiration_date\": \"<string>\",\n          \"justification\": \"<string>\",\n          \"waiver_summary\": {\n            \"total\": \"<integer>\",\n            \"passed\": {\n              \"total\": \"<integer>\"\n            },\n            \"skipped\": {\n              \"total\": \"<integer>\"\n            },\n            \"failed\": {\n              \"total\": \"<integer>\",\n              \"minor\": \"<integer>\",\n              \"major\": \"<integer>\",\n              \"critical\": \"<integer>\"\n            },\n            \"waived\": {\n              \"total\": \"<integer>\"\n            }\n          }\n        },\n        {\n          \"waived_str\": \"<string>\",\n          \"expiration_date\": \"<string>\",\n          \"justification\": \"<string>\",\n          \"waiver_summary\": {\n            \"total\": \"<integer>\",\n            \"passed\": {\n              \"total\": \"<integer>\"\n            },\n            \"skipped\": {\n              \"total\": \"<integer>\"\n            },\n            \"failed\": {\n              \"total\": \"<integer>\",\n              \"minor\": \"<integer>\",\n              \"major\": \"<integer>\",\n              \"critical\": \"<integer>\"\n            },\n            \"waived\": {\n              \"total\": \"<integer>\"\n            }\n          }\n        }\n      ]\n    }\n  ],\n  \"control_summary_totals\": {\n    \"total\": \"<integer>\",\n    \"passed\": {\n      \"total\": \"<integer>\"\n    },\n    \"skipped\": {\n      \"total\": \"<integer>\"\n    },\n    \"failed\": {\n      \"total\": \"<integer>\",\n      \"minor\": \"<integer>\",\n      \"major\": \"<integer>\",\n      \"critical\": \"<integer>\"\n    },\n    \"waived\": {\n      \"total\": \"<integer>\"\n    }\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-73ee6c31-a02c-496a-ba32-1753ced53267"
+                            },
+                            {
+                              "id": "0b038334-178e-4849-afcc-8c0a3e2b8b23",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"page_number\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/controls",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "controls"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-0b038334-178e-4849-afcc-8c0a3e2b8b23"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:14.000Z",
+                          "updatedAt": "2026-07-28T01:20:14.000Z",
+                          "uid": "35240-6093b2b8-4686-4109-adc0-ae65d4a6a105"
+                        }
+                      ],
+                      "id": "d3dc595f-77ce-4999-9212-c3b5d223e4d5",
+                      "createdAt": "2026-07-28T01:20:14.000Z",
+                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                      "uid": "35240-d3dc595f-77ce-4999-9212-c3b5d223e4d5"
+                    },
+                    {
+                      "name": "nodeheader",
+                      "item": [
+                        {
+                          "name": "id",
+                          "item": [
+                            {
+                              "name": "{id}",
+                              "item": [
+                                {
+                                  "name": "Show Node Header Info From Report ID",
+                                  "id": "0e482bbb-decc-4cde-aaca-fc5594c019a0",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/nodeheader/id/:id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "nodeheader",
+                                        "id",
+                                        ":id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "6df4ff93-7ba8-4152-8c35-b44ca0830734",
+                                          "key": "id",
+                                          "value": "<string>",
+                                          "description": "(Required) Unique identifier."
+                                        }
+                                      ]
+                                    },
+                                    "description": "Show specific details about node, report and metadate provided the report ID.\nSupports filtering, but not pagination or sorting.\n\nAuthorization Action:\n```\ncompliance:nodeheader:get\n```"
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "c0524a49-eb8a-4096-a442-6ed43d56fcf6",
+                                      "name": "A successful response.",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/nodeheader/id/:id",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "nodeheader",
+                                            "id",
+                                            ":id"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"node_id\": \"<string>\",\n  \"node_name\": \"<string>\",\n  \"end_time\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"environment\": \"<string>\",\n  \"version\": \"<string>\",\n  \"platform\": {\n    \"name\": \"<string>\",\n    \"release\": \"<string>\",\n    \"full\": \"<string>\"\n  },\n  \"profiles\": [\n    {\n      \"name\": \"<string>\",\n      \"status\": \"<string>\",\n      \"status_message\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"status\": \"<string>\",\n      \"status_message\": \"<string>\"\n    }\n  ],\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status_message\": \"<string>\"\n}",
+                                      "createdAt": "2026-07-28T01:20:14.000Z",
+                                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                                      "uid": "35240-c0524a49-eb8a-4096-a442-6ed43d56fcf6"
+                                    },
+                                    {
+                                      "id": "89246864-4e9a-41b0-a680-507e5716225c",
+                                      "name": "An unexpected error response.",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/nodeheader/id/:id",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "nodeheader",
+                                            "id",
+                                            ":id"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Internal Server Error",
+                                      "code": 500,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                      "createdAt": "2026-07-28T01:20:14.000Z",
+                                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                                      "uid": "35240-89246864-4e9a-41b0-a680-507e5716225c"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:20:14.000Z",
+                                  "updatedAt": "2026-07-28T01:20:14.000Z",
+                                  "uid": "35240-0e482bbb-decc-4cde-aaca-fc5594c019a0"
+                                }
+                              ],
+                              "id": "2489be18-2c34-4728-98e4-3263ef14e897",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-2489be18-2c34-4728-98e4-3263ef14e897"
+                            }
+                          ],
+                          "id": "274c091c-3b0c-4fad-a981-acdf0d4eb467",
+                          "createdAt": "2026-07-28T01:20:14.000Z",
+                          "updatedAt": "2026-07-28T01:20:14.000Z",
+                          "uid": "35240-274c091c-3b0c-4fad-a981-acdf0d4eb467"
+                        }
+                      ],
+                      "id": "95994d83-297a-48b1-b8ad-bcc1f1b325ad",
+                      "createdAt": "2026-07-28T01:20:14.000Z",
+                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                      "uid": "35240-95994d83-297a-48b1-b8ad-bcc1f1b325ad"
+                    },
+                    {
+                      "name": "nodes",
+                      "item": [
+                        {
+                          "name": "id",
+                          "item": [
+                            {
+                              "name": "{id}",
+                              "item": [
+                                {
+                                  "name": "Show Node by ID",
+                                  "id": "4e0218db-8caf-48ea-85f4-5ead4e58b63f",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/nodes/id/:id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "nodes",
+                                        "id",
+                                        ":id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "27dda5c7-573a-402e-b512-b914a8a93a14",
+                                          "key": "id",
+                                          "value": "<string>",
+                                          "description": "(Required) Unique identifier."
+                                        }
+                                      ]
+                                    },
+                                    "description": "Show a specific node by ID.\nSupports filtering by profile or control.\nDoes not support pagination or sorting.\n\nAuthorization Action:\n```\ncompliance:reportNodes:get\n```"
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "bc2c0d47-e7c5-489b-8f59-b781a9c0d32e",
+                                      "name": "A successful response.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/nodes/id/:id",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "nodes",
+                                            "id",
+                                            ":id"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"platform\": {\n    \"name\": \"<string>\",\n    \"release\": \"<string>\",\n    \"full\": \"<string>\"\n  },\n  \"environment\": \"<string>\",\n  \"latest_report\": {\n    \"id\": \"<string>\",\n    \"end_time\": \"<dateTime>\",\n    \"status\": \"<string>\",\n    \"controls\": {\n      \"total\": \"<integer>\",\n      \"passed\": {\n        \"total\": \"<integer>\"\n      },\n      \"skipped\": {\n        \"total\": \"<integer>\"\n      },\n      \"failed\": {\n        \"total\": \"<integer>\",\n        \"minor\": \"<integer>\",\n        \"major\": \"<integer>\",\n        \"critical\": \"<integer>\"\n      },\n      \"waived\": {\n        \"total\": \"<integer>\"\n      }\n    }\n  },\n  \"tags\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"profiles\": [\n    {\n      \"name\": \"<string>\",\n      \"version\": \"<string>\",\n      \"id\": \"<string>\",\n      \"status\": \"<string>\",\n      \"full\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"version\": \"<string>\",\n      \"id\": \"<string>\",\n      \"status\": \"<string>\",\n      \"full\": \"<string>\"\n    }\n  ]\n}",
+                                      "createdAt": "2026-07-28T01:20:14.000Z",
+                                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                                      "uid": "35240-bc2c0d47-e7c5-489b-8f59-b781a9c0d32e"
+                                    },
+                                    {
+                                      "id": "805cda88-ce74-4aa4-82c9-c065cf7979df",
+                                      "name": "An unexpected error response.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/nodes/id/:id",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "nodes",
+                                            "id",
+                                            ":id"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Internal Server Error",
+                                      "code": 500,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                      "createdAt": "2026-07-28T01:20:14.000Z",
+                                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                                      "uid": "35240-805cda88-ce74-4aa4-82c9-c065cf7979df"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:20:14.000Z",
+                                  "updatedAt": "2026-07-28T01:20:14.000Z",
+                                  "uid": "35240-4e0218db-8caf-48ea-85f4-5ead4e58b63f"
+                                }
+                              ],
+                              "id": "7602246f-c96a-46ce-826f-d7de2a785090",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-7602246f-c96a-46ce-826f-d7de2a785090"
+                            }
+                          ],
+                          "id": "368a1dfe-9b57-4785-b562-769973134b78",
+                          "createdAt": "2026-07-28T01:20:14.000Z",
+                          "updatedAt": "2026-07-28T01:20:14.000Z",
+                          "uid": "35240-368a1dfe-9b57-4785-b562-769973134b78"
+                        },
+                        {
+                          "name": "search",
+                          "item": [
+                            {
+                              "name": "List Nodes",
+                              "id": "829ab21a-a0b5-4c0a-a109-80d4fc76a067",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/nodes/search",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "nodes",
+                                    "search"
+                                  ]
+                                },
+                                "description": "List all nodes, with optional filtering, pagination, and sorting.\nMax return payload size is 4MB, use pagination to fetch remaining data.\n| Sort parameter | Sort value |\n| --- | --- |\n| environment | environment.lower |\n| latest_report.controls.failed.critical | controls_sums.failed.critical |\n| latest_report.controls.failed.total | controls_sums.failed.total |\n| latest_report.end_time (default) | end_time |\n| latest_report.status | status |\n| name | node_name.lower |\n| platform | platform.full |\n| status | status |\n\nThe API supports date range filters when `end_time` is the current time\nand `start_time` is any time in last 90 days. In case, the `end_time` is any\ndate other than the current date, the API would return data only for the `end_time`.\n\nExample:\n```\n{\n\"filters\":[\n{\"type\":\"environment\",\"values\":[\"dev*\"]},\n{\"type\":\"start_time\",\"values\":[\"2019-10-26T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-11-05T23:59:59Z\"]}\n],\n\"page\":1,\"per_page\":100,\n\"sort\":\"environment\",\"order\":\"ASC\"\n}\n```\n\nAuthorization Action:\n```\ncompliance:reportNodes:list\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "a466bc73-3661-401c-83b5-87ff9a6322b6",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/nodes/search",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "nodes",
+                                        "search"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"nodes\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"platform\": {\n        \"name\": \"<string>\",\n        \"release\": \"<string>\",\n        \"full\": \"<string>\"\n      },\n      \"environment\": \"<string>\",\n      \"latest_report\": {\n        \"id\": \"<string>\",\n        \"end_time\": \"<dateTime>\",\n        \"status\": \"<string>\",\n        \"controls\": {\n          \"total\": \"<integer>\",\n          \"passed\": {\n            \"total\": \"<integer>\"\n          },\n          \"skipped\": {\n            \"total\": \"<integer>\"\n          },\n          \"failed\": {\n            \"total\": \"<integer>\",\n            \"minor\": \"<integer>\",\n            \"major\": \"<integer>\",\n            \"critical\": \"<integer>\"\n          },\n          \"waived\": {\n            \"total\": \"<integer>\"\n          }\n        }\n      },\n      \"tags\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"profiles\": [\n        {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\",\n          \"id\": \"<string>\",\n          \"status\": \"<string>\",\n          \"full\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\",\n          \"id\": \"<string>\",\n          \"status\": \"<string>\",\n          \"full\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"platform\": {\n        \"name\": \"<string>\",\n        \"release\": \"<string>\",\n        \"full\": \"<string>\"\n      },\n      \"environment\": \"<string>\",\n      \"latest_report\": {\n        \"id\": \"<string>\",\n        \"end_time\": \"<dateTime>\",\n        \"status\": \"<string>\",\n        \"controls\": {\n          \"total\": \"<integer>\",\n          \"passed\": {\n            \"total\": \"<integer>\"\n          },\n          \"skipped\": {\n            \"total\": \"<integer>\"\n          },\n          \"failed\": {\n            \"total\": \"<integer>\",\n            \"minor\": \"<integer>\",\n            \"major\": \"<integer>\",\n            \"critical\": \"<integer>\"\n          },\n          \"waived\": {\n            \"total\": \"<integer>\"\n          }\n        }\n      },\n      \"tags\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"profiles\": [\n        {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\",\n          \"id\": \"<string>\",\n          \"status\": \"<string>\",\n          \"full\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"version\": \"<string>\",\n          \"id\": \"<string>\",\n          \"status\": \"<string>\",\n          \"full\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"total_passed\": \"<integer>\",\n  \"total_failed\": \"<integer>\",\n  \"total_skipped\": \"<integer>\",\n  \"total_waived\": \"<integer>\"\n}",
+                                  "createdAt": "2026-07-28T01:20:14.000Z",
+                                  "updatedAt": "2026-07-28T01:20:14.000Z",
+                                  "uid": "35240-a466bc73-3661-401c-83b5-87ff9a6322b6"
+                                },
+                                {
+                                  "id": "f9eb779d-e758-432c-83ea-d705a0e8391f",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/nodes/search",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "nodes",
+                                        "search"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:14.000Z",
+                                  "updatedAt": "2026-07-28T01:20:14.000Z",
+                                  "uid": "35240-f9eb779d-e758-432c-83ea-d705a0e8391f"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-829ab21a-a0b5-4c0a-a109-80d4fc76a067"
+                            }
+                          ],
+                          "id": "58e65591-62b8-4437-9849-0c14e7572f9f",
+                          "createdAt": "2026-07-28T01:20:14.000Z",
+                          "updatedAt": "2026-07-28T01:20:14.000Z",
+                          "uid": "35240-58e65591-62b8-4437-9849-0c14e7572f9f"
+                        }
+                      ],
+                      "id": "55be1eca-2762-469e-a711-8f37d1a88c57",
+                      "createdAt": "2026-07-28T01:20:14.000Z",
+                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                      "uid": "35240-55be1eca-2762-469e-a711-8f37d1a88c57"
+                    },
+                    {
+                      "name": "profiles",
+                      "item": [
+                        {
+                          "name": "List Profiles",
+                          "id": "4f8b29cc-f58a-472c-8279-a6fd4ef4b32d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/compliance/reporting/profiles",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "compliance",
+                                "reporting",
+                                "profiles"
+                              ]
+                            },
+                            "description": "List all profiles in use, with optional filtering.\nSupports pagination, filtering, and sorting.\nValid sort fields: name, title\n\nThe API supports date range filters when `end_time` is the current time\nand `start_time` is any time in last 90 days. In case, the `end_time` is any\ndate other than the current date, the API would return data only for the `end_time`.\n\nExample:\n```\n{\"filters\":\n[\n{\"type\":\"start_time\",\"values\":[\"2019-09-09T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-09-11T23:59:59Z\"]}\n],\n\"page\":1, \"per_page\": 3,\n}\n```\nAuthorization Action:\n```\ncompliance:reportProfiles:list\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "3100b935-333e-4b95-88ba-29b600167432",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/profiles",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "profiles"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"profiles\": [\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"id\": \"<string>\",\n      \"version\": \"<string>\",\n      \"status\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"id\": \"<string>\",\n      \"version\": \"<string>\",\n      \"status\": \"<string>\"\n    }\n  ],\n  \"counts\": {\n    \"total\": \"<integer>\",\n    \"failed\": \"<integer>\",\n    \"skipped\": \"<integer>\",\n    \"passed\": \"<integer>\",\n    \"waived\": \"<integer>\"\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-3100b935-333e-4b95-88ba-29b600167432"
+                            },
+                            {
+                              "id": "fcff7617-1160-4ec2-bd9f-8ed3daadc6a8",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/profiles",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "profiles"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-fcff7617-1160-4ec2-bd9f-8ed3daadc6a8"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:14.000Z",
+                          "updatedAt": "2026-07-28T01:20:14.000Z",
+                          "uid": "35240-4f8b29cc-f58a-472c-8279-a6fd4ef4b32d"
+                        }
+                      ],
+                      "id": "ab4c7f6d-b8c5-46a5-a538-15e0c5034e26",
+                      "createdAt": "2026-07-28T01:20:14.000Z",
+                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                      "uid": "35240-ab4c7f6d-b8c5-46a5-a538-15e0c5034e26"
+                    },
+                    {
+                      "name": "report-ids",
+                      "item": [
+                        {
+                          "name": "List Report IDs",
+                          "id": "d31cca11-9713-48a7-be55-27200676b569",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/compliance/reporting/report-ids",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "compliance",
+                                "reporting",
+                                "report-ids"
+                              ]
+                            },
+                            "description": "List all IDs for the latest report for each node, with optional filtering.\nSupports filtering, but not pagination or sorting.\nIncluding more than one value for `profile_id`, or `profile_name` is not allowed.\nIncluding values for both `profile_id` and `profile_name` in one request is not allowed.\nMax return payload size is 4MB.\n\nAuthorization Action:\n```\ncompliance:reportids:list\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "43d316d3-d539-4df5-b21f-825f5f05fbcd",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/report-ids",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "report-ids"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"report_data\": [\n    {\n      \"id\": \"<string>\",\n      \"end_time\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"end_time\": \"<dateTime>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-43d316d3-d539-4df5-b21f-825f5f05fbcd"
+                            },
+                            {
+                              "id": "c8b94231-0c7c-4869-9726-a93a171a67ce",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/report-ids",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "report-ids"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-c8b94231-0c7c-4869-9726-a93a171a67ce"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:14.000Z",
+                          "updatedAt": "2026-07-28T01:20:14.000Z",
+                          "uid": "35240-d31cca11-9713-48a7-be55-27200676b569"
+                        }
+                      ],
+                      "id": "8f890d2d-f646-4856-8f5e-3d2bb6393968",
+                      "createdAt": "2026-07-28T01:20:14.000Z",
+                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                      "uid": "35240-8f890d2d-f646-4856-8f5e-3d2bb6393968"
+                    },
+                    {
+                      "name": "reportcontrols",
+                      "item": [
+                        {
+                          "name": "id",
+                          "item": [
+                            {
+                              "name": "{id}",
+                              "item": [
+                                {
+                                  "name": "List Control Info",
+                                  "id": "f66913e8-88d0-450f-a534-59b7164dfd3d",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/reportcontrols/id/:id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "reportcontrols",
+                                        "id",
+                                        ":id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "1bbb7f2d-8801-4f26-83e7-f3dd26eadafd",
+                                          "key": "id",
+                                          "value": "<string>",
+                                          "description": "(Required) Unique identifier."
+                                        }
+                                      ]
+                                    },
+                                    "description": "Lists controls from the last run, with optional filtering.\nSupports filtering and pagination. Maximum 100 search can be \nmade when specifying the pagination from and size. Sum of from+size\nshould be less that 100. By default 10 results will be returned.\nAuthorization Action:\n```\ncompliance:ControlElements:list\n```"
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "11a2bd3c-f15c-42a1-9d8e-3b6db7193385",
+                                      "name": "A successful response.",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/reportcontrols/id/:id",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "reportcontrols",
+                                            "id",
+                                            ":id"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"control_elements\": [\n    {\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"profile\": \"<string>\",\n      \"impact\": \"<float>\",\n      \"results\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"profile_id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"profile\": \"<string>\",\n      \"impact\": \"<float>\",\n      \"results\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"profile_id\": \"<string>\"\n    }\n  ]\n}",
+                                      "createdAt": "2026-07-28T01:20:14.000Z",
+                                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                                      "uid": "35240-11a2bd3c-f15c-42a1-9d8e-3b6db7193385"
+                                    },
+                                    {
+                                      "id": "0059408a-026a-4aaa-829b-47f65797134c",
+                                      "name": "An unexpected error response.",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/reportcontrols/id/:id",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "reportcontrols",
+                                            "id",
+                                            ":id"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Internal Server Error",
+                                      "code": 500,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                      "createdAt": "2026-07-28T01:20:14.000Z",
+                                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                                      "uid": "35240-0059408a-026a-4aaa-829b-47f65797134c"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:20:14.000Z",
+                                  "updatedAt": "2026-07-28T01:20:14.000Z",
+                                  "uid": "35240-f66913e8-88d0-450f-a534-59b7164dfd3d"
+                                }
+                              ],
+                              "id": "fff20cc3-03e3-4896-be24-1682e9c1ebf1",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-fff20cc3-03e3-4896-be24-1682e9c1ebf1"
+                            }
+                          ],
+                          "id": "223dca89-030c-49c7-ab72-610b1df9cd76",
+                          "createdAt": "2026-07-28T01:20:14.000Z",
+                          "updatedAt": "2026-07-28T01:20:14.000Z",
+                          "uid": "35240-223dca89-030c-49c7-ab72-610b1df9cd76"
+                        }
+                      ],
+                      "id": "2cecefdb-9792-4a11-a81f-192023ff959a",
+                      "createdAt": "2026-07-28T01:20:14.000Z",
+                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                      "uid": "35240-2cecefdb-9792-4a11-a81f-192023ff959a"
+                    },
+                    {
+                      "name": "reportmanager",
+                      "item": [
+                        {
+                          "name": "export",
+                          "item": [
+                            {
+                              "name": "Export reports",
+                              "id": "c4241eb1-371d-430c-92d5-51b4729d04b2",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/reportmanager/export",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "reportmanager",
+                                    "export"
+                                  ]
+                                },
+                                "description": "Export multiple reports.\nSupports filtering by profile or control. API returns an acknowledgement ID.\n\nAuthorization Action:\n```\ncompliance:reports:list\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "5f26fb92-8d99-4b3e-bcdb-a7c6bec3d231",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/reportmanager/export",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "reportmanager",
+                                        "export"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"acknowledgement_id\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T01:20:14.000Z",
+                                  "updatedAt": "2026-07-28T01:20:14.000Z",
+                                  "uid": "35240-5f26fb92-8d99-4b3e-bcdb-a7c6bec3d231"
+                                },
+                                {
+                                  "id": "007c141d-28c5-4219-bf27-dab583d2a8e1",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/reportmanager/export",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "reportmanager",
+                                        "export"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:14.000Z",
+                                  "updatedAt": "2026-07-28T01:20:14.000Z",
+                                  "uid": "35240-007c141d-28c5-4219-bf27-dab583d2a8e1"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-c4241eb1-371d-430c-92d5-51b4729d04b2"
+                            }
+                          ],
+                          "id": "d0f79d1b-b013-4866-b487-bb9cc9023736",
+                          "createdAt": "2026-07-28T01:20:14.000Z",
+                          "updatedAt": "2026-07-28T01:20:14.000Z",
+                          "uid": "35240-d0f79d1b-b013-4866-b487-bb9cc9023736"
+                        }
+                      ],
+                      "id": "a17dc441-7200-452b-b369-9e442c9df042",
+                      "createdAt": "2026-07-28T01:20:14.000Z",
+                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                      "uid": "35240-a17dc441-7200-452b-b369-9e442c9df042"
+                    },
+                    {
+                      "name": "reports",
+                      "item": [
+                        {
+                          "name": "id",
+                          "item": [
+                            {
+                              "name": "{id}",
+                              "item": [
+                                {
+                                  "name": "Show Report by ID",
+                                  "id": "870fe027-9854-4ff6-b548-e4bbc4fdce01",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/reports/id/:id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "reports",
+                                        "id",
+                                        ":id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "b2d2d370-f2a9-48bb-9de1-ab746536abf1",
+                                          "key": "id",
+                                          "value": "<string>",
+                                          "description": "(Required) Unique identifier."
+                                        }
+                                      ]
+                                    },
+                                    "description": "Show a specific report by ID. Supports filtering, but not pagination or sorting.\nIncluding more than one value for `profile_id`, or `profile_name` is not allowed.\nIncluding values for both `profile_id` and `profile_name` in one request is not allowed.\n\nAuthorization Action:\n```\ncompliance:reports:get\n```"
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "b615eb5e-1344-4062-b9da-daa3632a39e5",
+                                      "name": "A successful response.",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/reports/id/:id",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "reports",
+                                            "id",
+                                            ":id"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"id\": \"<string>\",\n  \"node_id\": \"<string>\",\n  \"node_name\": \"<string>\",\n  \"end_time\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"controls\": {\n    \"total\": \"<integer>\",\n    \"passed\": {\n      \"total\": \"<integer>\"\n    },\n    \"skipped\": {\n      \"total\": \"<integer>\"\n    },\n    \"failed\": {\n      \"total\": \"<integer>\",\n      \"minor\": \"<integer>\",\n      \"major\": \"<integer>\",\n      \"critical\": \"<integer>\"\n    },\n    \"waived\": {\n      \"total\": \"<integer>\"\n    }\n  },\n  \"environment\": \"<string>\",\n  \"version\": \"<string>\",\n  \"platform\": {\n    \"name\": \"<string>\",\n    \"release\": \"<string>\",\n    \"full\": \"<string>\"\n  },\n  \"statistics\": {\n    \"duration\": \"<float>\"\n  },\n  \"profiles\": [\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"maintainer\": \"<string>\",\n      \"copyright\": \"<string>\",\n      \"copyright_email\": \"<string>\",\n      \"license\": \"<string>\",\n      \"summary\": \"<string>\",\n      \"version\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"full\": \"<string>\",\n      \"supports\": [\n        {\n          \"os_name\": \"<string>\",\n          \"os_family\": \"<string>\",\n          \"release\": \"<string>\",\n          \"inspec_version\": \"<string>\",\n          \"platform\": \"<string>\"\n        },\n        {\n          \"os_name\": \"<string>\",\n          \"os_family\": \"<string>\",\n          \"release\": \"<string>\",\n          \"inspec_version\": \"<string>\",\n          \"platform\": \"<string>\"\n        }\n      ],\n      \"depends\": [\n        {\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"path\": \"<string>\",\n          \"git\": \"<string>\",\n          \"branch\": \"<string>\",\n          \"tag\": \"<string>\",\n          \"commit\": \"<string>\",\n          \"version\": \"<string>\",\n          \"supermarket\": \"<string>\",\n          \"github\": \"<string>\",\n          \"compliance\": \"<string>\",\n          \"status\": \"<string>\",\n          \"skip_message\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"path\": \"<string>\",\n          \"git\": \"<string>\",\n          \"branch\": \"<string>\",\n          \"tag\": \"<string>\",\n          \"commit\": \"<string>\",\n          \"version\": \"<string>\",\n          \"supermarket\": \"<string>\",\n          \"github\": \"<string>\",\n          \"compliance\": \"<string>\",\n          \"status\": \"<string>\",\n          \"skip_message\": \"<string>\"\n        }\n      ],\n      \"sha256\": \"<string>\",\n      \"groups\": [\n        {\n          \"id\": \"<string>\",\n          \"title\": \"<string>\",\n          \"controls\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"id\": \"<string>\",\n          \"title\": \"<string>\",\n          \"controls\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"controls\": [\n        {\n          \"id\": \"<string>\",\n          \"code\": \"<string>\",\n          \"desc\": \"<string>\",\n          \"impact\": \"<float>\",\n          \"title\": \"<string>\",\n          \"source_location\": {\n            \"ref\": \"<string>\",\n            \"line\": \"<integer>\"\n          },\n          \"results\": [\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            },\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            },\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            }\n          ],\n          \"tags\": \"<string>\",\n          \"waived_str\": \"<string>\",\n          \"waiver_data\": {\n            \"expiration_date\": \"<string>\",\n            \"justification\": \"<string>\",\n            \"run\": \"<boolean>\",\n            \"skipped_due_to_waiver\": \"<boolean>\",\n            \"message\": \"<string>\"\n          },\n          \"removed_results_counts\": {\n            \"failed\": \"<integer>\",\n            \"skipped\": \"<integer>\",\n            \"passed\": \"<integer>\"\n          }\n        },\n        {\n          \"id\": \"<string>\",\n          \"code\": \"<string>\",\n          \"desc\": \"<string>\",\n          \"impact\": \"<float>\",\n          \"title\": \"<string>\",\n          \"source_location\": {\n            \"ref\": \"<string>\",\n            \"line\": \"<integer>\"\n          },\n          \"results\": [\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            },\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            },\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            }\n          ],\n          \"tags\": \"<string>\",\n          \"waived_str\": \"<string>\",\n          \"waiver_data\": {\n            \"expiration_date\": \"<string>\",\n            \"justification\": \"<string>\",\n            \"run\": \"<boolean>\",\n            \"skipped_due_to_waiver\": \"<boolean>\",\n            \"message\": \"<string>\"\n          },\n          \"removed_results_counts\": {\n            \"failed\": \"<integer>\",\n            \"skipped\": \"<integer>\",\n            \"passed\": \"<integer>\"\n          }\n        }\n      ],\n      \"attributes\": [\n        {\n          \"name\": \"<string>\",\n          \"options\": {\n            \"description\": \"<string>\",\n            \"default\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"options\": {\n            \"description\": \"<string>\",\n            \"default\": \"<string>\"\n          }\n        }\n      ],\n      \"latest_version\": \"<string>\",\n      \"status\": \"<string>\",\n      \"skip_message\": \"<string>\",\n      \"status_message\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"maintainer\": \"<string>\",\n      \"copyright\": \"<string>\",\n      \"copyright_email\": \"<string>\",\n      \"license\": \"<string>\",\n      \"summary\": \"<string>\",\n      \"version\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"full\": \"<string>\",\n      \"supports\": [\n        {\n          \"os_name\": \"<string>\",\n          \"os_family\": \"<string>\",\n          \"release\": \"<string>\",\n          \"inspec_version\": \"<string>\",\n          \"platform\": \"<string>\"\n        },\n        {\n          \"os_name\": \"<string>\",\n          \"os_family\": \"<string>\",\n          \"release\": \"<string>\",\n          \"inspec_version\": \"<string>\",\n          \"platform\": \"<string>\"\n        }\n      ],\n      \"depends\": [\n        {\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"path\": \"<string>\",\n          \"git\": \"<string>\",\n          \"branch\": \"<string>\",\n          \"tag\": \"<string>\",\n          \"commit\": \"<string>\",\n          \"version\": \"<string>\",\n          \"supermarket\": \"<string>\",\n          \"github\": \"<string>\",\n          \"compliance\": \"<string>\",\n          \"status\": \"<string>\",\n          \"skip_message\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"path\": \"<string>\",\n          \"git\": \"<string>\",\n          \"branch\": \"<string>\",\n          \"tag\": \"<string>\",\n          \"commit\": \"<string>\",\n          \"version\": \"<string>\",\n          \"supermarket\": \"<string>\",\n          \"github\": \"<string>\",\n          \"compliance\": \"<string>\",\n          \"status\": \"<string>\",\n          \"skip_message\": \"<string>\"\n        }\n      ],\n      \"sha256\": \"<string>\",\n      \"groups\": [\n        {\n          \"id\": \"<string>\",\n          \"title\": \"<string>\",\n          \"controls\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"id\": \"<string>\",\n          \"title\": \"<string>\",\n          \"controls\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"controls\": [\n        {\n          \"id\": \"<string>\",\n          \"code\": \"<string>\",\n          \"desc\": \"<string>\",\n          \"impact\": \"<float>\",\n          \"title\": \"<string>\",\n          \"source_location\": {\n            \"ref\": \"<string>\",\n            \"line\": \"<integer>\"\n          },\n          \"results\": [\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            },\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            },\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            }\n          ],\n          \"tags\": \"<string>\",\n          \"waived_str\": \"<string>\",\n          \"waiver_data\": {\n            \"expiration_date\": \"<string>\",\n            \"justification\": \"<string>\",\n            \"run\": \"<boolean>\",\n            \"skipped_due_to_waiver\": \"<boolean>\",\n            \"message\": \"<string>\"\n          },\n          \"removed_results_counts\": {\n            \"failed\": \"<integer>\",\n            \"skipped\": \"<integer>\",\n            \"passed\": \"<integer>\"\n          }\n        },\n        {\n          \"id\": \"<string>\",\n          \"code\": \"<string>\",\n          \"desc\": \"<string>\",\n          \"impact\": \"<float>\",\n          \"title\": \"<string>\",\n          \"source_location\": {\n            \"ref\": \"<string>\",\n            \"line\": \"<integer>\"\n          },\n          \"results\": [\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            },\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            },\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            }\n          ],\n          \"tags\": \"<string>\",\n          \"waived_str\": \"<string>\",\n          \"waiver_data\": {\n            \"expiration_date\": \"<string>\",\n            \"justification\": \"<string>\",\n            \"run\": \"<boolean>\",\n            \"skipped_due_to_waiver\": \"<boolean>\",\n            \"message\": \"<string>\"\n          },\n          \"removed_results_counts\": {\n            \"failed\": \"<integer>\",\n            \"skipped\": \"<integer>\",\n            \"passed\": \"<integer>\"\n          }\n        }\n      ],\n      \"attributes\": [\n        {\n          \"name\": \"<string>\",\n          \"options\": {\n            \"description\": \"<string>\",\n            \"default\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"options\": {\n            \"description\": \"<string>\",\n            \"default\": \"<string>\"\n          }\n        }\n      ],\n      \"latest_version\": \"<string>\",\n      \"status\": \"<string>\",\n      \"skip_message\": \"<string>\",\n      \"status_message\": \"<string>\"\n    }\n  ],\n  \"job_id\": \"<string>\",\n  \"ipaddress\": \"<string>\",\n  \"fqdn\": \"<string>\",\n  \"chef_server\": \"<string>\",\n  \"chef_organization\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"chef_tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status_message\": \"<string>\"\n}",
+                                      "createdAt": "2026-07-28T01:20:14.000Z",
+                                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                                      "uid": "35240-b615eb5e-1344-4062-b9da-daa3632a39e5"
+                                    },
+                                    {
+                                      "id": "9d0ce5d8-2e2f-4adf-8b91-0e68681c8236",
+                                      "name": "An unexpected error response.",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/reports/id/:id",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "reports",
+                                            "id",
+                                            ":id"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Internal Server Error",
+                                      "code": 500,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                      "createdAt": "2026-07-28T01:20:14.000Z",
+                                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                                      "uid": "35240-9d0ce5d8-2e2f-4adf-8b91-0e68681c8236"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:20:14.000Z",
+                                  "updatedAt": "2026-07-28T01:20:14.000Z",
+                                  "uid": "35240-870fe027-9854-4ff6-b548-e4bbc4fdce01"
+                                }
+                              ],
+                              "id": "d3287495-acb0-4007-bd1a-bc95436f7d93",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-d3287495-acb0-4007-bd1a-bc95436f7d93"
+                            }
+                          ],
+                          "id": "7f013fe9-67d0-47df-8db7-45f3e058eb41",
+                          "createdAt": "2026-07-28T01:20:14.000Z",
+                          "updatedAt": "2026-07-28T01:20:14.000Z",
+                          "uid": "35240-7f013fe9-67d0-47df-8db7-45f3e058eb41"
+                        },
+                        {
+                          "name": "List Reports",
+                          "id": "defb02c2-41b1-43e5-b163-191202c83fd3",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/compliance/reporting/reports",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "compliance",
+                                "reporting",
+                                "reports"
+                              ]
+                            },
+                            "description": "Makes a list of reports. Adding a filter makes a list of all node reports that meet the filter criteria.\nSupports pagination, filtering, and sorting.\nMax return payload size is 4MB, use pagination to fetch remaining data.\n\nValid sort fields: latest_report.controls.failed.critical, latest_report.controls.failed.total, latest_report.end_time, latest_report.status, node_name\n\nExample:\n```\n{\"filters\":\n[\n{\"type\":\"start_time\",\"values\":[\"2019-09-09T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-09-11T23:59:59Z\"]}\n],\n\"page\":1, \"per_page\": 3,\n\"sort\": \"latest_report.status\", \"order\": \"ASC\"\n}\n```\n\nAuthorization Action:\n```\ncompliance:reports:list\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "20f865e8-0960-4a22-9720-b0aa20bd56f1",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/reports",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "reports"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"reports\": [\n    {\n      \"id\": \"<string>\",\n      \"node_id\": \"<string>\",\n      \"node_name\": \"<string>\",\n      \"end_time\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"controls\": {\n        \"total\": \"<integer>\",\n        \"passed\": {\n          \"total\": \"<integer>\"\n        },\n        \"skipped\": {\n          \"total\": \"<integer>\"\n        },\n        \"failed\": {\n          \"total\": \"<integer>\",\n          \"minor\": \"<integer>\",\n          \"major\": \"<integer>\",\n          \"critical\": \"<integer>\"\n        },\n        \"waived\": {\n          \"total\": \"<integer>\"\n        }\n      },\n      \"ipaddress\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"node_id\": \"<string>\",\n      \"node_name\": \"<string>\",\n      \"end_time\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"controls\": {\n        \"total\": \"<integer>\",\n        \"passed\": {\n          \"total\": \"<integer>\"\n        },\n        \"skipped\": {\n          \"total\": \"<integer>\"\n        },\n        \"failed\": {\n          \"total\": \"<integer>\",\n          \"minor\": \"<integer>\",\n          \"major\": \"<integer>\",\n          \"critical\": \"<integer>\"\n        },\n        \"waived\": {\n          \"total\": \"<integer>\"\n        }\n      },\n      \"ipaddress\": \"<string>\"\n    }\n  ],\n  \"total\": \"<integer>\"\n}",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-20f865e8-0960-4a22-9720-b0aa20bd56f1"
+                            },
+                            {
+                              "id": "d2598807-4912-4d7b-9178-bbba27b75cdf",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/reports",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "reports"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-d2598807-4912-4d7b-9178-bbba27b75cdf"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:14.000Z",
+                          "updatedAt": "2026-07-28T01:20:14.000Z",
+                          "uid": "35240-defb02c2-41b1-43e5-b163-191202c83fd3"
+                        }
+                      ],
+                      "id": "b889b35c-7a05-410d-b6f2-aa940326124d",
+                      "createdAt": "2026-07-28T01:20:14.000Z",
+                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                      "uid": "35240-b889b35c-7a05-410d-b6f2-aa940326124d"
+                    },
+                    {
+                      "name": "suggestions",
+                      "item": [
+                        {
+                          "name": "List Reporting Suggestions",
+                          "id": "924e0e8e-6377-49fe-a875-18974e521ef0",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"type\": \"<string>\",\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"type_key\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/compliance/reporting/suggestions",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "compliance",
+                                "reporting",
+                                "suggestions"
+                              ]
+                            },
+                            "description": "Get suggestions for compliance reporting resources based on matching text substrings.\nSupports filtering, but not pagination or sorting.\n`type` parameter is required. It must be one of the parameters from the following table.\n\n| Suggestion type parameter | Suggestion type value |\n| --- | --- |\n| chef_server | source_fqdn |\n| chef_tags | chef_tags |\n| control | profiles.controls.title |\n| control_tag_key | profiles.controls.string_tags.key |\n| control_tag_value | profiles.controls.string_tags.values |\n| environment | environment |\n| inspec_version | version |\n| node | node_name |\n| organization | organization_name |\n| platform | platform.name |\n| platform_with_version | platform.full |\n| policy_group | policy_group |\n| policy_name | policy_name |\n| profile | profiles.title |\n| profile_with_version | profiles.full |\n| recipe | recipes |\n| role | roles |\n\nExample:\n```\n{\n\"type\":\"environment\",\n\"text\":\"aws*\",\n\"filters\":[\n{\"type\":\"start_time\",\"values\":[\"2019-10-26T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-11-05T23:59:59Z\"]}\n]\n}\n```\n\nAuthorization Action:\n```\ncompliance:reportSuggestions:list\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "6740583d-c832-4fe8-beea-bbbc1a4cacae",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"type\": \"<string>\",\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"type_key\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/suggestions",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "suggestions"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"suggestions\": [\n    {\n      \"text\": \"<string>\",\n      \"id\": \"<string>\",\n      \"score\": \"<float>\",\n      \"version\": \"<string>\"\n    },\n    {\n      \"text\": \"<string>\",\n      \"id\": \"<string>\",\n      \"score\": \"<float>\",\n      \"version\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-6740583d-c832-4fe8-beea-bbbc1a4cacae"
+                            },
+                            {
+                              "id": "b205675c-d56b-4cb4-8111-4453d02c2ced",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"type\": \"<string>\",\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"type_key\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/suggestions",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "suggestions"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:14.000Z",
+                              "updatedAt": "2026-07-28T01:20:14.000Z",
+                              "uid": "35240-b205675c-d56b-4cb4-8111-4453d02c2ced"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:14.000Z",
+                          "updatedAt": "2026-07-28T01:20:14.000Z",
+                          "uid": "35240-924e0e8e-6377-49fe-a875-18974e521ef0"
+                        }
+                      ],
+                      "id": "54cbbc8d-f246-458d-ab23-ea848a9fefca",
+                      "createdAt": "2026-07-28T01:20:14.000Z",
+                      "updatedAt": "2026-07-28T01:20:14.000Z",
+                      "uid": "35240-54cbbc8d-f246-458d-ab23-ea848a9fefca"
+                    }
+                  ],
+                  "id": "c28a288a-f7e7-4f90-b729-7580b7b8193c",
+                  "createdAt": "2026-07-28T01:20:14.000Z",
+                  "updatedAt": "2026-07-28T01:20:14.000Z",
+                  "uid": "35240-c28a288a-f7e7-4f90-b729-7580b7b8193c"
+                }
+              ],
+              "id": "6b52df56-469d-4325-bc6e-20ab1f778714",
+              "createdAt": "2026-07-28T01:20:14.000Z",
+              "updatedAt": "2026-07-28T01:20:14.000Z",
+              "uid": "35240-6b52df56-469d-4325-bc6e-20ab1f778714"
+            }
+          ],
+          "id": "5bcbeea0-da23-4016-bde3-2770e4ff0953",
+          "createdAt": "2026-07-28T01:20:14.000Z",
+          "updatedAt": "2026-07-28T01:20:14.000Z",
+          "uid": "35240-5bcbeea0-da23-4016-bde3-2770e4ff0953"
+        }
+      ],
+      "id": "7edd9598-add0-48b9-b02a-b9355d1074a3",
+      "createdAt": "2026-07-28T01:20:14.000Z",
+      "updatedAt": "2026-07-28T01:20:14.000Z",
+      "uid": "35240-7edd9598-add0-48b9-b02a-b9355d1074a3"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

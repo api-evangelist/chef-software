@@ -1,0 +1,556 @@
+{
+  "info": {
+    "_postman_id": "70e5b08b-18e1-407c-8211-68c84d0af0fd",
+    "name": "external/applications/applications.proto ApplicationsService UserSettingsService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:55.000Z",
+    "updatedAt": "2026-07-28T01:20:55.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-70e5b08b-18e1-407c-8211-68c84d0af0fd"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "user-settings",
+              "item": [
+                {
+                  "name": "{user.name}",
+                  "item": [
+                    {
+                      "name": "{user.connector}",
+                      "item": [
+                        {
+                          "name": "GetUserSettings returns all of the preferences for a given user",
+                          "id": "695a333a-4c98-40e3-8d89-47075cd73abe",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/user-settings/:user.name/:user.connector",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "user-settings",
+                                ":user.name",
+                                ":user.connector"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "563762a9-a52b-4d60-9bba-be4f39836211",
+                                  "key": "user"
+                                },
+                                {
+                                  "id": "1ff8487e-b769-48f0-bf4c-1c417b50a4eb",
+                                  "key": "user.name",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "debd7b16-1958-450f-ad7d-db840867bb9f",
+                                  "key": "user.connector",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "a9a64e9a-724f-45e9-bd6a-fee8d7bb32e8",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/user-settings/:user.name/:user.connector",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "user-settings",
+                                    ":user.name",
+                                    ":user.connector"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "user.name"
+                                    },
+                                    {
+                                      "key": "user.connector"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"user\": {\n    \"name\": \"<string>\",\n    \"connector\": \"<string>\"\n  },\n  \"settings\": {\n    \"exad9\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:55.000Z",
+                              "updatedAt": "2026-07-28T01:20:55.000Z",
+                              "uid": "35240-a9a64e9a-724f-45e9-bd6a-fee8d7bb32e8"
+                            },
+                            {
+                              "id": "b8471974-362f-4584-82f4-264bb188abaf",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/user-settings/:user.name/:user.connector",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "user-settings",
+                                    ":user.name",
+                                    ":user.connector"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "user.name"
+                                    },
+                                    {
+                                      "key": "user.connector"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:55.000Z",
+                              "updatedAt": "2026-07-28T01:20:55.000Z",
+                              "uid": "35240-b8471974-362f-4584-82f4-264bb188abaf"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:55.000Z",
+                          "updatedAt": "2026-07-28T01:20:55.000Z",
+                          "uid": "35240-695a333a-4c98-40e3-8d89-47075cd73abe"
+                        },
+                        {
+                          "name": "DeleteUserSettings deletes all settings for a given user",
+                          "id": "16d52952-c5fc-488c-b8ee-4bc7ad9a223a",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/user-settings/:user.name/:user.connector",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "user-settings",
+                                ":user.name",
+                                ":user.connector"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "2bd6d44f-67d1-44c3-bc70-225e840450f1",
+                                  "key": "user"
+                                },
+                                {
+                                  "id": "6d58d0ce-1e72-4c92-be53-58d15a973c2a",
+                                  "key": "user.name",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "666c609f-011b-4191-946b-c1d11a769c14",
+                                  "key": "user.connector",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "f3f53937-a80e-48f4-a8f6-fc6e271d5acf",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/user-settings/:user.name/:user.connector",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "user-settings",
+                                    ":user.name",
+                                    ":user.connector"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "user.name"
+                                    },
+                                    {
+                                      "key": "user.connector"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:20:55.000Z",
+                              "updatedAt": "2026-07-28T01:20:55.000Z",
+                              "uid": "35240-f3f53937-a80e-48f4-a8f6-fc6e271d5acf"
+                            },
+                            {
+                              "id": "a826e577-e34c-4721-81e5-6c87e461b560",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/user-settings/:user.name/:user.connector",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "user-settings",
+                                    ":user.name",
+                                    ":user.connector"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "user.name"
+                                    },
+                                    {
+                                      "key": "user.connector"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:55.000Z",
+                              "updatedAt": "2026-07-28T01:20:55.000Z",
+                              "uid": "35240-a826e577-e34c-4721-81e5-6c87e461b560"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:55.000Z",
+                          "updatedAt": "2026-07-28T01:20:55.000Z",
+                          "uid": "35240-16d52952-c5fc-488c-b8ee-4bc7ad9a223a"
+                        },
+                        {
+                          "name": "PutUserSettings upserts all of the preferences for a given user",
+                          "id": "dbe58221-a318-4a6f-8684-8afb3df42071",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"user\": {\n    \"name\": \"<string>\",\n    \"connector\": \"<string>\"\n  },\n  \"settings\": {\n    \"dolored0\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"sunt_39\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"esse__6\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"adipisicing8c\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/user-settings/:user.name/:user.connector",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "user-settings",
+                                ":user.name",
+                                ":user.connector"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "950803dc-3136-4467-b31b-bc8cfdd6a6de",
+                                  "key": "user"
+                                },
+                                {
+                                  "id": "61b0e521-db8f-4684-90ed-be3ce7b48bb3",
+                                  "key": "user.name",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "5115fd5d-788e-4d47-af8b-5634324bace0",
+                                  "key": "user.connector",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "6117b131-0be9-4a3c-a57f-a82bb60a5bd8",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"user\": {\n    \"name\": \"<string>\",\n    \"connector\": \"<string>\"\n  },\n  \"settings\": {\n    \"dolored0\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"sunt_39\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"esse__6\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"adipisicing8c\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/user-settings/:user.name/:user.connector",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "user-settings",
+                                    ":user.name",
+                                    ":user.connector"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "user.name"
+                                    },
+                                    {
+                                      "key": "user.connector"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"user\": {\n    \"name\": \"<string>\",\n    \"connector\": \"<string>\"\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:55.000Z",
+                              "updatedAt": "2026-07-28T01:20:55.000Z",
+                              "uid": "35240-6117b131-0be9-4a3c-a57f-a82bb60a5bd8"
+                            },
+                            {
+                              "id": "af2adc35-16e0-4eb0-b959-6e1f1aca5f33",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"user\": {\n    \"name\": \"<string>\",\n    \"connector\": \"<string>\"\n  },\n  \"settings\": {\n    \"dolored0\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"sunt_39\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"esse__6\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"adipisicing8c\": {\n      \"default_value\": \"<string>\",\n      \"value\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"valid_values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/user-settings/:user.name/:user.connector",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "user-settings",
+                                    ":user.name",
+                                    ":user.connector"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "user.name"
+                                    },
+                                    {
+                                      "key": "user.connector"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:55.000Z",
+                              "updatedAt": "2026-07-28T01:20:55.000Z",
+                              "uid": "35240-af2adc35-16e0-4eb0-b959-6e1f1aca5f33"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:55.000Z",
+                          "updatedAt": "2026-07-28T01:20:55.000Z",
+                          "uid": "35240-dbe58221-a318-4a6f-8684-8afb3df42071"
+                        }
+                      ],
+                      "id": "0752eddb-7fce-4888-a3b9-8ca74c328284",
+                      "createdAt": "2026-07-28T01:20:55.000Z",
+                      "updatedAt": "2026-07-28T01:20:55.000Z",
+                      "uid": "35240-0752eddb-7fce-4888-a3b9-8ca74c328284"
+                    }
+                  ],
+                  "id": "e1967270-718e-45bb-9558-51ce3e9177dc",
+                  "createdAt": "2026-07-28T01:20:55.000Z",
+                  "updatedAt": "2026-07-28T01:20:55.000Z",
+                  "uid": "35240-e1967270-718e-45bb-9558-51ce3e9177dc"
+                }
+              ],
+              "id": "d174dcb9-bca0-4153-a540-9328c47de846",
+              "createdAt": "2026-07-28T01:20:55.000Z",
+              "updatedAt": "2026-07-28T01:20:55.000Z",
+              "uid": "35240-d174dcb9-bca0-4153-a540-9328c47de846"
+            }
+          ],
+          "id": "eea60c52-434c-4a56-8861-de2a528bb27d",
+          "createdAt": "2026-07-28T01:20:55.000Z",
+          "updatedAt": "2026-07-28T01:20:55.000Z",
+          "uid": "35240-eea60c52-434c-4a56-8861-de2a528bb27d"
+        }
+      ],
+      "id": "f57f53fc-5677-4796-bb07-86f8bdbe727b",
+      "createdAt": "2026-07-28T01:20:55.000Z",
+      "updatedAt": "2026-07-28T01:20:55.000Z",
+      "uid": "35240-f57f53fc-5677-4796-bb07-86f8bdbe727b"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

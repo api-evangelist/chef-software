@@ -1,0 +1,1033 @@
+{
+  "info": {
+    "_postman_id": "24039c9b-75c7-4e5f-ac65-ef18c7eff939",
+    "name": "external/applications/applications.proto ApplicationsService ProfilesService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:11.000Z",
+    "updatedAt": "2026-07-28T01:20:11.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-24039c9b-75c7-4e5f-ac65-ef18c7eff939"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "compliance",
+              "item": [
+                {
+                  "name": "market",
+                  "item": [
+                    {
+                      "name": "read",
+                      "item": [
+                        {
+                          "name": "{name}",
+                          "item": [
+                            {
+                              "name": "version",
+                              "item": [
+                                {
+                                  "name": "{version}",
+                                  "item": [
+                                    {
+                                      "name": "Show an available profile",
+                                      "id": "694e6f75-25f7-4408-bc24-0e223db5eaa2",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/market/read/:name/version/:version?owner=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "market",
+                                            "read",
+                                            ":name",
+                                            "version",
+                                            ":version"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "Automate user associated with the profile.",
+                                              "key": "owner",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "173a2e36-5ba3-41c3-93d4-5aa1e794336d",
+                                              "key": "name",
+                                              "value": "<string>",
+                                              "description": "(Required) Name of the profile."
+                                            },
+                                            {
+                                              "id": "363281d4-fc27-4f04-a238-cf1b9c5666eb",
+                                              "key": "version",
+                                              "value": "<string>",
+                                              "description": "(Required) Version of the profile."
+                                            }
+                                          ]
+                                        },
+                                        "description": "Show the details of an un-installed profile using the profile name and version.\nin the UI, these are the profiles under the \"Available\" tab.\nThese profiles are created and maintained by Chef, shipped with Chef Automate.\n\n\nAuthorization Action:\n```\ncompliance:marketProfiles:get\n```"
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "97ee3bed-3d7f-46d9-8f6c-7a51fed68c54",
+                                          "name": "A successful response.",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/api/v0/compliance/market/read/:name/version/:version?owner=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "api",
+                                                "v0",
+                                                "compliance",
+                                                "market",
+                                                "read",
+                                                ":name",
+                                                "version",
+                                                ":version"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "Automate user associated with the profile.",
+                                                  "key": "owner",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "name"
+                                                },
+                                                {
+                                                  "key": "version"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"name\": \"<string>\",\n  \"title\": \"<string>\",\n  \"maintainer\": \"<string>\",\n  \"copyright\": \"<string>\",\n  \"copyright_email\": \"<string>\",\n  \"license\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"version\": \"<string>\",\n  \"owner\": \"<string>\",\n  \"supports\": [\n    {\n      \"os_name\": \"<string>\",\n      \"os_family\": \"<string>\",\n      \"release\": \"<string>\",\n      \"inspec_version\": \"<string>\",\n      \"platform\": \"<string>\"\n    },\n    {\n      \"os_name\": \"<string>\",\n      \"os_family\": \"<string>\",\n      \"release\": \"<string>\",\n      \"inspec_version\": \"<string>\",\n      \"platform\": \"<string>\"\n    }\n  ],\n  \"depends\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"path\": \"<string>\",\n      \"git\": \"<string>\",\n      \"branch\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"commit\": \"<string>\",\n      \"version\": \"<string>\",\n      \"supermarket\": \"<string>\",\n      \"github\": \"<string>\",\n      \"compliance\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"path\": \"<string>\",\n      \"git\": \"<string>\",\n      \"branch\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"commit\": \"<string>\",\n      \"version\": \"<string>\",\n      \"supermarket\": \"<string>\",\n      \"github\": \"<string>\",\n      \"compliance\": \"<string>\"\n    }\n  ],\n  \"sha256\": \"<string>\",\n  \"groups\": [\n    {\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"controls\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"controls\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"controls\": [\n    {\n      \"id\": \"<string>\",\n      \"code\": \"<string>\",\n      \"desc\": \"<string>\",\n      \"impact\": \"<float>\",\n      \"title\": \"<string>\",\n      \"source_location\": {\n        \"ref\": \"<string>\",\n        \"line\": \"<integer>\"\n      },\n      \"results\": [\n        {\n          \"status\": \"<string>\",\n          \"code_desc\": \"<string>\",\n          \"run_time\": \"<float>\",\n          \"start_time\": \"<string>\",\n          \"message\": \"<string>\",\n          \"skip_message\": \"<string>\"\n        },\n        {\n          \"status\": \"<string>\",\n          \"code_desc\": \"<string>\",\n          \"run_time\": \"<float>\",\n          \"start_time\": \"<string>\",\n          \"message\": \"<string>\",\n          \"skip_message\": \"<string>\"\n        }\n      ],\n      \"refs\": [\n        {\n          \"url\": \"<string>\",\n          \"ref\": \"<string>\"\n        },\n        {\n          \"url\": \"<string>\",\n          \"ref\": \"<string>\"\n        }\n      ],\n      \"tags\": {\n        \"occaecat_47a\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"code\": \"<string>\",\n      \"desc\": \"<string>\",\n      \"impact\": \"<float>\",\n      \"title\": \"<string>\",\n      \"source_location\": {\n        \"ref\": \"<string>\",\n        \"line\": \"<integer>\"\n      },\n      \"results\": [\n        {\n          \"status\": \"<string>\",\n          \"code_desc\": \"<string>\",\n          \"run_time\": \"<float>\",\n          \"start_time\": \"<string>\",\n          \"message\": \"<string>\",\n          \"skip_message\": \"<string>\"\n        },\n        {\n          \"status\": \"<string>\",\n          \"code_desc\": \"<string>\",\n          \"run_time\": \"<float>\",\n          \"start_time\": \"<string>\",\n          \"message\": \"<string>\",\n          \"skip_message\": \"<string>\"\n        }\n      ],\n      \"refs\": [\n        {\n          \"url\": \"<string>\",\n          \"ref\": \"<string>\"\n        },\n        {\n          \"url\": \"<string>\",\n          \"ref\": \"<string>\"\n        }\n      ],\n      \"tags\": {\n        \"dolore7ec\": \"<string>\"\n      }\n    }\n  ],\n  \"attributes\": [\n    {\n      \"name\": \"<string>\",\n      \"options\": {\n        \"description\": \"<string>\",\n        \"default\": \"<string>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"options\": {\n        \"description\": \"<string>\",\n        \"default\": \"<string>\"\n      }\n    }\n  ],\n  \"latest_version\": \"<string>\"\n}",
+                                          "createdAt": "2026-07-28T01:20:12.000Z",
+                                          "updatedAt": "2026-07-28T01:20:12.000Z",
+                                          "uid": "35240-97ee3bed-3d7f-46d9-8f6c-7a51fed68c54"
+                                        },
+                                        {
+                                          "id": "5b053350-502d-4d72-9485-e443eeca7d3f",
+                                          "name": "An unexpected error response.",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/api/v0/compliance/market/read/:name/version/:version?owner=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "api",
+                                                "v0",
+                                                "compliance",
+                                                "market",
+                                                "read",
+                                                ":name",
+                                                "version",
+                                                ":version"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "Automate user associated with the profile.",
+                                                  "key": "owner",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "name"
+                                                },
+                                                {
+                                                  "key": "version"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                          "createdAt": "2026-07-28T01:20:12.000Z",
+                                          "updatedAt": "2026-07-28T01:20:12.000Z",
+                                          "uid": "35240-5b053350-502d-4d72-9485-e443eeca7d3f"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:20:12.000Z",
+                                      "updatedAt": "2026-07-28T01:20:12.000Z",
+                                      "uid": "35240-694e6f75-25f7-4408-bc24-0e223db5eaa2"
+                                    }
+                                  ],
+                                  "id": "7d76faf9-4f86-44ba-844a-19543ac3a53b",
+                                  "createdAt": "2026-07-28T01:20:12.000Z",
+                                  "updatedAt": "2026-07-28T01:20:12.000Z",
+                                  "uid": "35240-7d76faf9-4f86-44ba-844a-19543ac3a53b"
+                                }
+                              ],
+                              "id": "e5d501fc-d01a-4862-9582-127142c229d5",
+                              "createdAt": "2026-07-28T01:20:12.000Z",
+                              "updatedAt": "2026-07-28T01:20:12.000Z",
+                              "uid": "35240-e5d501fc-d01a-4862-9582-127142c229d5"
+                            }
+                          ],
+                          "id": "2c27ad06-4b71-4073-91a3-59c7ccd51d97",
+                          "createdAt": "2026-07-28T01:20:12.000Z",
+                          "updatedAt": "2026-07-28T01:20:12.000Z",
+                          "uid": "35240-2c27ad06-4b71-4073-91a3-59c7ccd51d97"
+                        }
+                      ],
+                      "id": "17d74017-42cc-47f5-ab58-3af7dd67f871",
+                      "createdAt": "2026-07-28T01:20:12.000Z",
+                      "updatedAt": "2026-07-28T01:20:12.000Z",
+                      "uid": "35240-17d74017-42cc-47f5-ab58-3af7dd67f871"
+                    }
+                  ],
+                  "id": "9eee3243-12fc-45ce-9626-d5eb2939206f",
+                  "createdAt": "2026-07-28T01:20:12.000Z",
+                  "updatedAt": "2026-07-28T01:20:12.000Z",
+                  "uid": "35240-9eee3243-12fc-45ce-9626-d5eb2939206f"
+                },
+                {
+                  "name": "profiles",
+                  "item": [
+                    {
+                      "name": "metasearch",
+                      "item": [
+                        {
+                          "name": "Check if one or multiple profiles exist in the metadata database.",
+                          "id": "0968fd98-8482-47d7-a29e-10321e09e413",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"sha256\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/compliance/profiles/metasearch",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "compliance",
+                                "profiles",
+                                "metasearch"
+                              ]
+                            },
+                            "description": "The endpoint takes an array of compliance profile sha256 IDs and returns the ones that the backend\ndoesn't have metadata (profile title, copyright, controls title, code, tags, etc) for.\nThis is useful when deciding if a compliance report can be sent for ingestion without the associated profile metadata.\n\nAuthorization Action:\n```\ncompliance:profiles:list\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "be50c7de-af71-422a-8e23-1d7051abe67e",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"sha256\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/profiles/metasearch",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "profiles",
+                                    "metasearch"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"missing_sha256\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:12.000Z",
+                              "updatedAt": "2026-07-28T01:20:12.000Z",
+                              "uid": "35240-be50c7de-af71-422a-8e23-1d7051abe67e"
+                            },
+                            {
+                              "id": "957b7e19-0d4f-4785-b8d7-5f3007472b0c",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"sha256\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/profiles/metasearch",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "profiles",
+                                    "metasearch"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:12.000Z",
+                              "updatedAt": "2026-07-28T01:20:12.000Z",
+                              "uid": "35240-957b7e19-0d4f-4785-b8d7-5f3007472b0c"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:12.000Z",
+                          "updatedAt": "2026-07-28T01:20:12.000Z",
+                          "uid": "35240-0968fd98-8482-47d7-a29e-10321e09e413"
+                        }
+                      ],
+                      "id": "50807605-28e1-4459-8d07-d95152d3f303",
+                      "createdAt": "2026-07-28T01:20:12.000Z",
+                      "updatedAt": "2026-07-28T01:20:12.000Z",
+                      "uid": "35240-50807605-28e1-4459-8d07-d95152d3f303"
+                    },
+                    {
+                      "name": "read",
+                      "item": [
+                        {
+                          "name": "{owner}",
+                          "item": [
+                            {
+                              "name": "{name}",
+                              "item": [
+                                {
+                                  "name": "version",
+                                  "item": [
+                                    {
+                                      "name": "{version}",
+                                      "item": [
+                                        {
+                                          "name": "Show an installed profile",
+                                          "id": "2012919b-690a-42a3-9e10-d637e3b7257c",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/api/v0/compliance/profiles/read/:owner/:name/version/:version",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "api",
+                                                "v0",
+                                                "compliance",
+                                                "profiles",
+                                                "read",
+                                                ":owner",
+                                                ":name",
+                                                "version",
+                                                ":version"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "c1b298ee-6820-44f7-ba06-720553a320c6",
+                                                  "key": "owner",
+                                                  "value": "<string>",
+                                                  "description": "(Required) Automate user associated with the profile."
+                                                },
+                                                {
+                                                  "id": "794b6cf1-4b69-475f-889a-5165b7aeb36f",
+                                                  "key": "name",
+                                                  "value": "<string>",
+                                                  "description": "(Required) Name of the profile."
+                                                },
+                                                {
+                                                  "id": "73de45dd-b7ea-4505-be65-e2bc438561d4",
+                                                  "key": "version",
+                                                  "value": "<string>",
+                                                  "description": "(Required) Version of the profile."
+                                                }
+                                              ]
+                                            },
+                                            "description": "Show the details of an installed profile given the profile name, owner (Automate user associated with the profile), and version.\n\n\nAuthorization Action:\n```\ncompliance:profiles:get\n```"
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "1cb37ebb-15ad-4523-8132-7346f567dd31",
+                                              "name": "A successful response.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/api/v0/compliance/profiles/read/:owner/:name/version/:version",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "api",
+                                                    "v0",
+                                                    "compliance",
+                                                    "profiles",
+                                                    "read",
+                                                    ":owner",
+                                                    ":name",
+                                                    "version",
+                                                    ":version"
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "owner"
+                                                    },
+                                                    {
+                                                      "key": "name"
+                                                    },
+                                                    {
+                                                      "key": "version"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"name\": \"<string>\",\n  \"title\": \"<string>\",\n  \"maintainer\": \"<string>\",\n  \"copyright\": \"<string>\",\n  \"copyright_email\": \"<string>\",\n  \"license\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"version\": \"<string>\",\n  \"owner\": \"<string>\",\n  \"supports\": [\n    {\n      \"os_name\": \"<string>\",\n      \"os_family\": \"<string>\",\n      \"release\": \"<string>\",\n      \"inspec_version\": \"<string>\",\n      \"platform\": \"<string>\"\n    },\n    {\n      \"os_name\": \"<string>\",\n      \"os_family\": \"<string>\",\n      \"release\": \"<string>\",\n      \"inspec_version\": \"<string>\",\n      \"platform\": \"<string>\"\n    }\n  ],\n  \"depends\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"path\": \"<string>\",\n      \"git\": \"<string>\",\n      \"branch\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"commit\": \"<string>\",\n      \"version\": \"<string>\",\n      \"supermarket\": \"<string>\",\n      \"github\": \"<string>\",\n      \"compliance\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"path\": \"<string>\",\n      \"git\": \"<string>\",\n      \"branch\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"commit\": \"<string>\",\n      \"version\": \"<string>\",\n      \"supermarket\": \"<string>\",\n      \"github\": \"<string>\",\n      \"compliance\": \"<string>\"\n    }\n  ],\n  \"sha256\": \"<string>\",\n  \"groups\": [\n    {\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"controls\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"title\": \"<string>\",\n      \"controls\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"controls\": [\n    {\n      \"id\": \"<string>\",\n      \"code\": \"<string>\",\n      \"desc\": \"<string>\",\n      \"impact\": \"<float>\",\n      \"title\": \"<string>\",\n      \"source_location\": {\n        \"ref\": \"<string>\",\n        \"line\": \"<integer>\"\n      },\n      \"results\": [\n        {\n          \"status\": \"<string>\",\n          \"code_desc\": \"<string>\",\n          \"run_time\": \"<float>\",\n          \"start_time\": \"<string>\",\n          \"message\": \"<string>\",\n          \"skip_message\": \"<string>\"\n        },\n        {\n          \"status\": \"<string>\",\n          \"code_desc\": \"<string>\",\n          \"run_time\": \"<float>\",\n          \"start_time\": \"<string>\",\n          \"message\": \"<string>\",\n          \"skip_message\": \"<string>\"\n        }\n      ],\n      \"refs\": [\n        {\n          \"url\": \"<string>\",\n          \"ref\": \"<string>\"\n        },\n        {\n          \"url\": \"<string>\",\n          \"ref\": \"<string>\"\n        }\n      ],\n      \"tags\": {\n        \"occaecat_47a\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"code\": \"<string>\",\n      \"desc\": \"<string>\",\n      \"impact\": \"<float>\",\n      \"title\": \"<string>\",\n      \"source_location\": {\n        \"ref\": \"<string>\",\n        \"line\": \"<integer>\"\n      },\n      \"results\": [\n        {\n          \"status\": \"<string>\",\n          \"code_desc\": \"<string>\",\n          \"run_time\": \"<float>\",\n          \"start_time\": \"<string>\",\n          \"message\": \"<string>\",\n          \"skip_message\": \"<string>\"\n        },\n        {\n          \"status\": \"<string>\",\n          \"code_desc\": \"<string>\",\n          \"run_time\": \"<float>\",\n          \"start_time\": \"<string>\",\n          \"message\": \"<string>\",\n          \"skip_message\": \"<string>\"\n        }\n      ],\n      \"refs\": [\n        {\n          \"url\": \"<string>\",\n          \"ref\": \"<string>\"\n        },\n        {\n          \"url\": \"<string>\",\n          \"ref\": \"<string>\"\n        }\n      ],\n      \"tags\": {\n        \"dolore7ec\": \"<string>\"\n      }\n    }\n  ],\n  \"attributes\": [\n    {\n      \"name\": \"<string>\",\n      \"options\": {\n        \"description\": \"<string>\",\n        \"default\": \"<string>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"options\": {\n        \"description\": \"<string>\",\n        \"default\": \"<string>\"\n      }\n    }\n  ],\n  \"latest_version\": \"<string>\"\n}",
+                                              "createdAt": "2026-07-28T01:20:12.000Z",
+                                              "updatedAt": "2026-07-28T01:20:12.000Z",
+                                              "uid": "35240-1cb37ebb-15ad-4523-8132-7346f567dd31"
+                                            },
+                                            {
+                                              "id": "d237b918-36e7-4cb6-b3c7-189302f072f7",
+                                              "name": "An unexpected error response.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/api/v0/compliance/profiles/read/:owner/:name/version/:version",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "api",
+                                                    "v0",
+                                                    "compliance",
+                                                    "profiles",
+                                                    "read",
+                                                    ":owner",
+                                                    ":name",
+                                                    "version",
+                                                    ":version"
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "owner"
+                                                    },
+                                                    {
+                                                      "key": "name"
+                                                    },
+                                                    {
+                                                      "key": "version"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Internal Server Error",
+                                              "code": 500,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                              "createdAt": "2026-07-28T01:20:12.000Z",
+                                              "updatedAt": "2026-07-28T01:20:12.000Z",
+                                              "uid": "35240-d237b918-36e7-4cb6-b3c7-189302f072f7"
+                                            }
+                                          ],
+                                          "createdAt": "2026-07-28T01:20:12.000Z",
+                                          "updatedAt": "2026-07-28T01:20:12.000Z",
+                                          "uid": "35240-2012919b-690a-42a3-9e10-d637e3b7257c"
+                                        }
+                                      ],
+                                      "id": "3837cb63-34b1-4f8f-af76-1a509093925b",
+                                      "createdAt": "2026-07-28T01:20:12.000Z",
+                                      "updatedAt": "2026-07-28T01:20:12.000Z",
+                                      "uid": "35240-3837cb63-34b1-4f8f-af76-1a509093925b"
+                                    }
+                                  ],
+                                  "id": "352a6b0e-0564-45ca-856e-4a6ba0953d81",
+                                  "createdAt": "2026-07-28T01:20:12.000Z",
+                                  "updatedAt": "2026-07-28T01:20:12.000Z",
+                                  "uid": "35240-352a6b0e-0564-45ca-856e-4a6ba0953d81"
+                                }
+                              ],
+                              "id": "07273f38-124c-46d8-b742-4465aa434430",
+                              "createdAt": "2026-07-28T01:20:12.000Z",
+                              "updatedAt": "2026-07-28T01:20:12.000Z",
+                              "uid": "35240-07273f38-124c-46d8-b742-4465aa434430"
+                            }
+                          ],
+                          "id": "c17f9f13-4e5c-4e26-9d27-4ed5f0de5865",
+                          "createdAt": "2026-07-28T01:20:12.000Z",
+                          "updatedAt": "2026-07-28T01:20:12.000Z",
+                          "uid": "35240-c17f9f13-4e5c-4e26-9d27-4ed5f0de5865"
+                        }
+                      ],
+                      "id": "a848adc2-fc0f-4b86-ab81-e0a74779f3b7",
+                      "createdAt": "2026-07-28T01:20:12.000Z",
+                      "updatedAt": "2026-07-28T01:20:12.000Z",
+                      "uid": "35240-a848adc2-fc0f-4b86-ab81-e0a74779f3b7"
+                    },
+                    {
+                      "name": "search",
+                      "item": [
+                        {
+                          "name": "List all available profiles",
+                          "id": "84bceb8a-0ce6-4ce0-b079-e553bbb3893f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\",\n  \"owner\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/compliance/profiles/search",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "compliance",
+                                "profiles",
+                                "search"
+                              ]
+                            },
+                            "description": "Lists all profiles available for the Automate instance.\nEmpty params return all \"market\" profiles.\nSpecifying the `owner` field returns all profiles installed for the specified user.\n\nSupports pagination, sorting, and filtering (wildcard supported).\n\nSupported sort fields: title, name (default: title)\nSupported filter fields: name, version, title\n\nExample:\n```\n{\n\"filters\":[\n{\"type\": \"title\", \"values\": [ \"Dev*\"]}\n],\n\"page\": 1,\n\"per_page\": 3,\n\"owner\": \"admin\"\n}\n```\n\n\nAuthorization Action:\n```\ncompliance:profiles:list\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "fb927ca1-8749-4999-bd54-8eb13b962a63",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\",\n  \"owner\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/profiles/search",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "profiles",
+                                    "search"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"profiles\": [\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"maintainer\": \"<string>\",\n      \"copyright\": \"<string>\",\n      \"copyright_email\": \"<string>\",\n      \"license\": \"<string>\",\n      \"summary\": \"<string>\",\n      \"version\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"supports\": [\n        {\n          \"os_name\": \"<string>\",\n          \"os_family\": \"<string>\",\n          \"release\": \"<string>\",\n          \"inspec_version\": \"<string>\",\n          \"platform\": \"<string>\"\n        },\n        {\n          \"os_name\": \"<string>\",\n          \"os_family\": \"<string>\",\n          \"release\": \"<string>\",\n          \"inspec_version\": \"<string>\",\n          \"platform\": \"<string>\"\n        }\n      ],\n      \"depends\": [\n        {\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"path\": \"<string>\",\n          \"git\": \"<string>\",\n          \"branch\": \"<string>\",\n          \"tag\": \"<string>\",\n          \"commit\": \"<string>\",\n          \"version\": \"<string>\",\n          \"supermarket\": \"<string>\",\n          \"github\": \"<string>\",\n          \"compliance\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"path\": \"<string>\",\n          \"git\": \"<string>\",\n          \"branch\": \"<string>\",\n          \"tag\": \"<string>\",\n          \"commit\": \"<string>\",\n          \"version\": \"<string>\",\n          \"supermarket\": \"<string>\",\n          \"github\": \"<string>\",\n          \"compliance\": \"<string>\"\n        }\n      ],\n      \"sha256\": \"<string>\",\n      \"groups\": [\n        {\n          \"id\": \"<string>\",\n          \"title\": \"<string>\",\n          \"controls\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"id\": \"<string>\",\n          \"title\": \"<string>\",\n          \"controls\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"controls\": [\n        {\n          \"id\": \"<string>\",\n          \"code\": \"<string>\",\n          \"desc\": \"<string>\",\n          \"impact\": \"<float>\",\n          \"title\": \"<string>\",\n          \"source_location\": {\n            \"ref\": \"<string>\",\n            \"line\": \"<integer>\"\n          },\n          \"results\": [\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            },\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            },\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            }\n          ],\n          \"tags\": {\n            \"ut_321\": \"<string>\",\n            \"dolore_5_f\": \"<string>\"\n          }\n        },\n        {\n          \"id\": \"<string>\",\n          \"code\": \"<string>\",\n          \"desc\": \"<string>\",\n          \"impact\": \"<float>\",\n          \"title\": \"<string>\",\n          \"source_location\": {\n            \"ref\": \"<string>\",\n            \"line\": \"<integer>\"\n          },\n          \"results\": [\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            },\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            },\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            }\n          ],\n          \"tags\": {\n            \"incididunt9\": \"<string>\",\n            \"cillum735\": \"<string>\"\n          }\n        }\n      ],\n      \"attributes\": [\n        {\n          \"name\": \"<string>\",\n          \"options\": {\n            \"description\": \"<string>\",\n            \"default\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"options\": {\n            \"description\": \"<string>\",\n            \"default\": \"<string>\"\n          }\n        }\n      ],\n      \"latest_version\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"maintainer\": \"<string>\",\n      \"copyright\": \"<string>\",\n      \"copyright_email\": \"<string>\",\n      \"license\": \"<string>\",\n      \"summary\": \"<string>\",\n      \"version\": \"<string>\",\n      \"owner\": \"<string>\",\n      \"supports\": [\n        {\n          \"os_name\": \"<string>\",\n          \"os_family\": \"<string>\",\n          \"release\": \"<string>\",\n          \"inspec_version\": \"<string>\",\n          \"platform\": \"<string>\"\n        },\n        {\n          \"os_name\": \"<string>\",\n          \"os_family\": \"<string>\",\n          \"release\": \"<string>\",\n          \"inspec_version\": \"<string>\",\n          \"platform\": \"<string>\"\n        }\n      ],\n      \"depends\": [\n        {\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"path\": \"<string>\",\n          \"git\": \"<string>\",\n          \"branch\": \"<string>\",\n          \"tag\": \"<string>\",\n          \"commit\": \"<string>\",\n          \"version\": \"<string>\",\n          \"supermarket\": \"<string>\",\n          \"github\": \"<string>\",\n          \"compliance\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"path\": \"<string>\",\n          \"git\": \"<string>\",\n          \"branch\": \"<string>\",\n          \"tag\": \"<string>\",\n          \"commit\": \"<string>\",\n          \"version\": \"<string>\",\n          \"supermarket\": \"<string>\",\n          \"github\": \"<string>\",\n          \"compliance\": \"<string>\"\n        }\n      ],\n      \"sha256\": \"<string>\",\n      \"groups\": [\n        {\n          \"id\": \"<string>\",\n          \"title\": \"<string>\",\n          \"controls\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"id\": \"<string>\",\n          \"title\": \"<string>\",\n          \"controls\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"controls\": [\n        {\n          \"id\": \"<string>\",\n          \"code\": \"<string>\",\n          \"desc\": \"<string>\",\n          \"impact\": \"<float>\",\n          \"title\": \"<string>\",\n          \"source_location\": {\n            \"ref\": \"<string>\",\n            \"line\": \"<integer>\"\n          },\n          \"results\": [\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            },\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            },\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            }\n          ],\n          \"tags\": {\n            \"qui8f_\": \"<string>\",\n            \"fugiatf\": \"<string>\"\n          }\n        },\n        {\n          \"id\": \"<string>\",\n          \"code\": \"<string>\",\n          \"desc\": \"<string>\",\n          \"impact\": \"<float>\",\n          \"title\": \"<string>\",\n          \"source_location\": {\n            \"ref\": \"<string>\",\n            \"line\": \"<integer>\"\n          },\n          \"results\": [\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            },\n            {\n              \"status\": \"<string>\",\n              \"code_desc\": \"<string>\",\n              \"run_time\": \"<float>\",\n              \"start_time\": \"<string>\",\n              \"message\": \"<string>\",\n              \"skip_message\": \"<string>\"\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            },\n            {\n              \"url\": \"<string>\",\n              \"ref\": \"<string>\"\n            }\n          ],\n          \"tags\": {\n            \"nostrud18\": \"<string>\"\n          }\n        }\n      ],\n      \"attributes\": [\n        {\n          \"name\": \"<string>\",\n          \"options\": {\n            \"description\": \"<string>\",\n            \"default\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"options\": {\n            \"description\": \"<string>\",\n            \"default\": \"<string>\"\n          }\n        }\n      ],\n      \"latest_version\": \"<string>\"\n    }\n  ],\n  \"total\": \"<integer>\"\n}",
+                              "createdAt": "2026-07-28T01:20:12.000Z",
+                              "updatedAt": "2026-07-28T01:20:12.000Z",
+                              "uid": "35240-fb927ca1-8749-4999-bd54-8eb13b962a63"
+                            },
+                            {
+                              "id": "29ddd44d-33d0-42f4-b83f-d5d30646d6e0",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\",\n  \"owner\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/profiles/search",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "profiles",
+                                    "search"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:12.000Z",
+                              "updatedAt": "2026-07-28T01:20:12.000Z",
+                              "uid": "35240-29ddd44d-33d0-42f4-b83f-d5d30646d6e0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:12.000Z",
+                          "updatedAt": "2026-07-28T01:20:12.000Z",
+                          "uid": "35240-84bceb8a-0ce6-4ce0-b079-e553bbb3893f"
+                        }
+                      ],
+                      "id": "2a3815b4-5918-44a8-ba17-9acff993f6a4",
+                      "createdAt": "2026-07-28T01:20:12.000Z",
+                      "updatedAt": "2026-07-28T01:20:12.000Z",
+                      "uid": "35240-2a3815b4-5918-44a8-ba17-9acff993f6a4"
+                    },
+                    {
+                      "name": "{owner}",
+                      "item": [
+                        {
+                          "name": "{name}",
+                          "item": [
+                            {
+                              "name": "version",
+                              "item": [
+                                {
+                                  "name": "{version}",
+                                  "item": [
+                                    {
+                                      "name": "Delete an installed profile",
+                                      "id": "293da3c7-b3fa-40e6-95d8-1596d3f6046f",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/profiles/:owner/:name/version/:version",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "profiles",
+                                            ":owner",
+                                            ":name",
+                                            "version",
+                                            ":version"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "3d8f28e8-afd0-4613-a55c-fe718498463b",
+                                              "key": "owner",
+                                              "value": "<string>",
+                                              "description": "(Required) Automate user associated with the profile."
+                                            },
+                                            {
+                                              "id": "efc72cb3-efa4-4a33-9188-cc0d2a47de0d",
+                                              "key": "name",
+                                              "value": "<string>",
+                                              "description": "(Required) Name of the profile."
+                                            },
+                                            {
+                                              "id": "f1b5fe72-0d20-4253-982e-7915d9333484",
+                                              "key": "version",
+                                              "value": "<string>",
+                                              "description": "(Required) Version of the profile."
+                                            }
+                                          ]
+                                        },
+                                        "description": "Delete an installed profile given the profile name, owner (Automate user associated with the profile), and version.\nNote: this action \"uninstalls\" the profile. This has no impact on the market profiles.\n\n\nAuthorization Action:\n```\ncompliance:profiles:delete\n```"
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "e795c79a-aa7a-4c38-aaec-71497336bd21",
+                                          "name": "A successful response.",
+                                          "originalRequest": {
+                                            "method": "DELETE",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/api/v0/compliance/profiles/:owner/:name/version/:version",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "api",
+                                                "v0",
+                                                "compliance",
+                                                "profiles",
+                                                ":owner",
+                                                ":name",
+                                                "version",
+                                                ":version"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "owner"
+                                                },
+                                                {
+                                                  "key": "name"
+                                                },
+                                                {
+                                                  "key": "version"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{}",
+                                          "createdAt": "2026-07-28T01:20:12.000Z",
+                                          "updatedAt": "2026-07-28T01:20:12.000Z",
+                                          "uid": "35240-e795c79a-aa7a-4c38-aaec-71497336bd21"
+                                        },
+                                        {
+                                          "id": "7846abd4-5f28-4f23-98a6-445ba4d70be8",
+                                          "name": "An unexpected error response.",
+                                          "originalRequest": {
+                                            "method": "DELETE",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/api/v0/compliance/profiles/:owner/:name/version/:version",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "api",
+                                                "v0",
+                                                "compliance",
+                                                "profiles",
+                                                ":owner",
+                                                ":name",
+                                                "version",
+                                                ":version"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "owner"
+                                                },
+                                                {
+                                                  "key": "name"
+                                                },
+                                                {
+                                                  "key": "version"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                          "createdAt": "2026-07-28T01:20:12.000Z",
+                                          "updatedAt": "2026-07-28T01:20:12.000Z",
+                                          "uid": "35240-7846abd4-5f28-4f23-98a6-445ba4d70be8"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:20:12.000Z",
+                                      "updatedAt": "2026-07-28T01:20:12.000Z",
+                                      "uid": "35240-293da3c7-b3fa-40e6-95d8-1596d3f6046f"
+                                    }
+                                  ],
+                                  "id": "794119e8-770f-4804-b9b0-62afb4d1f301",
+                                  "createdAt": "2026-07-28T01:20:12.000Z",
+                                  "updatedAt": "2026-07-28T01:20:12.000Z",
+                                  "uid": "35240-794119e8-770f-4804-b9b0-62afb4d1f301"
+                                }
+                              ],
+                              "id": "3646be64-7341-4cad-bd38-6137cdc47eaf",
+                              "createdAt": "2026-07-28T01:20:12.000Z",
+                              "updatedAt": "2026-07-28T01:20:12.000Z",
+                              "uid": "35240-3646be64-7341-4cad-bd38-6137cdc47eaf"
+                            }
+                          ],
+                          "id": "6483c534-e32e-40da-8647-8bebb4e197d2",
+                          "createdAt": "2026-07-28T01:20:12.000Z",
+                          "updatedAt": "2026-07-28T01:20:12.000Z",
+                          "uid": "35240-6483c534-e32e-40da-8647-8bebb4e197d2"
+                        }
+                      ],
+                      "id": "93397fd7-0470-4677-9aaa-4c67dac64716",
+                      "createdAt": "2026-07-28T01:20:12.000Z",
+                      "updatedAt": "2026-07-28T01:20:12.000Z",
+                      "uid": "35240-93397fd7-0470-4677-9aaa-4c67dac64716"
+                    }
+                  ],
+                  "id": "a7cb5229-63a1-4f16-8e6f-d5444d9e0d6b",
+                  "createdAt": "2026-07-28T01:20:12.000Z",
+                  "updatedAt": "2026-07-28T01:20:12.000Z",
+                  "uid": "35240-a7cb5229-63a1-4f16-8e6f-d5444d9e0d6b"
+                }
+              ],
+              "id": "3ef5cc0e-71f8-4f4a-9535-6f34b50a61f4",
+              "createdAt": "2026-07-28T01:20:12.000Z",
+              "updatedAt": "2026-07-28T01:20:12.000Z",
+              "uid": "35240-3ef5cc0e-71f8-4f4a-9535-6f34b50a61f4"
+            }
+          ],
+          "id": "58b302b5-2f23-4f3b-ac15-eb110a7a343c",
+          "createdAt": "2026-07-28T01:20:12.000Z",
+          "updatedAt": "2026-07-28T01:20:12.000Z",
+          "uid": "35240-58b302b5-2f23-4f3b-ac15-eb110a7a343c"
+        }
+      ],
+      "id": "dd0cd6da-3fab-40f2-9a64-9b3504430471",
+      "createdAt": "2026-07-28T01:20:12.000Z",
+      "updatedAt": "2026-07-28T01:20:12.000Z",
+      "uid": "35240-dd0cd6da-3fab-40f2-9a64-9b3504430471"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

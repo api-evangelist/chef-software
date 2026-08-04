@@ -1,0 +1,2368 @@
+{
+  "info": {
+    "_postman_id": "2b9b1f1b-601e-4172-89e1-8bfab64764c8",
+    "name": "external/applications/applications.proto ApplicationsService DataLifecycle API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:58.000Z",
+    "updatedAt": "2026-07-28T01:19:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2b9b1f1b-601e-4172-89e1-8bfab64764c8"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "data-lifecycle",
+              "item": [
+                {
+                  "name": "compliance",
+                  "item": [
+                    {
+                      "name": "config",
+                      "item": [
+                        {
+                          "name": "SetComplianceConfig configures the compliance data lifecycle scheduler and jobs",
+                          "id": "c9acb4c2-5f1c-44f1-a422-61e5078f0da8",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"job_settings\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/compliance/config",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "compliance",
+                                "config"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "2ddedbfa-e556-4535-b734-7115a1fd9be7",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"job_settings\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/compliance/config",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "compliance",
+                                    "config"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-2ddedbfa-e556-4535-b734-7115a1fd9be7"
+                            },
+                            {
+                              "id": "cfb798c6-e464-4492-8aa7-00238d41af3b",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"job_settings\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/compliance/config",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "compliance",
+                                    "config"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-cfb798c6-e464-4492-8aa7-00238d41af3b"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-c9acb4c2-5f1c-44f1-a422-61e5078f0da8"
+                        }
+                      ],
+                      "id": "15ccdf0e-653b-41f1-acd6-3e7061918959",
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-15ccdf0e-653b-41f1-acd6-3e7061918959"
+                    },
+                    {
+                      "name": "run",
+                      "item": [
+                        {
+                          "name": "RunCompliance runs the compliance data lifecycle jobs",
+                          "id": "6f1bd4f0-0b50-4005-bce2-5212257193f7",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/compliance/run",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "compliance",
+                                "run"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "332925eb-7ce8-412b-b80f-ffc997475a0a",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/compliance/run",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "compliance",
+                                    "run"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-332925eb-7ce8-412b-b80f-ffc997475a0a"
+                            },
+                            {
+                              "id": "32b553d1-1704-40f8-82b4-933cd3b87934",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/compliance/run",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "compliance",
+                                    "run"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-32b553d1-1704-40f8-82b4-933cd3b87934"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-6f1bd4f0-0b50-4005-bce2-5212257193f7"
+                        }
+                      ],
+                      "id": "4f625d6c-629f-4469-a0d2-6bb16bf7fde4",
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-4f625d6c-629f-4469-a0d2-6bb16bf7fde4"
+                    },
+                    {
+                      "name": "status",
+                      "item": [
+                        {
+                          "name": "GetComplianceStatus returns the compliance job scheduler status",
+                          "id": "1d5c9696-3bd3-4396-b3b2-0f51bc7654c1",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/compliance/status",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "compliance",
+                                "status"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "52a90b51-0d1b-4434-a77f-82ba9eefb1da",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/compliance/status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "compliance",
+                                    "status"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"jobs\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      },\n      \"last_elapsed\": \"<string>\",\n      \"next_due_at\": \"<dateTime>\",\n      \"last_enqueued_at\": \"<dateTime>\",\n      \"last_started_at\": \"<dateTime>\",\n      \"last_ended_at\": \"<dateTime>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      },\n      \"last_elapsed\": \"<string>\",\n      \"next_due_at\": \"<dateTime>\",\n      \"last_enqueued_at\": \"<dateTime>\",\n      \"last_started_at\": \"<dateTime>\",\n      \"last_ended_at\": \"<dateTime>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-52a90b51-0d1b-4434-a77f-82ba9eefb1da"
+                            },
+                            {
+                              "id": "1d47684a-0fee-41f3-92d2-530daadfb935",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/compliance/status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "compliance",
+                                    "status"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-1d47684a-0fee-41f3-92d2-530daadfb935"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-1d5c9696-3bd3-4396-b3b2-0f51bc7654c1"
+                        }
+                      ],
+                      "id": "ddbb615b-4a04-4782-b410-26d00a6153e4",
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-ddbb615b-4a04-4782-b410-26d00a6153e4"
+                    }
+                  ],
+                  "id": "1ed4fc93-d4fa-4258-8e74-f96218f76758",
+                  "createdAt": "2026-07-28T01:19:58.000Z",
+                  "updatedAt": "2026-07-28T01:19:58.000Z",
+                  "uid": "35240-1ed4fc93-d4fa-4258-8e74-f96218f76758"
+                },
+                {
+                  "name": "config",
+                  "item": [
+                    {
+                      "name": "SetConfig provides a singular endpoint for configuring all data lifecycle jobs",
+                      "id": "27c31b4b-c815-4898-bf70-c6c816eef6bb",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"infra\": {\n    \"job_settings\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      }\n    ]\n  },\n  \"compliance\": {\n    \"job_settings\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      }\n    ]\n  },\n  \"event_feed\": {\n    \"job_settings\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      }\n    ]\n  },\n  \"services\": {\n    \"job_settings\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      }\n    ]\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/data-lifecycle/config",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "data-lifecycle",
+                            "config"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "d92ca52d-ff38-4293-9dea-6f27c26f3824",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"infra\": {\n    \"job_settings\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      }\n    ]\n  },\n  \"compliance\": {\n    \"job_settings\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      }\n    ]\n  },\n  \"event_feed\": {\n    \"job_settings\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      }\n    ]\n  },\n  \"services\": {\n    \"job_settings\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      }\n    ]\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/config",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "config"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-d92ca52d-ff38-4293-9dea-6f27c26f3824"
+                        },
+                        {
+                          "id": "bd80be83-2e6a-4790-add5-48aa5eef9d5d",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"infra\": {\n    \"job_settings\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      }\n    ]\n  },\n  \"compliance\": {\n    \"job_settings\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      }\n    ]\n  },\n  \"event_feed\": {\n    \"job_settings\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      }\n    ]\n  },\n  \"services\": {\n    \"job_settings\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\",\n              \"older_than_days\": \"<integer>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"policy_name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        }\n      }\n    ]\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/config",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "config"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-bd80be83-2e6a-4790-add5-48aa5eef9d5d"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-27c31b4b-c815-4898-bf70-c6c816eef6bb"
+                    }
+                  ],
+                  "id": "e43e8f5a-0db1-4999-8251-219beae132fd",
+                  "createdAt": "2026-07-28T01:19:58.000Z",
+                  "updatedAt": "2026-07-28T01:19:58.000Z",
+                  "uid": "35240-e43e8f5a-0db1-4999-8251-219beae132fd"
+                },
+                {
+                  "name": "event-feed",
+                  "item": [
+                    {
+                      "name": "config",
+                      "item": [
+                        {
+                          "name": "SetEventFeedConfig configures the event feed data lifecycle scheduler and jobs",
+                          "id": "dcefb1a2-e7ed-4cf0-89f4-2daec28535aa",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"job_settings\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/event-feed/config",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "event-feed",
+                                "config"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "3d57bf04-e6ff-464c-a27b-745b8687347e",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"job_settings\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/event-feed/config",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "event-feed",
+                                    "config"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-3d57bf04-e6ff-464c-a27b-745b8687347e"
+                            },
+                            {
+                              "id": "47c0b939-dc76-42ba-b44b-a6acffda975c",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"job_settings\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/event-feed/config",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "event-feed",
+                                    "config"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-47c0b939-dc76-42ba-b44b-a6acffda975c"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-dcefb1a2-e7ed-4cf0-89f4-2daec28535aa"
+                        }
+                      ],
+                      "id": "e218c060-cf40-46e7-ab84-8119422cb51c",
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-e218c060-cf40-46e7-ab84-8119422cb51c"
+                    },
+                    {
+                      "name": "run",
+                      "item": [
+                        {
+                          "name": "RunEventFeed runs the event feed data lifecycle jobs",
+                          "id": "189465b8-e0d8-46d1-a364-71731f818c2f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/event-feed/run",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "event-feed",
+                                "run"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "040dfd3b-4491-465a-936c-48c5407b9489",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/event-feed/run",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "event-feed",
+                                    "run"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-040dfd3b-4491-465a-936c-48c5407b9489"
+                            },
+                            {
+                              "id": "182a2c30-f15a-4864-8872-9c1e742421e7",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/event-feed/run",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "event-feed",
+                                    "run"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-182a2c30-f15a-4864-8872-9c1e742421e7"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-189465b8-e0d8-46d1-a364-71731f818c2f"
+                        }
+                      ],
+                      "id": "cc665cc8-8ee8-4007-843c-1084eaddd837",
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-cc665cc8-8ee8-4007-843c-1084eaddd837"
+                    },
+                    {
+                      "name": "status",
+                      "item": [
+                        {
+                          "name": "GetEventFeedStatus returns the event feed job scheduler status",
+                          "id": "1ae0e55c-999b-4248-84f7-8bebf90facd8",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/event-feed/status",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "event-feed",
+                                "status"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "6d1bc844-cc52-4335-bb5f-2316a383caef",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/event-feed/status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "event-feed",
+                                    "status"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"jobs\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      },\n      \"last_elapsed\": \"<string>\",\n      \"next_due_at\": \"<dateTime>\",\n      \"last_enqueued_at\": \"<dateTime>\",\n      \"last_started_at\": \"<dateTime>\",\n      \"last_ended_at\": \"<dateTime>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      },\n      \"last_elapsed\": \"<string>\",\n      \"next_due_at\": \"<dateTime>\",\n      \"last_enqueued_at\": \"<dateTime>\",\n      \"last_started_at\": \"<dateTime>\",\n      \"last_ended_at\": \"<dateTime>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-6d1bc844-cc52-4335-bb5f-2316a383caef"
+                            },
+                            {
+                              "id": "04d1fff7-6ea6-4507-9389-c60655ec250b",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/event-feed/status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "event-feed",
+                                    "status"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-04d1fff7-6ea6-4507-9389-c60655ec250b"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-1ae0e55c-999b-4248-84f7-8bebf90facd8"
+                        }
+                      ],
+                      "id": "4f09a740-faeb-46f5-80c1-450b3d12f44b",
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-4f09a740-faeb-46f5-80c1-450b3d12f44b"
+                    }
+                  ],
+                  "id": "156bbb50-4e74-41a9-ab77-280bbd778a38",
+                  "createdAt": "2026-07-28T01:19:58.000Z",
+                  "updatedAt": "2026-07-28T01:19:58.000Z",
+                  "uid": "35240-156bbb50-4e74-41a9-ab77-280bbd778a38"
+                },
+                {
+                  "name": "infra",
+                  "item": [
+                    {
+                      "name": "config",
+                      "item": [
+                        {
+                          "name": "SetInfraConfig configures the infra data lifecycle scheduler and jobs",
+                          "id": "d1beac56-6d79-42ca-9ca4-50854440a08e",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"job_settings\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/infra/config",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "infra",
+                                "config"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "bb3f7ced-ae39-4745-9110-029fb16fb78c",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"job_settings\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/infra/config",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "infra",
+                                    "config"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-bb3f7ced-ae39-4745-9110-029fb16fb78c"
+                            },
+                            {
+                              "id": "4140788d-95a8-4480-8352-41f0d8d936fe",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"job_settings\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/infra/config",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "infra",
+                                    "config"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-4140788d-95a8-4480-8352-41f0d8d936fe"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-d1beac56-6d79-42ca-9ca4-50854440a08e"
+                        }
+                      ],
+                      "id": "0f4e983c-66f6-4faf-9b30-27b83732a1a6",
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-0f4e983c-66f6-4faf-9b30-27b83732a1a6"
+                    },
+                    {
+                      "name": "run",
+                      "item": [
+                        {
+                          "name": "RunInfra runs the infra data lifecycle jobs",
+                          "id": "c5f837b1-272a-4efe-bf6d-2201c995605f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/infra/run",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "infra",
+                                "run"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "68a8e3c5-2283-41dc-be32-287bedf85357",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/infra/run",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "infra",
+                                    "run"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-68a8e3c5-2283-41dc-be32-287bedf85357"
+                            },
+                            {
+                              "id": "51f1d0c4-1282-468b-a249-8ab6ddcc31c5",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/infra/run",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "infra",
+                                    "run"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-51f1d0c4-1282-468b-a249-8ab6ddcc31c5"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-c5f837b1-272a-4efe-bf6d-2201c995605f"
+                        }
+                      ],
+                      "id": "f6293df4-7678-428c-89f0-32a478080f60",
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-f6293df4-7678-428c-89f0-32a478080f60"
+                    },
+                    {
+                      "name": "status",
+                      "item": [
+                        {
+                          "name": "GetInfraStatus returns the infra job scheduler status",
+                          "id": "78c9f9af-3309-4896-bcf6-a15f0a3617de",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/infra/status",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "infra",
+                                "status"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "575c7d65-7845-4861-a910-8fe06a8998dd",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/infra/status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "infra",
+                                    "status"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"jobs\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      },\n      \"last_elapsed\": \"<string>\",\n      \"next_due_at\": \"<dateTime>\",\n      \"last_enqueued_at\": \"<dateTime>\",\n      \"last_started_at\": \"<dateTime>\",\n      \"last_ended_at\": \"<dateTime>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      },\n      \"last_elapsed\": \"<string>\",\n      \"next_due_at\": \"<dateTime>\",\n      \"last_enqueued_at\": \"<dateTime>\",\n      \"last_started_at\": \"<dateTime>\",\n      \"last_ended_at\": \"<dateTime>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-575c7d65-7845-4861-a910-8fe06a8998dd"
+                            },
+                            {
+                              "id": "e25911b7-5ffb-42d1-a853-c4986e64c4b7",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/infra/status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "infra",
+                                    "status"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-e25911b7-5ffb-42d1-a853-c4986e64c4b7"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-78c9f9af-3309-4896-bcf6-a15f0a3617de"
+                        }
+                      ],
+                      "id": "eda415e7-19aa-47ba-a0d1-11a5885a821c",
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-eda415e7-19aa-47ba-a0d1-11a5885a821c"
+                    }
+                  ],
+                  "id": "09f52b43-d372-48e9-8e1b-079e9fbe80f6",
+                  "createdAt": "2026-07-28T01:19:58.000Z",
+                  "updatedAt": "2026-07-28T01:19:58.000Z",
+                  "uid": "35240-09f52b43-d372-48e9-8e1b-079e9fbe80f6"
+                },
+                {
+                  "name": "run",
+                  "item": [
+                    {
+                      "name": "Run runs all data lifecycle actions across all data lifecycle jobs",
+                      "id": "b77426de-4a61-40d4-916c-bb68676e7ecd",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/data-lifecycle/run",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "data-lifecycle",
+                            "run"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "8fa77455-17fd-4e77-ab78-bd607548af4b",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/run",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "run"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-8fa77455-17fd-4e77-ab78-bd607548af4b"
+                        },
+                        {
+                          "id": "abff5050-b5be-4d05-a475-42de41b510cf",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/run",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "run"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-abff5050-b5be-4d05-a475-42de41b510cf"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-b77426de-4a61-40d4-916c-bb68676e7ecd"
+                    }
+                  ],
+                  "id": "aceef5f6-4eec-433d-b034-7041a6f4e6c4",
+                  "createdAt": "2026-07-28T01:19:58.000Z",
+                  "updatedAt": "2026-07-28T01:19:58.000Z",
+                  "uid": "35240-aceef5f6-4eec-433d-b034-7041a6f4e6c4"
+                },
+                {
+                  "name": "services",
+                  "item": [
+                    {
+                      "name": "config",
+                      "item": [
+                        {
+                          "name": "Data Lifecycle Set Services Config",
+                          "id": "a03f904b-cd78-4cab-8254-ae7393df325e",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"job_settings\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/services/config",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "services",
+                                "config"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "b6f0732b-3f12-4c54-8e8c-14b2d5a9bfcc",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"job_settings\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/services/config",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "services",
+                                    "config"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-b6f0732b-3f12-4c54-8e8c-14b2d5a9bfcc"
+                            },
+                            {
+                              "id": "88b60fd6-eb79-4baa-b00b-b6d5d1e41e60",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"job_settings\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\",\n            \"older_than_days\": \"<integer>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"policy_name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/services/config",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "services",
+                                    "config"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-88b60fd6-eb79-4baa-b00b-b6d5d1e41e60"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-a03f904b-cd78-4cab-8254-ae7393df325e"
+                        }
+                      ],
+                      "id": "651aac30-1d6d-478c-871e-3d4ea1924480",
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-651aac30-1d6d-478c-871e-3d4ea1924480"
+                    },
+                    {
+                      "name": "run",
+                      "item": [
+                        {
+                          "name": "Data Lifecycle Run Services",
+                          "id": "264e622e-1ba1-48a2-afa7-51f0e30520f7",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/services/run",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "services",
+                                "run"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "3f1add0f-0cd9-49af-8453-35244b3305f1",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/services/run",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "services",
+                                    "run"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-3f1add0f-0cd9-49af-8453-35244b3305f1"
+                            },
+                            {
+                              "id": "7de8931d-2c25-4b06-b1a4-a556677961d5",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/services/run",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "services",
+                                    "run"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-7de8931d-2c25-4b06-b1a4-a556677961d5"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-264e622e-1ba1-48a2-afa7-51f0e30520f7"
+                        }
+                      ],
+                      "id": "7487b496-98f9-4864-8150-ae06dba2cad7",
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-7487b496-98f9-4864-8150-ae06dba2cad7"
+                    },
+                    {
+                      "name": "status",
+                      "item": [
+                        {
+                          "name": "Services",
+                          "id": "d78c2f04-bc49-4f6f-b471-4be7159506f8",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/services/status",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "services",
+                                "status"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "adddabf7-0c4d-4d19-b8c8-f6b3e9ada04f",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/services/status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "services",
+                                    "status"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"jobs\": [\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      },\n      \"last_elapsed\": \"<string>\",\n      \"next_due_at\": \"<dateTime>\",\n      \"last_enqueued_at\": \"<dateTime>\",\n      \"last_started_at\": \"<dateTime>\",\n      \"last_ended_at\": \"<dateTime>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"disabled\": \"<boolean>\",\n      \"recurrence\": \"<string>\",\n      \"threshold\": \"<string>\",\n      \"purge_policies\": {\n        \"elasticsearch\": [\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"index\": \"<string>\",\n            \"older_than_days\": \"<integer>\",\n            \"custom_purge_field\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ],\n        \"postgres\": [\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"disabled\": \"<boolean>\"\n          }\n        ]\n      },\n      \"last_elapsed\": \"<string>\",\n      \"next_due_at\": \"<dateTime>\",\n      \"last_enqueued_at\": \"<dateTime>\",\n      \"last_started_at\": \"<dateTime>\",\n      \"last_ended_at\": \"<dateTime>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-adddabf7-0c4d-4d19-b8c8-f6b3e9ada04f"
+                            },
+                            {
+                              "id": "117c68eb-039f-488f-a8dd-4d0002b8df83",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/data-lifecycle/services/status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "data-lifecycle",
+                                    "services",
+                                    "status"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:58.000Z",
+                              "updatedAt": "2026-07-28T01:19:58.000Z",
+                              "uid": "35240-117c68eb-039f-488f-a8dd-4d0002b8df83"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-d78c2f04-bc49-4f6f-b471-4be7159506f8"
+                        }
+                      ],
+                      "id": "a713f115-3e99-4a99-9e25-c3476f91c04e",
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-a713f115-3e99-4a99-9e25-c3476f91c04e"
+                    }
+                  ],
+                  "id": "1903660a-4f51-4a5d-b1de-0478267a5793",
+                  "createdAt": "2026-07-28T01:19:58.000Z",
+                  "updatedAt": "2026-07-28T01:19:58.000Z",
+                  "uid": "35240-1903660a-4f51-4a5d-b1de-0478267a5793"
+                },
+                {
+                  "name": "status",
+                  "item": [
+                    {
+                      "name": "GetStatus returns the aggregate status across all data lifecycle jobs",
+                      "id": "5b44b014-04d8-4bb6-881a-9f18d484ca99",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/data-lifecycle/status",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "data-lifecycle",
+                            "status"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "f0cc83b1-fd0a-4f2b-a670-848692512994",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/status",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "status"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"infra\": {\n    \"jobs\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        },\n        \"last_elapsed\": \"<string>\",\n        \"next_due_at\": \"<dateTime>\",\n        \"last_enqueued_at\": \"<dateTime>\",\n        \"last_started_at\": \"<dateTime>\",\n        \"last_ended_at\": \"<dateTime>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        },\n        \"last_elapsed\": \"<string>\",\n        \"next_due_at\": \"<dateTime>\",\n        \"last_enqueued_at\": \"<dateTime>\",\n        \"last_started_at\": \"<dateTime>\",\n        \"last_ended_at\": \"<dateTime>\"\n      }\n    ]\n  },\n  \"compliance\": {\n    \"jobs\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        },\n        \"last_elapsed\": \"<string>\",\n        \"next_due_at\": \"<dateTime>\",\n        \"last_enqueued_at\": \"<dateTime>\",\n        \"last_started_at\": \"<dateTime>\",\n        \"last_ended_at\": \"<dateTime>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        },\n        \"last_elapsed\": \"<string>\",\n        \"next_due_at\": \"<dateTime>\",\n        \"last_enqueued_at\": \"<dateTime>\",\n        \"last_started_at\": \"<dateTime>\",\n        \"last_ended_at\": \"<dateTime>\"\n      }\n    ]\n  },\n  \"event_feed\": {\n    \"jobs\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        },\n        \"last_elapsed\": \"<string>\",\n        \"next_due_at\": \"<dateTime>\",\n        \"last_enqueued_at\": \"<dateTime>\",\n        \"last_started_at\": \"<dateTime>\",\n        \"last_ended_at\": \"<dateTime>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        },\n        \"last_elapsed\": \"<string>\",\n        \"next_due_at\": \"<dateTime>\",\n        \"last_enqueued_at\": \"<dateTime>\",\n        \"last_started_at\": \"<dateTime>\",\n        \"last_ended_at\": \"<dateTime>\"\n      }\n    ]\n  },\n  \"services\": {\n    \"jobs\": [\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        },\n        \"last_elapsed\": \"<string>\",\n        \"next_due_at\": \"<dateTime>\",\n        \"last_enqueued_at\": \"<dateTime>\",\n        \"last_started_at\": \"<dateTime>\",\n        \"last_ended_at\": \"<dateTime>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"disabled\": \"<boolean>\",\n        \"recurrence\": \"<string>\",\n        \"threshold\": \"<string>\",\n        \"purge_policies\": {\n          \"elasticsearch\": [\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"index\": \"<string>\",\n              \"older_than_days\": \"<integer>\",\n              \"custom_purge_field\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ],\n          \"postgres\": [\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"disabled\": \"<boolean>\"\n            }\n          ]\n        },\n        \"last_elapsed\": \"<string>\",\n        \"next_due_at\": \"<dateTime>\",\n        \"last_enqueued_at\": \"<dateTime>\",\n        \"last_started_at\": \"<dateTime>\",\n        \"last_ended_at\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-f0cc83b1-fd0a-4f2b-a670-848692512994"
+                        },
+                        {
+                          "id": "88ff292c-283b-4363-90c4-6eae9e8d2af9",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/data-lifecycle/status",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "data-lifecycle",
+                                "status"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:58.000Z",
+                          "updatedAt": "2026-07-28T01:19:58.000Z",
+                          "uid": "35240-88ff292c-283b-4363-90c4-6eae9e8d2af9"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:58.000Z",
+                      "updatedAt": "2026-07-28T01:19:58.000Z",
+                      "uid": "35240-5b44b014-04d8-4bb6-881a-9f18d484ca99"
+                    }
+                  ],
+                  "id": "8e20ff1e-860b-4d43-9b8a-32f05478a3de",
+                  "createdAt": "2026-07-28T01:19:58.000Z",
+                  "updatedAt": "2026-07-28T01:19:58.000Z",
+                  "uid": "35240-8e20ff1e-860b-4d43-9b8a-32f05478a3de"
+                }
+              ],
+              "id": "cae0e72b-183b-470a-b8cc-72c079f07ba4",
+              "createdAt": "2026-07-28T01:19:58.000Z",
+              "updatedAt": "2026-07-28T01:19:58.000Z",
+              "uid": "35240-cae0e72b-183b-470a-b8cc-72c079f07ba4"
+            }
+          ],
+          "id": "4ced4deb-5120-4cee-9590-9d2005807822",
+          "createdAt": "2026-07-28T01:19:58.000Z",
+          "updatedAt": "2026-07-28T01:19:58.000Z",
+          "uid": "35240-4ced4deb-5120-4cee-9590-9d2005807822"
+        }
+      ],
+      "id": "2bbb9e81-3de1-4760-8b37-7f800fb6d0e3",
+      "createdAt": "2026-07-28T01:19:58.000Z",
+      "updatedAt": "2026-07-28T01:19:58.000Z",
+      "uid": "35240-2bbb9e81-3de1-4760-8b37-7f800fb6d0e3"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

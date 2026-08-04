@@ -1,0 +1,709 @@
+{
+  "info": {
+    "_postman_id": "737323f3-4abc-4aef-8181-36302b8bc4c8",
+    "name": "external/applications/applications.proto ApplicationsService Comp_Assets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:53.000Z",
+    "updatedAt": "2026-07-28T01:19:53.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-737323f3-4abc-4aef-8181-36302b8bc4c8"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "compliance",
+              "item": [
+                {
+                  "name": "reporting",
+                  "item": [
+                    {
+                      "name": "assets",
+                      "item": [
+                        {
+                          "name": "config",
+                          "item": [
+                            {
+                              "name": "search",
+                              "item": [
+                                {
+                                  "name": "Get Assets Config",
+                                  "id": "00f2a872-54b0-4d58-88c5-3fcbc334dc6b",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/assets/config/search",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "assets",
+                                        "config",
+                                        "search"
+                                      ]
+                                    },
+                                    "description": "GetAssetConfig gets the config details from the compliance data base \nand API return the policy name and no of days\nAuthorization Action:\n```\ncompliance:reports:get\n```"
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "4008da05-b088-4fc1-afa5-2b28e817735a",
+                                      "name": "A successful response.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/assets/config/search",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "assets",
+                                            "config",
+                                            "search"
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"policy_name\": \"<string>\",\n  \"value\": \"<integer>\"\n}",
+                                      "createdAt": "2026-07-28T01:19:54.000Z",
+                                      "updatedAt": "2026-07-28T01:19:54.000Z",
+                                      "uid": "35240-4008da05-b088-4fc1-afa5-2b28e817735a"
+                                    },
+                                    {
+                                      "id": "8734282c-c257-43ff-ab6e-4a054ab968ca",
+                                      "name": "An unexpected error response.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/assets/config/search",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "assets",
+                                            "config",
+                                            "search"
+                                          ]
+                                        }
+                                      },
+                                      "status": "Internal Server Error",
+                                      "code": 500,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                      "createdAt": "2026-07-28T01:19:54.000Z",
+                                      "updatedAt": "2026-07-28T01:19:54.000Z",
+                                      "uid": "35240-8734282c-c257-43ff-ab6e-4a054ab968ca"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:19:54.000Z",
+                                  "updatedAt": "2026-07-28T01:19:54.000Z",
+                                  "uid": "35240-00f2a872-54b0-4d58-88c5-3fcbc334dc6b"
+                                }
+                              ],
+                              "id": "77893239-c066-49b5-b5db-077106e7a7af",
+                              "createdAt": "2026-07-28T01:19:54.000Z",
+                              "updatedAt": "2026-07-28T01:19:54.000Z",
+                              "uid": "35240-77893239-c066-49b5-b5db-077106e7a7af"
+                            },
+                            {
+                              "name": "Set Unreachable Assets Config",
+                              "id": "7e15e7e0-b80b-453c-a5c5-6fd998883322",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"value\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/assets/config",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "assets",
+                                    "config"
+                                  ]
+                                },
+                                "description": "SetAssetConfig sets the compliance config with the parameters of no of days\nAnd API returns the policy name and no of the days which will set in the compliance data base\n\nAuthorization Action:\n```\ncompliance:reports:update\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "9e9a2954-c69a-4050-8e2d-4491f50f8dd9",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"value\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/assets/config",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "assets",
+                                        "config"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"policy_name\": \"<string>\",\n  \"value\": \"<integer>\"\n}",
+                                  "createdAt": "2026-07-28T01:19:54.000Z",
+                                  "updatedAt": "2026-07-28T01:19:54.000Z",
+                                  "uid": "35240-9e9a2954-c69a-4050-8e2d-4491f50f8dd9"
+                                },
+                                {
+                                  "id": "577e5c78-46eb-4316-a46c-a5a45e91c45f",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"value\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/assets/config",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "assets",
+                                        "config"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:19:54.000Z",
+                                  "updatedAt": "2026-07-28T01:19:54.000Z",
+                                  "uid": "35240-577e5c78-46eb-4316-a46c-a5a45e91c45f"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:19:54.000Z",
+                              "updatedAt": "2026-07-28T01:19:54.000Z",
+                              "uid": "35240-7e15e7e0-b80b-453c-a5c5-6fd998883322"
+                            }
+                          ],
+                          "id": "b3d29c94-f443-4679-af4f-8743e9ac374a",
+                          "createdAt": "2026-07-28T01:19:54.000Z",
+                          "updatedAt": "2026-07-28T01:19:54.000Z",
+                          "uid": "35240-b3d29c94-f443-4679-af4f-8743e9ac374a"
+                        },
+                        {
+                          "name": "count",
+                          "item": [
+                            {
+                              "name": "Assets Count",
+                              "id": "65c168f2-a0e7-47fa-8fe3-fda55e26967a",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/assets/count",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "assets",
+                                    "count"
+                                  ]
+                                },
+                                "description": "Count the compliance assets based on different filter options.\nThe API returns the response based on reported and unreported assets\n\nAuthorization Action:\n```\ncompliance:reports:list\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "6be1bfef-e783-45df-b9c7-89080f0d97bc",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/assets/count",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "assets",
+                                        "count"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"total_assets\": \"<integer>\",\n  \"collected\": {\n    \"passed\": \"<integer>\",\n    \"failed\": \"<integer>\",\n    \"skipped\": \"<integer>\",\n    \"waived\": \"<integer>\"\n  },\n  \"uncollected\": {\n    \"unreachable\": \"<integer>\",\n    \"unreported\": \"<integer>\"\n  }\n}",
+                                  "createdAt": "2026-07-28T01:19:54.000Z",
+                                  "updatedAt": "2026-07-28T01:19:54.000Z",
+                                  "uid": "35240-6be1bfef-e783-45df-b9c7-89080f0d97bc"
+                                },
+                                {
+                                  "id": "dbe9f7c8-6edd-4a74-a416-c08008fb166e",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/assets/count",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "assets",
+                                        "count"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:19:54.000Z",
+                                  "updatedAt": "2026-07-28T01:19:54.000Z",
+                                  "uid": "35240-dbe9f7c8-6edd-4a74-a416-c08008fb166e"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:19:54.000Z",
+                              "updatedAt": "2026-07-28T01:19:54.000Z",
+                              "uid": "35240-65c168f2-a0e7-47fa-8fe3-fda55e26967a"
+                            }
+                          ],
+                          "id": "2a5b8703-b2a6-4b14-8a30-5aab193d0d95",
+                          "createdAt": "2026-07-28T01:19:54.000Z",
+                          "updatedAt": "2026-07-28T01:19:54.000Z",
+                          "uid": "35240-2a5b8703-b2a6-4b14-8a30-5aab193d0d95"
+                        },
+                        {
+                          "name": "search",
+                          "item": [
+                            {
+                              "name": "List Assets",
+                              "id": "0e5d9741-cb0a-42d8-9c2b-a8580b1363fb",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"size\": \"<integer>\",\n  \"from\": \"<integer>\",\n  \"sort\": \"<string>\",\n  \"assets_type\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/assets/search",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "assets",
+                                    "search"
+                                  ]
+                                },
+                                "description": "Lists the compliance assets based on different filter options.\nThe API works with filtering assets based on collected, uncollected, unreported and unreachable assets\n\nAuthorization Action:\n```\ncompliance:reports:list\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "da785d27-7796-40e5-baa0-709e4531fc33",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"size\": \"<integer>\",\n  \"from\": \"<integer>\",\n  \"sort\": \"<string>\",\n  \"assets_type\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/assets/search",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "assets",
+                                        "search"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"assets\": [\n    {\n      \"node_uuid\": \"<string>\",\n      \"status\": \"<string>\",\n      \"first_run\": \"<string>\",\n      \"last_run\": \"<string>\"\n    },\n    {\n      \"node_uuid\": \"<string>\",\n      \"status\": \"<string>\",\n      \"first_run\": \"<string>\",\n      \"last_run\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:19:54.000Z",
+                                  "updatedAt": "2026-07-28T01:19:54.000Z",
+                                  "uid": "35240-da785d27-7796-40e5-baa0-709e4531fc33"
+                                },
+                                {
+                                  "id": "04e46382-d058-403a-884f-407061226491",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"size\": \"<integer>\",\n  \"from\": \"<integer>\",\n  \"sort\": \"<string>\",\n  \"assets_type\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/assets/search",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "assets",
+                                        "search"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:19:54.000Z",
+                                  "updatedAt": "2026-07-28T01:19:54.000Z",
+                                  "uid": "35240-04e46382-d058-403a-884f-407061226491"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:19:54.000Z",
+                              "updatedAt": "2026-07-28T01:19:54.000Z",
+                              "uid": "35240-0e5d9741-cb0a-42d8-9c2b-a8580b1363fb"
+                            }
+                          ],
+                          "id": "c1050cdb-2551-45f8-a4b5-078205892e4d",
+                          "createdAt": "2026-07-28T01:19:54.000Z",
+                          "updatedAt": "2026-07-28T01:19:54.000Z",
+                          "uid": "35240-c1050cdb-2551-45f8-a4b5-078205892e4d"
+                        }
+                      ],
+                      "id": "677a2709-8d3e-4138-a806-abcffdc5052f",
+                      "createdAt": "2026-07-28T01:19:54.000Z",
+                      "updatedAt": "2026-07-28T01:19:54.000Z",
+                      "uid": "35240-677a2709-8d3e-4138-a806-abcffdc5052f"
+                    }
+                  ],
+                  "id": "e9fc99f9-2c39-47f6-9211-a3a6811eafb8",
+                  "createdAt": "2026-07-28T01:19:54.000Z",
+                  "updatedAt": "2026-07-28T01:19:54.000Z",
+                  "uid": "35240-e9fc99f9-2c39-47f6-9211-a3a6811eafb8"
+                }
+              ],
+              "id": "c0124df3-bff3-425b-9644-272fb0887ad5",
+              "createdAt": "2026-07-28T01:19:54.000Z",
+              "updatedAt": "2026-07-28T01:19:54.000Z",
+              "uid": "35240-c0124df3-bff3-425b-9644-272fb0887ad5"
+            }
+          ],
+          "id": "b6b5d035-943f-4367-a8a5-dd518d8aecb8",
+          "createdAt": "2026-07-28T01:19:54.000Z",
+          "updatedAt": "2026-07-28T01:19:54.000Z",
+          "uid": "35240-b6b5d035-943f-4367-a8a5-dd518d8aecb8"
+        }
+      ],
+      "id": "f371c3a5-a1b9-4c3c-ab5f-8cbf56ea36ad",
+      "createdAt": "2026-07-28T01:19:54.000Z",
+      "updatedAt": "2026-07-28T01:19:54.000Z",
+      "uid": "35240-f371c3a5-a1b9-4c3c-ab5f-8cbf56ea36ad"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

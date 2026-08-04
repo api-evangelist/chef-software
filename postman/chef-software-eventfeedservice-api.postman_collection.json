@@ -1,0 +1,846 @@
+{
+  "info": {
+    "_postman_id": "3705baa1-4b4e-4625-bb84-d23652c15fb2",
+    "name": "external/applications/applications.proto ApplicationsService EventFeedService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:01.000Z",
+    "updatedAt": "2026-07-28T01:20:01.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3705baa1-4b4e-4625-bb84-d23652c15fb2"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "event_task_counts",
+              "item": [
+                {
+                  "name": "List Counts of Individual Event Tasks",
+                  "id": "f3d38ec5-5389-4992-b32c-07f5502047ed",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v0/event_task_counts?filter=<string>&filter=<string>&start=<int64>&end=<int64>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v0",
+                        "event_task_counts"
+                      ],
+                      "query": [
+                        {
+                          "description": "Filters to be applied to the request.",
+                          "key": "filter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filters to be applied to the request.",
+                          "key": "filter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Earliest events to return.",
+                          "key": "start",
+                          "value": "<int64>"
+                        },
+                        {
+                          "description": "Latest events to return.",
+                          "key": "end",
+                          "value": "<int64>"
+                        }
+                      ]
+                    },
+                    "description": "Returns the total counts of actions taken in an event. The counted actions are: update, create, and delete.\n\nExample:\n```\nevent_task_counts?start=1592546400000&end=1593151199999\n```\n\nAuthorization Action:\n```\nevent:events:list\n```"
+                  },
+                  "response": [
+                    {
+                      "id": "19eeef01-a9f9-42fe-bda8-d21680ac119c",
+                      "name": "A successful response.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/event_task_counts?filter=<string>&start=<int64>&end=<int64>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "event_task_counts"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filters to be applied to the request.",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Earliest events to return.",
+                              "key": "start",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Latest events to return.",
+                              "key": "end",
+                              "value": "<int64>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<int64>\",\n  \"counts\": [\n    {\n      \"name\": \"<string>\",\n      \"count\": \"<int64>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"count\": \"<int64>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:20:01.000Z",
+                      "updatedAt": "2026-07-28T01:20:01.000Z",
+                      "uid": "35240-19eeef01-a9f9-42fe-bda8-d21680ac119c"
+                    },
+                    {
+                      "id": "e8287197-7155-406f-b4e0-b3883ebd7986",
+                      "name": "An unexpected error response.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/event_task_counts?filter=<string>&start=<int64>&end=<int64>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "event_task_counts"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filters to be applied to the request.",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Earliest events to return.",
+                              "key": "start",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Latest events to return.",
+                              "key": "end",
+                              "value": "<int64>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:20:01.000Z",
+                      "updatedAt": "2026-07-28T01:20:01.000Z",
+                      "uid": "35240-e8287197-7155-406f-b4e0-b3883ebd7986"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:20:01.000Z",
+                  "updatedAt": "2026-07-28T01:20:01.000Z",
+                  "uid": "35240-f3d38ec5-5389-4992-b32c-07f5502047ed"
+                }
+              ],
+              "id": "ba78a45e-9fd3-4350-8ecf-fb247cda5097",
+              "createdAt": "2026-07-28T01:20:01.000Z",
+              "updatedAt": "2026-07-28T01:20:01.000Z",
+              "uid": "35240-ba78a45e-9fd3-4350-8ecf-fb247cda5097"
+            },
+            {
+              "name": "event_type_counts",
+              "item": [
+                {
+                  "name": "List Counts of Event Types",
+                  "id": "f2d42f6c-6135-41e5-b7c0-c5a283c862cd",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v0/event_type_counts?filter=<string>&filter=<string>&start=<int64>&end=<int64>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v0",
+                        "event_type_counts"
+                      ],
+                      "query": [
+                        {
+                          "description": "Filters to be applied to the request.",
+                          "key": "filter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filters to be applied to the request.",
+                          "key": "filter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Earliest events to return.",
+                          "key": "start",
+                          "value": "<int64>"
+                        },
+                        {
+                          "description": "Latest events to return.",
+                          "key": "end",
+                          "value": "<int64>"
+                        }
+                      ]
+                    },
+                    "description": "Returns totals for role, cookbook, and organization events.\n\nExample:\n```\nevent_type_counts?start=1592546400000&end=1593151199999\n```\n\nAuthorization Action:\n```\nevent:events:list\n```"
+                  },
+                  "response": [
+                    {
+                      "id": "5166ac91-8d53-4133-a786-da6288d7bebc",
+                      "name": "A successful response.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/event_type_counts?filter=<string>&start=<int64>&end=<int64>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "event_type_counts"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filters to be applied to the request.",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Earliest events to return.",
+                              "key": "start",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Latest events to return.",
+                              "key": "end",
+                              "value": "<int64>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<int64>\",\n  \"counts\": [\n    {\n      \"name\": \"<string>\",\n      \"count\": \"<int64>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"count\": \"<int64>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:20:01.000Z",
+                      "updatedAt": "2026-07-28T01:20:01.000Z",
+                      "uid": "35240-5166ac91-8d53-4133-a786-da6288d7bebc"
+                    },
+                    {
+                      "id": "5fd8d592-b259-450d-92e8-4c1a07292e87",
+                      "name": "An unexpected error response.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/event_type_counts?filter=<string>&start=<int64>&end=<int64>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "event_type_counts"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filters to be applied to the request.",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Earliest events to return.",
+                              "key": "start",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Latest events to return.",
+                              "key": "end",
+                              "value": "<int64>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:20:01.000Z",
+                      "updatedAt": "2026-07-28T01:20:01.000Z",
+                      "uid": "35240-5fd8d592-b259-450d-92e8-4c1a07292e87"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:20:01.000Z",
+                  "updatedAt": "2026-07-28T01:20:01.000Z",
+                  "uid": "35240-f2d42f6c-6135-41e5-b7c0-c5a283c862cd"
+                }
+              ],
+              "id": "e94f51f4-22dc-471c-8c8a-27a8b82b192c",
+              "createdAt": "2026-07-28T01:20:01.000Z",
+              "updatedAt": "2026-07-28T01:20:01.000Z",
+              "uid": "35240-e94f51f4-22dc-471c-8c8a-27a8b82b192c"
+            },
+            {
+              "name": "eventfeed",
+              "item": [
+                {
+                  "name": "List Events",
+                  "id": "dc1e0dff-a8d2-4c4c-8eb2-7c1fd88ecfc1",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v0/eventfeed?filter=<string>&filter=<string>&start=<int64>&end=<int64>&page_size=<integer>&after=<int64>&before=<int64>&cursor=<string>&collapse=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v0",
+                        "eventfeed"
+                      ],
+                      "query": [
+                        {
+                          "description": "Filters to be applied to the request.",
+                          "key": "filter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filters to be applied to the request.",
+                          "key": "filter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Earliest events to return.",
+                          "key": "start",
+                          "value": "<int64>"
+                        },
+                        {
+                          "description": "Latest events to return.",
+                          "key": "end",
+                          "value": "<int64>"
+                        },
+                        {
+                          "description": "Count of events to return per page.",
+                          "key": "page_size",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Used for pagination, to request results in ascending order.",
+                          "key": "after",
+                          "value": "<int64>"
+                        },
+                        {
+                          "description": "Used for pagination, to request results in descending order.",
+                          "key": "before",
+                          "value": "<int64>"
+                        },
+                        {
+                          "description": "Used for pagination, to bookmark next set of results.",
+                          "key": "cursor",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Used to group similar events together.",
+                          "key": "collapse",
+                          "value": "<boolean>"
+                        }
+                      ]
+                    },
+                    "description": "Returns a list of recorded events in Chef Automate, such as Infra Server events (cookbook creation, policyfile updates, and node creation) and Chef Automate internal events (profile installs and scan job creation).\nAdding a filter makes a list of all events that meet the filter criteria.\n\nExample:\n```\neventfeed?collapse=true&filter=organization:4thcafe&page_size=100&start=1592546400000&end=1593151199999\n```\n\nAuthorization Action:\n```\nevent:events:list\n```"
+                  },
+                  "response": [
+                    {
+                      "id": "f683d142-d77b-4a98-ae7f-6202a2bcb8fe",
+                      "name": "A successful response.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/eventfeed?filter=<string>&start=<int64>&end=<int64>&page_size=<integer>&after=<int64>&before=<int64>&cursor=<string>&collapse=<boolean>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "eventfeed"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filters to be applied to the request.",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Earliest events to return.",
+                              "key": "start",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Latest events to return.",
+                              "key": "end",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Count of events to return per page.",
+                              "key": "page_size",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Used for pagination, to request results in ascending order.",
+                              "key": "after",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Used for pagination, to request results in descending order.",
+                              "key": "before",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Used for pagination, to bookmark next set of results.",
+                              "key": "cursor",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Used to group similar events together.",
+                              "key": "collapse",
+                              "value": "<boolean>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"events\": [\n    {\n      \"event_type\": \"<string>\",\n      \"task\": \"<string>\",\n      \"start_time\": \"<dateTime>\",\n      \"entity_name\": \"<string>\",\n      \"requestor_type\": \"<string>\",\n      \"requestor_name\": \"<string>\",\n      \"service_hostname\": \"<string>\",\n      \"start_id\": \"<string>\",\n      \"event_count\": \"<integer>\",\n      \"parent_name\": \"<string>\",\n      \"parent_type\": \"<string>\",\n      \"end_time\": \"<dateTime>\",\n      \"end_id\": \"<string>\",\n      \"chef_organization\": \"<string>\",\n      \"chef_infra_server\": \"<string>\"\n    },\n    {\n      \"event_type\": \"<string>\",\n      \"task\": \"<string>\",\n      \"start_time\": \"<dateTime>\",\n      \"entity_name\": \"<string>\",\n      \"requestor_type\": \"<string>\",\n      \"requestor_name\": \"<string>\",\n      \"service_hostname\": \"<string>\",\n      \"start_id\": \"<string>\",\n      \"event_count\": \"<integer>\",\n      \"parent_name\": \"<string>\",\n      \"parent_type\": \"<string>\",\n      \"end_time\": \"<dateTime>\",\n      \"end_id\": \"<string>\",\n      \"chef_organization\": \"<string>\",\n      \"chef_infra_server\": \"<string>\"\n    }\n  ],\n  \"total_events\": \"<int64>\"\n}",
+                      "createdAt": "2026-07-28T01:20:01.000Z",
+                      "updatedAt": "2026-07-28T01:20:01.000Z",
+                      "uid": "35240-f683d142-d77b-4a98-ae7f-6202a2bcb8fe"
+                    },
+                    {
+                      "id": "4e708b18-672a-4a16-96bd-3da04583761a",
+                      "name": "An unexpected error response.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/eventfeed?filter=<string>&start=<int64>&end=<int64>&page_size=<integer>&after=<int64>&before=<int64>&cursor=<string>&collapse=<boolean>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "eventfeed"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filters to be applied to the request.",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Earliest events to return.",
+                              "key": "start",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Latest events to return.",
+                              "key": "end",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Count of events to return per page.",
+                              "key": "page_size",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Used for pagination, to request results in ascending order.",
+                              "key": "after",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Used for pagination, to request results in descending order.",
+                              "key": "before",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Used for pagination, to bookmark next set of results.",
+                              "key": "cursor",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Used to group similar events together.",
+                              "key": "collapse",
+                              "value": "<boolean>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:20:01.000Z",
+                      "updatedAt": "2026-07-28T01:20:01.000Z",
+                      "uid": "35240-4e708b18-672a-4a16-96bd-3da04583761a"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:20:01.000Z",
+                  "updatedAt": "2026-07-28T01:20:01.000Z",
+                  "uid": "35240-dc1e0dff-a8d2-4c4c-8eb2-7c1fd88ecfc1"
+                }
+              ],
+              "id": "7571fee8-7c4c-427c-9648-e4318eeb9913",
+              "createdAt": "2026-07-28T01:20:01.000Z",
+              "updatedAt": "2026-07-28T01:20:01.000Z",
+              "uid": "35240-7571fee8-7c4c-427c-9648-e4318eeb9913"
+            },
+            {
+              "name": "eventstrings",
+              "item": [
+                {
+                  "name": "List Summary Data of Events",
+                  "id": "879a3359-fa19-43f9-8685-971668cddb38",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v0/eventstrings?start=<string>&end=<string>&timezone=<string>&hours_between=<integer>&filter=<string>&filter=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v0",
+                        "eventstrings"
+                      ],
+                      "query": [
+                        {
+                          "description": "Earliest events to return.",
+                          "key": "start",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Latest events to return.",
+                          "key": "end",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "User timezone to apply to request.",
+                          "key": "timezone",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Interval for returned results, for example: 1 hour buckets.",
+                          "key": "hours_between",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Filters to be applied to the request.",
+                          "key": "filter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filters to be applied to the request.",
+                          "key": "filter",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Returns data that populates the guitar strings visual on the top of the event feed.\n\nExample:\n```\neventstrings?timezone=America/Denver&hours_between=1&start=2020-06-19&end=2020-06-25\n```\n\nAuthorization Action:\n```\nevent:events:list\n```"
+                  },
+                  "response": [
+                    {
+                      "id": "eb95c201-40be-448c-985e-503e987e27d6",
+                      "name": "A successful response.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/eventstrings?start=<string>&end=<string>&timezone=<string>&hours_between=<integer>&filter=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "eventstrings"
+                          ],
+                          "query": [
+                            {
+                              "description": "Earliest events to return.",
+                              "key": "start",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Latest events to return.",
+                              "key": "end",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "User timezone to apply to request.",
+                              "key": "timezone",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Interval for returned results, for example: 1 hour buckets.",
+                              "key": "hours_between",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Filters to be applied to the request.",
+                              "key": "filter",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"strings\": [\n    {\n      \"collection\": [\n        {\n          \"events_count\": [\n            {\n              \"name\": \"<string>\",\n              \"count\": \"<int64>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"count\": \"<int64>\"\n            }\n          ]\n        },\n        {\n          \"events_count\": [\n            {\n              \"name\": \"<string>\",\n              \"count\": \"<int64>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"count\": \"<int64>\"\n            }\n          ]\n        }\n      ],\n      \"event_action\": \"<string>\"\n    },\n    {\n      \"collection\": [\n        {\n          \"events_count\": [\n            {\n              \"name\": \"<string>\",\n              \"count\": \"<int64>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"count\": \"<int64>\"\n            }\n          ]\n        },\n        {\n          \"events_count\": [\n            {\n              \"name\": \"<string>\",\n              \"count\": \"<int64>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"count\": \"<int64>\"\n            }\n          ]\n        }\n      ],\n      \"event_action\": \"<string>\"\n    }\n  ],\n  \"start\": \"<string>\",\n  \"end\": \"<string>\",\n  \"hours_between\": \"<integer>\"\n}",
+                      "createdAt": "2026-07-28T01:20:01.000Z",
+                      "updatedAt": "2026-07-28T01:20:01.000Z",
+                      "uid": "35240-eb95c201-40be-448c-985e-503e987e27d6"
+                    },
+                    {
+                      "id": "19cf14c1-1e4f-401a-b319-bad921742a5b",
+                      "name": "An unexpected error response.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/eventstrings?start=<string>&end=<string>&timezone=<string>&hours_between=<integer>&filter=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "eventstrings"
+                          ],
+                          "query": [
+                            {
+                              "description": "Earliest events to return.",
+                              "key": "start",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Latest events to return.",
+                              "key": "end",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "User timezone to apply to request.",
+                              "key": "timezone",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Interval for returned results, for example: 1 hour buckets.",
+                              "key": "hours_between",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Filters to be applied to the request.",
+                              "key": "filter",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:20:01.000Z",
+                      "updatedAt": "2026-07-28T01:20:01.000Z",
+                      "uid": "35240-19cf14c1-1e4f-401a-b319-bad921742a5b"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:20:01.000Z",
+                  "updatedAt": "2026-07-28T01:20:01.000Z",
+                  "uid": "35240-879a3359-fa19-43f9-8685-971668cddb38"
+                }
+              ],
+              "id": "b501d71e-43b8-4572-9252-09aae8c1428d",
+              "createdAt": "2026-07-28T01:20:01.000Z",
+              "updatedAt": "2026-07-28T01:20:01.000Z",
+              "uid": "35240-b501d71e-43b8-4572-9252-09aae8c1428d"
+            }
+          ],
+          "id": "6f1625e5-9ed1-414f-a8b6-e8c8d52146bc",
+          "createdAt": "2026-07-28T01:20:01.000Z",
+          "updatedAt": "2026-07-28T01:20:01.000Z",
+          "uid": "35240-6f1625e5-9ed1-414f-a8b6-e8c8d52146bc"
+        }
+      ],
+      "id": "9310c99d-c3d3-41e0-84ad-f70fdac3ee09",
+      "createdAt": "2026-07-28T01:20:01.000Z",
+      "updatedAt": "2026-07-28T01:20:01.000Z",
+      "uid": "35240-9310c99d-c3d3-41e0-84ad-f70fdac3ee09"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

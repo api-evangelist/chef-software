@@ -1,0 +1,1619 @@
+{
+  "info": {
+    "_postman_id": "266f45d0-3cd3-4759-bee2-79956bbbce1e",
+    "name": "external/applications/applications.proto ApplicationsService service_groups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:35.000Z",
+    "updatedAt": "2026-07-28T01:20:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-266f45d0-3cd3-4759-bee2-79956bbbce1e"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "applications",
+              "item": [
+                {
+                  "name": "delete_disconnected_services",
+                  "item": [
+                    {
+                      "name": "Remove Disconnected Services",
+                      "id": "4f62c814-57e6-4c2e-a4ae-239c62b3acff",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"threshold_seconds\": \"<integer>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/applications/delete_disconnected_services",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "applications",
+                            "delete_disconnected_services"
+                          ]
+                        },
+                        "description": "Removes services marked as disconnected based on the `threshold_seconds` setting.\nThis function is not used by the API or CLI and is here for testing purposes.\nThe functionality is currently covered by a periodically running job that can be configured using `UpdateDeleteDisconnectedServicesConfig`.\n\nAuthorization Action:\n```\napplications:serviceGroups:delete\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "e06cf693-fd9e-4f31-a955-3774a4bce767",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"threshold_seconds\": \"<integer>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/delete_disconnected_services",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "delete_disconnected_services"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"services\": [\n    {\n      \"supervisor_id\": \"<string>\",\n      \"release\": \"<string>\",\n      \"group\": \"<string>\",\n      \"health_check\": \"OK\",\n      \"application\": \"<string>\",\n      \"environment\": \"<string>\",\n      \"fqdn\": \"<string>\",\n      \"channel\": \"<string>\",\n      \"update_strategy\": \"<string>\",\n      \"site\": \"<string>\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"<string>\",\n      \"health_updated_at\": \"<dateTime>\",\n      \"disconnected\": \"<boolean>\",\n      \"last_event_occurred_at\": \"<dateTime>\",\n      \"last_event_since\": \"<string>\",\n      \"health_check_result\": {\n        \"stdout\": \"<string>\",\n        \"stderr\": \"<string>\",\n        \"exit_status\": \"<integer>\"\n      },\n      \"id\": \"<string>\"\n    },\n    {\n      \"supervisor_id\": \"<string>\",\n      \"release\": \"<string>\",\n      \"group\": \"<string>\",\n      \"health_check\": \"OK\",\n      \"application\": \"<string>\",\n      \"environment\": \"<string>\",\n      \"fqdn\": \"<string>\",\n      \"channel\": \"<string>\",\n      \"update_strategy\": \"<string>\",\n      \"site\": \"<string>\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"<string>\",\n      \"health_updated_at\": \"<dateTime>\",\n      \"disconnected\": \"<boolean>\",\n      \"last_event_occurred_at\": \"<dateTime>\",\n      \"last_event_since\": \"<string>\",\n      \"health_check_result\": {\n        \"stdout\": \"<string>\",\n        \"stderr\": \"<string>\",\n        \"exit_status\": \"<integer>\"\n      },\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-e06cf693-fd9e-4f31-a955-3774a4bce767"
+                        },
+                        {
+                          "id": "3026b814-71d3-4366-bec0-862889aa9b75",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"threshold_seconds\": \"<integer>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/delete_disconnected_services",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "delete_disconnected_services"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-3026b814-71d3-4366-bec0-862889aa9b75"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:35.000Z",
+                      "updatedAt": "2026-07-28T01:20:35.000Z",
+                      "uid": "35240-4f62c814-57e6-4c2e-a4ae-239c62b3acff"
+                    }
+                  ],
+                  "id": "4eba439d-cd25-4f03-85c8-5fac7289f445",
+                  "createdAt": "2026-07-28T01:20:35.000Z",
+                  "updatedAt": "2026-07-28T01:20:35.000Z",
+                  "uid": "35240-4eba439d-cd25-4f03-85c8-5fac7289f445"
+                },
+                {
+                  "name": "delete_services_by_id",
+                  "item": [
+                    {
+                      "name": "Delete the services with the given IDs",
+                      "id": "a2497b65-af41-48c6-9856-f7e208c10887",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/applications/delete_services_by_id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "applications",
+                            "delete_services_by_id"
+                          ]
+                        },
+                        "description": "Authorization Action:\n```\napplications:serviceGroups:delete\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "d365815b-0083-4b1a-8bf2-fa63870d2cc6",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/delete_services_by_id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "delete_services_by_id"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"services\": [\n    {\n      \"supervisor_id\": \"<string>\",\n      \"release\": \"<string>\",\n      \"group\": \"<string>\",\n      \"health_check\": \"OK\",\n      \"application\": \"<string>\",\n      \"environment\": \"<string>\",\n      \"fqdn\": \"<string>\",\n      \"channel\": \"<string>\",\n      \"update_strategy\": \"<string>\",\n      \"site\": \"<string>\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"<string>\",\n      \"health_updated_at\": \"<dateTime>\",\n      \"disconnected\": \"<boolean>\",\n      \"last_event_occurred_at\": \"<dateTime>\",\n      \"last_event_since\": \"<string>\",\n      \"health_check_result\": {\n        \"stdout\": \"<string>\",\n        \"stderr\": \"<string>\",\n        \"exit_status\": \"<integer>\"\n      },\n      \"id\": \"<string>\"\n    },\n    {\n      \"supervisor_id\": \"<string>\",\n      \"release\": \"<string>\",\n      \"group\": \"<string>\",\n      \"health_check\": \"OK\",\n      \"application\": \"<string>\",\n      \"environment\": \"<string>\",\n      \"fqdn\": \"<string>\",\n      \"channel\": \"<string>\",\n      \"update_strategy\": \"<string>\",\n      \"site\": \"<string>\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"<string>\",\n      \"health_updated_at\": \"<dateTime>\",\n      \"disconnected\": \"<boolean>\",\n      \"last_event_occurred_at\": \"<dateTime>\",\n      \"last_event_since\": \"<string>\",\n      \"health_check_result\": {\n        \"stdout\": \"<string>\",\n        \"stderr\": \"<string>\",\n        \"exit_status\": \"<integer>\"\n      },\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-d365815b-0083-4b1a-8bf2-fa63870d2cc6"
+                        },
+                        {
+                          "id": "33e298a7-9d79-4276-852e-323ff4d9e675",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/delete_services_by_id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "delete_services_by_id"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-33e298a7-9d79-4276-852e-323ff4d9e675"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:35.000Z",
+                      "updatedAt": "2026-07-28T01:20:35.000Z",
+                      "uid": "35240-a2497b65-af41-48c6-9856-f7e208c10887"
+                    }
+                  ],
+                  "id": "7a041837-4776-4e47-ad24-bd0eaed43b5b",
+                  "createdAt": "2026-07-28T01:20:35.000Z",
+                  "updatedAt": "2026-07-28T01:20:35.000Z",
+                  "uid": "35240-7a041837-4776-4e47-ad24-bd0eaed43b5b"
+                },
+                {
+                  "name": "disconnected_services",
+                  "item": [
+                    {
+                      "name": "Mark Services as Disconnected",
+                      "id": "a8e5895e-c87d-4c95-93de-cfd0ea6b61a2",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/applications/disconnected_services?threshold_seconds=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "applications",
+                            "disconnected_services"
+                          ],
+                          "query": [
+                            {
+                              "description": "Threshold for marking services disconnected in seconds.",
+                              "key": "threshold_seconds",
+                              "value": "<integer>"
+                            }
+                          ]
+                        },
+                        "description": "Marks services as disconnected based on the `threshold_seconds` setting.\nThis function is not used by the API or CLI and is here for testing purposes.\nThe functionality is currently covered by a periodically running job that can be configured\nby utilizing the `UpdateDisconnectedServicesConfig` endpoint.\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "9ae379bd-c4dc-49f8-baac-096b6b78f7bb",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/disconnected_services?threshold_seconds=<integer>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "disconnected_services"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Threshold for marking services disconnected in seconds.",
+                                  "key": "threshold_seconds",
+                                  "value": "<integer>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"services\": [\n    {\n      \"supervisor_id\": \"<string>\",\n      \"release\": \"<string>\",\n      \"group\": \"<string>\",\n      \"health_check\": \"OK\",\n      \"application\": \"<string>\",\n      \"environment\": \"<string>\",\n      \"fqdn\": \"<string>\",\n      \"channel\": \"<string>\",\n      \"update_strategy\": \"<string>\",\n      \"site\": \"<string>\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"<string>\",\n      \"health_updated_at\": \"<dateTime>\",\n      \"disconnected\": \"<boolean>\",\n      \"last_event_occurred_at\": \"<dateTime>\",\n      \"last_event_since\": \"<string>\",\n      \"health_check_result\": {\n        \"stdout\": \"<string>\",\n        \"stderr\": \"<string>\",\n        \"exit_status\": \"<integer>\"\n      },\n      \"id\": \"<string>\"\n    },\n    {\n      \"supervisor_id\": \"<string>\",\n      \"release\": \"<string>\",\n      \"group\": \"<string>\",\n      \"health_check\": \"OK\",\n      \"application\": \"<string>\",\n      \"environment\": \"<string>\",\n      \"fqdn\": \"<string>\",\n      \"channel\": \"<string>\",\n      \"update_strategy\": \"<string>\",\n      \"site\": \"<string>\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"<string>\",\n      \"health_updated_at\": \"<dateTime>\",\n      \"disconnected\": \"<boolean>\",\n      \"last_event_occurred_at\": \"<dateTime>\",\n      \"last_event_since\": \"<string>\",\n      \"health_check_result\": {\n        \"stdout\": \"<string>\",\n        \"stderr\": \"<string>\",\n        \"exit_status\": \"<integer>\"\n      },\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-9ae379bd-c4dc-49f8-baac-096b6b78f7bb"
+                        },
+                        {
+                          "id": "3fedd460-017e-41ad-9235-0320e306b766",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/disconnected_services?threshold_seconds=<integer>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "disconnected_services"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Threshold for marking services disconnected in seconds.",
+                                  "key": "threshold_seconds",
+                                  "value": "<integer>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-3fedd460-017e-41ad-9235-0320e306b766"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:35.000Z",
+                      "updatedAt": "2026-07-28T01:20:35.000Z",
+                      "uid": "35240-a8e5895e-c87d-4c95-93de-cfd0ea6b61a2"
+                    }
+                  ],
+                  "id": "cb2f385a-65ad-493d-93ab-1372315672aa",
+                  "createdAt": "2026-07-28T01:20:35.000Z",
+                  "updatedAt": "2026-07-28T01:20:35.000Z",
+                  "uid": "35240-cb2f385a-65ad-493d-93ab-1372315672aa"
+                },
+                {
+                  "name": "service-groups",
+                  "item": [
+                    {
+                      "name": "{service_group_id}",
+                      "item": [
+                        {
+                          "name": "List Services for a Service Group",
+                          "id": "26d36bb9-8451-4e2f-a2d9-62279a59d34a",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/service-groups/:service_group_id?pagination.page=<integer>&pagination.size=<integer>&sorting.field=<string>&sorting.order=ASC&filter=<string>&filter=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "service-groups",
+                                ":service_group_id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Page number of the results to return.",
+                                  "key": "pagination.page",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Amount of results to include per page.",
+                                  "key": "pagination.size",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Field to sort the list results on.",
+                                  "key": "sorting.field",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Order the results should be returned in.",
+                                  "key": "sorting.order",
+                                  "value": "ASC"
+                                },
+                                {
+                                  "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters.",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters.",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "0d3608f3-ef37-484b-a19d-ba2a86adde8c",
+                                  "key": "service_group_id",
+                                  "value": "<string>",
+                                  "description": "(Required) Service group ID."
+                                }
+                              ]
+                            },
+                            "description": "List the services for a service group with health status and service metadata.\nUses the service group ID generated by Chef Automate instead of the Chef Habitat- provided ID.\nSupports pagination and filtering.\n\nExample:\n```\napplications/service-groups/1dfff679054c60a10c51d059b6dbf81a765c46f8d3e8ce0752b22ffe8d4d9716?pagination.page=1&pagination.size=25\n```\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "33593f85-a81d-4cf2-9df3-f959f3e3b4c2",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/applications/service-groups/:service_group_id?pagination.page=<integer>&pagination.size=<integer>&sorting.field=<string>&sorting.order=ASC&filter=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "applications",
+                                    "service-groups",
+                                    ":service_group_id"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Page number of the results to return.",
+                                      "key": "pagination.page",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "description": "Amount of results to include per page.",
+                                      "key": "pagination.size",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "description": "Field to sort the list results on.",
+                                      "key": "sorting.field",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Order the results should be returned in.",
+                                      "key": "sorting.order",
+                                      "value": "ASC"
+                                    },
+                                    {
+                                      "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters.",
+                                      "key": "filter",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "service_group_id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"group\": \"<string>\",\n  \"services\": [\n    {\n      \"supervisor_id\": \"<string>\",\n      \"release\": \"<string>\",\n      \"group\": \"<string>\",\n      \"health_check\": \"OK\",\n      \"application\": \"<string>\",\n      \"environment\": \"<string>\",\n      \"fqdn\": \"<string>\",\n      \"channel\": \"<string>\",\n      \"update_strategy\": \"<string>\",\n      \"site\": \"<string>\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"<string>\",\n      \"health_updated_at\": \"<dateTime>\",\n      \"disconnected\": \"<boolean>\",\n      \"last_event_occurred_at\": \"<dateTime>\",\n      \"last_event_since\": \"<string>\",\n      \"health_check_result\": {\n        \"stdout\": \"<string>\",\n        \"stderr\": \"<string>\",\n        \"exit_status\": \"<integer>\"\n      },\n      \"id\": \"<string>\"\n    },\n    {\n      \"supervisor_id\": \"<string>\",\n      \"release\": \"<string>\",\n      \"group\": \"<string>\",\n      \"health_check\": \"OK\",\n      \"application\": \"<string>\",\n      \"environment\": \"<string>\",\n      \"fqdn\": \"<string>\",\n      \"channel\": \"<string>\",\n      \"update_strategy\": \"<string>\",\n      \"site\": \"<string>\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"<string>\",\n      \"health_updated_at\": \"<dateTime>\",\n      \"disconnected\": \"<boolean>\",\n      \"last_event_occurred_at\": \"<dateTime>\",\n      \"last_event_since\": \"<string>\",\n      \"health_check_result\": {\n        \"stdout\": \"<string>\",\n        \"stderr\": \"<string>\",\n        \"exit_status\": \"<integer>\"\n      },\n      \"id\": \"<string>\"\n    }\n  ],\n  \"services_health_counts\": {\n    \"total\": \"<integer>\",\n    \"ok\": \"<integer>\",\n    \"warning\": \"<integer>\",\n    \"critical\": \"<integer>\",\n    \"unknown\": \"<integer>\",\n    \"disconnected\": \"<integer>\"\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:35.000Z",
+                              "updatedAt": "2026-07-28T01:20:35.000Z",
+                              "uid": "35240-33593f85-a81d-4cf2-9df3-f959f3e3b4c2"
+                            },
+                            {
+                              "id": "7a817566-d4c6-4969-897e-ac85eddb888d",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/applications/service-groups/:service_group_id?pagination.page=<integer>&pagination.size=<integer>&sorting.field=<string>&sorting.order=ASC&filter=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "applications",
+                                    "service-groups",
+                                    ":service_group_id"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Page number of the results to return.",
+                                      "key": "pagination.page",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "description": "Amount of results to include per page.",
+                                      "key": "pagination.size",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "description": "Field to sort the list results on.",
+                                      "key": "sorting.field",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Order the results should be returned in.",
+                                      "key": "sorting.order",
+                                      "value": "ASC"
+                                    },
+                                    {
+                                      "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters.",
+                                      "key": "filter",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "service_group_id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:35.000Z",
+                              "updatedAt": "2026-07-28T01:20:35.000Z",
+                              "uid": "35240-7a817566-d4c6-4969-897e-ac85eddb888d"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-26d36bb9-8451-4e2f-a2d9-62279a59d34a"
+                        }
+                      ],
+                      "id": "28a575b5-5cf2-481c-9afd-f007b567e062",
+                      "createdAt": "2026-07-28T01:20:35.000Z",
+                      "updatedAt": "2026-07-28T01:20:35.000Z",
+                      "uid": "35240-28a575b5-5cf2-481c-9afd-f007b567e062"
+                    },
+                    {
+                      "name": "List Service Groups",
+                      "id": "23b9ad2c-368a-46e9-ac35-c655d4fec512",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/applications/service-groups?filter=<string>&filter=<string>&pagination.page=<integer>&pagination.size=<integer>&sorting.field=<string>&sorting.order=ASC",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "applications",
+                            "service-groups"
+                          ],
+                          "query": [
+                            {
+                              "description": "Applies search and status filters, in the format of `fieldname:value` or `status:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine the service group results by a service's\n most recent connected/disconnected state or healthcheck result.\n\n Valid status filter parameters are:\n* `status:disconnected`: returns service groups with at least one service in a disconnected state\n* `status:critical`: returns service groups with a with at least one service in a \"critical\" healthcheck result\n* `status:unknown`: returns service groups with at least one service with an \"unknown\" healthcheck result\n* `status:warning`: returns service groups with at least one service with a \"warning\" healthcheck result\n* `status:ok`: returns service groups with at least one service with an \"ok\" health check result",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Applies search and status filters, in the format of `fieldname:value` or `status:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine the service group results by a service's\n most recent connected/disconnected state or healthcheck result.\n\n Valid status filter parameters are:\n* `status:disconnected`: returns service groups with at least one service in a disconnected state\n* `status:critical`: returns service groups with a with at least one service in a \"critical\" healthcheck result\n* `status:unknown`: returns service groups with at least one service with an \"unknown\" healthcheck result\n* `status:warning`: returns service groups with at least one service with a \"warning\" healthcheck result\n* `status:ok`: returns service groups with at least one service with an \"ok\" health check result",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Page number of the results to return.",
+                              "key": "pagination.page",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Amount of results to include per page.",
+                              "key": "pagination.size",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Field to sort the list results on.",
+                              "key": "sorting.field",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Order the results should be returned in.",
+                              "key": "sorting.order",
+                              "value": "ASC"
+                            }
+                          ]
+                        },
+                        "description": "Lists service groups with name, health information, and application, environment, package, release metadata.\nAccepts pagination, sorting, search, and status filters.\n\nExample:\n```\napplications/service-groups?sorting.field=percent_ok&sorting.order=ASC&pagination.page=1&pagination.size=25\n```\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "9ac42cd6-d0bd-480a-97d1-c38103d5ab7f",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/service-groups?filter=<string>&pagination.page=<integer>&pagination.size=<integer>&sorting.field=<string>&sorting.order=ASC",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "service-groups"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Applies search and status filters, in the format of `fieldname:value` or `status:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine the service group results by a service's\n most recent connected/disconnected state or healthcheck result.\n\n Valid status filter parameters are:\n* `status:disconnected`: returns service groups with at least one service in a disconnected state\n* `status:critical`: returns service groups with a with at least one service in a \"critical\" healthcheck result\n* `status:unknown`: returns service groups with at least one service with an \"unknown\" healthcheck result\n* `status:warning`: returns service groups with at least one service with a \"warning\" healthcheck result\n* `status:ok`: returns service groups with at least one service with an \"ok\" health check result",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Page number of the results to return.",
+                                  "key": "pagination.page",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Amount of results to include per page.",
+                                  "key": "pagination.size",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Field to sort the list results on.",
+                                  "key": "sorting.field",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Order the results should be returned in.",
+                                  "key": "sorting.order",
+                                  "value": "ASC"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"service_groups\": [\n    {\n      \"name\": \"<string>\",\n      \"release\": \"<string>\",\n      \"status\": \"OK\",\n      \"health_percentage\": \"<integer>\",\n      \"services_health_counts\": {\n        \"total\": \"<integer>\",\n        \"ok\": \"<integer>\",\n        \"warning\": \"<integer>\",\n        \"critical\": \"<integer>\",\n        \"unknown\": \"<integer>\",\n        \"disconnected\": \"<integer>\"\n      },\n      \"id\": \"<string>\",\n      \"application\": \"<string>\",\n      \"environment\": \"<string>\",\n      \"package\": \"<string>\",\n      \"disconnected_count\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"release\": \"<string>\",\n      \"status\": \"OK\",\n      \"health_percentage\": \"<integer>\",\n      \"services_health_counts\": {\n        \"total\": \"<integer>\",\n        \"ok\": \"<integer>\",\n        \"warning\": \"<integer>\",\n        \"critical\": \"<integer>\",\n        \"unknown\": \"<integer>\",\n        \"disconnected\": \"<integer>\"\n      },\n      \"id\": \"<string>\",\n      \"application\": \"<string>\",\n      \"environment\": \"<string>\",\n      \"package\": \"<string>\",\n      \"disconnected_count\": \"<integer>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-9ac42cd6-d0bd-480a-97d1-c38103d5ab7f"
+                        },
+                        {
+                          "id": "e0aedf7c-28d8-458e-acce-17400e1dad3d",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/service-groups?filter=<string>&pagination.page=<integer>&pagination.size=<integer>&sorting.field=<string>&sorting.order=ASC",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "service-groups"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Applies search and status filters, in the format of `fieldname:value` or `status:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine the service group results by a service's\n most recent connected/disconnected state or healthcheck result.\n\n Valid status filter parameters are:\n* `status:disconnected`: returns service groups with at least one service in a disconnected state\n* `status:critical`: returns service groups with a with at least one service in a \"critical\" healthcheck result\n* `status:unknown`: returns service groups with at least one service with an \"unknown\" healthcheck result\n* `status:warning`: returns service groups with at least one service with a \"warning\" healthcheck result\n* `status:ok`: returns service groups with at least one service with an \"ok\" health check result",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Page number of the results to return.",
+                                  "key": "pagination.page",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Amount of results to include per page.",
+                                  "key": "pagination.size",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Field to sort the list results on.",
+                                  "key": "sorting.field",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Order the results should be returned in.",
+                                  "key": "sorting.order",
+                                  "value": "ASC"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-e0aedf7c-28d8-458e-acce-17400e1dad3d"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:35.000Z",
+                      "updatedAt": "2026-07-28T01:20:35.000Z",
+                      "uid": "35240-23b9ad2c-368a-46e9-ac35-c655d4fec512"
+                    }
+                  ],
+                  "id": "ccd564ba-f91a-4f70-97e8-e3507ee57b9a",
+                  "createdAt": "2026-07-28T01:20:35.000Z",
+                  "updatedAt": "2026-07-28T01:20:35.000Z",
+                  "uid": "35240-ccd564ba-f91a-4f70-97e8-e3507ee57b9a"
+                },
+                {
+                  "name": "service_groups_health_counts",
+                  "item": [
+                    {
+                      "name": "List Service Groups Health Counts",
+                      "id": "55a046b4-ceaf-4396-9b60-a3ec3934988f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/applications/service_groups_health_counts?filter=<string>&filter=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "applications",
+                            "service_groups_health_counts"
+                          ],
+                          "query": [
+                            {
+                              "description": "Applies search filters, in the format of `fieldname:value`.\nSee the documentation for ServiceGroupsReq for valid filter parameters.",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Applies search filters, in the format of `fieldname:value`.\nSee the documentation for ServiceGroupsReq for valid filter parameters.",
+                              "key": "filter",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Lists the total service group health reports by critical, warning, ok and unknown responses. Supports search and status filtering.\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "d7c98764-e599-4d12-852d-776dd3c0fb20",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/service_groups_health_counts?filter=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "service_groups_health_counts"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Applies search filters, in the format of `fieldname:value`.\nSee the documentation for ServiceGroupsReq for valid filter parameters.",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"total\": \"<integer>\",\n  \"ok\": \"<integer>\",\n  \"warning\": \"<integer>\",\n  \"critical\": \"<integer>\",\n  \"unknown\": \"<integer>\",\n  \"disconnected\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-d7c98764-e599-4d12-852d-776dd3c0fb20"
+                        },
+                        {
+                          "id": "1df39495-b828-44b2-9d86-c62d212f8e9e",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/service_groups_health_counts?filter=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "service_groups_health_counts"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Applies search filters, in the format of `fieldname:value`.\nSee the documentation for ServiceGroupsReq for valid filter parameters.",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-1df39495-b828-44b2-9d86-c62d212f8e9e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:35.000Z",
+                      "updatedAt": "2026-07-28T01:20:35.000Z",
+                      "uid": "35240-55a046b4-ceaf-4396-9b60-a3ec3934988f"
+                    }
+                  ],
+                  "id": "1727f3af-f832-4004-aaff-0a20e32c07dd",
+                  "createdAt": "2026-07-28T01:20:35.000Z",
+                  "updatedAt": "2026-07-28T01:20:35.000Z",
+                  "uid": "35240-1727f3af-f832-4004-aaff-0a20e32c07dd"
+                },
+                {
+                  "name": "services",
+                  "item": [
+                    {
+                      "name": "List Services",
+                      "id": "be39611c-14c1-42e1-b609-8216f9e5cdf2",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/applications/services?filter=<string>&filter=<string>&pagination.page=<integer>&pagination.size=<integer>&sorting.field=<string>&sorting.order=ASC",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "applications",
+                            "services"
+                          ],
+                          "query": [
+                            {
+                              "description": "Applies search filters, in the format of `fieldname:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine service results by a service's\n current state or most recent healthcheck result.\n Disconnected services keep their last healthcheck result\n until their reports are removed by Chef Automate.\n When you apply a healthcheck filter, the report includes\n all recently disconnected services.\n Valid status filter parameters are:\n* `status:disconnected`: returns services in a disconnected state\n* `status:critical`: returns services with a \"critical\" healthcheck result\n* `status:unknown`: returns services with an \"unknown\" healthcheck result\n* `status:warning`: returns services with a \"warning\" healthcheck result\n* `status:ok`: returns services with an  \"ok\" health check result",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Applies search filters, in the format of `fieldname:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine service results by a service's\n current state or most recent healthcheck result.\n Disconnected services keep their last healthcheck result\n until their reports are removed by Chef Automate.\n When you apply a healthcheck filter, the report includes\n all recently disconnected services.\n Valid status filter parameters are:\n* `status:disconnected`: returns services in a disconnected state\n* `status:critical`: returns services with a \"critical\" healthcheck result\n* `status:unknown`: returns services with an \"unknown\" healthcheck result\n* `status:warning`: returns services with a \"warning\" healthcheck result\n* `status:ok`: returns services with an  \"ok\" health check result",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Page number of the results to return.",
+                              "key": "pagination.page",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Amount of results to include per page.",
+                              "key": "pagination.size",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Field to sort the list results on.",
+                              "key": "sorting.field",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Order the results should be returned in.",
+                              "key": "sorting.order",
+                              "value": "ASC"
+                            }
+                          ]
+                        },
+                        "description": "Lists service health status and service metadata for services.\nSupports pagination and search and status filtering. For a list of services for a specific service-group see \"List Services for a Service Group\" (GetServicesBySG endpoint).\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "36e212af-4623-4aac-88fc-d50d9d775283",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/services?filter=<string>&pagination.page=<integer>&pagination.size=<integer>&sorting.field=<string>&sorting.order=ASC",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "services"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Applies search filters, in the format of `fieldname:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine service results by a service's\n current state or most recent healthcheck result.\n Disconnected services keep their last healthcheck result\n until their reports are removed by Chef Automate.\n When you apply a healthcheck filter, the report includes\n all recently disconnected services.\n Valid status filter parameters are:\n* `status:disconnected`: returns services in a disconnected state\n* `status:critical`: returns services with a \"critical\" healthcheck result\n* `status:unknown`: returns services with an \"unknown\" healthcheck result\n* `status:warning`: returns services with a \"warning\" healthcheck result\n* `status:ok`: returns services with an  \"ok\" health check result",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Page number of the results to return.",
+                                  "key": "pagination.page",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Amount of results to include per page.",
+                                  "key": "pagination.size",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Field to sort the list results on.",
+                                  "key": "sorting.field",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Order the results should be returned in.",
+                                  "key": "sorting.order",
+                                  "value": "ASC"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"services\": [\n    {\n      \"supervisor_id\": \"<string>\",\n      \"release\": \"<string>\",\n      \"group\": \"<string>\",\n      \"health_check\": \"OK\",\n      \"application\": \"<string>\",\n      \"environment\": \"<string>\",\n      \"fqdn\": \"<string>\",\n      \"channel\": \"<string>\",\n      \"update_strategy\": \"<string>\",\n      \"site\": \"<string>\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"<string>\",\n      \"health_updated_at\": \"<dateTime>\",\n      \"disconnected\": \"<boolean>\",\n      \"last_event_occurred_at\": \"<dateTime>\",\n      \"last_event_since\": \"<string>\",\n      \"health_check_result\": {\n        \"stdout\": \"<string>\",\n        \"stderr\": \"<string>\",\n        \"exit_status\": \"<integer>\"\n      },\n      \"id\": \"<string>\"\n    },\n    {\n      \"supervisor_id\": \"<string>\",\n      \"release\": \"<string>\",\n      \"group\": \"<string>\",\n      \"health_check\": \"OK\",\n      \"application\": \"<string>\",\n      \"environment\": \"<string>\",\n      \"fqdn\": \"<string>\",\n      \"channel\": \"<string>\",\n      \"update_strategy\": \"<string>\",\n      \"site\": \"<string>\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"<string>\",\n      \"health_updated_at\": \"<dateTime>\",\n      \"disconnected\": \"<boolean>\",\n      \"last_event_occurred_at\": \"<dateTime>\",\n      \"last_event_since\": \"<string>\",\n      \"health_check_result\": {\n        \"stdout\": \"<string>\",\n        \"stderr\": \"<string>\",\n        \"exit_status\": \"<integer>\"\n      },\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-36e212af-4623-4aac-88fc-d50d9d775283"
+                        },
+                        {
+                          "id": "bd12f0c7-1a08-4e9e-808e-7a6d376778c0",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/services?filter=<string>&pagination.page=<integer>&pagination.size=<integer>&sorting.field=<string>&sorting.order=ASC",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "services"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Applies search filters, in the format of `fieldname:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine service results by a service's\n current state or most recent healthcheck result.\n Disconnected services keep their last healthcheck result\n until their reports are removed by Chef Automate.\n When you apply a healthcheck filter, the report includes\n all recently disconnected services.\n Valid status filter parameters are:\n* `status:disconnected`: returns services in a disconnected state\n* `status:critical`: returns services with a \"critical\" healthcheck result\n* `status:unknown`: returns services with an \"unknown\" healthcheck result\n* `status:warning`: returns services with a \"warning\" healthcheck result\n* `status:ok`: returns services with an  \"ok\" health check result",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Page number of the results to return.",
+                                  "key": "pagination.page",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Amount of results to include per page.",
+                                  "key": "pagination.size",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Field to sort the list results on.",
+                                  "key": "sorting.field",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Order the results should be returned in.",
+                                  "key": "sorting.order",
+                                  "value": "ASC"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-bd12f0c7-1a08-4e9e-808e-7a6d376778c0"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:35.000Z",
+                      "updatedAt": "2026-07-28T01:20:35.000Z",
+                      "uid": "35240-be39611c-14c1-42e1-b609-8216f9e5cdf2"
+                    }
+                  ],
+                  "id": "96785ba2-e0ca-4bde-b90b-8eabc7f3157b",
+                  "createdAt": "2026-07-28T01:20:35.000Z",
+                  "updatedAt": "2026-07-28T01:20:35.000Z",
+                  "uid": "35240-96785ba2-e0ca-4bde-b90b-8eabc7f3157b"
+                },
+                {
+                  "name": "services-distinct-values",
+                  "item": [
+                    {
+                      "name": "List Filter Values",
+                      "id": "13c52ca7-6093-443d-b153-860d92dc5164",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/applications/services-distinct-values?field_name=<string>&query_fragment=<string>&filter=<string>&filter=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "applications",
+                            "services-distinct-values"
+                          ],
+                          "query": [
+                            {
+                              "description": "Field name of service values.",
+                              "key": "field_name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query value, supports wildcards (* and ?).",
+                              "key": "query_fragment",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters.",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters.",
+                              "key": "filter",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Lists all of the possible filter values for a given valid field.\nLimit the returned values by providing at one or more characters in the `query_fragment` parameter.\nSupports wildcard (* and ?)\n\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "29d04020-ff73-4681-b3f8-b43bb79fe191",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/services-distinct-values?field_name=<string>&query_fragment=<string>&filter=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "services-distinct-values"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Field name of service values.",
+                                  "key": "field_name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query value, supports wildcards (* and ?).",
+                                  "key": "query_fragment",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters.",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"values\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-29d04020-ff73-4681-b3f8-b43bb79fe191"
+                        },
+                        {
+                          "id": "576c79e4-6a78-4b10-9b5c-244a7cdcd050",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/services-distinct-values?field_name=<string>&query_fragment=<string>&filter=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "services-distinct-values"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Field name of service values.",
+                                  "key": "field_name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query value, supports wildcards (* and ?).",
+                                  "key": "query_fragment",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters.",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-576c79e4-6a78-4b10-9b5c-244a7cdcd050"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:35.000Z",
+                      "updatedAt": "2026-07-28T01:20:35.000Z",
+                      "uid": "35240-13c52ca7-6093-443d-b153-860d92dc5164"
+                    }
+                  ],
+                  "id": "968e1217-dcb6-41a1-ab68-76f2961d4063",
+                  "createdAt": "2026-07-28T01:20:35.000Z",
+                  "updatedAt": "2026-07-28T01:20:35.000Z",
+                  "uid": "35240-968e1217-dcb6-41a1-ab68-76f2961d4063"
+                },
+                {
+                  "name": "stats",
+                  "item": [
+                    {
+                      "name": "Show Summary",
+                      "id": "7edae3a5-1b39-4381-966c-2e9e336392cc",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/applications/stats",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "applications",
+                            "stats"
+                          ]
+                        },
+                        "description": "Shows a summary of service-groups, services, deployments, and supervisors.\nUsed for telemetry.\nDoes not support filtering.\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "4fcc57fb-f010-47d5-a6c0-772d3432c368",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/stats",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "stats"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"total_service_groups\": \"<integer>\",\n  \"total_services\": \"<integer>\",\n  \"total_supervisors\": \"<integer>\",\n  \"total_deployments\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-4fcc57fb-f010-47d5-a6c0-772d3432c368"
+                        },
+                        {
+                          "id": "43a14a03-f1fa-4cda-a006-a480772fd082",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/stats",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "stats"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:35.000Z",
+                          "updatedAt": "2026-07-28T01:20:35.000Z",
+                          "uid": "35240-43a14a03-f1fa-4cda-a006-a480772fd082"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:35.000Z",
+                      "updatedAt": "2026-07-28T01:20:35.000Z",
+                      "uid": "35240-7edae3a5-1b39-4381-966c-2e9e336392cc"
+                    }
+                  ],
+                  "id": "bb30ef1a-e4f7-4aa9-b0b5-532d9547225b",
+                  "createdAt": "2026-07-28T01:20:35.000Z",
+                  "updatedAt": "2026-07-28T01:20:35.000Z",
+                  "uid": "35240-bb30ef1a-e4f7-4aa9-b0b5-532d9547225b"
+                }
+              ],
+              "id": "69d6f4a8-adf9-4dc6-8989-7e0808975045",
+              "createdAt": "2026-07-28T01:20:35.000Z",
+              "updatedAt": "2026-07-28T01:20:35.000Z",
+              "uid": "35240-69d6f4a8-adf9-4dc6-8989-7e0808975045"
+            }
+          ],
+          "id": "69eae71c-4402-4a49-8203-3997b085c943",
+          "createdAt": "2026-07-28T01:20:35.000Z",
+          "updatedAt": "2026-07-28T01:20:35.000Z",
+          "uid": "35240-69eae71c-4402-4a49-8203-3997b085c943"
+        }
+      ],
+      "id": "33493aec-bb04-4a2e-9f86-4f88fc68ec09",
+      "createdAt": "2026-07-28T01:20:35.000Z",
+      "updatedAt": "2026-07-28T01:20:35.000Z",
+      "uid": "35240-33493aec-bb04-4a2e-9f86-4f88fc68ec09"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

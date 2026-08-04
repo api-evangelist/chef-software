@@ -1,0 +1,1066 @@
+{
+  "info": {
+    "_postman_id": "daa5e531-8de4-4c96-adee-2948d7e844d7",
+    "name": "external/applications/applications.proto ApplicationsService StatsService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:36.000Z",
+    "updatedAt": "2026-07-28T01:20:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-daa5e531-8de4-4c96-adee-2948d7e844d7"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "compliance",
+              "item": [
+                {
+                  "name": "reporting",
+                  "item": [
+                    {
+                      "name": "stats",
+                      "item": [
+                        {
+                          "name": "failures",
+                          "item": [
+                            {
+                              "name": "Read Failures",
+                              "id": "0e63a766-3529-4672-a1f4-8a328e01abce",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/failures",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "stats",
+                                    "failures"
+                                  ]
+                                },
+                                "description": "Returns the top failures for the specified object. A types filter is required for this api.\nSupported values are `platform`, `environment`, `control`, and `profile`.\nBy default, the top ten failed objects for the specified type are returned.\nSupports filtering and respects `size` parameter.\n\nExample:\n```\n{\n\"filters\":[\n{\"type\":\"start_time\",\"values\":[\"2019-10-26T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-11-05T23:59:59Z\"]},\n{\"type\":\"types\",\"values\":[\"platform\",\"environment\"]}\n]\n}\n```\n\nAuthorization Action:\n```\ncompliance:reportFailures:get\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "69ae5a1e-988f-430f-b7ad-c7ce2a72018d",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/failures",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "stats",
+                                        "failures"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"profiles\": [\n    {\n      \"name\": \"<string>\",\n      \"failures\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"profile\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"failures\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"profile\": \"<string>\"\n    }\n  ],\n  \"platforms\": [\n    {\n      \"name\": \"<string>\",\n      \"failures\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"profile\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"failures\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"profile\": \"<string>\"\n    }\n  ],\n  \"controls\": [\n    {\n      \"name\": \"<string>\",\n      \"failures\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"profile\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"failures\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"profile\": \"<string>\"\n    }\n  ],\n  \"environments\": [\n    {\n      \"name\": \"<string>\",\n      \"failures\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"profile\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"failures\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"profile\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:36.000Z",
+                                  "updatedAt": "2026-07-28T01:20:36.000Z",
+                                  "uid": "35240-69ae5a1e-988f-430f-b7ad-c7ce2a72018d"
+                                },
+                                {
+                                  "id": "8c7074cc-7d85-4ff9-8a7d-b58c8dea6f21",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/failures",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "stats",
+                                        "failures"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:36.000Z",
+                                  "updatedAt": "2026-07-28T01:20:36.000Z",
+                                  "uid": "35240-8c7074cc-7d85-4ff9-8a7d-b58c8dea6f21"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:36.000Z",
+                              "updatedAt": "2026-07-28T01:20:36.000Z",
+                              "uid": "35240-0e63a766-3529-4672-a1f4-8a328e01abce"
+                            }
+                          ],
+                          "id": "6f92bc2a-471c-491b-962d-04f355e78246",
+                          "createdAt": "2026-07-28T01:20:36.000Z",
+                          "updatedAt": "2026-07-28T01:20:36.000Z",
+                          "uid": "35240-6f92bc2a-471c-491b-962d-04f355e78246"
+                        },
+                        {
+                          "name": "nodes",
+                          "item": [
+                            {
+                              "name": "count",
+                              "item": [
+                                {
+                                  "name": "updated",
+                                  "item": [
+                                    {
+                                      "name": "UpdateTelemetryReported",
+                                      "id": "585648c7-e11f-4e13-9c9d-46acc7285641",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "PUT",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"last_telemetry_reported_at\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/nodes/count/updated",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "stats",
+                                            "nodes",
+                                            "count",
+                                            "updated"
+                                          ]
+                                        },
+                                        "description": "Acknowledge API  to updates the last complaince telemetry reported date in postgres\n\nAuthorization Action:\n```\niam:introspect:getAll\n```"
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "8f6269a7-c8f6-4cce-96e4-d63e3111044b",
+                                          "name": "A successful response.",
+                                          "originalRequest": {
+                                            "method": "PUT",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"last_telemetry_reported_at\": \"<string>\"\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/nodes/count/updated",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "api",
+                                                "v0",
+                                                "compliance",
+                                                "reporting",
+                                                "stats",
+                                                "nodes",
+                                                "count",
+                                                "updated"
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{}",
+                                          "createdAt": "2026-07-28T01:20:36.000Z",
+                                          "updatedAt": "2026-07-28T01:20:36.000Z",
+                                          "uid": "35240-8f6269a7-c8f6-4cce-96e4-d63e3111044b"
+                                        },
+                                        {
+                                          "id": "1e7b746f-665c-4143-bf77-2d95487b505a",
+                                          "name": "An unexpected error response.",
+                                          "originalRequest": {
+                                            "method": "PUT",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"last_telemetry_reported_at\": \"<string>\"\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/nodes/count/updated",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "api",
+                                                "v0",
+                                                "compliance",
+                                                "reporting",
+                                                "stats",
+                                                "nodes",
+                                                "count",
+                                                "updated"
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                          "createdAt": "2026-07-28T01:20:36.000Z",
+                                          "updatedAt": "2026-07-28T01:20:36.000Z",
+                                          "uid": "35240-1e7b746f-665c-4143-bf77-2d95487b505a"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:20:36.000Z",
+                                      "updatedAt": "2026-07-28T01:20:36.000Z",
+                                      "uid": "35240-585648c7-e11f-4e13-9c9d-46acc7285641"
+                                    }
+                                  ],
+                                  "id": "b7cdd1a5-27d3-4d91-b37a-fb3d8eabbb03",
+                                  "createdAt": "2026-07-28T01:20:36.000Z",
+                                  "updatedAt": "2026-07-28T01:20:36.000Z",
+                                  "uid": "35240-b7cdd1a5-27d3-4d91-b37a-fb3d8eabbb03"
+                                },
+                                {
+                                  "name": "GetNodesUsageCount",
+                                  "id": "bee1b50b-3d76-47e0-9a67-caad2da65adb",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/nodes/count",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "stats",
+                                        "nodes",
+                                        "count"
+                                      ]
+                                    },
+                                    "description": "Returns the count of unique nodes with lastRun in a given time.\nThe time duration can be between the last time Telemetry data sent and the day before the current date.\nIf the duration < 15 days --> 15 days\nduration > 15 days --> duration\n\nAuthorization Action:\n```\niam:introspect:getAll\n```"
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "57df3493-8d80-4533-8370-8e619782ed96",
+                                      "name": "A successful response.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/nodes/count",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "stats",
+                                            "nodes",
+                                            "count"
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"days_since_last_post\": \"<int64>\",\n  \"node_cnt\": \"<int64>\"\n}",
+                                      "createdAt": "2026-07-28T01:20:36.000Z",
+                                      "updatedAt": "2026-07-28T01:20:36.000Z",
+                                      "uid": "35240-57df3493-8d80-4533-8370-8e619782ed96"
+                                    },
+                                    {
+                                      "id": "88effee8-2152-4822-8729-339534ff1228",
+                                      "name": "An unexpected error response.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/nodes/count",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "compliance",
+                                            "reporting",
+                                            "stats",
+                                            "nodes",
+                                            "count"
+                                          ]
+                                        }
+                                      },
+                                      "status": "Internal Server Error",
+                                      "code": 500,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                      "createdAt": "2026-07-28T01:20:36.000Z",
+                                      "updatedAt": "2026-07-28T01:20:36.000Z",
+                                      "uid": "35240-88effee8-2152-4822-8729-339534ff1228"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:20:36.000Z",
+                                  "updatedAt": "2026-07-28T01:20:36.000Z",
+                                  "uid": "35240-bee1b50b-3d76-47e0-9a67-caad2da65adb"
+                                }
+                              ],
+                              "id": "157730ea-45fd-4c19-86e5-b86f31c6462a",
+                              "createdAt": "2026-07-28T01:20:36.000Z",
+                              "updatedAt": "2026-07-28T01:20:36.000Z",
+                              "uid": "35240-157730ea-45fd-4c19-86e5-b86f31c6462a"
+                            }
+                          ],
+                          "id": "775d6954-a063-49a1-b7ac-2e660a9da845",
+                          "createdAt": "2026-07-28T01:20:36.000Z",
+                          "updatedAt": "2026-07-28T01:20:36.000Z",
+                          "uid": "35240-775d6954-a063-49a1-b7ac-2e660a9da845"
+                        },
+                        {
+                          "name": "profiles",
+                          "item": [
+                            {
+                              "name": "Read Profiles",
+                              "id": "9f1c0f97-bd60-4562-ad0d-819a6ed850da",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/profiles",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "stats",
+                                    "profiles"
+                                  ]
+                                },
+                                "description": "Returns statistics and summary information for profiles executed as part of the compliance reports. \nIf called without specifying a profile ID (`id`), the API will return stats on all the profiles.\nIf the `id` field is provided (profile ID) as part of the query object, the `type` field must also be specified. Options are `controls` or `summary`.\nSupports filtering.\n\n```\n{\n\"type\":\"controls\",\n\"id\":\"09adcbb3b9b3233d5de63cd98a5ba3e155b3aaeb66b5abed379f5fb1ff143988\",\n\"filters\":[\n{\"type\":\"environment\",\"values\":[\"dev*\"]},\n{\"type\":\"start_time\",\"values\":[\"2019-10-26T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-11-05T23:59:59Z\"]}\n]\n}\n```\n\nAuthorization Action:\n```\ncompliance:reportProfiles:get\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "3b8738e0-03fa-4549-88ef-9e04ff233c8a",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/profiles",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "stats",
+                                        "profiles"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"profile_list\": [\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\",\n      \"failures\": \"<integer>\",\n      \"majors\": \"<integer>\",\n      \"minors\": \"<integer>\",\n      \"criticals\": \"<integer>\",\n      \"passed\": \"<integer>\",\n      \"skipped\": \"<integer>\",\n      \"waived\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\",\n      \"failures\": \"<integer>\",\n      \"majors\": \"<integer>\",\n      \"minors\": \"<integer>\",\n      \"criticals\": \"<integer>\",\n      \"passed\": \"<integer>\",\n      \"skipped\": \"<integer>\",\n      \"waived\": \"<integer>\"\n    }\n  ],\n  \"profile_summary\": {\n    \"name\": \"<string>\",\n    \"title\": \"<string>\",\n    \"version\": \"<string>\",\n    \"license\": \"<string>\",\n    \"maintainer\": \"<string>\",\n    \"copyright\": \"<string>\",\n    \"copyright_email\": \"<string>\",\n    \"summary\": \"<string>\",\n    \"supports\": [\n      {\n        \"os_name\": \"<string>\",\n        \"os_family\": \"<string>\",\n        \"release\": \"<string>\",\n        \"inspec_version\": \"<string>\",\n        \"platform_name\": \"<string>\",\n        \"platform_family\": \"<string>\",\n        \"platform\": \"<string>\"\n      },\n      {\n        \"os_name\": \"<string>\",\n        \"os_family\": \"<string>\",\n        \"release\": \"<string>\",\n        \"inspec_version\": \"<string>\",\n        \"platform_name\": \"<string>\",\n        \"platform_family\": \"<string>\",\n        \"platform\": \"<string>\"\n      }\n    ],\n    \"stats\": {\n      \"failed\": \"<integer>\",\n      \"passed\": \"<integer>\",\n      \"skipped\": \"<integer>\",\n      \"failed_nodes\": \"<integer>\",\n      \"total_nodes\": \"<integer>\",\n      \"waived\": \"<integer>\"\n    },\n    \"depends\": [\n      {\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"path\": \"<string>\",\n        \"git\": \"<string>\",\n        \"branch\": \"<string>\",\n        \"tag\": \"<string>\",\n        \"commit\": \"<string>\",\n        \"version\": \"<string>\",\n        \"supermarket\": \"<string>\",\n        \"github\": \"<string>\",\n        \"compliance\": \"<string>\",\n        \"status\": \"<string>\",\n        \"skip_message\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"path\": \"<string>\",\n        \"git\": \"<string>\",\n        \"branch\": \"<string>\",\n        \"tag\": \"<string>\",\n        \"commit\": \"<string>\",\n        \"version\": \"<string>\",\n        \"supermarket\": \"<string>\",\n        \"github\": \"<string>\",\n        \"compliance\": \"<string>\",\n        \"status\": \"<string>\",\n        \"skip_message\": \"<string>\"\n      }\n    ]\n  },\n  \"control_stats\": [\n    {\n      \"control\": \"<string>\",\n      \"title\": \"<string>\",\n      \"passed\": \"<integer>\",\n      \"failed\": \"<integer>\",\n      \"skipped\": \"<integer>\",\n      \"impact\": \"<float>\",\n      \"waived\": \"<integer>\"\n    },\n    {\n      \"control\": \"<string>\",\n      \"title\": \"<string>\",\n      \"passed\": \"<integer>\",\n      \"failed\": \"<integer>\",\n      \"skipped\": \"<integer>\",\n      \"impact\": \"<float>\",\n      \"waived\": \"<integer>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:36.000Z",
+                                  "updatedAt": "2026-07-28T01:20:36.000Z",
+                                  "uid": "35240-3b8738e0-03fa-4549-88ef-9e04ff233c8a"
+                                },
+                                {
+                                  "id": "77f07aa0-64c8-449d-8f34-c3017042e3da",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/profiles",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "stats",
+                                        "profiles"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:36.000Z",
+                                  "updatedAt": "2026-07-28T01:20:36.000Z",
+                                  "uid": "35240-77f07aa0-64c8-449d-8f34-c3017042e3da"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:36.000Z",
+                              "updatedAt": "2026-07-28T01:20:36.000Z",
+                              "uid": "35240-9f1c0f97-bd60-4562-ad0d-819a6ed850da"
+                            }
+                          ],
+                          "id": "6ab0b86b-e894-45ee-8a1b-0d25943a6bff",
+                          "createdAt": "2026-07-28T01:20:36.000Z",
+                          "updatedAt": "2026-07-28T01:20:36.000Z",
+                          "uid": "35240-6ab0b86b-e894-45ee-8a1b-0d25943a6bff"
+                        },
+                        {
+                          "name": "summary",
+                          "item": [
+                            {
+                              "name": "Read Summary",
+                              "id": "68b5ed04-661f-480c-ac7b-dc639aa6cb3f",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/summary",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "stats",
+                                    "summary"
+                                  ]
+                                },
+                                "description": "Returns summary statistics for compliance reports. \nGeneral report summary information is the default. \nAdding a `type` value of `nodes` or `controls` will return summary statistics for that object.\nSupports filtering.\n\nThe API supports date range filters when `end_time` is the current time\nand `start_time` is any time in last 90 days. In case, the `end_time` is any\ndate other than the current date, the API would return data only for the `end_time`.\n\nExample:\n```\n{\n\"type\":\"nodes\",\n\"filters\":[\n{\"type\":\"environment\",\"values\":[\"dev*\"]},\n{\"type\":\"start_time\",\"values\":[\"2019-10-26T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-11-05T23:59:59Z\"]}\n]\n}\n```\n\nAuthorization Action:\n```\ncompliance:reportSummary:get\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "5682e740-f9c3-490f-b069-fe7b768e17d4",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/summary",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "stats",
+                                        "summary"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"controls_summary\": {\n    \"failures\": \"<integer>\",\n    \"majors\": \"<integer>\",\n    \"minors\": \"<integer>\",\n    \"criticals\": \"<integer>\",\n    \"passed\": \"<integer>\",\n    \"skipped\": \"<integer>\",\n    \"waived\": \"<integer>\"\n  },\n  \"node_summary\": {\n    \"compliant\": \"<integer>\",\n    \"skipped\": \"<integer>\",\n    \"noncompliant\": \"<integer>\",\n    \"high_risk\": \"<integer>\",\n    \"medium_risk\": \"<integer>\",\n    \"low_risk\": \"<integer>\",\n    \"waived\": \"<integer>\"\n  },\n  \"report_summary\": {\n    \"status\": \"<string>\",\n    \"duration\": \"<double>\",\n    \"start_date\": \"<string>\",\n    \"stats\": {\n      \"nodes\": \"<int64>\",\n      \"platforms\": \"<integer>\",\n      \"environments\": \"<integer>\",\n      \"profiles\": \"<integer>\",\n      \"nodes_cnt\": \"<integer>\",\n      \"controls\": \"<integer>\"\n    }\n  }\n}",
+                                  "createdAt": "2026-07-28T01:20:36.000Z",
+                                  "updatedAt": "2026-07-28T01:20:36.000Z",
+                                  "uid": "35240-5682e740-f9c3-490f-b069-fe7b768e17d4"
+                                },
+                                {
+                                  "id": "7d5c7d8e-d3e3-4dbb-bee2-6d7efb1fc87e",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/summary",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "stats",
+                                        "summary"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:36.000Z",
+                                  "updatedAt": "2026-07-28T01:20:36.000Z",
+                                  "uid": "35240-7d5c7d8e-d3e3-4dbb-bee2-6d7efb1fc87e"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:36.000Z",
+                              "updatedAt": "2026-07-28T01:20:36.000Z",
+                              "uid": "35240-68b5ed04-661f-480c-ac7b-dc639aa6cb3f"
+                            }
+                          ],
+                          "id": "2af2fd95-b6fd-4e0e-9654-ec8e3b24a8cd",
+                          "createdAt": "2026-07-28T01:20:36.000Z",
+                          "updatedAt": "2026-07-28T01:20:36.000Z",
+                          "uid": "35240-2af2fd95-b6fd-4e0e-9654-ec8e3b24a8cd"
+                        },
+                        {
+                          "name": "trend",
+                          "item": [
+                            {
+                              "name": "Read Trend",
+                              "id": "9aaa9f18-8dd8-4d46-a6c5-7614039bc034",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/trend",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "stats",
+                                    "trend"
+                                  ]
+                                },
+                                "description": "Returns trendgraph statistics for compliance reports. \nThe `type` field is required for this api call. Options are `nodes` or `controls`.\nRequires minimum `interval` field of 3600 and defined start time and end time filters.\nSupports filtering.\n\nExample:\n```\n{\n\"type\":\"nodes\",\n\"interval\":86400,\n\"filters\":[\n{\"type\":\"environment\",\"values\":[\"dev*\"]},\n{\"type\":\"start_time\",\"values\":[\"2019-10-26T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-11-05T23:59:59Z\"]}\n]\n}\n```\n\nAuthorization Action:\n```\ncompliance:reportTrend:get\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "cbd7d946-28ac-47a4-96eb-d646c259f7dd",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/trend",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "stats",
+                                        "trend"
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"trends\": [\n    {\n      \"report_time\": \"<string>\",\n      \"passed\": \"<integer>\",\n      \"failed\": \"<integer>\",\n      \"skipped\": \"<integer>\",\n      \"waived\": \"<integer>\"\n    },\n    {\n      \"report_time\": \"<string>\",\n      \"passed\": \"<integer>\",\n      \"failed\": \"<integer>\",\n      \"skipped\": \"<integer>\",\n      \"waived\": \"<integer>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:36.000Z",
+                                  "updatedAt": "2026-07-28T01:20:36.000Z",
+                                  "uid": "35240-cbd7d946-28ac-47a4-96eb-d646c259f7dd"
+                                },
+                                {
+                                  "id": "7a622e95-3d13-4095-8db5-573694f9b90d",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/compliance/reporting/stats/trend",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "compliance",
+                                        "reporting",
+                                        "stats",
+                                        "trend"
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:36.000Z",
+                                  "updatedAt": "2026-07-28T01:20:36.000Z",
+                                  "uid": "35240-7a622e95-3d13-4095-8db5-573694f9b90d"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:36.000Z",
+                              "updatedAt": "2026-07-28T01:20:36.000Z",
+                              "uid": "35240-9aaa9f18-8dd8-4d46-a6c5-7614039bc034"
+                            }
+                          ],
+                          "id": "472e6b8b-3698-45be-a0af-c7fe935620a7",
+                          "createdAt": "2026-07-28T01:20:36.000Z",
+                          "updatedAt": "2026-07-28T01:20:36.000Z",
+                          "uid": "35240-472e6b8b-3698-45be-a0af-c7fe935620a7"
+                        }
+                      ],
+                      "id": "56b108d4-477f-475e-a615-5573a10ae140",
+                      "createdAt": "2026-07-28T01:20:36.000Z",
+                      "updatedAt": "2026-07-28T01:20:36.000Z",
+                      "uid": "35240-56b108d4-477f-475e-a615-5573a10ae140"
+                    }
+                  ],
+                  "id": "eabebbc4-f417-4ed0-bf50-59824ea3e835",
+                  "createdAt": "2026-07-28T01:20:36.000Z",
+                  "updatedAt": "2026-07-28T01:20:36.000Z",
+                  "uid": "35240-eabebbc4-f417-4ed0-bf50-59824ea3e835"
+                }
+              ],
+              "id": "bb8b7097-505a-4853-a9ab-45226dd98bd8",
+              "createdAt": "2026-07-28T01:20:36.000Z",
+              "updatedAt": "2026-07-28T01:20:36.000Z",
+              "uid": "35240-bb8b7097-505a-4853-a9ab-45226dd98bd8"
+            }
+          ],
+          "id": "51dedaa2-bdd1-4670-9ed3-9535f1b36bc6",
+          "createdAt": "2026-07-28T01:20:36.000Z",
+          "updatedAt": "2026-07-28T01:20:36.000Z",
+          "uid": "35240-51dedaa2-bdd1-4670-9ed3-9535f1b36bc6"
+        }
+      ],
+      "id": "f6963343-493f-4304-b437-23ea78e2f2c2",
+      "createdAt": "2026-07-28T01:20:36.000Z",
+      "updatedAt": "2026-07-28T01:20:36.000Z",
+      "uid": "35240-f6963343-493f-4304-b437-23ea78e2f2c2"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

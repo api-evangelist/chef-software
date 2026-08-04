@@ -1,0 +1,797 @@
+{
+  "info": {
+    "_postman_id": "2a6e8806-561b-4512-9829-c639d33b4e05",
+    "name": "external/applications/applications.proto ApplicationsService hidden API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:02.000Z",
+    "updatedAt": "2026-07-28T01:20:02.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2a6e8806-561b-4512-9829-c639d33b4e05"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "applications",
+              "item": [
+                {
+                  "name": "version",
+                  "item": [
+                    {
+                      "name": "Show Version",
+                      "id": "78b83fa9-97a7-41a9-855d-bfeb723fca0b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/applications/version",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "applications",
+                            "version"
+                          ]
+                        },
+                        "description": "Displays the current version of the applications-service\n\nAuthorization Action:\n```\nsystem:serviceVersion:get\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "7fca893f-aeb6-463e-9a88-3f322f6a76bb",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/version",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "version"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"version\": \"<string>\",\n  \"sha\": \"<string>\",\n  \"built\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:20:02.000Z",
+                          "updatedAt": "2026-07-28T01:20:02.000Z",
+                          "uid": "35240-7fca893f-aeb6-463e-9a88-3f322f6a76bb"
+                        },
+                        {
+                          "id": "2cf719b0-8a43-442f-9269-941549a28498",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/applications/version",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "applications",
+                                "version"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:02.000Z",
+                          "updatedAt": "2026-07-28T01:20:02.000Z",
+                          "uid": "35240-2cf719b0-8a43-442f-9269-941549a28498"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:02.000Z",
+                      "updatedAt": "2026-07-28T01:20:02.000Z",
+                      "uid": "35240-78b83fa9-97a7-41a9-855d-bfeb723fca0b"
+                    }
+                  ],
+                  "id": "fcf12c91-31e1-48b9-92bb-336ffd6b5a15",
+                  "createdAt": "2026-07-28T01:20:02.000Z",
+                  "updatedAt": "2026-07-28T01:20:02.000Z",
+                  "uid": "35240-fcf12c91-31e1-48b9-92bb-336ffd6b5a15"
+                }
+              ],
+              "id": "855fc687-02e1-441f-9e28-e92cfa454013",
+              "createdAt": "2026-07-28T01:20:02.000Z",
+              "updatedAt": "2026-07-28T01:20:02.000Z",
+              "uid": "35240-855fc687-02e1-441f-9e28-e92cfa454013"
+            },
+            {
+              "name": "cfgmgmt",
+              "item": [
+                {
+                  "name": "version",
+                  "item": [
+                    {
+                      "name": "Config Mgmt Get Version",
+                      "id": "99358f20-92b3-407d-ac3d-6e000beb3dbd",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/cfgmgmt/version",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "cfgmgmt",
+                            "version"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "142b2b03-79c4-45a3-990a-68c7b58d01b9",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/cfgmgmt/version",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "cfgmgmt",
+                                "version"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"version\": \"<string>\",\n  \"sha\": \"<string>\",\n  \"built\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:20:02.000Z",
+                          "updatedAt": "2026-07-28T01:20:02.000Z",
+                          "uid": "35240-142b2b03-79c4-45a3-990a-68c7b58d01b9"
+                        },
+                        {
+                          "id": "801bbe6f-bda8-432d-9cec-ca74920c33cc",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/cfgmgmt/version",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "cfgmgmt",
+                                "version"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:02.000Z",
+                          "updatedAt": "2026-07-28T01:20:02.000Z",
+                          "uid": "35240-801bbe6f-bda8-432d-9cec-ca74920c33cc"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:02.000Z",
+                      "updatedAt": "2026-07-28T01:20:02.000Z",
+                      "uid": "35240-99358f20-92b3-407d-ac3d-6e000beb3dbd"
+                    }
+                  ],
+                  "id": "dd1b0658-a059-4d12-bca0-3178acafb8e5",
+                  "createdAt": "2026-07-28T01:20:02.000Z",
+                  "updatedAt": "2026-07-28T01:20:02.000Z",
+                  "uid": "35240-dd1b0658-a059-4d12-bca0-3178acafb8e5"
+                }
+              ],
+              "id": "b872e313-2476-4551-aca8-aa48602c4069",
+              "createdAt": "2026-07-28T01:20:02.000Z",
+              "updatedAt": "2026-07-28T01:20:02.000Z",
+              "uid": "35240-b872e313-2476-4551-aca8-aa48602c4069"
+            },
+            {
+              "name": "compliance",
+              "item": [
+                {
+                  "name": "reporting",
+                  "item": [
+                    {
+                      "name": "version",
+                      "item": [
+                        {
+                          "name": "Reporting Service Get Version",
+                          "id": "058ec0e2-ec26-475a-8802-020dbd150a66",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/compliance/reporting/version",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "compliance",
+                                "reporting",
+                                "version"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "2cac728f-56c7-4169-9c1d-1d998aab092a",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/version",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "version"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"version\": \"<string>\",\n  \"sha\": \"<string>\",\n  \"built\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:20:02.000Z",
+                              "updatedAt": "2026-07-28T01:20:02.000Z",
+                              "uid": "35240-2cac728f-56c7-4169-9c1d-1d998aab092a"
+                            },
+                            {
+                              "id": "90fb6f5e-1a11-42cf-9a6b-c7003541e0f0",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/compliance/reporting/version",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "compliance",
+                                    "reporting",
+                                    "version"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:02.000Z",
+                              "updatedAt": "2026-07-28T01:20:02.000Z",
+                              "uid": "35240-90fb6f5e-1a11-42cf-9a6b-c7003541e0f0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:02.000Z",
+                          "updatedAt": "2026-07-28T01:20:02.000Z",
+                          "uid": "35240-058ec0e2-ec26-475a-8802-020dbd150a66"
+                        }
+                      ],
+                      "id": "de72e27a-70dc-4277-bea5-96b81887bd9c",
+                      "createdAt": "2026-07-28T01:20:02.000Z",
+                      "updatedAt": "2026-07-28T01:20:02.000Z",
+                      "uid": "35240-de72e27a-70dc-4277-bea5-96b81887bd9c"
+                    }
+                  ],
+                  "id": "db0cb399-2eee-4e68-a7b4-bf94ead8ff60",
+                  "createdAt": "2026-07-28T01:20:02.000Z",
+                  "updatedAt": "2026-07-28T01:20:02.000Z",
+                  "uid": "35240-db0cb399-2eee-4e68-a7b4-bf94ead8ff60"
+                }
+              ],
+              "id": "7eda9e8a-20e2-4176-9545-3e07522f4adf",
+              "createdAt": "2026-07-28T01:20:02.000Z",
+              "updatedAt": "2026-07-28T01:20:02.000Z",
+              "uid": "35240-7eda9e8a-20e2-4176-9545-3e07522f4adf"
+            },
+            {
+              "name": "eventexport",
+              "item": [
+                {
+                  "name": "Event Feed Service Event Export",
+                  "id": "27eae970-a4de-49c7-a13a-93b8be1d84fe",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v0/eventexport?output_type=<string>&filter=<string>&filter=<string>&start=<int64>&end=<int64>&order=ASC",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v0",
+                        "eventexport"
+                      ],
+                      "query": [
+                        {
+                          "description": "JSON or CSV.",
+                          "key": "output_type",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filters to be applied to the request.",
+                          "key": "filter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filters to be applied to the request.",
+                          "key": "filter",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Earliest events to return.",
+                          "key": "start",
+                          "value": "<int64>"
+                        },
+                        {
+                          "description": "Latest events to return.",
+                          "key": "end",
+                          "value": "<int64>"
+                        },
+                        {
+                          "description": "Order the results should be returned in.",
+                          "key": "order",
+                          "value": "ASC"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "13ae5cf2-90ed-4eb2-a8e1-621634c30ca6",
+                      "name": "A successful response.(streaming responses)",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/eventexport?output_type=<string>&filter=<string>&start=<int64>&end=<int64>&order=ASC",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "eventexport"
+                          ],
+                          "query": [
+                            {
+                              "description": "JSON or CSV.",
+                              "key": "output_type",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filters to be applied to the request.",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Earliest events to return.",
+                              "key": "start",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Latest events to return.",
+                              "key": "end",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Order the results should be returned in.",
+                              "key": "order",
+                              "value": "ASC"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"result\": {\n    \"content\": \"<string>\"\n  },\n  \"error\": {\n    \"grpc_code\": \"<integer>\",\n    \"http_code\": \"<integer>\",\n    \"message\": \"<string>\",\n    \"http_status\": \"<string>\",\n    \"details\": [\n      {\n        \"type_url\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"type_url\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  }\n}",
+                      "createdAt": "2026-07-28T01:20:02.000Z",
+                      "updatedAt": "2026-07-28T01:20:02.000Z",
+                      "uid": "35240-13ae5cf2-90ed-4eb2-a8e1-621634c30ca6"
+                    },
+                    {
+                      "id": "6688e9fa-8688-472f-b3b2-ab6997fb0cb2",
+                      "name": "An unexpected error response.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/eventexport?output_type=<string>&filter=<string>&start=<int64>&end=<int64>&order=ASC",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "eventexport"
+                          ],
+                          "query": [
+                            {
+                              "description": "JSON or CSV.",
+                              "key": "output_type",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filters to be applied to the request.",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Earliest events to return.",
+                              "key": "start",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Latest events to return.",
+                              "key": "end",
+                              "value": "<int64>"
+                            },
+                            {
+                              "description": "Order the results should be returned in.",
+                              "key": "order",
+                              "value": "ASC"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:20:02.000Z",
+                      "updatedAt": "2026-07-28T01:20:02.000Z",
+                      "uid": "35240-6688e9fa-8688-472f-b3b2-ab6997fb0cb2"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:20:02.000Z",
+                  "updatedAt": "2026-07-28T01:20:02.000Z",
+                  "uid": "35240-27eae970-a4de-49c7-a13a-93b8be1d84fe"
+                }
+              ],
+              "id": "dd4dd871-a7b6-4251-b844-a950b1379fb4",
+              "createdAt": "2026-07-28T01:20:02.000Z",
+              "updatedAt": "2026-07-28T01:20:02.000Z",
+              "uid": "35240-dd4dd871-a7b6-4251-b844-a950b1379fb4"
+            }
+          ],
+          "id": "811d65f8-0c1f-4e92-bb5f-a26dc46e6718",
+          "createdAt": "2026-07-28T01:20:02.000Z",
+          "updatedAt": "2026-07-28T01:20:02.000Z",
+          "uid": "35240-811d65f8-0c1f-4e92-bb5f-a26dc46e6718"
+        }
+      ],
+      "id": "7436ad4a-1755-4da5-8dc2-bd4c49e59c95",
+      "createdAt": "2026-07-28T01:20:02.000Z",
+      "updatedAt": "2026-07-28T01:20:02.000Z",
+      "uid": "35240-7436ad4a-1755-4da5-8dc2-bd4c49e59c95"
+    },
+    {
+      "name": "apis",
+      "item": [
+        {
+          "name": "iam",
+          "item": [
+            {
+              "name": "v2",
+              "item": [
+                {
+                  "name": "introspect_projects",
+                  "item": [
+                    {
+                      "name": "Policies Introspect All Projects",
+                      "id": "2a71d64e-0727-4a41-bc5a-6a3a04085b1a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/introspect_projects",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "introspect_projects"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "665ab0fe-faf2-4eea-894d-df4614fd093e",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/introspect_projects",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "introspect_projects"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"projects\": [\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\",\n      \"type\": \"CHEF_MANAGED\",\n      \"status\": \"PROJECT_RULES_STATUS_UNSET\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\",\n      \"type\": \"CHEF_MANAGED\",\n      \"status\": \"PROJECT_RULES_STATUS_UNSET\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:02.000Z",
+                          "updatedAt": "2026-07-28T01:20:02.000Z",
+                          "uid": "35240-665ab0fe-faf2-4eea-894d-df4614fd093e"
+                        },
+                        {
+                          "id": "4db307fd-83bf-4f37-b192-a8b36a4128e6",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/introspect_projects",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "introspect_projects"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:02.000Z",
+                          "updatedAt": "2026-07-28T01:20:02.000Z",
+                          "uid": "35240-4db307fd-83bf-4f37-b192-a8b36a4128e6"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:02.000Z",
+                      "updatedAt": "2026-07-28T01:20:02.000Z",
+                      "uid": "35240-2a71d64e-0727-4a41-bc5a-6a3a04085b1a"
+                    }
+                  ],
+                  "id": "736ddbf1-8f8b-4bb7-82d4-40e3c4c1bf60",
+                  "createdAt": "2026-07-28T01:20:02.000Z",
+                  "updatedAt": "2026-07-28T01:20:02.000Z",
+                  "uid": "35240-736ddbf1-8f8b-4bb7-82d4-40e3c4c1bf60"
+                }
+              ],
+              "id": "d36363fa-ff16-4083-8066-29b183b693ed",
+              "createdAt": "2026-07-28T01:20:02.000Z",
+              "updatedAt": "2026-07-28T01:20:02.000Z",
+              "uid": "35240-d36363fa-ff16-4083-8066-29b183b693ed"
+            }
+          ],
+          "id": "8ecd5cd0-05bd-4f3b-8cb3-2a0abfdbc25c",
+          "createdAt": "2026-07-28T01:20:02.000Z",
+          "updatedAt": "2026-07-28T01:20:02.000Z",
+          "uid": "35240-8ecd5cd0-05bd-4f3b-8cb3-2a0abfdbc25c"
+        }
+      ],
+      "id": "e245e4ce-83f0-44b5-85d2-9e6310189abb",
+      "createdAt": "2026-07-28T01:20:02.000Z",
+      "updatedAt": "2026-07-28T01:20:02.000Z",
+      "uid": "35240-e245e4ce-83f0-44b5-85d2-9e6310189abb"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

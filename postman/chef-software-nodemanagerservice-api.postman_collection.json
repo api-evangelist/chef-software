@@ -1,0 +1,1879 @@
+{
+  "info": {
+    "_postman_id": "566e0ebb-8d8a-45ec-a765-4713ad6cf2e4",
+    "name": "external/applications/applications.proto ApplicationsService NodeManagerService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:08.000Z",
+    "updatedAt": "2026-07-28T01:20:08.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-566e0ebb-8d8a-45ec-a765-4713ad6cf2e4"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "nodemanagers",
+              "item": [
+                {
+                  "name": "id",
+                  "item": [
+                    {
+                      "name": "{id}",
+                      "item": [
+                        {
+                          "name": "with-node-state",
+                          "item": [
+                            {
+                              "name": "stopped",
+                              "item": [
+                                {
+                                  "name": "Delete a Node Manager and Stop Nodes",
+                                  "id": "38107a2b-8607-4fba-b432-fce351807990",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id/with-node-state/stopped",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "nodemanagers",
+                                        "id",
+                                        ":id",
+                                        "with-node-state",
+                                        "stopped"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "88d5e965-947d-42ab-99a2-ae9bc17ad20d",
+                                          "key": "id",
+                                          "value": "<string>",
+                                          "description": "(Required) UUID for the node manager."
+                                        }
+                                      ]
+                                    },
+                                    "description": "Delete a node manager and update its associated nodes to `stopped`.\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:delete\n```"
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "eca6ea8f-fe43-4ab2-970f-1232a15f6e5c",
+                                      "name": "A successful response.",
+                                      "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id/with-node-state/stopped",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "nodemanagers",
+                                            "id",
+                                            ":id",
+                                            "with-node-state",
+                                            "stopped"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{}",
+                                      "createdAt": "2026-07-28T01:20:08.000Z",
+                                      "updatedAt": "2026-07-28T01:20:08.000Z",
+                                      "uid": "35240-eca6ea8f-fe43-4ab2-970f-1232a15f6e5c"
+                                    },
+                                    {
+                                      "id": "935e4591-7207-419d-bfdc-eeea15f188c4",
+                                      "name": "An unexpected error response.",
+                                      "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id/with-node-state/stopped",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "nodemanagers",
+                                            "id",
+                                            ":id",
+                                            "with-node-state",
+                                            "stopped"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Internal Server Error",
+                                      "code": 500,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                      "createdAt": "2026-07-28T01:20:08.000Z",
+                                      "updatedAt": "2026-07-28T01:20:08.000Z",
+                                      "uid": "35240-935e4591-7207-419d-bfdc-eeea15f188c4"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:20:08.000Z",
+                                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                                  "uid": "35240-38107a2b-8607-4fba-b432-fce351807990"
+                                }
+                              ],
+                              "id": "276d0356-e64b-4854-a9d0-67be3f83bd19",
+                              "createdAt": "2026-07-28T01:20:08.000Z",
+                              "updatedAt": "2026-07-28T01:20:08.000Z",
+                              "uid": "35240-276d0356-e64b-4854-a9d0-67be3f83bd19"
+                            },
+                            {
+                              "name": "terminated",
+                              "item": [
+                                {
+                                  "name": "Delete a Node Manager and Terminate Nodes",
+                                  "id": "0a222a5b-46d2-48e6-842d-f28a55053d7d",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id/with-node-state/terminated",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "nodemanagers",
+                                        "id",
+                                        ":id",
+                                        "with-node-state",
+                                        "terminated"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "c565b13b-c5a3-4c26-9f29-8131a18df146",
+                                          "key": "id",
+                                          "value": "<string>",
+                                          "description": "(Required) UUID for the node manager."
+                                        }
+                                      ]
+                                    },
+                                    "description": "Delete a node manager and update its associated nodes to `terminated`.\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:delete\n```"
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "9fecdd96-5fe3-462d-9a77-76fc63b38837",
+                                      "name": "A successful response.",
+                                      "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id/with-node-state/terminated",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "nodemanagers",
+                                            "id",
+                                            ":id",
+                                            "with-node-state",
+                                            "terminated"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{}",
+                                      "createdAt": "2026-07-28T01:20:08.000Z",
+                                      "updatedAt": "2026-07-28T01:20:08.000Z",
+                                      "uid": "35240-9fecdd96-5fe3-462d-9a77-76fc63b38837"
+                                    },
+                                    {
+                                      "id": "0c2dd018-cc17-4ec3-bc47-314e841af3c1",
+                                      "name": "An unexpected error response.",
+                                      "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id/with-node-state/terminated",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "api",
+                                            "v0",
+                                            "nodemanagers",
+                                            "id",
+                                            ":id",
+                                            "with-node-state",
+                                            "terminated"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "id"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Internal Server Error",
+                                      "code": 500,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                      "createdAt": "2026-07-28T01:20:08.000Z",
+                                      "updatedAt": "2026-07-28T01:20:08.000Z",
+                                      "uid": "35240-0c2dd018-cc17-4ec3-bc47-314e841af3c1"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:20:08.000Z",
+                                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                                  "uid": "35240-0a222a5b-46d2-48e6-842d-f28a55053d7d"
+                                }
+                              ],
+                              "id": "56948525-0329-4055-80bb-e93c7365c3b3",
+                              "createdAt": "2026-07-28T01:20:08.000Z",
+                              "updatedAt": "2026-07-28T01:20:08.000Z",
+                              "uid": "35240-56948525-0329-4055-80bb-e93c7365c3b3"
+                            }
+                          ],
+                          "id": "40d3f633-cdce-4e9e-b874-87eecbd20473",
+                          "createdAt": "2026-07-28T01:20:08.000Z",
+                          "updatedAt": "2026-07-28T01:20:08.000Z",
+                          "uid": "35240-40d3f633-cdce-4e9e-b874-87eecbd20473"
+                        },
+                        {
+                          "name": "with-nodes",
+                          "item": [
+                            {
+                              "name": "Delete a Node Manager and Delete Nodes",
+                              "id": "9e033733-a028-407e-8caa-757e4db76ed1",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id/with-nodes",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "nodemanagers",
+                                    "id",
+                                    ":id",
+                                    "with-nodes"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "2295d409-897f-444c-90bc-a724c0026f2b",
+                                      "key": "id",
+                                      "value": "<string>",
+                                      "description": "(Required) UUID for the node manager."
+                                    }
+                                  ]
+                                },
+                                "description": "Delete a node manager and all of its associated nodes.\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:delete\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "4fcbf941-8ffa-4433-846b-ff99d59d22e5",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id/with-nodes",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "nodemanagers",
+                                        "id",
+                                        ":id",
+                                        "with-nodes"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"ids\": [\n    {\n      \"id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:08.000Z",
+                                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                                  "uid": "35240-4fcbf941-8ffa-4433-846b-ff99d59d22e5"
+                                },
+                                {
+                                  "id": "1c667463-0ced-4396-8a38-c81cb7a5eb96",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id/with-nodes",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "nodemanagers",
+                                        "id",
+                                        ":id",
+                                        "with-nodes"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:08.000Z",
+                                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                                  "uid": "35240-1c667463-0ced-4396-8a38-c81cb7a5eb96"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:08.000Z",
+                              "updatedAt": "2026-07-28T01:20:08.000Z",
+                              "uid": "35240-9e033733-a028-407e-8caa-757e4db76ed1"
+                            }
+                          ],
+                          "id": "a1c4b9a5-1a6b-4bcd-afcd-ba225ddb7b83",
+                          "createdAt": "2026-07-28T01:20:08.000Z",
+                          "updatedAt": "2026-07-28T01:20:08.000Z",
+                          "uid": "35240-a1c4b9a5-1a6b-4bcd-afcd-ba225ddb7b83"
+                        },
+                        {
+                          "name": "View a Node Manager",
+                          "id": "72f1685b-0e5d-4bce-9b31-0624be6a9d8c",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "nodemanagers",
+                                "id",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "72842123-894b-4f0f-912b-dc6014f162b2",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) UUID for the node manager."
+                                }
+                              ]
+                            },
+                            "description": "List the details of a node manager.\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:get\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "570193b9-852a-479f-928f-2e3ad4054ad5",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "nodemanagers",
+                                    "id",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"credential_id\": \"<string>\",\n  \"credential_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"instance_credentials\": [\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"status\": \"<string>\",\n  \"account_id\": \"<string>\",\n  \"date_added\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T01:20:08.000Z",
+                              "updatedAt": "2026-07-28T01:20:08.000Z",
+                              "uid": "35240-570193b9-852a-479f-928f-2e3ad4054ad5"
+                            },
+                            {
+                              "id": "137bde3d-27f5-41d7-8ab6-2f463cd40a82",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "nodemanagers",
+                                    "id",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:08.000Z",
+                              "updatedAt": "2026-07-28T01:20:08.000Z",
+                              "uid": "35240-137bde3d-27f5-41d7-8ab6-2f463cd40a82"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:08.000Z",
+                          "updatedAt": "2026-07-28T01:20:08.000Z",
+                          "uid": "35240-72f1685b-0e5d-4bce-9b31-0624be6a9d8c"
+                        },
+                        {
+                          "name": "Delete a Node Manager",
+                          "id": "9556a7ad-b9a9-4c21-948e-53422b80b16e",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "nodemanagers",
+                                "id",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "0ddfa631-55c0-44c8-98b1-385515e05450",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) UUID for the node manager."
+                                }
+                              ]
+                            },
+                            "description": "Delete a single node manager. This deletes the node manager itself and\nreassigns its associated nodes to the Automate node manager.\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:delete\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "789430eb-bd9d-430d-b7dd-91bc01774361",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "nodemanagers",
+                                    "id",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:20:08.000Z",
+                              "updatedAt": "2026-07-28T01:20:08.000Z",
+                              "uid": "35240-789430eb-bd9d-430d-b7dd-91bc01774361"
+                            },
+                            {
+                              "id": "6cb5bbfa-cf0d-4785-97ac-8ea6a39531c3",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "nodemanagers",
+                                    "id",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:08.000Z",
+                              "updatedAt": "2026-07-28T01:20:08.000Z",
+                              "uid": "35240-6cb5bbfa-cf0d-4785-97ac-8ea6a39531c3"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:08.000Z",
+                          "updatedAt": "2026-07-28T01:20:08.000Z",
+                          "uid": "35240-9556a7ad-b9a9-4c21-948e-53422b80b16e"
+                        },
+                        {
+                          "name": "Update a Node Manager",
+                          "id": "95b2ee06-bf6c-47b4-bd2b-353c4c0f05a7",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"credential_id\": \"<string>\",\n  \"credential_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"instance_credentials\": [\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"status\": \"<string>\",\n  \"account_id\": \"<string>\",\n  \"date_added\": \"<dateTime>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "nodemanagers",
+                                "id",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "2af8b36f-3135-465e-8d17-21bc345a63a7",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) UUID for the nodemanager."
+                                }
+                              ]
+                            },
+                            "description": "Update a node manager's metadata, such as its name, associated credential id, or data.\nThis is a PUT operation and it overwrites ALL of the existing node manager metadata. Include all fields, because a PUT operation overwrites any missing fields to empty (\"\").\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:update\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "ea002b8d-9a06-4132-90f6-c4111a93c3a0",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"credential_id\": \"<string>\",\n  \"credential_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"instance_credentials\": [\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"status\": \"<string>\",\n  \"account_id\": \"<string>\",\n  \"date_added\": \"<dateTime>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "nodemanagers",
+                                    "id",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:20:08.000Z",
+                              "updatedAt": "2026-07-28T01:20:08.000Z",
+                              "uid": "35240-ea002b8d-9a06-4132-90f6-c4111a93c3a0"
+                            },
+                            {
+                              "id": "c7a4154a-adb3-41ac-8910-2663984815e0",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"credential_id\": \"<string>\",\n  \"credential_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"instance_credentials\": [\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"status\": \"<string>\",\n  \"account_id\": \"<string>\",\n  \"date_added\": \"<dateTime>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "nodemanagers",
+                                    "id",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:08.000Z",
+                              "updatedAt": "2026-07-28T01:20:08.000Z",
+                              "uid": "35240-c7a4154a-adb3-41ac-8910-2663984815e0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:08.000Z",
+                          "updatedAt": "2026-07-28T01:20:08.000Z",
+                          "uid": "35240-95b2ee06-bf6c-47b4-bd2b-353c4c0f05a7"
+                        }
+                      ],
+                      "id": "ed500ee2-e224-4389-abc5-a1942e34dbde",
+                      "createdAt": "2026-07-28T01:20:08.000Z",
+                      "updatedAt": "2026-07-28T01:20:08.000Z",
+                      "uid": "35240-ed500ee2-e224-4389-abc5-a1942e34dbde"
+                    },
+                    {
+                      "name": "{node_manager_id}",
+                      "item": [
+                        {
+                          "name": "search-fields",
+                          "item": [
+                            {
+                              "name": "Search Node Fields",
+                              "id": "dd8ae3b6-8dae-46f5-afa6-1c0024b05cb2",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"node_manager_id\": \"<string>\",\n  \"query\": {\n    \"filter_map\": [\n      {\n        \"key\": \"<string>\",\n        \"exclude\": \"<boolean>\",\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"key\": \"<string>\",\n        \"exclude\": \"<boolean>\",\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ],\n    \"order\": \"ASC\",\n    \"sort\": \"<string>\",\n    \"page\": \"<integer>\",\n    \"per_page\": \"<integer>\"\n  },\n  \"field\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:node_manager_id/search-fields",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "nodemanagers",
+                                    "id",
+                                    ":node_manager_id",
+                                    "search-fields"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "aaa367e2-4103-4c43-ba60-f4d5f067e98d",
+                                      "key": "node_manager_id",
+                                      "value": "<string>",
+                                      "description": "(Required) Node manager ID."
+                                    }
+                                  ]
+                                },
+                                "description": "Searches the available values for a given field across all nodes associated with the nodemanager id.\n\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:list\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "ec5fde80-bbf1-4484-8480-8dc22b2f55dc",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"node_manager_id\": \"<string>\",\n  \"query\": {\n    \"filter_map\": [\n      {\n        \"key\": \"<string>\",\n        \"exclude\": \"<boolean>\",\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"key\": \"<string>\",\n        \"exclude\": \"<boolean>\",\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ],\n    \"order\": \"ASC\",\n    \"sort\": \"<string>\",\n    \"page\": \"<integer>\",\n    \"per_page\": \"<integer>\"\n  },\n  \"field\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:node_manager_id/search-fields",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "nodemanagers",
+                                        "id",
+                                        ":node_manager_id",
+                                        "search-fields"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "node_manager_id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"fields\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:08.000Z",
+                                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                                  "uid": "35240-ec5fde80-bbf1-4484-8480-8dc22b2f55dc"
+                                },
+                                {
+                                  "id": "47858a64-0cc8-4b0f-b1c1-0b2ce964b23e",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"node_manager_id\": \"<string>\",\n  \"query\": {\n    \"filter_map\": [\n      {\n        \"key\": \"<string>\",\n        \"exclude\": \"<boolean>\",\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"key\": \"<string>\",\n        \"exclude\": \"<boolean>\",\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ],\n    \"order\": \"ASC\",\n    \"sort\": \"<string>\",\n    \"page\": \"<integer>\",\n    \"per_page\": \"<integer>\"\n  },\n  \"field\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:node_manager_id/search-fields",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "nodemanagers",
+                                        "id",
+                                        ":node_manager_id",
+                                        "search-fields"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "node_manager_id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:08.000Z",
+                                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                                  "uid": "35240-47858a64-0cc8-4b0f-b1c1-0b2ce964b23e"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:08.000Z",
+                              "updatedAt": "2026-07-28T01:20:08.000Z",
+                              "uid": "35240-dd8ae3b6-8dae-46f5-afa6-1c0024b05cb2"
+                            }
+                          ],
+                          "id": "0ffe7530-55a4-417f-8079-6113ca4cf81f",
+                          "createdAt": "2026-07-28T01:20:08.000Z",
+                          "updatedAt": "2026-07-28T01:20:08.000Z",
+                          "uid": "35240-0ffe7530-55a4-417f-8079-6113ca4cf81f"
+                        },
+                        {
+                          "name": "search-nodes",
+                          "item": [
+                            {
+                              "name": "Search nodes",
+                              "id": "9e650395-68eb-47cd-92b9-b1b06717f3a0",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"node_manager_id\": \"<string>\",\n  \"query\": {\n    \"filter_map\": [\n      {\n        \"key\": \"<string>\",\n        \"exclude\": \"<boolean>\",\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"key\": \"<string>\",\n        \"exclude\": \"<boolean>\",\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ],\n    \"order\": \"ASC\",\n    \"sort\": \"<string>\",\n    \"page\": \"<integer>\",\n    \"per_page\": \"<integer>\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:node_manager_id/search-nodes",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "nodemanagers",
+                                    "id",
+                                    ":node_manager_id",
+                                    "search-nodes"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "a9aeb704-77e0-4708-b0e9-e8899cd3fddd",
+                                      "key": "node_manager_id",
+                                      "value": "<string>",
+                                      "description": "(Required) Node manager ID."
+                                    }
+                                  ]
+                                },
+                                "description": "Searches the available nodes for a single node manager by id.\n\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:list\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "8a0bd525-f1c0-4e14-be8f-2a03bf05b304",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"node_manager_id\": \"<string>\",\n  \"query\": {\n    \"filter_map\": [\n      {\n        \"key\": \"<string>\",\n        \"exclude\": \"<boolean>\",\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"key\": \"<string>\",\n        \"exclude\": \"<boolean>\",\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ],\n    \"order\": \"ASC\",\n    \"sort\": \"<string>\",\n    \"page\": \"<integer>\",\n    \"per_page\": \"<integer>\"\n  }\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:node_manager_id/search-nodes",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "nodemanagers",
+                                        "id",
+                                        ":node_manager_id",
+                                        "search-nodes"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "node_manager_id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"nodes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"total\": \"<integer>\"\n}",
+                                  "createdAt": "2026-07-28T01:20:08.000Z",
+                                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                                  "uid": "35240-8a0bd525-f1c0-4e14-be8f-2a03bf05b304"
+                                },
+                                {
+                                  "id": "befd980f-108e-4a51-8892-5ccb3883bd93",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"node_manager_id\": \"<string>\",\n  \"query\": {\n    \"filter_map\": [\n      {\n        \"key\": \"<string>\",\n        \"exclude\": \"<boolean>\",\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"key\": \"<string>\",\n        \"exclude\": \"<boolean>\",\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ],\n    \"order\": \"ASC\",\n    \"sort\": \"<string>\",\n    \"page\": \"<integer>\",\n    \"per_page\": \"<integer>\"\n  }\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/nodemanagers/id/:node_manager_id/search-nodes",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "nodemanagers",
+                                        "id",
+                                        ":node_manager_id",
+                                        "search-nodes"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "node_manager_id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:08.000Z",
+                                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                                  "uid": "35240-befd980f-108e-4a51-8892-5ccb3883bd93"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:08.000Z",
+                              "updatedAt": "2026-07-28T01:20:08.000Z",
+                              "uid": "35240-9e650395-68eb-47cd-92b9-b1b06717f3a0"
+                            }
+                          ],
+                          "id": "c8117bfd-1ecd-411e-a1d6-d909f0d9f499",
+                          "createdAt": "2026-07-28T01:20:08.000Z",
+                          "updatedAt": "2026-07-28T01:20:08.000Z",
+                          "uid": "35240-c8117bfd-1ecd-411e-a1d6-d909f0d9f499"
+                        }
+                      ],
+                      "id": "98d68dd7-d705-41fa-a932-5b4e4de37f1d",
+                      "createdAt": "2026-07-28T01:20:08.000Z",
+                      "updatedAt": "2026-07-28T01:20:08.000Z",
+                      "uid": "35240-98d68dd7-d705-41fa-a932-5b4e4de37f1d"
+                    }
+                  ],
+                  "id": "b78de241-4e53-4298-92d0-4ac2c0619415",
+                  "createdAt": "2026-07-28T01:20:08.000Z",
+                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                  "uid": "35240-b78de241-4e53-4298-92d0-4ac2c0619415"
+                },
+                {
+                  "name": "rerun",
+                  "item": [
+                    {
+                      "name": "id",
+                      "item": [
+                        {
+                          "name": "{id}",
+                          "item": [
+                            {
+                              "name": "Connect",
+                              "id": "290eab98-9d90-40a8-8a0a-802e8a1697b0",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/nodemanagers/rerun/id/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "nodemanagers",
+                                    "rerun",
+                                    "id",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "454c6370-3e41-4173-b1d4-0ba7345ee34a",
+                                      "key": "id",
+                                      "value": "<string>",
+                                      "description": "(Required) UUID for the node manager."
+                                    }
+                                  ]
+                                },
+                                "description": "Attempts to reach the API for the given nodemanager id to validate the\ncredentials associated with the nodemanager.\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:rerun\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "3d51e204-63af-4458-8018-b9e8d3a56338",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/nodemanagers/rerun/id/:id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "nodemanagers",
+                                        "rerun",
+                                        "id",
+                                        ":id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{}",
+                                  "createdAt": "2026-07-28T01:20:08.000Z",
+                                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                                  "uid": "35240-3d51e204-63af-4458-8018-b9e8d3a56338"
+                                },
+                                {
+                                  "id": "8a49d1da-6a1a-4c7d-a980-d79cdde2348d",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/nodemanagers/rerun/id/:id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "nodemanagers",
+                                        "rerun",
+                                        "id",
+                                        ":id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:08.000Z",
+                                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                                  "uid": "35240-8a49d1da-6a1a-4c7d-a980-d79cdde2348d"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:08.000Z",
+                              "updatedAt": "2026-07-28T01:20:08.000Z",
+                              "uid": "35240-290eab98-9d90-40a8-8a0a-802e8a1697b0"
+                            }
+                          ],
+                          "id": "3ad05220-0bba-46e7-9c99-5b2f1ae929e4",
+                          "createdAt": "2026-07-28T01:20:08.000Z",
+                          "updatedAt": "2026-07-28T01:20:08.000Z",
+                          "uid": "35240-3ad05220-0bba-46e7-9c99-5b2f1ae929e4"
+                        }
+                      ],
+                      "id": "a810e40a-baf6-4226-9a62-0e978dd791bc",
+                      "createdAt": "2026-07-28T01:20:08.000Z",
+                      "updatedAt": "2026-07-28T01:20:08.000Z",
+                      "uid": "35240-a810e40a-baf6-4226-9a62-0e978dd791bc"
+                    }
+                  ],
+                  "id": "95f162a4-4f58-41e4-b262-2ca4895d5c53",
+                  "createdAt": "2026-07-28T01:20:08.000Z",
+                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                  "uid": "35240-95f162a4-4f58-41e4-b262-2ca4895d5c53"
+                },
+                {
+                  "name": "search",
+                  "item": [
+                    {
+                      "name": "List all Node Managers",
+                      "id": "b89ce891-359f-4c51-b554-fd8e5e56e8c9",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"filter_map\": [\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/nodemanagers/search",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "nodemanagers",
+                            "search"
+                          ]
+                        },
+                        "description": "Returns a list of node managers.\nSupports filtering, sorting, and pagination.\n\nValid filtering fields: manager_type\n\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "1f861855-2072-4c39-8791-d763deadb413",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"filter_map\": [\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/nodemanagers/search",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "nodemanagers",
+                                "search"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"managers\": [\n    {\n      \"id\": \"<string>\",\n      \"credential_id\": \"<string>\",\n      \"credential_data\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"instance_credentials\": [\n        {\n          \"tag_key\": \"<string>\",\n          \"tag_value\": \"<string>\",\n          \"credential_ids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"tag_key\": \"<string>\",\n          \"tag_value\": \"<string>\",\n          \"credential_ids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"status\": \"<string>\",\n      \"account_id\": \"<string>\",\n      \"date_added\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"credential_id\": \"<string>\",\n      \"credential_data\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"instance_credentials\": [\n        {\n          \"tag_key\": \"<string>\",\n          \"tag_value\": \"<string>\",\n          \"credential_ids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"tag_key\": \"<string>\",\n          \"tag_value\": \"<string>\",\n          \"credential_ids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"status\": \"<string>\",\n      \"account_id\": \"<string>\",\n      \"date_added\": \"<dateTime>\"\n    }\n  ],\n  \"total\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T01:20:08.000Z",
+                          "updatedAt": "2026-07-28T01:20:08.000Z",
+                          "uid": "35240-1f861855-2072-4c39-8791-d763deadb413"
+                        },
+                        {
+                          "id": "0336a2fb-b428-4949-85ae-c04cfd4e369a",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"filter_map\": [\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/nodemanagers/search",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "nodemanagers",
+                                "search"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:08.000Z",
+                          "updatedAt": "2026-07-28T01:20:08.000Z",
+                          "uid": "35240-0336a2fb-b428-4949-85ae-c04cfd4e369a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:08.000Z",
+                      "updatedAt": "2026-07-28T01:20:08.000Z",
+                      "uid": "35240-b89ce891-359f-4c51-b554-fd8e5e56e8c9"
+                    }
+                  ],
+                  "id": "445b5574-038c-4aa8-97fd-237a6015534d",
+                  "createdAt": "2026-07-28T01:20:08.000Z",
+                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                  "uid": "35240-445b5574-038c-4aa8-97fd-237a6015534d"
+                },
+                {
+                  "name": "Create a Node Manager",
+                  "id": "4c0b170b-beeb-4174-a6f8-7be049081e75",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"credential_id\": \"<string>\",\n  \"credential_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"instance_credentials\": [\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"status\": \"<string>\",\n  \"account_id\": \"<string>\",\n  \"date_added\": \"<dateTime>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v0/nodemanagers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v0",
+                        "nodemanagers"
+                      ]
+                    },
+                    "description": "Creates a node manager given a name, credential id *or* credential data, and type.\n\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:create\n```"
+                  },
+                  "response": [
+                    {
+                      "id": "471277ab-edd4-4194-9b97-87e023b090b1",
+                      "name": "A successful response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"credential_id\": \"<string>\",\n  \"credential_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"instance_credentials\": [\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"status\": \"<string>\",\n  \"account_id\": \"<string>\",\n  \"date_added\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/nodemanagers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "nodemanagers"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"ids\": [\n    {\n      \"id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:20:08.000Z",
+                      "updatedAt": "2026-07-28T01:20:08.000Z",
+                      "uid": "35240-471277ab-edd4-4194-9b97-87e023b090b1"
+                    },
+                    {
+                      "id": "a44cdef4-137f-4acc-8709-e3db6ddb4030",
+                      "name": "An unexpected error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"credential_id\": \"<string>\",\n  \"credential_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"instance_credentials\": [\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"tag_key\": \"<string>\",\n      \"tag_value\": \"<string>\",\n      \"credential_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"status\": \"<string>\",\n  \"account_id\": \"<string>\",\n  \"date_added\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/nodemanagers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "nodemanagers"
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:20:08.000Z",
+                      "updatedAt": "2026-07-28T01:20:08.000Z",
+                      "uid": "35240-a44cdef4-137f-4acc-8709-e3db6ddb4030"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:20:08.000Z",
+                  "updatedAt": "2026-07-28T01:20:08.000Z",
+                  "uid": "35240-4c0b170b-beeb-4174-a6f8-7be049081e75"
+                }
+              ],
+              "id": "bcff0af0-02b7-4acc-9a3a-f5c8c0d47e4e",
+              "createdAt": "2026-07-28T01:20:08.000Z",
+              "updatedAt": "2026-07-28T01:20:08.000Z",
+              "uid": "35240-bcff0af0-02b7-4acc-9a3a-f5c8c0d47e4e"
+            }
+          ],
+          "id": "aa67de25-c686-4928-8761-7c5f6c0550d9",
+          "createdAt": "2026-07-28T01:20:08.000Z",
+          "updatedAt": "2026-07-28T01:20:08.000Z",
+          "uid": "35240-aa67de25-c686-4928-8761-7c5f6c0550d9"
+        }
+      ],
+      "id": "5d779d1e-e8f4-4a28-8aab-c4781e23b557",
+      "createdAt": "2026-07-28T01:20:08.000Z",
+      "updatedAt": "2026-07-28T01:20:08.000Z",
+      "uid": "35240-5d779d1e-e8f4-4a28-8aab-c4781e23b557"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

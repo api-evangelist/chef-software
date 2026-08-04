@@ -1,0 +1,1609 @@
+{
+  "info": {
+    "_postman_id": "a90a7024-b9d5-414d-a227-b6859cd88d29",
+    "name": "external/applications/applications.proto ApplicationsService policies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:10.000Z",
+    "updatedAt": "2026-07-28T01:20:10.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a90a7024-b9d5-414d-a227-b6859cd88d29"
+  },
+  "item": [
+    {
+      "name": "apis",
+      "item": [
+        {
+          "name": "iam",
+          "item": [
+            {
+              "name": "v2",
+              "item": [
+                {
+                  "name": "policies",
+                  "item": [
+                    {
+                      "name": "{id}",
+                      "item": [
+                        {
+                          "name": "members",
+                          "item": [
+                            {
+                              "name": "Lists policy members",
+                              "id": "d12fe4ff-28f9-480d-a4e0-775844390b8f",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/policies/:id/members",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "policies",
+                                    ":id",
+                                    "members"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "91a49597-b2dd-4fe8-8aaa-01c98f344381",
+                                      "key": "id",
+                                      "value": "<string>",
+                                      "description": "(Required) ID of the policy."
+                                    }
+                                  ]
+                                },
+                                "description": "Lists all members of a specific policy.\n\nAuthorization Action:\n```\niam:policyMembers:get\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "33592544-9e75-42b4-9a15-fd9c16aa8a2e",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/policies/:id/members",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "policies",
+                                        ":id",
+                                        "members"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:11.000Z",
+                                  "updatedAt": "2026-07-28T01:20:11.000Z",
+                                  "uid": "35240-33592544-9e75-42b4-9a15-fd9c16aa8a2e"
+                                },
+                                {
+                                  "id": "6a074b7d-8947-42b9-9c0c-1b1a1b61c593",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/policies/:id/members",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "policies",
+                                        ":id",
+                                        "members"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:11.000Z",
+                                  "updatedAt": "2026-07-28T01:20:11.000Z",
+                                  "uid": "35240-6a074b7d-8947-42b9-9c0c-1b1a1b61c593"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:11.000Z",
+                              "updatedAt": "2026-07-28T01:20:11.000Z",
+                              "uid": "35240-d12fe4ff-28f9-480d-a4e0-775844390b8f"
+                            },
+                            {
+                              "name": "Replaces policy members",
+                              "id": "2f09e088-4be5-41f1-9474-ff9e2cd3a29e",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/policies/:id/members",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "policies",
+                                    ":id",
+                                    "members"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "04f14092-466f-4b69-bca1-7f9ea60c7552",
+                                      "key": "id",
+                                      "value": "<string>",
+                                      "description": "(Required) ID of the policy."
+                                    }
+                                  ]
+                                },
+                                "description": "Replaces the entire member list of a specific policy with a new list.\nYou may use this endpoint to update members of either Custom or Chef-managed policies.\n\nEnsure each element of the members array is in the correct\n[Member Expression](https://automate.chef.io/docs/iam-v2-guide/#member-expressions) format.\n\nAuthorization Action:\n```\niam:policyMembers:update\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "d8a7233d-ae53-4bdb-8498-aabae3a1e5f5",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/policies/:id/members",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "policies",
+                                        ":id",
+                                        "members"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:11.000Z",
+                                  "updatedAt": "2026-07-28T01:20:11.000Z",
+                                  "uid": "35240-d8a7233d-ae53-4bdb-8498-aabae3a1e5f5"
+                                },
+                                {
+                                  "id": "0042c694-30a8-4d44-9a4f-1e565f764886",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/policies/:id/members",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "policies",
+                                        ":id",
+                                        "members"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:11.000Z",
+                                  "updatedAt": "2026-07-28T01:20:11.000Z",
+                                  "uid": "35240-0042c694-30a8-4d44-9a4f-1e565f764886"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:11.000Z",
+                              "updatedAt": "2026-07-28T01:20:11.000Z",
+                              "uid": "35240-2f09e088-4be5-41f1-9474-ff9e2cd3a29e"
+                            }
+                          ],
+                          "id": "3236d1e2-9431-4527-826d-6ded975c7640",
+                          "createdAt": "2026-07-28T01:20:10.000Z",
+                          "updatedAt": "2026-07-28T01:20:10.000Z",
+                          "uid": "35240-3236d1e2-9431-4527-826d-6ded975c7640"
+                        },
+                        {
+                          "name": "members:add",
+                          "item": [
+                            {
+                              "name": "Adds policy members",
+                              "id": "933822a1-cab8-437d-ab61-c0f2cb0825d4",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/policies/:id/members:add",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "policies",
+                                    ":id",
+                                    "members:add"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "d9d24dd8-1a3d-4530-bb8a-d865720abd6c",
+                                      "key": "id",
+                                      "value": "<string>",
+                                      "description": "(Required) ID of the policy."
+                                    }
+                                  ]
+                                },
+                                "description": "Adds members to the member list of a specific policy.\nYou may use this endpoint to update members of either Custom or Chef-managed policies.\n\nEnsure each element of the members array is in the correct\n[Member Expression](https://automate.chef.io/docs/iam-v2-guide/#member-expressions) format.\n\nAuthorization Action:\n```\niam:policyMembers:create\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "18b23226-5916-4e8b-a8aa-5ffa9bb46f7d",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/policies/:id/members:add",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "policies",
+                                        ":id",
+                                        "members:add"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:11.000Z",
+                                  "updatedAt": "2026-07-28T01:20:11.000Z",
+                                  "uid": "35240-18b23226-5916-4e8b-a8aa-5ffa9bb46f7d"
+                                },
+                                {
+                                  "id": "5c6891e6-4949-47a0-8df5-f99511019295",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/policies/:id/members:add",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "policies",
+                                        ":id",
+                                        "members:add"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:11.000Z",
+                                  "updatedAt": "2026-07-28T01:20:11.000Z",
+                                  "uid": "35240-5c6891e6-4949-47a0-8df5-f99511019295"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:11.000Z",
+                              "updatedAt": "2026-07-28T01:20:11.000Z",
+                              "uid": "35240-933822a1-cab8-437d-ab61-c0f2cb0825d4"
+                            }
+                          ],
+                          "id": "857cd4eb-fc2b-45d0-a1c3-354d1b44db4f",
+                          "createdAt": "2026-07-28T01:20:10.000Z",
+                          "updatedAt": "2026-07-28T01:20:10.000Z",
+                          "uid": "35240-857cd4eb-fc2b-45d0-a1c3-354d1b44db4f"
+                        },
+                        {
+                          "name": "members:remove",
+                          "item": [
+                            {
+                              "name": "Removes policy members",
+                              "id": "a7518e25-a179-4e32-83b3-684731d6bc8f",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/policies/:id/members:remove",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "policies",
+                                    ":id",
+                                    "members:remove"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "7bf06774-3181-42b9-856d-d61162c06d77",
+                                      "key": "id",
+                                      "value": "<string>",
+                                      "description": "(Required) ID of the policy."
+                                    }
+                                  ]
+                                },
+                                "description": "Removes members from the member list of a specific policy. Silently ignores\nmembers that are not already part of the member list.\nYou may use this endpoint to update members of either Custom or Chef-managed policies.\n\nEnsure each element of the members array is in the correct\n[Member Expression](https://automate.chef.io/docs/iam-v2-guide/#member-expressions) format.\n\nThe removed members will still exist within Chef Automate, but are no longer associated with this policy.\n\nAuthorization Action:\n```\niam:policyMembers:delete\n```"
+                              },
+                              "response": [
+                                {
+                                  "id": "329ac7b5-8804-4fb2-b7c7-f2c50ac1e78b",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/policies/:id/members:remove",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "policies",
+                                        ":id",
+                                        "members:remove"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:11.000Z",
+                                  "updatedAt": "2026-07-28T01:20:11.000Z",
+                                  "uid": "35240-329ac7b5-8804-4fb2-b7c7-f2c50ac1e78b"
+                                },
+                                {
+                                  "id": "343c84e1-4c05-41d5-a104-4bd509c9a96c",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/apis/iam/v2/policies/:id/members:remove",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "apis",
+                                        "iam",
+                                        "v2",
+                                        "policies",
+                                        ":id",
+                                        "members:remove"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:20:11.000Z",
+                                  "updatedAt": "2026-07-28T01:20:11.000Z",
+                                  "uid": "35240-343c84e1-4c05-41d5-a104-4bd509c9a96c"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:20:11.000Z",
+                              "updatedAt": "2026-07-28T01:20:11.000Z",
+                              "uid": "35240-a7518e25-a179-4e32-83b3-684731d6bc8f"
+                            }
+                          ],
+                          "id": "beba510a-bd3a-41ad-95ff-bc665e63ba82",
+                          "createdAt": "2026-07-28T01:20:10.000Z",
+                          "updatedAt": "2026-07-28T01:20:10.000Z",
+                          "uid": "35240-beba510a-bd3a-41ad-95ff-bc665e63ba82"
+                        },
+                        {
+                          "name": "Gets a policy",
+                          "id": "ffa80c64-9cdb-4177-bd5e-8501236a609f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/policies/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "policies",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "7b67a81b-737d-4768-bdec-05c81f54c008",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) ID of the policy."
+                                }
+                              ]
+                            },
+                            "description": "Returns the details for a policy.\n\nAuthorization Action:\n```\niam:policies:get\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "fae80be5-5604-42c7-b9fd-7453e9e2fe21",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/policies/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "policies",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"policy\": {\n    \"name\": \"<string>\",\n    \"id\": \"<string>\",\n    \"type\": \"CHEF_MANAGED\",\n    \"members\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"statements\": [\n      {\n        \"effect\": \"ALLOW\",\n        \"actions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"role\": \"<string>\",\n        \"resources\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"projects\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"effect\": \"ALLOW\",\n        \"actions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"role\": \"<string>\",\n        \"resources\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"projects\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ],\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:11.000Z",
+                              "updatedAt": "2026-07-28T01:20:11.000Z",
+                              "uid": "35240-fae80be5-5604-42c7-b9fd-7453e9e2fe21"
+                            },
+                            {
+                              "id": "f64df1b5-c301-46a2-a944-1d056235b1c1",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/policies/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "policies",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:11.000Z",
+                              "updatedAt": "2026-07-28T01:20:11.000Z",
+                              "uid": "35240-f64df1b5-c301-46a2-a944-1d056235b1c1"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:11.000Z",
+                          "updatedAt": "2026-07-28T01:20:11.000Z",
+                          "uid": "35240-ffa80c64-9cdb-4177-bd5e-8501236a609f"
+                        },
+                        {
+                          "name": "Deletes a custom policy",
+                          "id": "ececd311-2652-4972-851b-9b4846ed7ce2",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/policies/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "policies",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "b7c2d01e-94a3-4647-82e6-3204b12344cf",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) ID of the policy."
+                                }
+                              ]
+                            },
+                            "description": "Deletes a specified custom policy. You cannot delete Chef-managed policies.\n\nAuthorization Action:\n```\niam:policies:delete\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "66b22ee2-e9e2-4305-9fb9-0277453e4bc1",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/policies/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "policies",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:20:11.000Z",
+                              "updatedAt": "2026-07-28T01:20:11.000Z",
+                              "uid": "35240-66b22ee2-e9e2-4305-9fb9-0277453e4bc1"
+                            },
+                            {
+                              "id": "8939ed5e-3693-4e39-8288-ee93e8e20569",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/policies/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "policies",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:11.000Z",
+                              "updatedAt": "2026-07-28T01:20:11.000Z",
+                              "uid": "35240-8939ed5e-3693-4e39-8288-ee93e8e20569"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:11.000Z",
+                          "updatedAt": "2026-07-28T01:20:11.000Z",
+                          "uid": "35240-ececd311-2652-4972-851b-9b4846ed7ce2"
+                        },
+                        {
+                          "name": "Updates a custom policy",
+                          "id": "a5731e33-950c-45c2-aadf-63af838877ff",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"statements\": [\n    {\n      \"effect\": \"ALLOW\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"role\": \"<string>\",\n      \"resources\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"effect\": \"ALLOW\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"role\": \"<string>\",\n      \"resources\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/policies/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "policies",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "9f0abbe5-5ba9-458f-a972-ef9b2b999a72",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) Unique ID. Cannot be changed."
+                                }
+                              ]
+                            },
+                            "description": "This operation overwrites all fields excepting ID,\nincluding those omitted from the request, so be sure to specify all properties.\nProperties that you do not include are reset to empty values.\nThe only exception is the policy ID, which is immutable; it can only be set at creation time.\n\nWhile you can use this endpoint to update members on a policy, if that is the only\nproperty you wish to modify you might find it more convenient to use one of these endpoints instead:\nAdd policy members, Remove policy members, or Replace policy members.\n\nAuthorization Action:\n```\niam:policies:update\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "f3e4c6dc-cc14-4265-b8f1-a330e9618db6",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"statements\": [\n    {\n      \"effect\": \"ALLOW\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"role\": \"<string>\",\n      \"resources\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"effect\": \"ALLOW\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"role\": \"<string>\",\n      \"resources\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/policies/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "policies",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"policy\": {\n    \"name\": \"<string>\",\n    \"id\": \"<string>\",\n    \"type\": \"CHEF_MANAGED\",\n    \"members\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"statements\": [\n      {\n        \"effect\": \"ALLOW\",\n        \"actions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"role\": \"<string>\",\n        \"resources\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"projects\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"effect\": \"ALLOW\",\n        \"actions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"role\": \"<string>\",\n        \"resources\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"projects\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ],\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:11.000Z",
+                              "updatedAt": "2026-07-28T01:20:11.000Z",
+                              "uid": "35240-f3e4c6dc-cc14-4265-b8f1-a330e9618db6"
+                            },
+                            {
+                              "id": "86dcd3c4-900a-46a3-a369-78249077c4a3",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"statements\": [\n    {\n      \"effect\": \"ALLOW\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"role\": \"<string>\",\n      \"resources\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"effect\": \"ALLOW\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"role\": \"<string>\",\n      \"resources\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/policies/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "policies",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:11.000Z",
+                              "updatedAt": "2026-07-28T01:20:11.000Z",
+                              "uid": "35240-86dcd3c4-900a-46a3-a369-78249077c4a3"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:11.000Z",
+                          "updatedAt": "2026-07-28T01:20:11.000Z",
+                          "uid": "35240-a5731e33-950c-45c2-aadf-63af838877ff"
+                        }
+                      ],
+                      "id": "ffad2b5e-28e2-4d20-9e9f-01c039c22c3e",
+                      "createdAt": "2026-07-28T01:20:10.000Z",
+                      "updatedAt": "2026-07-28T01:20:10.000Z",
+                      "uid": "35240-ffad2b5e-28e2-4d20-9e9f-01c039c22c3e"
+                    },
+                    {
+                      "name": "Lists all policies",
+                      "id": "5caa04ff-7d61-4960-b2cc-8592fdae353d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/policies",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "policies"
+                          ]
+                        },
+                        "description": "Lists all policies.\n\nAuthorization Action:\n```\niam:policies:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "731989cc-07fe-4bb4-8e17-ecf995d4b3bd",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/policies",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "policies"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"policies\": [\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\",\n      \"type\": \"CHEF_MANAGED\",\n      \"members\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"statements\": [\n        {\n          \"effect\": \"ALLOW\",\n          \"actions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"role\": \"<string>\",\n          \"resources\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"projects\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"effect\": \"ALLOW\",\n          \"actions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"role\": \"<string>\",\n          \"resources\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"projects\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\",\n      \"type\": \"CHEF_MANAGED\",\n      \"members\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"statements\": [\n        {\n          \"effect\": \"ALLOW\",\n          \"actions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"role\": \"<string>\",\n          \"resources\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"projects\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"effect\": \"ALLOW\",\n          \"actions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"role\": \"<string>\",\n          \"resources\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"projects\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:11.000Z",
+                          "updatedAt": "2026-07-28T01:20:11.000Z",
+                          "uid": "35240-731989cc-07fe-4bb4-8e17-ecf995d4b3bd"
+                        },
+                        {
+                          "id": "4e52db6c-6f2a-42ce-a22f-f97c8f2af809",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/policies",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "policies"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:11.000Z",
+                          "updatedAt": "2026-07-28T01:20:11.000Z",
+                          "uid": "35240-4e52db6c-6f2a-42ce-a22f-f97c8f2af809"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:11.000Z",
+                      "updatedAt": "2026-07-28T01:20:11.000Z",
+                      "uid": "35240-5caa04ff-7d61-4960-b2cc-8592fdae353d"
+                    },
+                    {
+                      "name": "Creates a custom policy",
+                      "id": "cb9f358a-7b9b-4752-8788-c8b52b8e05ab",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"statements\": [\n    {\n      \"effect\": \"ALLOW\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"role\": \"<string>\",\n      \"resources\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"effect\": \"ALLOW\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"role\": \"<string>\",\n      \"resources\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/policies",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "policies"
+                          ]
+                        },
+                        "description": "Creates a custom IAM policy used to control permissions in Automate.\nA policy is composed of one or more statements that grant permissions to a set of members.\nEach statement contains a role as well as a list of projects.\n\nThe role defines a set of actions that the statement is scoped to.\nThe project list defines the set of resources that the statement is scoped to.\nPass `\"projects\": [\"*\"]` to scope a statement to every project.\n\nA policy's *top-level* projects list defines which projects the policy belongs to (for filtering policies by their projects),\nwhereas the *statement-level* projects list defines which projects the statement applies to.\n\nThe example creates a new policy not associated with any project (because the top-level `projects` property is empty) that grants the `viewer` role\non a few projects for all LDAP teams and a custom role `qa` on a specific project.\n\nAuthorization Action:\n```\niam:policies:create\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "0a5988cc-702b-48e9-afb6-66029565ae1f",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"statements\": [\n    {\n      \"effect\": \"ALLOW\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"role\": \"<string>\",\n      \"resources\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"effect\": \"ALLOW\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"role\": \"<string>\",\n      \"resources\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/policies",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "policies"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"policy\": {\n    \"name\": \"<string>\",\n    \"id\": \"<string>\",\n    \"type\": \"CHEF_MANAGED\",\n    \"members\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"statements\": [\n      {\n        \"effect\": \"ALLOW\",\n        \"actions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"role\": \"<string>\",\n        \"resources\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"projects\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"effect\": \"ALLOW\",\n        \"actions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"role\": \"<string>\",\n        \"resources\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"projects\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ],\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                          "createdAt": "2026-07-28T01:20:11.000Z",
+                          "updatedAt": "2026-07-28T01:20:11.000Z",
+                          "uid": "35240-0a5988cc-702b-48e9-afb6-66029565ae1f"
+                        },
+                        {
+                          "id": "068211be-5007-4c54-be81-a86831654a96",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"statements\": [\n    {\n      \"effect\": \"ALLOW\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"role\": \"<string>\",\n      \"resources\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"effect\": \"ALLOW\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"role\": \"<string>\",\n      \"resources\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"members\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/policies",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "policies"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:11.000Z",
+                          "updatedAt": "2026-07-28T01:20:11.000Z",
+                          "uid": "35240-068211be-5007-4c54-be81-a86831654a96"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:11.000Z",
+                      "updatedAt": "2026-07-28T01:20:11.000Z",
+                      "uid": "35240-cb9f358a-7b9b-4752-8788-c8b52b8e05ab"
+                    }
+                  ],
+                  "id": "97248b2e-7e7c-401f-9f8c-45a6adfa5975",
+                  "createdAt": "2026-07-28T01:20:10.000Z",
+                  "updatedAt": "2026-07-28T01:20:10.000Z",
+                  "uid": "35240-97248b2e-7e7c-401f-9f8c-45a6adfa5975"
+                },
+                {
+                  "name": "policy_version",
+                  "item": [
+                    {
+                      "name": "Gets IAM version",
+                      "id": "68deb697-ce5d-4d29-aedb-a846b0709614",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/policy_version",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "policy_version"
+                          ]
+                        },
+                        "description": "Returns the major and minor version of IAM that your automate installation is running.\n\nAuthorization Action:\n```\niam:policies:get\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "72741d98-de9b-4ecb-8e57-7d2fd3b5bef1",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/policy_version",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "policy_version"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"version\": {\n    \"major\": \"V0\",\n    \"minor\": \"V0\"\n  }\n}",
+                          "createdAt": "2026-07-28T01:20:11.000Z",
+                          "updatedAt": "2026-07-28T01:20:11.000Z",
+                          "uid": "35240-72741d98-de9b-4ecb-8e57-7d2fd3b5bef1"
+                        },
+                        {
+                          "id": "4a82cca8-f216-4a27-b5a2-7dd45b1e8def",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/policy_version",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "policy_version"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:11.000Z",
+                          "updatedAt": "2026-07-28T01:20:11.000Z",
+                          "uid": "35240-4a82cca8-f216-4a27-b5a2-7dd45b1e8def"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:11.000Z",
+                      "updatedAt": "2026-07-28T01:20:11.000Z",
+                      "uid": "35240-68deb697-ce5d-4d29-aedb-a846b0709614"
+                    }
+                  ],
+                  "id": "28165a6b-ddbe-43a7-b332-ff3654352ead",
+                  "createdAt": "2026-07-28T01:20:10.000Z",
+                  "updatedAt": "2026-07-28T01:20:10.000Z",
+                  "uid": "35240-28165a6b-ddbe-43a7-b332-ff3654352ead"
+                }
+              ],
+              "id": "a13b1164-bc75-413b-9495-039156410956",
+              "createdAt": "2026-07-28T01:20:10.000Z",
+              "updatedAt": "2026-07-28T01:20:10.000Z",
+              "uid": "35240-a13b1164-bc75-413b-9495-039156410956"
+            }
+          ],
+          "id": "b701a6e5-bcb4-4edd-8a8e-57a2f5aa8caf",
+          "createdAt": "2026-07-28T01:20:10.000Z",
+          "updatedAt": "2026-07-28T01:20:10.000Z",
+          "uid": "35240-b701a6e5-bcb4-4edd-8a8e-57a2f5aa8caf"
+        }
+      ],
+      "id": "e7defdb0-a4a7-4a02-bb48-5097f90e2876",
+      "createdAt": "2026-07-28T01:20:10.000Z",
+      "updatedAt": "2026-07-28T01:20:10.000Z",
+      "uid": "35240-e7defdb0-a4a7-4a02-bb48-5097f90e2876"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

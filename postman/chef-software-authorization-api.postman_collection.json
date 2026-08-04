@@ -1,0 +1,487 @@
+{
+  "info": {
+    "_postman_id": "0c18417c-3468-40a4-9dc0-104d8fcfa9ef",
+    "name": "external/applications/applications.proto ApplicationsService Authorization API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:35.000Z",
+    "updatedAt": "2026-07-28T01:19:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0c18417c-3468-40a4-9dc0-104d8fcfa9ef"
+  },
+  "item": [
+    {
+      "name": "apis",
+      "item": [
+        {
+          "name": "iam",
+          "item": [
+            {
+              "name": "v2",
+              "item": [
+                {
+                  "name": "introspect",
+                  "item": [
+                    {
+                      "name": "Authorization Introspect All",
+                      "id": "f2da4e64-f5c5-493d-a628-f85943a73822",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/introspect",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "introspect"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "2790b6ff-e2be-4519-af07-283e4d01434a",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/introspect",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "introspect"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"endpoints\": {\n    \"laborum_6d\": {\n      \"get\": \"<boolean>\",\n      \"put\": \"<boolean>\",\n      \"post\": \"<boolean>\",\n      \"delete\": \"<boolean>\",\n      \"patch\": \"<boolean>\"\n    }\n  }\n}",
+                          "createdAt": "2026-07-28T01:19:35.000Z",
+                          "updatedAt": "2026-07-28T01:19:35.000Z",
+                          "uid": "35240-2790b6ff-e2be-4519-af07-283e4d01434a"
+                        },
+                        {
+                          "id": "efcf76a1-8d3b-4d16-8701-660025b08948",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/introspect",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "introspect"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:35.000Z",
+                          "updatedAt": "2026-07-28T01:19:35.000Z",
+                          "uid": "35240-efcf76a1-8d3b-4d16-8701-660025b08948"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:35.000Z",
+                      "updatedAt": "2026-07-28T01:19:35.000Z",
+                      "uid": "35240-f2da4e64-f5c5-493d-a628-f85943a73822"
+                    },
+                    {
+                      "name": "Authorization Introspect",
+                      "id": "4ac572d9-72a0-45fd-97e6-c797c76f2aff",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"path\": \"<string>\",\n  \"parameters\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/introspect",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "introspect"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "61498d8a-274f-47d4-8777-9ccbe6630d96",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"path\": \"<string>\",\n  \"parameters\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/introspect",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "introspect"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"endpoints\": {\n    \"laborum_6d\": {\n      \"get\": \"<boolean>\",\n      \"put\": \"<boolean>\",\n      \"post\": \"<boolean>\",\n      \"delete\": \"<boolean>\",\n      \"patch\": \"<boolean>\"\n    }\n  }\n}",
+                          "createdAt": "2026-07-28T01:19:35.000Z",
+                          "updatedAt": "2026-07-28T01:19:35.000Z",
+                          "uid": "35240-61498d8a-274f-47d4-8777-9ccbe6630d96"
+                        },
+                        {
+                          "id": "0d06ed02-4833-45f1-83cc-d7bc479380cb",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"path\": \"<string>\",\n  \"parameters\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/introspect",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "introspect"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:35.000Z",
+                          "updatedAt": "2026-07-28T01:19:35.000Z",
+                          "uid": "35240-0d06ed02-4833-45f1-83cc-d7bc479380cb"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:35.000Z",
+                      "updatedAt": "2026-07-28T01:19:35.000Z",
+                      "uid": "35240-4ac572d9-72a0-45fd-97e6-c797c76f2aff"
+                    }
+                  ],
+                  "id": "0a4ca6fa-0758-43d9-8228-c5ddb2fd2d1f",
+                  "createdAt": "2026-07-28T01:19:35.000Z",
+                  "updatedAt": "2026-07-28T01:19:35.000Z",
+                  "uid": "35240-0a4ca6fa-0758-43d9-8228-c5ddb2fd2d1f"
+                },
+                {
+                  "name": "introspect_some",
+                  "item": [
+                    {
+                      "name": "Authorization Introspect Some",
+                      "id": "6ae171b1-c978-4295-b0dc-13b3fdfd9801",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"paths\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/introspect_some",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "introspect_some"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "ff11b44d-42c9-4846-9f3d-143cc2857f62",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"paths\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/introspect_some",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "introspect_some"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"endpoints\": {\n    \"laborum_6d\": {\n      \"get\": \"<boolean>\",\n      \"put\": \"<boolean>\",\n      \"post\": \"<boolean>\",\n      \"delete\": \"<boolean>\",\n      \"patch\": \"<boolean>\"\n    }\n  }\n}",
+                          "createdAt": "2026-07-28T01:19:35.000Z",
+                          "updatedAt": "2026-07-28T01:19:35.000Z",
+                          "uid": "35240-ff11b44d-42c9-4846-9f3d-143cc2857f62"
+                        },
+                        {
+                          "id": "b6c0aece-bf76-4998-a8c9-9a8eb9e599fd",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"paths\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/introspect_some",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "introspect_some"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:35.000Z",
+                          "updatedAt": "2026-07-28T01:19:35.000Z",
+                          "uid": "35240-b6c0aece-bf76-4998-a8c9-9a8eb9e599fd"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:35.000Z",
+                      "updatedAt": "2026-07-28T01:19:35.000Z",
+                      "uid": "35240-6ae171b1-c978-4295-b0dc-13b3fdfd9801"
+                    }
+                  ],
+                  "id": "4f397af1-9846-4978-91f7-f7f1b9464cbd",
+                  "createdAt": "2026-07-28T01:19:35.000Z",
+                  "updatedAt": "2026-07-28T01:19:35.000Z",
+                  "uid": "35240-4f397af1-9846-4978-91f7-f7f1b9464cbd"
+                }
+              ],
+              "id": "63218eab-e1cb-43b0-8a29-b93c4afc808b",
+              "createdAt": "2026-07-28T01:19:35.000Z",
+              "updatedAt": "2026-07-28T01:19:35.000Z",
+              "uid": "35240-63218eab-e1cb-43b0-8a29-b93c4afc808b"
+            }
+          ],
+          "id": "d1bd2dea-7850-4ae1-b3c7-99ee11f32c08",
+          "createdAt": "2026-07-28T01:19:35.000Z",
+          "updatedAt": "2026-07-28T01:19:35.000Z",
+          "uid": "35240-d1bd2dea-7850-4ae1-b3c7-99ee11f32c08"
+        }
+      ],
+      "id": "90336bb1-6a54-4a61-84a9-79b7381d10f6",
+      "createdAt": "2026-07-28T01:19:35.000Z",
+      "updatedAt": "2026-07-28T01:19:35.000Z",
+      "uid": "35240-90336bb1-6a54-4a61-84a9-79b7381d10f6"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

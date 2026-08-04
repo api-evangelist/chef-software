@@ -1,0 +1,781 @@
+{
+  "info": {
+    "_postman_id": "6f974561-b63c-49e3-9a4c-6e6bd51c4b4b",
+    "name": "external/applications/applications.proto ApplicationsService roles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:20:31.000Z",
+    "updatedAt": "2026-07-28T01:20:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6f974561-b63c-49e3-9a4c-6e6bd51c4b4b"
+  },
+  "item": [
+    {
+      "name": "apis",
+      "item": [
+        {
+          "name": "iam",
+          "item": [
+            {
+              "name": "v2",
+              "item": [
+                {
+                  "name": "roles",
+                  "item": [
+                    {
+                      "name": "{id}",
+                      "item": [
+                        {
+                          "name": "Gets a role",
+                          "id": "f615641a-6102-4e14-9168-906060d82796",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/roles/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "roles",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "12dda7eb-5078-4408-a2b2-de647a2eaa2f",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) ID of the role."
+                                }
+                              ]
+                            },
+                            "description": "Returns the details for a role.\n\nAuthorization Action:\n```\niam:roles:get\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "80f12f1b-d780-4efe-8b6a-131bc05a184c",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/roles/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "roles",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"role\": {\n    \"name\": \"<string>\",\n    \"id\": \"<string>\",\n    \"type\": \"CHEF_MANAGED\",\n    \"actions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:32.000Z",
+                              "updatedAt": "2026-07-28T01:20:32.000Z",
+                              "uid": "35240-80f12f1b-d780-4efe-8b6a-131bc05a184c"
+                            },
+                            {
+                              "id": "245674e4-46ee-432c-b541-ea2c3dbbb4fb",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/roles/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "roles",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:32.000Z",
+                              "updatedAt": "2026-07-28T01:20:32.000Z",
+                              "uid": "35240-245674e4-46ee-432c-b541-ea2c3dbbb4fb"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:32.000Z",
+                          "updatedAt": "2026-07-28T01:20:32.000Z",
+                          "uid": "35240-f615641a-6102-4e14-9168-906060d82796"
+                        },
+                        {
+                          "name": "Deletes a custom role",
+                          "id": "f1493b42-6cd9-4e38-8dc4-bb39ee33c74f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/roles/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "roles",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "810e21e1-533e-46a3-a23a-ae492b3b195a",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) ID of the role."
+                                }
+                              ]
+                            },
+                            "description": "Deletes a specified custom role (you cannot delete Chef-managed roles) and remove it from any statements that may have been using it.\nIf such a statement has no other associated actions, the statement is deleted as well.\nSimilarly, if that statement removal results in a policy with no other statements,\nthat policy is removed as well.\n\nAuthorization Action:\n```\niam:roles:delete\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "0f29a062-c6f7-46d0-924f-510d3c7c3ceb",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/roles/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "roles",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{}",
+                              "createdAt": "2026-07-28T01:20:32.000Z",
+                              "updatedAt": "2026-07-28T01:20:32.000Z",
+                              "uid": "35240-0f29a062-c6f7-46d0-924f-510d3c7c3ceb"
+                            },
+                            {
+                              "id": "f0be0ffb-e78d-4a84-ae83-e1b2874771e2",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/roles/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "roles",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:32.000Z",
+                              "updatedAt": "2026-07-28T01:20:32.000Z",
+                              "uid": "35240-f0be0ffb-e78d-4a84-ae83-e1b2874771e2"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:32.000Z",
+                          "updatedAt": "2026-07-28T01:20:32.000Z",
+                          "uid": "35240-f1493b42-6cd9-4e38-8dc4-bb39ee33c74f"
+                        },
+                        {
+                          "name": "Updates a custom role",
+                          "id": "55390425-ec7e-44d8-a1f3-fad28ebc9868",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"actions\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/roles/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "roles",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "4a39a5d5-3d54-4aac-8085-02fcc04e5ab7",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) Unique ID. Cannot be changed."
+                                }
+                              ]
+                            },
+                            "description": "This operation overwrites all fields excepting ID,\nincluding those omitted from the request, so be sure to specify all properties.\nProperties that you do not include are reset to empty values.\n\nAuthorization Action:\n```\niam:roles:update\n```"
+                          },
+                          "response": [
+                            {
+                              "id": "f288616d-8420-49ba-a07c-ac814c703449",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"actions\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/roles/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "roles",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"role\": {\n    \"name\": \"<string>\",\n    \"id\": \"<string>\",\n    \"type\": \"CHEF_MANAGED\",\n    \"actions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                              "createdAt": "2026-07-28T01:20:32.000Z",
+                              "updatedAt": "2026-07-28T01:20:32.000Z",
+                              "uid": "35240-f288616d-8420-49ba-a07c-ac814c703449"
+                            },
+                            {
+                              "id": "47dedc06-cdb5-4ce5-87fc-3f9b675b6381",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"actions\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/iam/v2/roles/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "iam",
+                                    "v2",
+                                    "roles",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:20:32.000Z",
+                              "updatedAt": "2026-07-28T01:20:32.000Z",
+                              "uid": "35240-47dedc06-cdb5-4ce5-87fc-3f9b675b6381"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:20:32.000Z",
+                          "updatedAt": "2026-07-28T01:20:32.000Z",
+                          "uid": "35240-55390425-ec7e-44d8-a1f3-fad28ebc9868"
+                        }
+                      ],
+                      "id": "06f3c779-df73-4d8f-bfbb-bb306babc15a",
+                      "createdAt": "2026-07-28T01:20:32.000Z",
+                      "updatedAt": "2026-07-28T01:20:32.000Z",
+                      "uid": "35240-06f3c779-df73-4d8f-bfbb-bb306babc15a"
+                    },
+                    {
+                      "name": "Lists all roles",
+                      "id": "25c61d59-d0e5-4456-a5e2-1f79920cece5",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/roles",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "roles"
+                          ]
+                        },
+                        "description": "Lists all *Chef-managed* and *Custom* roles.\n\nAuthorization Action:\n```\niam:roles:list\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "fd9bb9cc-d18d-43a5-b35b-83915ad302c0",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/roles",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "roles"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"roles\": [\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\",\n      \"type\": \"CHEF_MANAGED\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\",\n      \"type\": \"CHEF_MANAGED\",\n      \"actions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:32.000Z",
+                          "updatedAt": "2026-07-28T01:20:32.000Z",
+                          "uid": "35240-fd9bb9cc-d18d-43a5-b35b-83915ad302c0"
+                        },
+                        {
+                          "id": "3a7eb36d-3160-40ce-978f-849bbf28b5d3",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/roles",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "roles"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:32.000Z",
+                          "updatedAt": "2026-07-28T01:20:32.000Z",
+                          "uid": "35240-3a7eb36d-3160-40ce-978f-849bbf28b5d3"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:32.000Z",
+                      "updatedAt": "2026-07-28T01:20:32.000Z",
+                      "uid": "35240-25c61d59-d0e5-4456-a5e2-1f79920cece5"
+                    },
+                    {
+                      "name": "Creates a custom role",
+                      "id": "583c6504-e79c-48e9-bb52-dc491c44e3f6",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"actions\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/iam/v2/roles",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "iam",
+                            "v2",
+                            "roles"
+                          ]
+                        },
+                        "description": "Creates a new role to be used in the policies that control permissions in Automate.\n\nA role defines the scope of actions in a policy statement.\n\nAuthorization Action:\n```\niam:roles:create\n```"
+                      },
+                      "response": [
+                        {
+                          "id": "40d698f0-10c5-4612-92c4-924782977035",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"actions\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/roles",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "roles"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"role\": {\n    \"name\": \"<string>\",\n    \"id\": \"<string>\",\n    \"type\": \"CHEF_MANAGED\",\n    \"actions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"projects\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                          "createdAt": "2026-07-28T01:20:32.000Z",
+                          "updatedAt": "2026-07-28T01:20:32.000Z",
+                          "uid": "35240-40d698f0-10c5-4612-92c4-924782977035"
+                        },
+                        {
+                          "id": "d68982fb-860f-45cb-8c9b-96c6aeab9b7d",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"actions\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/iam/v2/roles",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "iam",
+                                "v2",
+                                "roles"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:20:32.000Z",
+                          "updatedAt": "2026-07-28T01:20:32.000Z",
+                          "uid": "35240-d68982fb-860f-45cb-8c9b-96c6aeab9b7d"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:20:32.000Z",
+                      "updatedAt": "2026-07-28T01:20:32.000Z",
+                      "uid": "35240-583c6504-e79c-48e9-bb52-dc491c44e3f6"
+                    }
+                  ],
+                  "id": "f3ecff61-13fd-4fa9-9011-7334c02ed7ae",
+                  "createdAt": "2026-07-28T01:20:32.000Z",
+                  "updatedAt": "2026-07-28T01:20:32.000Z",
+                  "uid": "35240-f3ecff61-13fd-4fa9-9011-7334c02ed7ae"
+                }
+              ],
+              "id": "5b89a06f-f6ed-4743-84c0-b196f3dd2a6a",
+              "createdAt": "2026-07-28T01:20:32.000Z",
+              "updatedAt": "2026-07-28T01:20:32.000Z",
+              "uid": "35240-5b89a06f-f6ed-4743-84c0-b196f3dd2a6a"
+            }
+          ],
+          "id": "8906ed4d-9c71-44bf-861a-c033dd72c7a9",
+          "createdAt": "2026-07-28T01:20:32.000Z",
+          "updatedAt": "2026-07-28T01:20:32.000Z",
+          "uid": "35240-8906ed4d-9c71-44bf-861a-c033dd72c7a9"
+        }
+      ],
+      "id": "4db9be9f-47f0-4558-bb1c-67505336d7ac",
+      "createdAt": "2026-07-28T01:20:32.000Z",
+      "updatedAt": "2026-07-28T01:20:32.000Z",
+      "uid": "35240-4db9be9f-47f0-4558-bb1c-67505336d7ac"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

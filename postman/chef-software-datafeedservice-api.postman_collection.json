@@ -1,0 +1,1313 @@
+{
+  "info": {
+    "_postman_id": "321959c6-b67d-4043-8ad9-d4a082113aa7",
+    "name": "external/applications/applications.proto ApplicationsService DatafeedService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:19:57.000Z",
+    "updatedAt": "2026-07-28T01:19:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-321959c6-b67d-4043-8ad9-d4a082113aa7"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "datafeed",
+              "item": [
+                {
+                  "name": "config",
+                  "item": [
+                    {
+                      "name": "Datafeed Service Global Data Feed Config",
+                      "id": "ce21d2bb-1b8d-445f-8165-92f8aefccaac",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/datafeed/config",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "datafeed",
+                            "config"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "84572250-e0de-4761-b512-442a2a80e7da",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/datafeed/config",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "datafeed",
+                                "config"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"feed_interval\": \"<string>\",\n  \"node_batch_size\": \"<int64>\",\n  \"updated_nodes_only\": \"<boolean>\",\n  \"disable_cidr_filter\": \"<boolean>\",\n  \"cidr_filter\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"accepted_status_codes\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:57.000Z",
+                          "updatedAt": "2026-07-28T01:19:57.000Z",
+                          "uid": "35240-84572250-e0de-4761-b512-442a2a80e7da"
+                        },
+                        {
+                          "id": "70d99c5b-e947-40bb-99d5-dd506bd15448",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/datafeed/config",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "datafeed",
+                                "config"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:57.000Z",
+                          "updatedAt": "2026-07-28T01:19:57.000Z",
+                          "uid": "35240-70d99c5b-e947-40bb-99d5-dd506bd15448"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:57.000Z",
+                      "updatedAt": "2026-07-28T01:19:57.000Z",
+                      "uid": "35240-ce21d2bb-1b8d-445f-8165-92f8aefccaac"
+                    }
+                  ],
+                  "id": "49e616e7-4289-4d80-bbe6-fa4e13d92efc",
+                  "createdAt": "2026-07-28T01:19:57.000Z",
+                  "updatedAt": "2026-07-28T01:19:57.000Z",
+                  "uid": "35240-49e616e7-4289-4d80-bbe6-fa4e13d92efc"
+                },
+                {
+                  "name": "destination",
+                  "item": [
+                    {
+                      "name": "enable",
+                      "item": [
+                        {
+                          "name": "{id}",
+                          "item": [
+                            {
+                              "name": "Datafeed Service Enable Destination",
+                              "id": "9a75e061-bcf4-43e0-a1dd-2838ceb791d1",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"enable\": \"<boolean>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/datafeed/destination/enable/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "datafeed",
+                                    "destination",
+                                    "enable",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "0e063923-ee70-4f14-ae51-80905da1cb7b",
+                                      "key": "id",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                }
+                              },
+                              "response": [
+                                {
+                                  "id": "aab9e5b2-15d0-461a-9e8f-44a2acb5d009",
+                                  "name": "A successful response.",
+                                  "originalRequest": {
+                                    "method": "PATCH",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"enable\": \"<boolean>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/datafeed/destination/enable/:id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "datafeed",
+                                        "destination",
+                                        "enable",
+                                        ":id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"id\": \"<int64>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string>\",\n  \"services\": \"<string>\",\n  \"integration_types\": \"<string>\",\n  \"enable\": \"<boolean>\",\n  \"meta_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:19:57.000Z",
+                                  "updatedAt": "2026-07-28T01:19:57.000Z",
+                                  "uid": "35240-aab9e5b2-15d0-461a-9e8f-44a2acb5d009"
+                                },
+                                {
+                                  "id": "45cf5b3b-a018-4282-8a59-bc13b95813f9",
+                                  "name": "An unexpected error response.",
+                                  "originalRequest": {
+                                    "method": "PATCH",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"id\": \"<string>\",\n  \"enable\": \"<boolean>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v0/datafeed/destination/enable/:id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v0",
+                                        "datafeed",
+                                        "destination",
+                                        "enable",
+                                        ":id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:19:57.000Z",
+                                  "updatedAt": "2026-07-28T01:19:57.000Z",
+                                  "uid": "35240-45cf5b3b-a018-4282-8a59-bc13b95813f9"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:19:57.000Z",
+                              "updatedAt": "2026-07-28T01:19:57.000Z",
+                              "uid": "35240-9a75e061-bcf4-43e0-a1dd-2838ceb791d1"
+                            }
+                          ],
+                          "id": "0f68b850-4d20-4112-89f7-fd0fc0ac58f5",
+                          "createdAt": "2026-07-28T01:19:57.000Z",
+                          "updatedAt": "2026-07-28T01:19:57.000Z",
+                          "uid": "35240-0f68b850-4d20-4112-89f7-fd0fc0ac58f5"
+                        }
+                      ],
+                      "id": "aff0e0d3-278e-462b-aecd-2be4b19aa3a8",
+                      "createdAt": "2026-07-28T01:19:57.000Z",
+                      "updatedAt": "2026-07-28T01:19:57.000Z",
+                      "uid": "35240-aff0e0d3-278e-462b-aecd-2be4b19aa3a8"
+                    },
+                    {
+                      "name": "{id}",
+                      "item": [
+                        {
+                          "name": "Datafeed Service Get Destination",
+                          "id": "6b205f00-29ea-4c1b-85a6-e56a0ece1d57",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/datafeed/destination/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "datafeed",
+                                "destination",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "96a2a0cd-f274-437b-b501-fdc5f6806f4c",
+                                  "key": "id",
+                                  "value": "<int64>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "0c7fe7b3-3575-4268-9d56-e14d2bdfae46",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/datafeed/destination/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "datafeed",
+                                    "destination",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<int64>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string>\",\n  \"services\": \"<string>\",\n  \"integration_types\": \"<string>\",\n  \"enable\": \"<boolean>\",\n  \"meta_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:57.000Z",
+                              "updatedAt": "2026-07-28T01:19:57.000Z",
+                              "uid": "35240-0c7fe7b3-3575-4268-9d56-e14d2bdfae46"
+                            },
+                            {
+                              "id": "f821a97e-2d49-4479-9dc8-ae82808ca496",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/datafeed/destination/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "datafeed",
+                                    "destination",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:57.000Z",
+                              "updatedAt": "2026-07-28T01:19:57.000Z",
+                              "uid": "35240-f821a97e-2d49-4479-9dc8-ae82808ca496"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:57.000Z",
+                          "updatedAt": "2026-07-28T01:19:57.000Z",
+                          "uid": "35240-6b205f00-29ea-4c1b-85a6-e56a0ece1d57"
+                        },
+                        {
+                          "name": "Datafeed Service Delete Destination",
+                          "id": "d48a9769-3846-4afb-a00d-4e6f0d6d9f57",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/datafeed/destination/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "datafeed",
+                                "destination",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "04f1bb8c-d1b2-4130-9f17-c2ac2440e7e3",
+                                  "key": "id",
+                                  "value": "<int64>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "13dc2e95-336f-440c-b7eb-cb290eec82ae",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/datafeed/destination/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "datafeed",
+                                    "destination",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<int64>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string>\",\n  \"services\": \"<string>\",\n  \"integration_types\": \"<string>\",\n  \"enable\": \"<boolean>\",\n  \"meta_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:57.000Z",
+                              "updatedAt": "2026-07-28T01:19:57.000Z",
+                              "uid": "35240-13dc2e95-336f-440c-b7eb-cb290eec82ae"
+                            },
+                            {
+                              "id": "8b85bfc7-55bf-4258-abec-026b3c65dd34",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/datafeed/destination/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "datafeed",
+                                    "destination",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:57.000Z",
+                              "updatedAt": "2026-07-28T01:19:57.000Z",
+                              "uid": "35240-8b85bfc7-55bf-4258-abec-026b3c65dd34"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:57.000Z",
+                          "updatedAt": "2026-07-28T01:19:57.000Z",
+                          "uid": "35240-d48a9769-3846-4afb-a00d-4e6f0d6d9f57"
+                        },
+                        {
+                          "name": "Datafeed Service Update Destination",
+                          "id": "8a1d7dc7-5766-40ea-a881-863588016751",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string>\",\n  \"services\": \"<string>\",\n  \"integration_types\": \"<string>\",\n  \"enable\": \"<boolean>\",\n  \"meta_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/datafeed/destination/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "datafeed",
+                                "destination",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "2659f402-e1b5-4198-a48e-498de45a0b2c",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "cc4fcd97-faf6-4fa8-b793-ff2a431ba8fd",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string>\",\n  \"services\": \"<string>\",\n  \"integration_types\": \"<string>\",\n  \"enable\": \"<boolean>\",\n  \"meta_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/datafeed/destination/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "datafeed",
+                                    "destination",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<int64>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string>\",\n  \"services\": \"<string>\",\n  \"integration_types\": \"<string>\",\n  \"enable\": \"<boolean>\",\n  \"meta_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:57.000Z",
+                              "updatedAt": "2026-07-28T01:19:57.000Z",
+                              "uid": "35240-cc4fcd97-faf6-4fa8-b793-ff2a431ba8fd"
+                            },
+                            {
+                              "id": "ffbe7d73-fca8-478e-bd15-03abd084766c",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string>\",\n  \"services\": \"<string>\",\n  \"integration_types\": \"<string>\",\n  \"enable\": \"<boolean>\",\n  \"meta_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/datafeed/destination/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "datafeed",
+                                    "destination",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:57.000Z",
+                              "updatedAt": "2026-07-28T01:19:57.000Z",
+                              "uid": "35240-ffbe7d73-fca8-478e-bd15-03abd084766c"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:57.000Z",
+                          "updatedAt": "2026-07-28T01:19:57.000Z",
+                          "uid": "35240-8a1d7dc7-5766-40ea-a881-863588016751"
+                        }
+                      ],
+                      "id": "23cbe1f8-0891-4bac-91e0-b377cb299283",
+                      "createdAt": "2026-07-28T01:19:57.000Z",
+                      "updatedAt": "2026-07-28T01:19:57.000Z",
+                      "uid": "35240-23cbe1f8-0891-4bac-91e0-b377cb299283"
+                    },
+                    {
+                      "name": "Datafeed Service Add Destination",
+                      "id": "4661a0af-e581-42a8-b191-33e33ba30d81",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<int64>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string>\",\n  \"services\": \"<string>\",\n  \"integration_types\": \"<string>\",\n  \"enable\": \"<boolean>\",\n  \"meta_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/datafeed/destination",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "datafeed",
+                            "destination"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "654bd4cc-90a3-4c82-a3b6-d6a65ab63caa",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<int64>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string>\",\n  \"services\": \"<string>\",\n  \"integration_types\": \"<string>\",\n  \"enable\": \"<boolean>\",\n  \"meta_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/datafeed/destination",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "datafeed",
+                                "destination"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<int64>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string>\",\n  \"services\": \"<string>\",\n  \"integration_types\": \"<string>\",\n  \"enable\": \"<boolean>\",\n  \"meta_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:57.000Z",
+                          "updatedAt": "2026-07-28T01:19:57.000Z",
+                          "uid": "35240-654bd4cc-90a3-4c82-a3b6-d6a65ab63caa"
+                        },
+                        {
+                          "id": "8466d0aa-bd1f-4464-8ee1-193d7b0ade42",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<int64>\",\n  \"name\": \"<string>\",\n  \"url\": \"<string>\",\n  \"secret\": \"<string>\",\n  \"services\": \"<string>\",\n  \"integration_types\": \"<string>\",\n  \"enable\": \"<boolean>\",\n  \"meta_data\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/datafeed/destination",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "datafeed",
+                                "destination"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:57.000Z",
+                          "updatedAt": "2026-07-28T01:19:57.000Z",
+                          "uid": "35240-8466d0aa-bd1f-4464-8ee1-193d7b0ade42"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:57.000Z",
+                      "updatedAt": "2026-07-28T01:19:57.000Z",
+                      "uid": "35240-4661a0af-e581-42a8-b191-33e33ba30d81"
+                    }
+                  ],
+                  "id": "dd0e9bdf-62c8-4f26-b285-2fc012245c90",
+                  "createdAt": "2026-07-28T01:19:57.000Z",
+                  "updatedAt": "2026-07-28T01:19:57.000Z",
+                  "uid": "35240-dd0e9bdf-62c8-4f26-b285-2fc012245c90"
+                },
+                {
+                  "name": "destinations",
+                  "item": [
+                    {
+                      "name": "test",
+                      "item": [
+                        {
+                          "name": "Datafeed Service Test Destination",
+                          "id": "b525c432-13d3-4d75-a7e3-5efcea2713a5",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"url\": \"<string>\",\n  \"username_password\": {\n    \"username\": \"<string>\",\n    \"password\": \"<string>\"\n  },\n  \"secret_id\": {\n    \"id\": \"<string>\"\n  },\n  \"secret_id_with_addon\": {\n    \"id\": \"<string>\",\n    \"services\": \"<string>\",\n    \"integration_types\": \"<string>\",\n    \"enable\": \"<boolean>\",\n    \"meta_data\": [\n      {\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"header\": {\n    \"value\": \"<string>\"\n  },\n  \"aws\": {\n    \"access_key\": \"<string>\",\n    \"secret_access_key\": \"<string>\",\n    \"bucket\": \"<string>\",\n    \"region\": \"<string>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/datafeed/destinations/test",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "datafeed",
+                                "destinations",
+                                "test"
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "13d36cad-34a1-4f7c-a981-0f82641dca1a",
+                              "name": "A successful response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"url\": \"<string>\",\n  \"username_password\": {\n    \"username\": \"<string>\",\n    \"password\": \"<string>\"\n  },\n  \"secret_id\": {\n    \"id\": \"<string>\"\n  },\n  \"secret_id_with_addon\": {\n    \"id\": \"<string>\",\n    \"services\": \"<string>\",\n    \"integration_types\": \"<string>\",\n    \"enable\": \"<boolean>\",\n    \"meta_data\": [\n      {\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"header\": {\n    \"value\": \"<string>\"\n  },\n  \"aws\": {\n    \"access_key\": \"<string>\",\n    \"secret_access_key\": \"<string>\",\n    \"bucket\": \"<string>\",\n    \"region\": \"<string>\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/datafeed/destinations/test",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "datafeed",
+                                    "destinations",
+                                    "test"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"success\": \"<boolean>\"\n}",
+                              "createdAt": "2026-07-28T01:19:57.000Z",
+                              "updatedAt": "2026-07-28T01:19:57.000Z",
+                              "uid": "35240-13d36cad-34a1-4f7c-a981-0f82641dca1a"
+                            },
+                            {
+                              "id": "b7d47147-b055-4790-88d6-f9c498d85c49",
+                              "name": "An unexpected error response.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"url\": \"<string>\",\n  \"username_password\": {\n    \"username\": \"<string>\",\n    \"password\": \"<string>\"\n  },\n  \"secret_id\": {\n    \"id\": \"<string>\"\n  },\n  \"secret_id_with_addon\": {\n    \"id\": \"<string>\",\n    \"services\": \"<string>\",\n    \"integration_types\": \"<string>\",\n    \"enable\": \"<boolean>\",\n    \"meta_data\": [\n      {\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"header\": {\n    \"value\": \"<string>\"\n  },\n  \"aws\": {\n    \"access_key\": \"<string>\",\n    \"secret_access_key\": \"<string>\",\n    \"bucket\": \"<string>\",\n    \"region\": \"<string>\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v0/datafeed/destinations/test",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v0",
+                                    "datafeed",
+                                    "destinations",
+                                    "test"
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:19:57.000Z",
+                              "updatedAt": "2026-07-28T01:19:57.000Z",
+                              "uid": "35240-b7d47147-b055-4790-88d6-f9c498d85c49"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:19:57.000Z",
+                          "updatedAt": "2026-07-28T01:19:57.000Z",
+                          "uid": "35240-b525c432-13d3-4d75-a7e3-5efcea2713a5"
+                        }
+                      ],
+                      "id": "2e08e416-3aff-4097-a40d-251e8f77aef1",
+                      "createdAt": "2026-07-28T01:19:57.000Z",
+                      "updatedAt": "2026-07-28T01:19:57.000Z",
+                      "uid": "35240-2e08e416-3aff-4097-a40d-251e8f77aef1"
+                    },
+                    {
+                      "name": "Datafeed Service List Destinations",
+                      "id": "8083b603-6636-4c11-bd2c-e772e164d9ab",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v0/datafeed/destinations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v0",
+                            "datafeed",
+                            "destinations"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "851df9aa-62d6-491f-989f-ca585b7eb52f",
+                          "name": "A successful response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/datafeed/destinations",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "datafeed",
+                                "destinations"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"destinations\": [\n    {\n      \"id\": \"<int64>\",\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"services\": \"<string>\",\n      \"integration_types\": \"<string>\",\n      \"enable\": \"<boolean>\",\n      \"meta_data\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<int64>\",\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"secret\": \"<string>\",\n      \"services\": \"<string>\",\n      \"integration_types\": \"<string>\",\n      \"enable\": \"<boolean>\",\n      \"meta_data\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:57.000Z",
+                          "updatedAt": "2026-07-28T01:19:57.000Z",
+                          "uid": "35240-851df9aa-62d6-491f-989f-ca585b7eb52f"
+                        },
+                        {
+                          "id": "5d3d3bac-04b7-4b74-8f4d-71d2604da0ec",
+                          "name": "An unexpected error response.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v0/datafeed/destinations",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v0",
+                                "datafeed",
+                                "destinations"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\",\n  \"details\": [\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"type_url\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:19:57.000Z",
+                          "updatedAt": "2026-07-28T01:19:57.000Z",
+                          "uid": "35240-5d3d3bac-04b7-4b74-8f4d-71d2604da0ec"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:19:57.000Z",
+                      "updatedAt": "2026-07-28T01:19:57.000Z",
+                      "uid": "35240-8083b603-6636-4c11-bd2c-e772e164d9ab"
+                    }
+                  ],
+                  "id": "b9a275a7-bc26-4770-b066-782c4fbd3d70",
+                  "createdAt": "2026-07-28T01:19:57.000Z",
+                  "updatedAt": "2026-07-28T01:19:57.000Z",
+                  "uid": "35240-b9a275a7-bc26-4770-b066-782c4fbd3d70"
+                }
+              ],
+              "id": "57f69f35-a3b9-4d5b-9127-08376c051d3c",
+              "createdAt": "2026-07-28T01:19:57.000Z",
+              "updatedAt": "2026-07-28T01:19:57.000Z",
+              "uid": "35240-57f69f35-a3b9-4d5b-9127-08376c051d3c"
+            }
+          ],
+          "id": "d88df88f-dcb0-4cb8-9b87-88e2f32944bb",
+          "createdAt": "2026-07-28T01:19:57.000Z",
+          "updatedAt": "2026-07-28T01:19:57.000Z",
+          "uid": "35240-d88df88f-dcb0-4cb8-9b87-88e2f32944bb"
+        }
+      ],
+      "id": "fbe95ca9-d5d8-40d5-b924-45758d4eb066",
+      "createdAt": "2026-07-28T01:19:57.000Z",
+      "updatedAt": "2026-07-28T01:19:57.000Z",
+      "uid": "35240-fbe95ca9-d5d8-40d5-b924-45758d4eb066"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

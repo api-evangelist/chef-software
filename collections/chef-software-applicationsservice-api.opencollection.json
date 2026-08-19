@@ -1,0 +1,38 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ApplicationsService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ApplicationsService_GetServicesUsageCount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/applications/telemetry/services/count"
+          }
+        },
+        {
+          "info": {
+            "name": "ApplicationsService_UpdateTelemetryReported",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/applications/telemetry/services/count/updated"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

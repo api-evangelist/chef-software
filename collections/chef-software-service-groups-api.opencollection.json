@@ -1,0 +1,255 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService service_groups API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "service_groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Remove Disconnected Services",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/applications/delete_disconnected_services"
+          },
+          "docs": "Removes services marked as disconnected based on the `threshold_seconds` setting.\nThis function is not used by the API or CLI and is here for testing purposes.\nThe functionality is currently covered by a periodically running job that can be configured using `UpdateDeleteDisconnectedServicesConfig`.\n\nAuthorization Action:\n```\napplications:serviceGroups:delete\n```"
+        },
+        {
+          "info": {
+            "name": "Delete the services with the given IDs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/applications/delete_services_by_id"
+          },
+          "docs": "Authorization Action:\n```\napplications:serviceGroups:delete\n```"
+        },
+        {
+          "info": {
+            "name": "Mark Services as Disconnected",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/applications/disconnected_services",
+            "params": [
+              {
+                "name": "threshold_seconds",
+                "value": "",
+                "type": "query",
+                "description": "Threshold for marking services disconnected in seconds."
+              }
+            ]
+          },
+          "docs": "Marks services as disconnected based on the `threshold_seconds` setting.\nThis function is not used by the API or CLI and is here for testing purposes.\nThe functionality is currently covered by a periodically running job that can be configured\nby utilizing the `UpdateDisconnectedServicesConfig` endpoint.\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Service Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/applications/service-groups",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Applies search and status filters, in the format of `fieldname:value` or `status:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine the service group results by a service's\n most recent connected/disconnected state or healthcheck result.\n\n Valid status filter parameters are:\n* `status:disconnected`: returns service groups with at least one service in a disconnected state\n* `status:critical`: returns service groups with a with at least one service in a \"critical\" healthcheck result\n* `status:unknown`: returns service groups with at least one service with an \"unknown\" healthcheck result\n* `status:warning`: returns service groups with at least one service with a \"warning\" healthcheck result\n* `status:ok`: returns service groups with at least one service with an \"ok\" health check result"
+              },
+              {
+                "name": "pagination.page",
+                "value": "",
+                "type": "query",
+                "description": "Page number of the results to return."
+              },
+              {
+                "name": "pagination.size",
+                "value": "",
+                "type": "query",
+                "description": "Amount of results to include per page."
+              },
+              {
+                "name": "sorting.field",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort the list results on."
+              },
+              {
+                "name": "sorting.order",
+                "value": "",
+                "type": "query",
+                "description": "Order the results should be returned in."
+              }
+            ]
+          },
+          "docs": "Lists service groups with name, health information, and application, environment, package, release metadata.\nAccepts pagination, sorting, search, and status filters.\n\nExample:\n```\napplications/service-groups?sorting.field=percent_ok&sorting.order=ASC&pagination.page=1&pagination.size=25\n```\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Services for a Service Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/applications/service-groups/:service_group_id",
+            "params": [
+              {
+                "name": "service_group_id",
+                "value": "",
+                "type": "path",
+                "description": "Service group ID."
+              },
+              {
+                "name": "pagination.page",
+                "value": "",
+                "type": "query",
+                "description": "Page number of the results to return."
+              },
+              {
+                "name": "pagination.size",
+                "value": "",
+                "type": "query",
+                "description": "Amount of results to include per page."
+              },
+              {
+                "name": "sorting.field",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort the list results on."
+              },
+              {
+                "name": "sorting.order",
+                "value": "",
+                "type": "query",
+                "description": "Order the results should be returned in."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters."
+              }
+            ]
+          },
+          "docs": "List the services for a service group with health status and service metadata.\nUses the service group ID generated by Chef Automate instead of the Chef Habitat- provided ID.\nSupports pagination and filtering.\n\nExample:\n```\napplications/service-groups/1dfff679054c60a10c51d059b6dbf81a765c46f8d3e8ce0752b22ffe8d4d9716?pagination.page=1&pagination.size=25\n```\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Service Groups Health Counts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/applications/service_groups_health_counts",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Applies search filters, in the format of `fieldname:value`.\nSee the documentation for ServiceGroupsReq for valid filter parameters."
+              }
+            ]
+          },
+          "docs": "Lists the total service group health reports by critical, warning, ok and unknown responses. Supports search and status filtering.\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/applications/services",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Applies search filters, in the format of `fieldname:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine service results by a service's\n current state or most recent healthcheck result.\n Disconnected services keep their last healthcheck result\n until their reports are removed by Chef Automate.\n When you apply a healthcheck filter, the report includes\n all recently disconnected services.\n Valid status filter parameters are:\n* `status:disconnected`: returns services in a disconnected state\n* `status:critical`: returns services with a \"critical\" healthcheck result\n* `status:unknown`: returns services with an \"unknown\" healthcheck result\n* `status:warning`: returns services with a \"warning\" healthcheck result\n* `status:ok`: returns services with an  \"ok\" health check result"
+              },
+              {
+                "name": "pagination.page",
+                "value": "",
+                "type": "query",
+                "description": "Page number of the results to return."
+              },
+              {
+                "name": "pagination.size",
+                "value": "",
+                "type": "query",
+                "description": "Amount of results to include per page."
+              },
+              {
+                "name": "sorting.field",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort the list results on."
+              },
+              {
+                "name": "sorting.order",
+                "value": "",
+                "type": "query",
+                "description": "Order the results should be returned in."
+              }
+            ]
+          },
+          "docs": "Lists service health status and service metadata for services.\nSupports pagination and search and status filtering. For a list of services for a specific service-group see \"List Services for a Service Group\" (GetServicesBySG endpoint).\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Filter Values",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/applications/services-distinct-values",
+            "params": [
+              {
+                "name": "field_name",
+                "value": "",
+                "type": "query",
+                "description": "Field name of service values."
+              },
+              {
+                "name": "query_fragment",
+                "value": "",
+                "type": "query",
+                "description": "Query value, supports wildcards (* and ?)."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters."
+              }
+            ]
+          },
+          "docs": "Lists all of the possible filter values for a given valid field.\nLimit the returned values by providing at one or more characters in the `query_fragment` parameter.\nSupports wildcard (* and ?)\n\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+        },
+        {
+          "info": {
+            "name": "Show Summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/applications/stats"
+          },
+          "docs": "Shows a summary of service-groups, services, deployments, and supervisors.\nUsed for telemetry.\nDoes not support filtering.\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

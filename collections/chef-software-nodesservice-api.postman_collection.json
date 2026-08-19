@@ -1,0 +1,1279 @@
+{
+  "item": [
+    {
+      "id": "6c6bced1-3546-4d9c-bb22-ce8badd19c06",
+      "name": "NodesService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f41074fc-5908-4606-8c16-14de76f7ecb1",
+          "name": "Create a Node",
+          "request": {
+            "name": "Create a Node",
+            "description": {
+              "content": "Creates a node and adds it to the Chef Automate node manager.\nRequires a FQDN or IP address, a user-specified name, and a ssh or winrm credential reference.\nUseful for creating nodes for the purpose of running compliance scan jobs.\n\nExample:\n```\n{\n\"name\": \"my-vagrant-node\",\n\"manager\":\"automate\",\n\"target_config\": {\n\"backend\":\"ssh\",\n\"host\":\"localhost\",\n\"secrets\":[\"b75195e5-a173-4502-9f59-d949adfe2c38\"],\n\"port\": 22\n},\n\"tags\": [\n{ \"key\":\"test-node\", \"value\":\"is amazing\" }\n]\n}\n```\n\nAuthorization Action:\n```\ninfra:nodes:create\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "nodes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"platform\": \"<string>\",\n  \"platform_version\": \"<string>\",\n  \"manager\": \"<string>\",\n  \"tags\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"last_contact\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"last_job\": {\n    \"node_id\": \"<string>\",\n    \"report_id\": \"<string>\",\n    \"status\": \"<string>\",\n    \"result\": \"<string>\",\n    \"job_id\": \"<string>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\"\n  },\n  \"target_config\": {\n    \"secrets\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"backend\": \"<string>\",\n    \"host\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"sudo\": \"<boolean>\",\n    \"ssl\": \"<boolean>\",\n    \"self_signed\": \"<boolean>\",\n    \"user\": \"<string>\",\n    \"sudo_options\": \"<string>\",\n    \"hosts\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"manager_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"connection_error\": \"<string>\",\n  \"state\": \"<string>\",\n  \"name_prefix\": \"<string>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"run_data\": {\n    \"id\": \"<string>\",\n    \"status\": \"UNKNOWN\",\n    \"penultimate_status\": \"UNKNOWN\",\n    \"end_time\": \"<dateTime>\"\n  },\n  \"scan_data\": {\n    \"id\": \"<string>\",\n    \"status\": \"UNKNOWN\",\n    \"penultimate_status\": \"UNKNOWN\",\n    \"end_time\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1b4bf855-3b72-4b1d-80ec-fac4ecf3fb4d",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "819daa7a-4697-4554-a109-e3afaa3fa010",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2169,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "76916f2b-62a8-4cf1-8ff1-0bb9864d22ca",
+          "name": "Bulk Create Nodes",
+          "request": {
+            "name": "Bulk Create Nodes",
+            "description": {
+              "content": "Creates multiple nodes from a list of node data.\n`hosts` field is required. Multiple hosts may be defined in this field.\n\nExample:\n```\n{\n\"name_prefix\": \"000-my-ssh-node\",\n\"manager\":\"automate\",\n\"target_config\": {\n\"backend\":\"ssh\",\n\"hosts\":[\"localhost\",\"127.0.0.1\"],\n\"secrets\":[\"b75195e5-a173-4502-9f59-d949adfe2c38\"],\n\"port\": 22\n},\n\"tags\": [\n{ \"key\":\"test-node\", \"value\":\"is-amazing\" },\n]\n}\n```\n\nAuthorization Action:\n```\ninfra:nodes:create\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "nodes",
+                "bulk-create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nodes\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"platform\": \"<string>\",\n      \"platform_version\": \"<string>\",\n      \"manager\": \"<string>\",\n      \"tags\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"last_contact\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"last_job\": {\n        \"node_id\": \"<string>\",\n        \"report_id\": \"<string>\",\n        \"status\": \"<string>\",\n        \"result\": \"<string>\",\n        \"job_id\": \"<string>\",\n        \"start_time\": \"<dateTime>\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"target_config\": {\n        \"secrets\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"backend\": \"<string>\",\n        \"host\": \"<string>\",\n        \"port\": \"<integer>\",\n        \"sudo\": \"<boolean>\",\n        \"ssl\": \"<boolean>\",\n        \"self_signed\": \"<boolean>\",\n        \"user\": \"<string>\",\n        \"sudo_options\": \"<string>\",\n        \"hosts\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"manager_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"connection_error\": \"<string>\",\n      \"state\": \"<string>\",\n      \"name_prefix\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"run_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"scan_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"platform\": \"<string>\",\n      \"platform_version\": \"<string>\",\n      \"manager\": \"<string>\",\n      \"tags\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"last_contact\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"last_job\": {\n        \"node_id\": \"<string>\",\n        \"report_id\": \"<string>\",\n        \"status\": \"<string>\",\n        \"result\": \"<string>\",\n        \"job_id\": \"<string>\",\n        \"start_time\": \"<dateTime>\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"target_config\": {\n        \"secrets\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"backend\": \"<string>\",\n        \"host\": \"<string>\",\n        \"port\": \"<integer>\",\n        \"sudo\": \"<boolean>\",\n        \"ssl\": \"<boolean>\",\n        \"self_signed\": \"<boolean>\",\n        \"user\": \"<string>\",\n        \"sudo_options\": \"<string>\",\n        \"hosts\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"manager_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"connection_error\": \"<string>\",\n      \"state\": \"<string>\",\n      \"name_prefix\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"run_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"scan_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      }\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"total_unreachable\": \"<integer>\",\n  \"total_reachable\": \"<integer>\",\n  \"total_unknown\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3cec3c8a-504b-45d5-bc1d-ab4038810d3d",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "bulk-create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nodes\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"platform\": \"<string>\",\n      \"platform_version\": \"<string>\",\n      \"manager\": \"<string>\",\n      \"tags\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"last_contact\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"last_job\": {\n        \"node_id\": \"<string>\",\n        \"report_id\": \"<string>\",\n        \"status\": \"<string>\",\n        \"result\": \"<string>\",\n        \"job_id\": \"<string>\",\n        \"start_time\": \"<dateTime>\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"target_config\": {\n        \"secrets\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"backend\": \"<string>\",\n        \"host\": \"<string>\",\n        \"port\": \"<integer>\",\n        \"sudo\": \"<boolean>\",\n        \"ssl\": \"<boolean>\",\n        \"self_signed\": \"<boolean>\",\n        \"user\": \"<string>\",\n        \"sudo_options\": \"<string>\",\n        \"hosts\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"manager_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"connection_error\": \"<string>\",\n      \"state\": \"<string>\",\n      \"name_prefix\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"run_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"scan_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"platform\": \"<string>\",\n      \"platform_version\": \"<string>\",\n      \"manager\": \"<string>\",\n      \"tags\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"last_contact\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"last_job\": {\n        \"node_id\": \"<string>\",\n        \"report_id\": \"<string>\",\n        \"status\": \"<string>\",\n        \"result\": \"<string>\",\n        \"job_id\": \"<string>\",\n        \"start_time\": \"<dateTime>\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"target_config\": {\n        \"secrets\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"backend\": \"<string>\",\n        \"host\": \"<string>\",\n        \"port\": \"<integer>\",\n        \"sudo\": \"<boolean>\",\n        \"ssl\": \"<boolean>\",\n        \"self_signed\": \"<boolean>\",\n        \"user\": \"<string>\",\n        \"sudo_options\": \"<string>\",\n        \"hosts\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"manager_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"connection_error\": \"<string>\",\n      \"state\": \"<string>\",\n      \"name_prefix\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"run_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"scan_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      }\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"total_unreachable\": \"<integer>\",\n  \"total_reachable\": \"<integer>\",\n  \"total_unknown\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ids\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0eb0941-c1bb-4968-b1ac-cfc2d26cb797",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "bulk-create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nodes\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"platform\": \"<string>\",\n      \"platform_version\": \"<string>\",\n      \"manager\": \"<string>\",\n      \"tags\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"last_contact\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"last_job\": {\n        \"node_id\": \"<string>\",\n        \"report_id\": \"<string>\",\n        \"status\": \"<string>\",\n        \"result\": \"<string>\",\n        \"job_id\": \"<string>\",\n        \"start_time\": \"<dateTime>\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"target_config\": {\n        \"secrets\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"backend\": \"<string>\",\n        \"host\": \"<string>\",\n        \"port\": \"<integer>\",\n        \"sudo\": \"<boolean>\",\n        \"ssl\": \"<boolean>\",\n        \"self_signed\": \"<boolean>\",\n        \"user\": \"<string>\",\n        \"sudo_options\": \"<string>\",\n        \"hosts\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"manager_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"connection_error\": \"<string>\",\n      \"state\": \"<string>\",\n      \"name_prefix\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"run_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"scan_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"platform\": \"<string>\",\n      \"platform_version\": \"<string>\",\n      \"manager\": \"<string>\",\n      \"tags\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"last_contact\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"last_job\": {\n        \"node_id\": \"<string>\",\n        \"report_id\": \"<string>\",\n        \"status\": \"<string>\",\n        \"result\": \"<string>\",\n        \"job_id\": \"<string>\",\n        \"start_time\": \"<dateTime>\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"target_config\": {\n        \"secrets\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"backend\": \"<string>\",\n        \"host\": \"<string>\",\n        \"port\": \"<integer>\",\n        \"sudo\": \"<boolean>\",\n        \"ssl\": \"<boolean>\",\n        \"self_signed\": \"<boolean>\",\n        \"user\": \"<string>\",\n        \"sudo_options\": \"<string>\",\n        \"hosts\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"manager_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"connection_error\": \"<string>\",\n      \"state\": \"<string>\",\n      \"name_prefix\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"run_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"scan_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      }\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"total_unreachable\": \"<integer>\",\n  \"total_reachable\": \"<integer>\",\n  \"total_unknown\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 4798,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55e3ea12-2f53-4fcb-9eb8-7ffcac4636a6",
+          "name": "Bulk Delete Nodes by Filter",
+          "request": {
+            "name": "Bulk Delete Nodes by Filter",
+            "description": {
+              "content": "Deletes a set of nodes that match a filter.\nAvailable filters: account_id, last_contact, manager_id, manager_type, name, platform_name,\nplatform_release, region, source_id, state, statechange_timerange, status,\nlast_run_timerange, last_scan_timerange, last_run_status, last_scan_status,\nlast_run_penultimate_status, last_scan_penultimate_status\n\nExample:\n```\n{\"filters\": [{\"key\": \"name\", \"values\": [\"vj*\"]}]}'\n```\n\nAuthorization Action:\n```\ninfra:nodes:delete\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "nodes",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b5d6b302-453a-4806-a424-61ddd38023a5",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"names\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "57f9bb32-c682-4ee7-a45e-b26a869b60fe",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 4798,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a878ec71-f4c4-4b56-987f-4e6452afec5c",
+          "name": "Bulk Delete Nodes by ID",
+          "request": {
+            "name": "Bulk Delete Nodes by ID",
+            "description": {
+              "content": "Deletes a set of nodes given a list of IDs.\nInvalid IDs will be ignored.\n\nAuthorization Action:\n```\ninfra:nodes:delete\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "nodes",
+                "delete",
+                "ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "465eeb83-26a2-4db9-a184-337167b02ae0",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "delete",
+                    "ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"names\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06e6a6e9-2e55-467f-b87c-b4d126eb073a",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "delete",
+                    "ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 4798,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "347fa226-cfa6-430a-8bba-b646b880a83d",
+          "name": "Show Node Details",
+          "request": {
+            "name": "Show Node Details",
+            "description": {
+              "content": "Returns the details for a node given the node ID.\n\nAuthorization Action:\n```\ninfra:nodes:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "nodes",
+                "id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique node ID (UUID)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4df79b45-aed0-46a6-83b9-1462a41b2db2",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique node ID (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"platform\": \"<string>\",\n  \"platform_version\": \"<string>\",\n  \"manager\": \"<string>\",\n  \"tags\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"last_contact\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"last_job\": {\n    \"node_id\": \"<string>\",\n    \"report_id\": \"<string>\",\n    \"status\": \"<string>\",\n    \"result\": \"<string>\",\n    \"job_id\": \"<string>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\"\n  },\n  \"target_config\": {\n    \"secrets\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"backend\": \"<string>\",\n    \"host\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"sudo\": \"<boolean>\",\n    \"ssl\": \"<boolean>\",\n    \"self_signed\": \"<boolean>\",\n    \"user\": \"<string>\",\n    \"sudo_options\": \"<string>\",\n    \"hosts\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"manager_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"connection_error\": \"<string>\",\n  \"state\": \"<string>\",\n  \"name_prefix\": \"<string>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"run_data\": {\n    \"id\": \"<string>\",\n    \"status\": \"UNKNOWN\",\n    \"penultimate_status\": \"UNKNOWN\",\n    \"end_time\": \"<dateTime>\"\n  },\n  \"scan_data\": {\n    \"id\": \"<string>\",\n    \"status\": \"UNKNOWN\",\n    \"penultimate_status\": \"UNKNOWN\",\n    \"end_time\": \"<dateTime>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "737838c9-e36d-48a6-8f90-54faedd47f10",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique node ID (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 4798,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "463cebf1-2467-4c4d-9a9c-3c6688fde1a7",
+          "name": "Delete a Node",
+          "request": {
+            "name": "Delete a Node",
+            "description": {
+              "content": "Deletes the node with the node ID.\n\nAuthorization Action:\n```\ninfra:nodes:delete\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "nodes",
+                "id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique node ID (UUID)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8fb66afd-9336-4d15-b07f-8cf1c654f419",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique node ID (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9463e7d-64f3-44c2-ad19-05b240384d16",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique node ID (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 4798,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a1186c1-5f96-4a9f-a3aa-c174be3ce1ab",
+          "name": "Update Node",
+          "request": {
+            "name": "Update Node",
+            "description": {
+              "content": "This PUT operation overwrites ALL node details and requires the complete set of node details,\nconsisting of a FQDN or IP address, a user-specified name, and the ID for an ssh or winrm credential.\nSubstitute the desired values for the existing node details in the PUT message.\n\nAuthorization Action:\n```\ninfra:nodes:update\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "nodes",
+                "id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique node ID (UUID)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"platform\": \"<string>\",\n  \"platform_version\": \"<string>\",\n  \"manager\": \"<string>\",\n  \"tags\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"last_contact\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"last_job\": {\n    \"node_id\": \"<string>\",\n    \"report_id\": \"<string>\",\n    \"status\": \"<string>\",\n    \"result\": \"<string>\",\n    \"job_id\": \"<string>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\"\n  },\n  \"target_config\": {\n    \"secrets\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"backend\": \"<string>\",\n    \"host\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"sudo\": \"<boolean>\",\n    \"ssl\": \"<boolean>\",\n    \"self_signed\": \"<boolean>\",\n    \"user\": \"<string>\",\n    \"sudo_options\": \"<string>\",\n    \"hosts\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"manager_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"connection_error\": \"<string>\",\n  \"state\": \"<string>\",\n  \"name_prefix\": \"<string>\",\n  \"projects\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"run_data\": {\n    \"id\": \"<string>\",\n    \"status\": \"UNKNOWN\",\n    \"penultimate_status\": \"UNKNOWN\",\n    \"end_time\": \"<dateTime>\"\n  },\n  \"scan_data\": {\n    \"id\": \"<string>\",\n    \"status\": \"UNKNOWN\",\n    \"penultimate_status\": \"UNKNOWN\",\n    \"end_time\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0dd40fe8-a497-4e38-ad0c-383d97c7e276",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique node ID (UUID)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "36ac24ea-df82-441c-8868-cada3ab97821",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique node ID (UUID)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 4798,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41631865-a4d0-4193-abbb-48c2d97da77c",
+          "name": "List Node Status",
+          "request": {
+            "name": "List Node Status",
+            "description": {
+              "content": "Use this to run an `inspec detect` job on the node, which updates the status to reflect that the node is reachable or unreachable.\n\nAuthorization Action:\n```\ninfra:nodes:rerun\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "nodes",
+                "rerun",
+                "id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique node ID (UUID)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea6685f9-a005-49f9-9a73-b52533533650",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "rerun",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique node ID (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ee3c40eb-4f20-46f2-8df6-013864eeecac",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "rerun",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique node ID (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 4798,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cbdaf05c-3cca-4911-8ec8-f0f9d53447ac",
+          "name": "List and Filter Nodes",
+          "request": {
+            "name": "List and Filter Nodes",
+            "description": {
+              "content": "Makes a list of nodes.\nSupports filtering, pagination, and sorting.\nAdding a filter narrows the list of nodes to only those that match the filter or filters.\nSupported filters:\naccount_id, last_contact, manager_id, manager_type, name, platform_name,\nplatform_release, region, source_id, state, statechange_timerange, status,\nlast_run_timerange, last_scan_timerange, last_run_status, last_scan_status,\nlast_run_penultimate_status, last_scan_penultimate_status\n\nExample:\n```\n{\n\"filters\":[\n{\"key\": \"last_scan_status\", \"values\": [\"FAILED\"]},\n{\"key\": \"last_scan_penultimate_status\", \"values\": [\"PASSED\"]},\n{\"key\": \"name\", \"values\": [\"MyNode*\"]}\n],\n\"page\":1, \"per_page\":100,\n\"sort\":\"status\", \"order\":\"ASC\"\n}\n```\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "nodes",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "44a1291a-5cdc-4e59-b37b-edcbbacd068a",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"nodes\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"platform\": \"<string>\",\n      \"platform_version\": \"<string>\",\n      \"manager\": \"<string>\",\n      \"tags\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"last_contact\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"last_job\": {\n        \"node_id\": \"<string>\",\n        \"report_id\": \"<string>\",\n        \"status\": \"<string>\",\n        \"result\": \"<string>\",\n        \"job_id\": \"<string>\",\n        \"start_time\": \"<dateTime>\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"target_config\": {\n        \"secrets\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"backend\": \"<string>\",\n        \"host\": \"<string>\",\n        \"port\": \"<integer>\",\n        \"sudo\": \"<boolean>\",\n        \"ssl\": \"<boolean>\",\n        \"self_signed\": \"<boolean>\",\n        \"user\": \"<string>\",\n        \"sudo_options\": \"<string>\",\n        \"hosts\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"manager_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"connection_error\": \"<string>\",\n      \"state\": \"<string>\",\n      \"name_prefix\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"run_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"scan_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"platform\": \"<string>\",\n      \"platform_version\": \"<string>\",\n      \"manager\": \"<string>\",\n      \"tags\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"last_contact\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"last_job\": {\n        \"node_id\": \"<string>\",\n        \"report_id\": \"<string>\",\n        \"status\": \"<string>\",\n        \"result\": \"<string>\",\n        \"job_id\": \"<string>\",\n        \"start_time\": \"<dateTime>\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"target_config\": {\n        \"secrets\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"backend\": \"<string>\",\n        \"host\": \"<string>\",\n        \"port\": \"<integer>\",\n        \"sudo\": \"<boolean>\",\n        \"ssl\": \"<boolean>\",\n        \"self_signed\": \"<boolean>\",\n        \"user\": \"<string>\",\n        \"sudo_options\": \"<string>\",\n        \"hosts\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"manager_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"connection_error\": \"<string>\",\n      \"state\": \"<string>\",\n      \"name_prefix\": \"<string>\",\n      \"projects\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"run_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      },\n      \"scan_data\": {\n        \"id\": \"<string>\",\n        \"status\": \"UNKNOWN\",\n        \"penultimate_status\": \"UNKNOWN\",\n        \"end_time\": \"<dateTime>\"\n      }\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"total_unreachable\": \"<integer>\",\n  \"total_reachable\": \"<integer>\",\n  \"total_unknown\": \"<integer>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b21909ac-c15d-4ea3-8c25-f0a9fe018add",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "nodes",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 4798,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "34473d50-f85f-47e0-a473-62b084c12ec6",
+    "name": "external/applications/applications.proto ApplicationsService NodesService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

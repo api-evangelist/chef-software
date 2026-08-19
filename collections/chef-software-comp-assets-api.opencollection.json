@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService Comp_Assets API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Comp_Assets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Set Unreachable Assets Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/compliance/reporting/assets/config"
+          },
+          "docs": "SetAssetConfig sets the compliance config with the parameters of no of days\nAnd API returns the policy name and no of the days which will set in the compliance data base\n\nAuthorization Action:\n```\ncompliance:reports:update\n```"
+        },
+        {
+          "info": {
+            "name": "Get Assets Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/compliance/reporting/assets/config/search"
+          },
+          "docs": "GetAssetConfig gets the config details from the compliance data base \nand API return the policy name and no of days\nAuthorization Action:\n```\ncompliance:reports:get\n```"
+        },
+        {
+          "info": {
+            "name": "Assets Count",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/compliance/reporting/assets/count"
+          },
+          "docs": "Count the compliance assets based on different filter options.\nThe API returns the response based on reported and unreported assets\n\nAuthorization Action:\n```\ncompliance:reports:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Assets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/compliance/reporting/assets/search"
+          },
+          "docs": "Lists the compliance assets based on different filter options.\nThe API works with filtering assets based on collected, uncollected, unreported and unreachable assets\n\nAuthorization Action:\n```\ncompliance:reports:list\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

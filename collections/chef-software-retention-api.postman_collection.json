@@ -1,0 +1,865 @@
+{
+  "item": [
+    {
+      "id": "70ed9c2c-1d35-4265-ba25-f40d97a53fb8",
+      "name": "retention",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ace1e01e-70d0-47c5-a2ad-789db2615108",
+          "name": "Show 'Remove Disconnected Services' Configuration",
+          "request": {
+            "name": "Show 'Remove Disconnected Services' Configuration",
+            "description": {
+              "content": "Displays configuration for the task that deletes services marked as disconnected\nafter 'threshold'. Threshold is a string that follows Elasticsearch's date math expressions.\nThis job is disabled if running is set to false.\n\nAuthorization Action:\n```\nretention:serviceGroups:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "retention",
+                "service_groups",
+                "delete_disconnected_services",
+                "config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "53503815-a0ca-4037-ae87-671fd2d96491",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "retention",
+                    "service_groups",
+                    "delete_disconnected_services",
+                    "config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"running\": true,\n  \"threshold\": \"string\",\n  \"recurrence\": \"string\",\n  \"job_info\": {\n    \"last_enqueued_at\": \"1965-01-31T18:15:09.529Z\",\n    \"last_started_at\": \"2014-05-05T09:23:42.966Z\",\n    \"last_ended_at\": \"1968-10-05T16:33:46.151Z\",\n    \"last_elapsed\": \"string\",\n    \"next_due_at\": \"1978-02-03T14:37:11.529Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5309c42f-4b79-4689-b330-b663c5b6874d",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "retention",
+                    "service_groups",
+                    "delete_disconnected_services",
+                    "config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 5627,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d688fadc-7d7e-4ed5-b2e7-99cf0629000a",
+          "name": "Change 'Remove Disconnected Services' Configuration",
+          "request": {
+            "name": "Change 'Remove Disconnected Services' Configuration",
+            "description": {
+              "content": "Updates configuration information for the task that deletes services marked as disconnected\nafter 'threshold'. Threshold is a string that follows Elasticsearch's date math expressions.\nThis job can be disabled by setting `\"running\": false`.\n\nThe frequency of the job's execution can be modified by changing the\n'recurrence'. This setting is a string\n[as defined in section 4.3.10 of RFC 2445](https://www.ietf.org/rfc/rfc2445.txt).\nBy default, the task runs every 60 seconds. It is not recommended to change\nthe recurrence.\n\nExample:\n```\nservice_groups/delete_disconnected_services/config\" -d\n'{\n\"threshold\": \"1d\",\n\"running\":true,\n\"recurrence\": \"FREQ=SECONDLY;DTSTART=20200612T182166Z;INTERVAL=60\"\n}'\n```\n\nAuthorization Action:\n```\nretention:serviceGroups:update\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "retention",
+                "service_groups",
+                "delete_disconnected_services",
+                "config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"running\": \"<boolean>\",\n  \"threshold\": \"<string>\",\n  \"recurrence\": \"<string>\",\n  \"job_info\": {\n    \"last_enqueued_at\": \"<dateTime>\",\n    \"last_started_at\": \"<dateTime>\",\n    \"last_ended_at\": \"<dateTime>\",\n    \"last_elapsed\": \"<string>\",\n    \"next_due_at\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e93f3122-8cff-4a99-b867-ed3dc8a4dfe9",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "retention",
+                    "service_groups",
+                    "delete_disconnected_services",
+                    "config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"running\": \"<boolean>\",\n  \"threshold\": \"<string>\",\n  \"recurrence\": \"<string>\",\n  \"job_info\": {\n    \"last_enqueued_at\": \"<dateTime>\",\n    \"last_started_at\": \"<dateTime>\",\n    \"last_ended_at\": \"<dateTime>\",\n    \"last_elapsed\": \"<string>\",\n    \"next_due_at\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1084143d-0024-4bea-af16-06591bff5a96",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "retention",
+                    "service_groups",
+                    "delete_disconnected_services",
+                    "config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"running\": \"<boolean>\",\n  \"threshold\": \"<string>\",\n  \"recurrence\": \"<string>\",\n  \"job_info\": {\n    \"last_enqueued_at\": \"<dateTime>\",\n    \"last_started_at\": \"<dateTime>\",\n    \"last_ended_at\": \"<dateTime>\",\n    \"last_elapsed\": \"<string>\",\n    \"next_due_at\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 9361,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33155e31-b640-4be3-9f49-48640984c0e1",
+          "name": "Applications Service Run Delete Disconnected Services Job",
+          "request": {
+            "name": "Applications Service Run Delete Disconnected Services Job",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "retention",
+                "service_groups",
+                "delete_disconnected_services",
+                "run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "73476701-2665-4414-b8d5-ac57d1437a52",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "retention",
+                    "service_groups",
+                    "delete_disconnected_services",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "987507ec-2ca2-4d6f-a353-8d0f357c110a",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "retention",
+                    "service_groups",
+                    "delete_disconnected_services",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 9361,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2df2cccd-893c-4552-8a96-28776a3e04e2",
+          "name": "Show 'Disconnected Services' configuration",
+          "request": {
+            "name": "Show 'Disconnected Services' configuration",
+            "description": {
+              "content": "Returns the configuration for the task that marks services as disconnected. The `threshold` setting defines the period of time between the last report from a node and the moment when Chef Automate marks it as disconnected. `Threshold` is a string that follows Elasticsearch's date math expressions.\nThis task is always enabled, cannot be disabled. Because this task runs continuously, the response does not return information about its status.\n\nAuthorization Action:\n```\nretention:serviceGroups:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "retention",
+                "service_groups",
+                "disconnected_services",
+                "config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b11aea90-b379-4768-aaba-329bc8d11459",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "retention",
+                    "service_groups",
+                    "disconnected_services",
+                    "config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"threshold\": \"string\",\n  \"running\": true,\n  \"recurrence\": \"string\",\n  \"job_info\": {\n    \"last_enqueued_at\": \"<dateTime>\",\n    \"last_started_at\": \"<dateTime>\",\n    \"last_ended_at\": \"<dateTime>\",\n    \"last_elapsed\": \"<string>\",\n    \"next_due_at\": \"<dateTime>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bee3023e-b31d-458d-8a4a-c17fcdb570d5",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "retention",
+                    "service_groups",
+                    "disconnected_services",
+                    "config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 9361,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3743344a-0b54-4fb2-919f-ea4a2f2eb5eb",
+          "name": "Change 'Disconnected Services' Configuration",
+          "request": {
+            "name": "Change 'Disconnected Services' Configuration",
+            "description": {
+              "content": "Changes the configuration for the task that marks services as disconnected.\n\nThe periodic task to check for disconnected services can be enabled or\ndisabled by setting the 'running' setting to `true` or `false`, respectively.\nWhen disabled, no services will be marked disconnected, regardless of the\ntime that has elapsed since the last health check. It is not recommened to\ndisable the job.\n\nThe frequency of the job's execution can be modified by changing the\n'recurrence'. This setting is a string\n[as defined in section 4.3.10 of RFC 2445](https://www.ietf.org/rfc/rfc2445.txt).\nBy default, the task runs every 60 seconds. It is not recommended to change\nthe recurrence.\n\nWhen enabled, services are marked disconnected when the time elapsed since\nAutomate last received a health check exceeds 'threshold'. Threshold is a\nstring that follows Elasticsearch's date math expressions.\n\n\nExample:\n```\n/retention/service_groups/disconnected_services/config\n'{\n\"threshold\": \"15m\",\n\"running\": true,\n\"recurrence\": \"FREQ=SECONDLY;DTSTART=20200612T182166Z;INTERVAL=60\"\n}'\n```\n\nAuthorization Action:\n```\nretention:serviceGroups:update\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "retention",
+                "service_groups",
+                "disconnected_services",
+                "config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"threshold\": \"<string>\",\n  \"running\": \"<boolean>\",\n  \"recurrence\": \"<string>\",\n  \"job_info\": {\n    \"last_enqueued_at\": \"<dateTime>\",\n    \"last_started_at\": \"<dateTime>\",\n    \"last_ended_at\": \"<dateTime>\",\n    \"last_elapsed\": \"<string>\",\n    \"next_due_at\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "73da19d5-5d95-4dbe-bd8c-572295859527",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "retention",
+                    "service_groups",
+                    "disconnected_services",
+                    "config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"threshold\": \"<string>\",\n  \"running\": \"<boolean>\",\n  \"recurrence\": \"<string>\",\n  \"job_info\": {\n    \"last_enqueued_at\": \"<dateTime>\",\n    \"last_started_at\": \"<dateTime>\",\n    \"last_ended_at\": \"<dateTime>\",\n    \"last_elapsed\": \"<string>\",\n    \"next_due_at\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6b47c97f-6084-4541-b416-0ebfa1198e76",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "retention",
+                    "service_groups",
+                    "disconnected_services",
+                    "config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"threshold\": \"<string>\",\n  \"running\": \"<boolean>\",\n  \"recurrence\": \"<string>\",\n  \"job_info\": {\n    \"last_enqueued_at\": \"<dateTime>\",\n    \"last_started_at\": \"<dateTime>\",\n    \"last_ended_at\": \"<dateTime>\",\n    \"last_elapsed\": \"<string>\",\n    \"next_due_at\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 9361,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b432b55d-765a-4df7-a406-8dd4bcf02ee7",
+          "name": "Runs the job to mark services as disconnected immediately.",
+          "request": {
+            "name": "Runs the job to mark services as disconnected immediately.",
+            "description": {
+              "content": "Authorization Action:\n```\nretention:serviceGroups:update\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "retention",
+                "service_groups",
+                "disconnected_services",
+                "run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "084d124d-da8c-4274-99de-1180fdeeea5f",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "retention",
+                    "service_groups",
+                    "disconnected_services",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e2d14a8-f000-44be-afea-6ba80ef70a7a",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "retention",
+                    "service_groups",
+                    "disconnected_services",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 9361,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3526b90a-c14c-4627-ac86-6e462a88e376",
+    "name": "external/applications/applications.proto ApplicationsService retention API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

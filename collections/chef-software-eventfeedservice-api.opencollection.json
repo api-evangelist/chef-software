@@ -1,0 +1,184 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService EventFeedService API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "EventFeedService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Counts of Individual Event Tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/event_task_counts",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters to be applied to the request."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Earliest events to return."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Latest events to return."
+              }
+            ]
+          },
+          "docs": "Returns the total counts of actions taken in an event. The counted actions are: update, create, and delete.\n\nExample:\n```\nevent_task_counts?start=1592546400000&end=1593151199999\n```\n\nAuthorization Action:\n```\nevent:events:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Counts of Event Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/event_type_counts",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters to be applied to the request."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Earliest events to return."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Latest events to return."
+              }
+            ]
+          },
+          "docs": "Returns totals for role, cookbook, and organization events.\n\nExample:\n```\nevent_type_counts?start=1592546400000&end=1593151199999\n```\n\nAuthorization Action:\n```\nevent:events:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/eventfeed",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters to be applied to the request."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Earliest events to return."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Latest events to return."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Count of events to return per page."
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "Used for pagination, to request results in ascending order."
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "Used for pagination, to request results in descending order."
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "Used for pagination, to bookmark next set of results."
+              },
+              {
+                "name": "collapse",
+                "value": "",
+                "type": "query",
+                "description": "Used to group similar events together."
+              }
+            ]
+          },
+          "docs": "Returns a list of recorded events in Chef Automate, such as Infra Server events (cookbook creation, policyfile updates, and node creation) and Chef Automate internal events (profile installs and scan job creation).\nAdding a filter makes a list of all events that meet the filter criteria.\n\nExample:\n```\neventfeed?collapse=true&filter=organization:4thcafe&page_size=100&start=1592546400000&end=1593151199999\n```\n\nAuthorization Action:\n```\nevent:events:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Summary Data of Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/eventstrings",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Earliest events to return."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Latest events to return."
+              },
+              {
+                "name": "timezone",
+                "value": "",
+                "type": "query",
+                "description": "User timezone to apply to request."
+              },
+              {
+                "name": "hours_between",
+                "value": "",
+                "type": "query",
+                "description": "Interval for returned results, for example: 1 hour buckets."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters to be applied to the request."
+              }
+            ]
+          },
+          "docs": "Returns data that populates the guitar strings visual on the top of the event feed.\n\nExample:\n```\neventstrings?timezone=America/Denver&hours_between=1&start=2020-06-19&end=2020-06-25\n```\n\nAuthorization Action:\n```\nevent:events:list\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

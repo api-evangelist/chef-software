@@ -1,0 +1,126 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService DatafeedService API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DatafeedService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "DatafeedService_GlobalDataFeedConfig",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/datafeed/config"
+          }
+        },
+        {
+          "info": {
+            "name": "DatafeedService_AddDestination",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/datafeed/destination"
+          }
+        },
+        {
+          "info": {
+            "name": "DatafeedService_EnableDestination",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/v0/datafeed/destination/enable/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "DatafeedService_GetDestination",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/datafeed/destination/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "DatafeedService_UpdateDestination",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/v0/datafeed/destination/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "DatafeedService_DeleteDestination",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/datafeed/destination/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "DatafeedService_ListDestinations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/datafeed/destinations"
+          }
+        },
+        {
+          "info": {
+            "name": "DatafeedService_TestDestination",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/datafeed/destinations/test"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,899 @@
+{
+  "item": [
+    {
+      "id": "0b77e970-b963-4c1c-a1ca-a60e6baa83e1",
+      "name": "ProfilesService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5745f9d7-238f-492b-8cce-7903641e2587",
+          "name": "Show an available profile",
+          "request": {
+            "name": "Show an available profile",
+            "description": {
+              "content": "Show the details of an un-installed profile using the profile name and version.\nin the UI, these are the profiles under the \"Available\" tab.\nThese profiles are created and maintained by Chef, shipped with Chef Automate.\n\n\nAuthorization Action:\n```\ncompliance:marketProfiles:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "market",
+                "read",
+                ":name",
+                "version",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "owner",
+                  "value": "<string>",
+                  "description": "Automate user associated with the profile."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the profile."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) Version of the profile."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a56e32d6-6dcd-42a8-8f24-b0ec24eaf7c1",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "market",
+                    "read",
+                    ":name",
+                    "version",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "owner",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the profile."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) Version of the profile."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"title\": \"string\",\n  \"maintainer\": \"string\",\n  \"copyright\": \"string\",\n  \"copyright_email\": \"string\",\n  \"license\": \"string\",\n  \"summary\": \"string\",\n  \"version\": \"string\",\n  \"owner\": \"string\",\n  \"supports\": [\n    {\n      \"os_name\": \"string\",\n      \"os_family\": \"string\",\n      \"release\": \"string\",\n      \"inspec_version\": \"string\",\n      \"platform\": \"string\"\n    },\n    {\n      \"os_name\": \"string\",\n      \"os_family\": \"string\",\n      \"release\": \"string\",\n      \"inspec_version\": \"string\",\n      \"platform\": \"string\"\n    }\n  ],\n  \"depends\": [\n    {\n      \"name\": \"string\",\n      \"url\": \"string\",\n      \"path\": \"string\",\n      \"git\": \"string\",\n      \"branch\": \"string\",\n      \"tag\": \"string\",\n      \"commit\": \"string\",\n      \"version\": \"string\",\n      \"supermarket\": \"string\",\n      \"github\": \"string\",\n      \"compliance\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"url\": \"string\",\n      \"path\": \"string\",\n      \"git\": \"string\",\n      \"branch\": \"string\",\n      \"tag\": \"string\",\n      \"commit\": \"string\",\n      \"version\": \"string\",\n      \"supermarket\": \"string\",\n      \"github\": \"string\",\n      \"compliance\": \"string\"\n    }\n  ],\n  \"sha256\": \"string\",\n  \"groups\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"controls\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"controls\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"controls\": [\n    {\n      \"id\": \"string\",\n      \"code\": \"string\",\n      \"desc\": \"string\",\n      \"impact\": 5377.495433835249,\n      \"title\": \"string\",\n      \"source_location\": {\n        \"ref\": \"string\",\n        \"line\": 3055\n      },\n      \"results\": [\n        {\n          \"status\": \"string\",\n          \"code_desc\": \"string\",\n          \"run_time\": 7107.230852727621,\n          \"start_time\": \"string\",\n          \"message\": \"string\",\n          \"skip_message\": \"string\"\n        },\n        {\n          \"status\": \"string\",\n          \"code_desc\": \"string\",\n          \"run_time\": 1635.2156067888614,\n          \"start_time\": \"string\",\n          \"message\": \"string\",\n          \"skip_message\": \"string\"\n        }\n      ],\n      \"refs\": [\n        {\n          \"url\": \"string\",\n          \"ref\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"ref\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"code\": \"string\",\n      \"desc\": \"string\",\n      \"impact\": 1347.0656570742267,\n      \"title\": \"string\",\n      \"source_location\": {\n        \"ref\": \"string\",\n        \"line\": 786\n      },\n      \"results\": [\n        {\n          \"status\": \"string\",\n          \"code_desc\": \"string\",\n          \"run_time\": 2417.875755634119,\n          \"start_time\": \"string\",\n          \"message\": \"string\",\n          \"skip_message\": \"string\"\n        },\n        {\n          \"status\": \"string\",\n          \"code_desc\": \"string\",\n          \"run_time\": 827.3383486363361,\n          \"start_time\": \"string\",\n          \"message\": \"string\",\n          \"skip_message\": \"string\"\n        }\n      ],\n      \"refs\": [\n        {\n          \"url\": \"string\",\n          \"ref\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"ref\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"attributes\": [\n    {\n      \"name\": \"string\",\n      \"options\": {\n        \"description\": \"string\",\n        \"default\": \"string\"\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"options\": {\n        \"description\": \"string\",\n        \"default\": \"string\"\n      }\n    }\n  ],\n  \"latest_version\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e0c0cca3-8c2e-4cfa-b687-e91499fd5f95",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "market",
+                    "read",
+                    ":name",
+                    "version",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "owner",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the profile."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) Version of the profile."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 6102,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13bce057-794a-471a-bf25-8c7158785ac3",
+          "name": "Check if one or multiple profiles exist in the metadata database.",
+          "request": {
+            "name": "Check if one or multiple profiles exist in the metadata database.",
+            "description": {
+              "content": "The endpoint takes an array of compliance profile sha256 IDs and returns the ones that the backend\ndoesn't have metadata (profile title, copyright, controls title, code, tags, etc) for.\nThis is useful when deciding if a compliance report can be sent for ingestion without the associated profile metadata.\n\nAuthorization Action:\n```\ncompliance:profiles:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "profiles",
+                "metasearch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sha256\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d4115cea-42a2-45b1-a225-94335106500c",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "profiles",
+                    "metasearch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sha256\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"missing_sha256\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "30afdca4-5335-45ee-9637-6e6632bf01f7",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "profiles",
+                    "metasearch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sha256\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 6297,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99165abd-7b7a-44e7-8b40-d09ff1a726fa",
+          "name": "Show an installed profile",
+          "request": {
+            "name": "Show an installed profile",
+            "description": {
+              "content": "Show the details of an installed profile given the profile name, owner (Automate user associated with the profile), and version.\n\n\nAuthorization Action:\n```\ncompliance:profiles:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "profiles",
+                "read",
+                ":owner",
+                ":name",
+                "version",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "owner",
+                  "description": "(Required) Automate user associated with the profile."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the profile."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) Version of the profile."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5bdbe10d-ba9c-4daf-89ec-4c9634182f75",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "profiles",
+                    "read",
+                    ":owner",
+                    ":name",
+                    "version",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) Automate user associated with the profile."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the profile."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) Version of the profile."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"title\": \"string\",\n  \"maintainer\": \"string\",\n  \"copyright\": \"string\",\n  \"copyright_email\": \"string\",\n  \"license\": \"string\",\n  \"summary\": \"string\",\n  \"version\": \"string\",\n  \"owner\": \"string\",\n  \"supports\": [\n    {\n      \"os_name\": \"string\",\n      \"os_family\": \"string\",\n      \"release\": \"string\",\n      \"inspec_version\": \"string\",\n      \"platform\": \"string\"\n    },\n    {\n      \"os_name\": \"string\",\n      \"os_family\": \"string\",\n      \"release\": \"string\",\n      \"inspec_version\": \"string\",\n      \"platform\": \"string\"\n    }\n  ],\n  \"depends\": [\n    {\n      \"name\": \"string\",\n      \"url\": \"string\",\n      \"path\": \"string\",\n      \"git\": \"string\",\n      \"branch\": \"string\",\n      \"tag\": \"string\",\n      \"commit\": \"string\",\n      \"version\": \"string\",\n      \"supermarket\": \"string\",\n      \"github\": \"string\",\n      \"compliance\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"url\": \"string\",\n      \"path\": \"string\",\n      \"git\": \"string\",\n      \"branch\": \"string\",\n      \"tag\": \"string\",\n      \"commit\": \"string\",\n      \"version\": \"string\",\n      \"supermarket\": \"string\",\n      \"github\": \"string\",\n      \"compliance\": \"string\"\n    }\n  ],\n  \"sha256\": \"string\",\n  \"groups\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"controls\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"controls\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"controls\": [\n    {\n      \"id\": \"string\",\n      \"code\": \"string\",\n      \"desc\": \"string\",\n      \"impact\": 74.02550517335627,\n      \"title\": \"string\",\n      \"source_location\": {\n        \"ref\": \"string\",\n        \"line\": 5645\n      },\n      \"results\": [\n        {\n          \"status\": \"string\",\n          \"code_desc\": \"string\",\n          \"run_time\": 2638.5387391084646,\n          \"start_time\": \"string\",\n          \"message\": \"string\",\n          \"skip_message\": \"string\"\n        },\n        {\n          \"status\": \"string\",\n          \"code_desc\": \"string\",\n          \"run_time\": 4627.6282919806235,\n          \"start_time\": \"string\",\n          \"message\": \"string\",\n          \"skip_message\": \"string\"\n        }\n      ],\n      \"refs\": [\n        {\n          \"url\": \"string\",\n          \"ref\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"ref\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"code\": \"string\",\n      \"desc\": \"string\",\n      \"impact\": 6810.1771629193345,\n      \"title\": \"string\",\n      \"source_location\": {\n        \"ref\": \"string\",\n        \"line\": 8393\n      },\n      \"results\": [\n        {\n          \"status\": \"string\",\n          \"code_desc\": \"string\",\n          \"run_time\": 3935.843939291137,\n          \"start_time\": \"string\",\n          \"message\": \"string\",\n          \"skip_message\": \"string\"\n        },\n        {\n          \"status\": \"string\",\n          \"code_desc\": \"string\",\n          \"run_time\": 240.57347411681528,\n          \"start_time\": \"string\",\n          \"message\": \"string\",\n          \"skip_message\": \"string\"\n        }\n      ],\n      \"refs\": [\n        {\n          \"url\": \"string\",\n          \"ref\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"ref\": \"string\"\n        }\n      ],\n      \"tags\": {\n        \"key_0\": \"string\"\n      }\n    }\n  ],\n  \"attributes\": [\n    {\n      \"name\": \"string\",\n      \"options\": {\n        \"description\": \"string\",\n        \"default\": \"string\"\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"options\": {\n        \"description\": \"string\",\n        \"default\": \"string\"\n      }\n    }\n  ],\n  \"latest_version\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "334e9b2c-3b88-4f59-9974-9276713d5e06",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "profiles",
+                    "read",
+                    ":owner",
+                    ":name",
+                    "version",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) Automate user associated with the profile."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the profile."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) Version of the profile."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 6297,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d075dfb1-6533-43f0-9a7c-156ebd996a82",
+          "name": "List all available profiles",
+          "request": {
+            "name": "List all available profiles",
+            "description": {
+              "content": "Lists all profiles available for the Automate instance.\nEmpty params return all \"market\" profiles.\nSpecifying the `owner` field returns all profiles installed for the specified user.\n\nSupports pagination, sorting, and filtering (wildcard supported).\n\nSupported sort fields: title, name (default: title)\nSupported filter fields: name, version, title\n\nExample:\n```\n{\n\"filters\":[\n{\"type\": \"title\", \"values\": [ \"Dev*\"]}\n],\n\"page\": 1,\n\"per_page\": 3,\n\"owner\": \"admin\"\n}\n```\n\n\nAuthorization Action:\n```\ncompliance:profiles:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "profiles",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\",\n  \"owner\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a200744c-96d1-43f3-8fa9-be60ba468b9d",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "profiles",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\",\n  \"owner\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"profiles\": [\n    {\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"maintainer\": \"string\",\n      \"copyright\": \"string\",\n      \"copyright_email\": \"string\",\n      \"license\": \"string\",\n      \"summary\": \"string\",\n      \"version\": \"string\",\n      \"owner\": \"string\",\n      \"supports\": [\n        {\n          \"os_name\": \"string\",\n          \"os_family\": \"string\",\n          \"release\": \"string\",\n          \"inspec_version\": \"string\",\n          \"platform\": \"string\"\n        },\n        {\n          \"os_name\": \"string\",\n          \"os_family\": \"string\",\n          \"release\": \"string\",\n          \"inspec_version\": \"string\",\n          \"platform\": \"string\"\n        }\n      ],\n      \"depends\": [\n        {\n          \"name\": \"string\",\n          \"url\": \"string\",\n          \"path\": \"string\",\n          \"git\": \"string\",\n          \"branch\": \"string\",\n          \"tag\": \"string\",\n          \"commit\": \"string\",\n          \"version\": \"string\",\n          \"supermarket\": \"string\",\n          \"github\": \"string\",\n          \"compliance\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"url\": \"string\",\n          \"path\": \"string\",\n          \"git\": \"string\",\n          \"branch\": \"string\",\n          \"tag\": \"string\",\n          \"commit\": \"string\",\n          \"version\": \"string\",\n          \"supermarket\": \"string\",\n          \"github\": \"string\",\n          \"compliance\": \"string\"\n        }\n      ],\n      \"sha256\": \"string\",\n      \"groups\": [\n        {\n          \"id\": \"string\",\n          \"title\": \"string\",\n          \"controls\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"id\": \"string\",\n          \"title\": \"string\",\n          \"controls\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"controls\": [\n        {\n          \"id\": \"string\",\n          \"code\": \"string\",\n          \"desc\": \"string\",\n          \"impact\": 4611.5383702956515,\n          \"title\": \"string\",\n          \"source_location\": {\n            \"ref\": \"string\",\n            \"line\": 8063\n          },\n          \"results\": [\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"tags\": {\n            \"key_0\": \"string\"\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"code\": \"string\",\n          \"desc\": \"string\",\n          \"impact\": 5014.691043820237,\n          \"title\": \"string\",\n          \"source_location\": {\n            \"ref\": \"string\",\n            \"line\": 5324\n          },\n          \"results\": [\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"tags\": {\n            \"key_0\": \"string\"\n          }\n        }\n      ],\n      \"attributes\": [\n        {\n          \"name\": \"string\",\n          \"options\": {\n            \"description\": \"string\",\n            \"default\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"options\": {\n            \"description\": \"string\",\n            \"default\": \"string\"\n          }\n        }\n      ],\n      \"latest_version\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"maintainer\": \"string\",\n      \"copyright\": \"string\",\n      \"copyright_email\": \"string\",\n      \"license\": \"string\",\n      \"summary\": \"string\",\n      \"version\": \"string\",\n      \"owner\": \"string\",\n      \"supports\": [\n        {\n          \"os_name\": \"string\",\n          \"os_family\": \"string\",\n          \"release\": \"string\",\n          \"inspec_version\": \"string\",\n          \"platform\": \"string\"\n        },\n        {\n          \"os_name\": \"string\",\n          \"os_family\": \"string\",\n          \"release\": \"string\",\n          \"inspec_version\": \"string\",\n          \"platform\": \"string\"\n        }\n      ],\n      \"depends\": [\n        {\n          \"name\": \"string\",\n          \"url\": \"string\",\n          \"path\": \"string\",\n          \"git\": \"string\",\n          \"branch\": \"string\",\n          \"tag\": \"string\",\n          \"commit\": \"string\",\n          \"version\": \"string\",\n          \"supermarket\": \"string\",\n          \"github\": \"string\",\n          \"compliance\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"url\": \"string\",\n          \"path\": \"string\",\n          \"git\": \"string\",\n          \"branch\": \"string\",\n          \"tag\": \"string\",\n          \"commit\": \"string\",\n          \"version\": \"string\",\n          \"supermarket\": \"string\",\n          \"github\": \"string\",\n          \"compliance\": \"string\"\n        }\n      ],\n      \"sha256\": \"string\",\n      \"groups\": [\n        {\n          \"id\": \"string\",\n          \"title\": \"string\",\n          \"controls\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"id\": \"string\",\n          \"title\": \"string\",\n          \"controls\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"controls\": [\n        {\n          \"id\": \"string\",\n          \"code\": \"string\",\n          \"desc\": \"string\",\n          \"impact\": 7856.939820014737,\n          \"title\": \"string\",\n          \"source_location\": {\n            \"ref\": \"string\",\n            \"line\": 8554\n          },\n          \"results\": [\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"tags\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"code\": \"string\",\n          \"desc\": \"string\",\n          \"impact\": 6307.613765280674,\n          \"title\": \"string\",\n          \"source_location\": {\n            \"ref\": \"string\",\n            \"line\": 1242\n          },\n          \"results\": [\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"tags\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          }\n        }\n      ],\n      \"attributes\": [\n        {\n          \"name\": \"string\",\n          \"options\": {\n            \"description\": \"string\",\n            \"default\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"options\": {\n            \"description\": \"string\",\n            \"default\": \"string\"\n          }\n        }\n      ],\n      \"latest_version\": \"string\"\n    }\n  ],\n  \"total\": 1372\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "05d37ad6-bcee-4546-b267-08f96917325f",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "profiles",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\",\n  \"owner\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 6297,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1585125b-d316-47db-9c9c-32aa1a290acd",
+          "name": "Delete an installed profile",
+          "request": {
+            "name": "Delete an installed profile",
+            "description": {
+              "content": "Delete an installed profile given the profile name, owner (Automate user associated with the profile), and version.\nNote: this action \"uninstalls\" the profile. This has no impact on the market profiles.\n\n\nAuthorization Action:\n```\ncompliance:profiles:delete\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "profiles",
+                ":owner",
+                ":name",
+                "version",
+                ":version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "owner",
+                  "description": "(Required) Automate user associated with the profile."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the profile."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) Version of the profile."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "965a159b-eccd-4ab7-a761-ea54cd361ca9",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "profiles",
+                    ":owner",
+                    ":name",
+                    "version",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) Automate user associated with the profile."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the profile."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) Version of the profile."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07ebd528-4321-48a3-a990-29399688cae8",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "profiles",
+                    ":owner",
+                    ":name",
+                    "version",
+                    ":version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "owner",
+                      "description": "(Required) Automate user associated with the profile."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the profile."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) Version of the profile."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 6297,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bcab2537-b970-4bdb-a2d8-7d55c2ea3dc6",
+    "name": "external/applications/applications.proto ApplicationsService ProfilesService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

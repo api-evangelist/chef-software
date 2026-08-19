@@ -1,0 +1,101 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService hidden API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "hidden",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show Version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/applications/version"
+          },
+          "docs": "Displays the current version of the applications-service\n\nAuthorization Action:\n```\nsystem:serviceVersion:get\n```"
+        },
+        {
+          "info": {
+            "name": "ConfigMgmt_GetVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/version"
+          }
+        },
+        {
+          "info": {
+            "name": "ReportingService_GetVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/compliance/reporting/version"
+          }
+        },
+        {
+          "info": {
+            "name": "EventFeedService_EventExport",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/eventexport",
+            "params": [
+              {
+                "name": "output_type",
+                "value": "",
+                "type": "query",
+                "description": "JSON or CSV."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters to be applied to the request."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Earliest events to return."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Latest events to return."
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Order the results should be returned in."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Policies_IntrospectAllProjects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/introspect_projects"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService ChefIngester API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ChefIngester",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ChefIngester_ProcessChefAction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/ingest/events/chef/action"
+          }
+        },
+        {
+          "info": {
+            "name": "ChefIngester_ProcessLivenessPing",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/ingest/events/chef/liveness"
+          }
+        },
+        {
+          "info": {
+            "name": "ChefIngester_ProcessMultipleNodeDeletes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/ingest/events/chef/node-multiple-deletes"
+          }
+        },
+        {
+          "info": {
+            "name": "ChefIngester_ProcessNodeDelete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/ingest/events/chef/nodedelete"
+          }
+        },
+        {
+          "info": {
+            "name": "ChefIngester_ProcessChefRun",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/ingest/events/chef/run"
+          }
+        },
+        {
+          "info": {
+            "name": "ChefIngester_GetVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/ingest/version"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

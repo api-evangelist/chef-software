@@ -1,0 +1,97 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService tokens API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "tokens",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lists all tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/tokens"
+          },
+          "docs": "Lists all tokens, both admin and non-admin.\n\nAuthorization Action:\n```\niam:tokens:list\n```"
+        },
+        {
+          "info": {
+            "name": "Creates a token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/apis/iam/v2/tokens"
+          },
+          "docs": "Creates a token.\nActive defaults to true when not specified.\nValue is auto-generated when not specified.\n\nNote that this creates *non-admin* tokens that may then be assigned permissions via policies just like users or teams (unless you have already created policies that encompass all tokens using `tokens:*``).\n\nYou cannot create admin tokens via the REST API.\nAdmin tokens can only be created by specifying the `--admin` flag to this chef-automate sub-command:\n```\nchef-automate iam token create <y"
+        },
+        {
+          "info": {
+            "name": "Gets a token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/tokens/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the token."
+              }
+            ]
+          },
+          "docs": "Returns the details for a token.\n\nAuthorization Action:\n```\niam:tokens:get\n```"
+        },
+        {
+          "info": {
+            "name": "Updates a token",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/apis/iam/v2/tokens/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique ID. Cannot be changed."
+              }
+            ]
+          },
+          "docs": "This operation overwrites all fields excepting ID, timestamps, and value,\nincluding those omitted from the request, so be sure to specify all properties.\nProperties that you do not include are reset to empty values.\n\nAuthorization Action:\n```\niam:tokens:update\n```"
+        },
+        {
+          "info": {
+            "name": "Deletes a token",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/apis/iam/v2/tokens/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the token."
+              }
+            ]
+          },
+          "docs": "Deletes a token and remove it from any policies.\n\nAuthorization Action:\n```\niam:tokens:delete\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

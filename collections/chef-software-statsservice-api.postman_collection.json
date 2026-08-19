@@ -1,0 +1,842 @@
+{
+  "item": [
+    {
+      "id": "c0e53876-f28c-4e2b-83b2-70f7e7fecad5",
+      "name": "StatsService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "53e2a853-aff4-4cec-9f76-a0878fa3fee4",
+          "name": "Read Failures",
+          "request": {
+            "name": "Read Failures",
+            "description": {
+              "content": "Returns the top failures for the specified object. A types filter is required for this api.\nSupported values are `platform`, `environment`, `control`, and `profile`.\nBy default, the top ten failed objects for the specified type are returned.\nSupports filtering and respects `size` parameter.\n\nExample:\n```\n{\n\"filters\":[\n{\"type\":\"start_time\",\"values\":[\"2019-10-26T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-11-05T23:59:59Z\"]},\n{\"type\":\"types\",\"values\":[\"platform\",\"environment\"]}\n]\n}\n```\n\nAuthorization Action:\n```\ncompliance:reportFailures:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "stats",
+                "failures"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2cdcd541-8517-45a2-995d-1d18d257aeb1",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "stats",
+                    "failures"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"profiles\": [\n    {\n      \"name\": \"string\",\n      \"failures\": 4052,\n      \"id\": \"string\",\n      \"profile\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"failures\": 6022,\n      \"id\": \"string\",\n      \"profile\": \"string\"\n    }\n  ],\n  \"platforms\": [\n    {\n      \"name\": \"string\",\n      \"failures\": 9222,\n      \"id\": \"string\",\n      \"profile\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"failures\": 6405,\n      \"id\": \"string\",\n      \"profile\": \"string\"\n    }\n  ],\n  \"controls\": [\n    {\n      \"name\": \"string\",\n      \"failures\": 6943,\n      \"id\": \"string\",\n      \"profile\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"failures\": 7868,\n      \"id\": \"string\",\n      \"profile\": \"string\"\n    }\n  ],\n  \"environments\": [\n    {\n      \"name\": \"string\",\n      \"failures\": 5951,\n      \"id\": \"string\",\n      \"profile\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"failures\": 7095,\n      \"id\": \"string\",\n      \"profile\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "78b428ce-66e6-4a00-ad58-efad3b4bb90b",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "stats",
+                    "failures"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 4752,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a6b709b-ed2e-4404-bf98-21066516c6ff",
+          "name": "GetNodesUsageCount",
+          "request": {
+            "name": "GetNodesUsageCount",
+            "description": {
+              "content": "Returns the count of unique nodes with lastRun in a given time.\nThe time duration can be between the last time Telemetry data sent and the day before the current date.\nIf the duration < 15 days --> 15 days\nduration > 15 days --> duration\n\nAuthorization Action:\n```\niam:introspect:getAll\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "stats",
+                "nodes",
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f3b3f8d0-50ae-4e43-95ae-6473a4b1d9ab",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "stats",
+                    "nodes",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"days_since_last_post\": \"string\",\n  \"node_cnt\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7f926d04-c290-456f-8181-2dce19a1fcda",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "stats",
+                    "nodes",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8891,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "101a3544-99bc-40bd-bff7-c8faa309fc4f",
+          "name": "UpdateTelemetryReported",
+          "request": {
+            "name": "UpdateTelemetryReported",
+            "description": {
+              "content": "Acknowledge API  to updates the last complaince telemetry reported date in postgres\n\nAuthorization Action:\n```\niam:introspect:getAll\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "stats",
+                "nodes",
+                "count",
+                "updated"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"last_telemetry_reported_at\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "786c0179-3358-48e9-a566-9c6db8ebbbd5",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "stats",
+                    "nodes",
+                    "count",
+                    "updated"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"last_telemetry_reported_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d0e550f-ca5c-4910-b354-e1afdd67bd29",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "stats",
+                    "nodes",
+                    "count",
+                    "updated"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"last_telemetry_reported_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8891,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1370207b-cb62-4271-8a1a-5923d810b7e4",
+          "name": "Read Profiles",
+          "request": {
+            "name": "Read Profiles",
+            "description": {
+              "content": "Returns statistics and summary information for profiles executed as part of the compliance reports. \nIf called without specifying a profile ID (`id`), the API will return stats on all the profiles.\nIf the `id` field is provided (profile ID) as part of the query object, the `type` field must also be specified. Options are `controls` or `summary`.\nSupports filtering.\n\n```\n{\n\"type\":\"controls\",\n\"id\":\"09adcbb3b9b3233d5de63cd98a5ba3e155b3aaeb66b5abed379f5fb1ff143988\",\n\"filters\":[\n{\"type\":\"environment\",\"values\":[\"dev*\"]},\n{\"type\":\"start_time\",\"values\":[\"2019-10-26T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-11-05T23:59:59Z\"]}\n]\n}\n```\n\nAuthorization Action:\n```\ncompliance:reportProfiles:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "stats",
+                "profiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0fc274ef-524d-4613-9287-6b4e48185143",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "stats",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"profile_list\": [\n    {\n      \"name\": \"string\",\n      \"id\": \"string\",\n      \"failures\": 5188,\n      \"majors\": 8817,\n      \"minors\": 5310,\n      \"criticals\": 1024,\n      \"passed\": 6014,\n      \"skipped\": 7806,\n      \"waived\": 2294\n    },\n    {\n      \"name\": \"string\",\n      \"id\": \"string\",\n      \"failures\": 7631,\n      \"majors\": 5408,\n      \"minors\": 9115,\n      \"criticals\": 4416,\n      \"passed\": 4057,\n      \"skipped\": 1703,\n      \"waived\": 2579\n    }\n  ],\n  \"profile_summary\": {\n    \"name\": \"string\",\n    \"title\": \"string\",\n    \"version\": \"string\",\n    \"license\": \"string\",\n    \"maintainer\": \"string\",\n    \"copyright\": \"string\",\n    \"copyright_email\": \"string\",\n    \"summary\": \"string\",\n    \"supports\": [\n      {\n        \"os_name\": \"string\",\n        \"os_family\": \"string\",\n        \"release\": \"string\",\n        \"inspec_version\": \"string\",\n        \"platform_name\": \"string\",\n        \"platform_family\": \"string\",\n        \"platform\": \"string\"\n      },\n      {\n        \"os_name\": \"string\",\n        \"os_family\": \"string\",\n        \"release\": \"string\",\n        \"inspec_version\": \"string\",\n        \"platform_name\": \"string\",\n        \"platform_family\": \"string\",\n        \"platform\": \"string\"\n      }\n    ],\n    \"stats\": {\n      \"failed\": 9889,\n      \"passed\": 1993,\n      \"skipped\": 4249,\n      \"failed_nodes\": 6882,\n      \"total_nodes\": 2260,\n      \"waived\": 1965\n    },\n    \"depends\": [\n      {\n        \"name\": \"string\",\n        \"url\": \"string\",\n        \"path\": \"string\",\n        \"git\": \"string\",\n        \"branch\": \"string\",\n        \"tag\": \"string\",\n        \"commit\": \"string\",\n        \"version\": \"string\",\n        \"supermarket\": \"string\",\n        \"github\": \"string\",\n        \"compliance\": \"string\",\n        \"status\": \"string\",\n        \"skip_message\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"url\": \"string\",\n        \"path\": \"string\",\n        \"git\": \"string\",\n        \"branch\": \"string\",\n        \"tag\": \"string\",\n        \"commit\": \"string\",\n        \"version\": \"string\",\n        \"supermarket\": \"string\",\n        \"github\": \"string\",\n        \"compliance\": \"string\",\n        \"status\": \"string\",\n        \"skip_message\": \"string\"\n      }\n    ]\n  },\n  \"control_stats\": [\n    {\n      \"control\": \"string\",\n      \"title\": \"string\",\n      \"passed\": 1179,\n      \"failed\": 6431,\n      \"skipped\": 7995,\n      \"impact\": 1647.7925410608884,\n      \"waived\": 7109\n    },\n    {\n      \"control\": \"string\",\n      \"title\": \"string\",\n      \"passed\": 2434,\n      \"failed\": 6477,\n      \"skipped\": 678,\n      \"impact\": 7647.492852897206,\n      \"waived\": 72\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "443c051b-cdd1-4dca-aa92-37cc867a158b",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "stats",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8891,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a8d0e61-1177-4b7b-b92d-620c2687016a",
+          "name": "Read Summary",
+          "request": {
+            "name": "Read Summary",
+            "description": {
+              "content": "Returns summary statistics for compliance reports. \nGeneral report summary information is the default. \nAdding a `type` value of `nodes` or `controls` will return summary statistics for that object.\nSupports filtering.\n\nThe API supports date range filters when `end_time` is the current time\nand `start_time` is any time in last 90 days. In case, the `end_time` is any\ndate other than the current date, the API would return data only for the `end_time`.\n\nExample:\n```\n{\n\"type\":\"nodes\",\n\"filters\":[\n{\"type\":\"environment\",\"values\":[\"dev*\"]},\n{\"type\":\"start_time\",\"values\":[\"2019-10-26T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-11-05T23:59:59Z\"]}\n]\n}\n```\n\nAuthorization Action:\n```\ncompliance:reportSummary:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "stats",
+                "summary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "28af52be-994d-48b0-8c22-b18a9bd8ad44",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "stats",
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"controls_summary\": {\n    \"failures\": 33,\n    \"majors\": 7580,\n    \"minors\": 4490,\n    \"criticals\": 3458,\n    \"passed\": 9534,\n    \"skipped\": 3206,\n    \"waived\": 8857\n  },\n  \"node_summary\": {\n    \"compliant\": 1365,\n    \"skipped\": 1060,\n    \"noncompliant\": 827,\n    \"high_risk\": 4424,\n    \"medium_risk\": 9985,\n    \"low_risk\": 1729,\n    \"waived\": 8374\n  },\n  \"report_summary\": {\n    \"status\": \"string\",\n    \"duration\": 8369.380304651386,\n    \"start_date\": \"string\",\n    \"stats\": {\n      \"nodes\": \"string\",\n      \"platforms\": 2362,\n      \"environments\": 1523,\n      \"profiles\": 5673,\n      \"nodes_cnt\": 197,\n      \"controls\": 3115\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b65146f0-1260-490d-a07b-4b4192d5ce7d",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "stats",
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8891,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "473ce35a-0ab2-4794-bc6b-219d990024b2",
+          "name": "Read Trend",
+          "request": {
+            "name": "Read Trend",
+            "description": {
+              "content": "Returns trendgraph statistics for compliance reports. \nThe `type` field is required for this api call. Options are `nodes` or `controls`.\nRequires minimum `interval` field of 3600 and defined start time and end time filters.\nSupports filtering.\n\nExample:\n```\n{\n\"type\":\"nodes\",\n\"interval\":86400,\n\"filters\":[\n{\"type\":\"environment\",\"values\":[\"dev*\"]},\n{\"type\":\"start_time\",\"values\":[\"2019-10-26T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-11-05T23:59:59Z\"]}\n]\n}\n```\n\nAuthorization Action:\n```\ncompliance:reportTrend:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "stats",
+                "trend"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"interval\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "370b9593-c15b-4db3-bf64-4725a636eb5e",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "stats",
+                    "trend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"trends\": [\n    {\n      \"report_time\": \"string\",\n      \"passed\": 504,\n      \"failed\": 1170,\n      \"skipped\": 6011,\n      \"waived\": 4852\n    },\n    {\n      \"report_time\": \"string\",\n      \"passed\": 6001,\n      \"failed\": 7920,\n      \"skipped\": 1362,\n      \"waived\": 7081\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "96b48b97-c0b9-4352-8590-4cafa2aee60c",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "stats",
+                    "trend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8891,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ea7e9414-f960-4409-bb8a-b485ac90b82e",
+    "name": "external/applications/applications.proto ApplicationsService StatsService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

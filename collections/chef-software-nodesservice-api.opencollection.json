@@ -1,0 +1,149 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService NodesService API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NodesService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a Node",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/nodes"
+          },
+          "docs": "Creates a node and adds it to the Chef Automate node manager.\nRequires a FQDN or IP address, a user-specified name, and a ssh or winrm credential reference.\nUseful for creating nodes for the purpose of running compliance scan jobs.\n\nExample:\n```\n{\n\"name\": \"my-vagrant-node\",\n\"manager\":\"automate\",\n\"target_config\": {\n\"backend\":\"ssh\",\n\"host\":\"localhost\",\n\"secrets\":[\"b75195e5-a173-4502-9f59-d949adfe2c38\"],\n\"port\": 22\n},\n\"tags\": [\n{ \"key\":\"test-node\", \"value\":\"is amazing\" }\n]\n}\n```\n\nAuthorization Acti"
+        },
+        {
+          "info": {
+            "name": "Bulk Create Nodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/nodes/bulk-create"
+          },
+          "docs": "Creates multiple nodes from a list of node data.\n`hosts` field is required. Multiple hosts may be defined in this field.\n\nExample:\n```\n{\n\"name_prefix\": \"000-my-ssh-node\",\n\"manager\":\"automate\",\n\"target_config\": {\n\"backend\":\"ssh\",\n\"hosts\":[\"localhost\",\"127.0.0.1\"],\n\"secrets\":[\"b75195e5-a173-4502-9f59-d949adfe2c38\"],\n\"port\": 22\n},\n\"tags\": [\n{ \"key\":\"test-node\", \"value\":\"is-amazing\" },\n]\n}\n```\n\nAuthorization Action:\n```\ninfra:nodes:create\n```"
+        },
+        {
+          "info": {
+            "name": "Bulk Delete Nodes by Filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/nodes/delete"
+          },
+          "docs": "Deletes a set of nodes that match a filter.\nAvailable filters: account_id, last_contact, manager_id, manager_type, name, platform_name,\nplatform_release, region, source_id, state, statechange_timerange, status,\nlast_run_timerange, last_scan_timerange, last_run_status, last_scan_status,\nlast_run_penultimate_status, last_scan_penultimate_status\n\nExample:\n```\n{\"filters\": [{\"key\": \"name\", \"values\": [\"vj*\"]}]}'\n```\n\nAuthorization Action:\n```\ninfra:nodes:delete\n```"
+        },
+        {
+          "info": {
+            "name": "Bulk Delete Nodes by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/nodes/delete/ids"
+          },
+          "docs": "Deletes a set of nodes given a list of IDs.\nInvalid IDs will be ignored.\n\nAuthorization Action:\n```\ninfra:nodes:delete\n```"
+        },
+        {
+          "info": {
+            "name": "Show Node Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/nodes/id/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique node ID (UUID)"
+              }
+            ]
+          },
+          "docs": "Returns the details for a node given the node ID.\n\nAuthorization Action:\n```\ninfra:nodes:get\n```"
+        },
+        {
+          "info": {
+            "name": "Update Node",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/nodes/id/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique node ID (UUID)."
+              }
+            ]
+          },
+          "docs": "This PUT operation overwrites ALL node details and requires the complete set of node details,\nconsisting of a FQDN or IP address, a user-specified name, and the ID for an ssh or winrm credential.\nSubstitute the desired values for the existing node details in the PUT message.\n\nAuthorization Action:\n```\ninfra:nodes:update\n```"
+        },
+        {
+          "info": {
+            "name": "Delete a Node",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/nodes/id/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique node ID (UUID)"
+              }
+            ]
+          },
+          "docs": "Deletes the node with the node ID.\n\nAuthorization Action:\n```\ninfra:nodes:delete\n```"
+        },
+        {
+          "info": {
+            "name": "List Node Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/nodes/rerun/id/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique node ID (UUID)"
+              }
+            ]
+          },
+          "docs": "Use this to run an `inspec detect` job on the node, which updates the status to reflect that the node is reachable or unreachable.\n\nAuthorization Action:\n```\ninfra:nodes:rerun\n```"
+        },
+        {
+          "info": {
+            "name": "List and Filter Nodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/nodes/search"
+          },
+          "docs": "Makes a list of nodes.\nSupports filtering, pagination, and sorting.\nAdding a filter narrows the list of nodes to only those that match the filter or filters.\nSupported filters:\naccount_id, last_contact, manager_id, manager_type, name, platform_name,\nplatform_release, region, source_id, state, statechange_timerange, status,\nlast_run_timerange, last_scan_timerange, last_run_status, last_scan_status,\nlast_run_penultimate_status, last_scan_penultimate_status\n\nExample:\n```\n{\n\"filters\":[\n{\"key\": \"last"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

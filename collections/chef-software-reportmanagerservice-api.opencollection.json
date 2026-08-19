@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService ReportManagerService API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ReportManagerService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Download Report Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/reportmanager/requests"
+          },
+          "docs": "Returns the details of the download report requests placed by the user.\n\nAuthorization Action:\n```\nreportmanager:requests:list\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService Cds API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "SubmitCredentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/beta/content/credentials"
+          },
+          "docs": "Submit a Chef Cloud Credentials to enable content\n\nAuthorization Action:\n```\ncontent:credentials:add\n```"
+        },
+        {
+          "info": {
+            "name": "IsContentEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/beta/content/enabled"
+          },
+          "docs": "Check if the content is enable for this Automate instance. \n\nAuthorization Action:\n```\ncontent:credentials:enabled\n```"
+        },
+        {
+          "info": {
+            "name": "InstallContentItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/beta/content/install"
+          },
+          "docs": "Installs a content item from its ID\n\nAuthorization Action:\n```\ncontent:items:install\n```"
+        },
+        {
+          "info": {
+            "name": "ListContentItems",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/beta/content/items"
+          },
+          "docs": "Returns a list of metadata for each CDS content. Provides a description and current \nstate of each content item.\n\nAuthorization Action:\n```\ncontent:items:list\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

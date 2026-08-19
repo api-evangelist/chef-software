@@ -1,0 +1,166 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService teams API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "teams",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lists all local teams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/teams"
+          },
+          "docs": "Lists all local teams.\n\nAuthorization Action:\n```\niam:teams:list\n```"
+        },
+        {
+          "info": {
+            "name": "Creates a local team",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/apis/iam/v2/teams"
+          },
+          "docs": "Creates a local team that is used to group local users as members of IAM policies.\n\nAuthorization Action:\n```\niam:teams:create\n```"
+        },
+        {
+          "info": {
+            "name": "Get a team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/teams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the details for a team.\n\nAuthorization Action:\n```\niam:teams:get\n```"
+        },
+        {
+          "info": {
+            "name": "Updates a local team",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/apis/iam/v2/teams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Updates a local team.\n\nAuthorization Action:\n```\niam:teams:update\n```"
+        },
+        {
+          "info": {
+            "name": "Deletes a local team",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/apis/iam/v2/teams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a local team and removes it from any policies.\n\nAuthorization Action:\n```\niam:teams:delete\n```"
+        },
+        {
+          "info": {
+            "name": "Gets local team membership",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/teams/:id/users",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all users of a local team. Users are listed by their membership_id.\n\nAuthorization Action:\n```\niam:teamUsers:list\n```"
+        },
+        {
+          "info": {
+            "name": "Adds local team membership",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/apis/iam/v2/teams/:id/users:add",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Adds a list of users to a local team. Users are added by their membership_id.\nThe request currently does not validate that membership_id maps to a real user.\n\nThe membership_id for users can be found via GET /apis/apis/iam/v2/users/<user_id>.\n\nAuthorization Action:\n```\niam:teamUsers:create\n```"
+        },
+        {
+          "info": {
+            "name": "Removes local team membership",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/apis/iam/v2/teams/:id/users:remove",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Removes a list of users from a local team. Users are removed by their membership_id.\nThe request currently does not validate that membership_id maps to a real user.\n\nThe membership_id for users can be found via GET /apis/apis/iam/v2/users/<user_id>.\n\nAuthorization Action:\n```\niam:teamUsers:delete\n```"
+        },
+        {
+          "info": {
+            "name": "Gets team membership for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/users/:membership_id/teams",
+            "params": [
+              {
+                "name": "membership_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all local teams for a specific user. You must use their membership_id in the request URL.\n\nAuthorization Action:\n```\niam:userTeams:get\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

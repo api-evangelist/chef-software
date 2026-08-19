@@ -1,0 +1,3701 @@
+{
+  "item": [
+    {
+      "id": "212fd612-b9f0-4836-bbd7-e05bd611fb44",
+      "name": "ConfigMgmt",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c6f6d4c7-867d-4d45-b0f2-1a95b2896d9c",
+          "name": "CreateRollout",
+          "request": {
+            "name": "CreateRollout",
+            "description": {
+              "content": "Creates a Rollout record. A rollout represents the process of nodes acquiring\nthe latest policy revision pushed to a policy group.\n\nAuthorization Action:\n```\ningest:unifiedEvents:create\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "beta",
+                "cfgmgmt",
+                "rollouts",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"policy_name\": \"<string>\",\n  \"policy_node_group\": \"<string>\",\n  \"policy_revision_id\": \"<string>\",\n  \"policy_domain_url\": \"<string>\",\n  \"scm_type\": \"SCM_TYPE_UNSPECIFIED\",\n  \"scm_web_type\": \"SCM_WEB_TYPE_UNSPECIFIED\",\n  \"policy_scm_url\": \"<string>\",\n  \"policy_scm_web_url\": \"<string>\",\n  \"policy_scm_commit\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ci_job_url\": \"<string>\",\n  \"ci_job_id\": \"<string>\",\n  \"scm_author_name\": \"<string>\",\n  \"scm_author_email\": \"<string>\",\n  \"policy_domain_username\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "086ed75e-8432-433e-974d-bf33ef3938e9",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "beta",
+                    "cfgmgmt",
+                    "rollouts",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"policy_name\": \"<string>\",\n  \"policy_node_group\": \"<string>\",\n  \"policy_revision_id\": \"<string>\",\n  \"policy_domain_url\": \"<string>\",\n  \"scm_type\": \"SCM_TYPE_UNSPECIFIED\",\n  \"scm_web_type\": \"SCM_WEB_TYPE_UNSPECIFIED\",\n  \"policy_scm_url\": \"<string>\",\n  \"policy_scm_web_url\": \"<string>\",\n  \"policy_scm_commit\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ci_job_url\": \"<string>\",\n  \"ci_job_id\": \"<string>\",\n  \"scm_author_name\": \"<string>\",\n  \"scm_author_email\": \"<string>\",\n  \"policy_domain_username\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"policy_name\": \"string\",\n  \"policy_node_group\": \"string\",\n  \"policy_revision_id\": \"string\",\n  \"policy_domain_url\": \"string\",\n  \"scm_type\": \"SCM_TYPE_UNSPECIFIED\",\n  \"scm_web_type\": \"SCM_WEB_TYPE_UNSPECIFIED\",\n  \"policy_scm_url\": \"string\",\n  \"policy_scm_web_url\": \"string\",\n  \"policy_scm_commit\": \"string\",\n  \"description\": \"string\",\n  \"ci_job_url\": \"string\",\n  \"ci_job_id\": \"string\",\n  \"id\": \"string\",\n  \"start_time\": \"string\",\n  \"end_time\": \"string\",\n  \"scm_author_name\": \"string\",\n  \"scm_author_email\": \"string\",\n  \"policy_domain_username\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59fe5cc7-4cf9-4724-8ac6-29c1457f2fb8",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "beta",
+                    "cfgmgmt",
+                    "rollouts",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"policy_name\": \"<string>\",\n  \"policy_node_group\": \"<string>\",\n  \"policy_revision_id\": \"<string>\",\n  \"policy_domain_url\": \"<string>\",\n  \"scm_type\": \"SCM_TYPE_UNSPECIFIED\",\n  \"scm_web_type\": \"SCM_WEB_TYPE_UNSPECIFIED\",\n  \"policy_scm_url\": \"<string>\",\n  \"policy_scm_web_url\": \"<string>\",\n  \"policy_scm_commit\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ci_job_url\": \"<string>\",\n  \"ci_job_id\": \"<string>\",\n  \"scm_author_name\": \"<string>\",\n  \"scm_author_email\": \"<string>\",\n  \"policy_domain_username\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 9738,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1cc68a83-5251-4252-97d7-8445c69237e7",
+          "name": "GetRolloutForChefRun",
+          "request": {
+            "name": "GetRolloutForChefRun",
+            "description": {
+              "content": "Returns the rollout for the given Chef Server/org, policy group, policy name, and policy revision\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "beta",
+                "cfgmgmt",
+                "rollouts",
+                "find"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "policy_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "policy_group",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "policy_revision_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "72de9817-7e0c-47e3-97c5-bbff8a4d7a82",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "beta",
+                    "cfgmgmt",
+                    "rollouts",
+                    "find"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "policy_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "policy_group",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "policy_revision_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"policy_name\": \"string\",\n  \"policy_node_group\": \"string\",\n  \"policy_revision_id\": \"string\",\n  \"policy_domain_url\": \"string\",\n  \"scm_type\": \"SCM_TYPE_UNSPECIFIED\",\n  \"scm_web_type\": \"SCM_WEB_TYPE_UNSPECIFIED\",\n  \"policy_scm_url\": \"string\",\n  \"policy_scm_web_url\": \"string\",\n  \"policy_scm_commit\": \"string\",\n  \"description\": \"string\",\n  \"ci_job_url\": \"string\",\n  \"ci_job_id\": \"string\",\n  \"id\": \"string\",\n  \"start_time\": \"string\",\n  \"end_time\": \"string\",\n  \"scm_author_name\": \"string\",\n  \"scm_author_email\": \"string\",\n  \"policy_domain_username\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "55a266c0-3f21-4f4b-a1c7-36876cb7da20",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "beta",
+                    "cfgmgmt",
+                    "rollouts",
+                    "find"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "policy_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "policy_group",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "policy_revision_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "253584da-c966-4bae-8345-b178bb7e6d2e",
+          "name": "GetRollouts",
+          "request": {
+            "name": "GetRollouts",
+            "description": {
+              "content": "Gives a list of rollouts\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "beta",
+                "cfgmgmt",
+                "rollouts",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters to apply to the request for the rollouts list."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters to apply to the request for the rollouts list."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6022a22c-0329-4742-b90a-0dc5a982412f",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "beta",
+                    "cfgmgmt",
+                    "rollouts",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"rollouts\": [\n    {\n      \"policy_name\": \"string\",\n      \"policy_node_group\": \"string\",\n      \"policy_revision_id\": \"string\",\n      \"policy_domain_url\": \"string\",\n      \"scm_type\": \"SCM_TYPE_UNSPECIFIED\",\n      \"scm_web_type\": \"SCM_WEB_TYPE_UNSPECIFIED\",\n      \"policy_scm_url\": \"string\",\n      \"policy_scm_web_url\": \"string\",\n      \"policy_scm_commit\": \"string\",\n      \"description\": \"string\",\n      \"ci_job_url\": \"string\",\n      \"ci_job_id\": \"string\",\n      \"id\": \"string\",\n      \"start_time\": \"string\",\n      \"end_time\": \"string\",\n      \"scm_author_name\": \"string\",\n      \"scm_author_email\": \"string\",\n      \"policy_domain_username\": \"string\"\n    },\n    {\n      \"policy_name\": \"string\",\n      \"policy_node_group\": \"string\",\n      \"policy_revision_id\": \"string\",\n      \"policy_domain_url\": \"string\",\n      \"scm_type\": \"SCM_TYPE_UNSPECIFIED\",\n      \"scm_web_type\": \"SCM_WEB_TYPE_UNSPECIFIED\",\n      \"policy_scm_url\": \"string\",\n      \"policy_scm_web_url\": \"string\",\n      \"policy_scm_commit\": \"string\",\n      \"description\": \"string\",\n      \"ci_job_url\": \"string\",\n      \"ci_job_id\": \"string\",\n      \"id\": \"string\",\n      \"start_time\": \"string\",\n      \"end_time\": \"string\",\n      \"scm_author_name\": \"string\",\n      \"scm_author_email\": \"string\",\n      \"policy_domain_username\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "11a7cbd3-9196-4af2-9f87-cc71f168f2a8",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "beta",
+                    "cfgmgmt",
+                    "rollouts",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cedf6f9e-9645-4cee-a017-3988e98f2327",
+          "name": "Config Mgmt List Node Segments With Rollout Progress",
+          "request": {
+            "name": "Config Mgmt List Node Segments With Rollout Progress",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "beta",
+                "cfgmgmt",
+                "rollouts",
+                "progress_by_node_segment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters to apply to the request for the node segments list."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters to apply to the request for the node segments list."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "777e96d8-eb8b-46b1-b258-a823957bf0a2",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "beta",
+                    "cfgmgmt",
+                    "rollouts",
+                    "progress_by_node_segment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"node_segment_rollout_progress\": [\n    {\n      \"policy_name\": \"string\",\n      \"policy_node_group\": \"string\",\n      \"policy_domain_url\": \"string\",\n      \"total_nodes\": 3699,\n      \"current_rollout_progress\": {\n        \"rollout\": {\n          \"policy_name\": \"string\",\n          \"policy_node_group\": \"string\",\n          \"policy_revision_id\": \"string\",\n          \"policy_domain_url\": \"string\",\n          \"scm_type\": \"SCM_TYPE_UNSPECIFIED\",\n          \"scm_web_type\": \"SCM_WEB_TYPE_UNSPECIFIED\",\n          \"policy_scm_url\": \"string\",\n          \"policy_scm_web_url\": \"string\",\n          \"policy_scm_commit\": \"string\",\n          \"description\": \"string\",\n          \"ci_job_url\": \"string\",\n          \"ci_job_id\": \"string\",\n          \"id\": \"string\",\n          \"start_time\": \"string\",\n          \"end_time\": \"string\",\n          \"scm_author_name\": \"string\",\n          \"scm_author_email\": \"string\",\n          \"policy_domain_username\": \"string\"\n        },\n        \"node_count\": 3543,\n        \"latest_run_successful_count\": 7906,\n        \"latest_run_errored_count\": 4710,\n        \"source_link\": \"string\",\n        \"build_link\": \"string\"\n      },\n      \"previous_rollouts\": [\n        {\n          \"rollout\": {\n            \"policy_name\": \"string\",\n            \"policy_node_group\": \"string\",\n            \"policy_revision_id\": \"string\",\n            \"policy_domain_url\": \"string\",\n            \"scm_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"scm_web_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"policy_scm_url\": \"string\",\n            \"policy_scm_web_url\": \"string\",\n            \"policy_scm_commit\": \"string\",\n            \"description\": \"string\",\n            \"ci_job_url\": \"string\",\n            \"ci_job_id\": \"string\",\n            \"id\": \"string\",\n            \"start_time\": \"string\",\n            \"end_time\": \"string\",\n            \"scm_author_name\": \"string\",\n            \"scm_author_email\": \"string\",\n            \"policy_domain_username\": \"string\"\n          },\n          \"latest_run_node_count\": 1908,\n          \"source_link\": \"string\",\n          \"build_link\": \"string\"\n        },\n        {\n          \"rollout\": {\n            \"policy_name\": \"string\",\n            \"policy_node_group\": \"string\",\n            \"policy_revision_id\": \"string\",\n            \"policy_domain_url\": \"string\",\n            \"scm_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"scm_web_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"policy_scm_url\": \"string\",\n            \"policy_scm_web_url\": \"string\",\n            \"policy_scm_commit\": \"string\",\n            \"description\": \"string\",\n            \"ci_job_url\": \"string\",\n            \"ci_job_id\": \"string\",\n            \"id\": \"string\",\n            \"start_time\": \"string\",\n            \"end_time\": \"string\",\n            \"scm_author_name\": \"string\",\n            \"scm_author_email\": \"string\",\n            \"policy_domain_username\": \"string\"\n          },\n          \"latest_run_node_count\": 7940,\n          \"source_link\": \"string\",\n          \"build_link\": \"string\"\n        }\n      ]\n    },\n    {\n      \"policy_name\": \"string\",\n      \"policy_node_group\": \"string\",\n      \"policy_domain_url\": \"string\",\n      \"total_nodes\": 1664,\n      \"current_rollout_progress\": {\n        \"rollout\": {\n          \"policy_name\": \"string\",\n          \"policy_node_group\": \"string\",\n          \"policy_revision_id\": \"string\",\n          \"policy_domain_url\": \"string\",\n          \"scm_type\": \"SCM_TYPE_UNSPECIFIED\",\n          \"scm_web_type\": \"SCM_WEB_TYPE_UNSPECIFIED\",\n          \"policy_scm_url\": \"string\",\n          \"policy_scm_web_url\": \"string\",\n          \"policy_scm_commit\": \"string\",\n          \"description\": \"string\",\n          \"ci_job_url\": \"string\",\n          \"ci_job_id\": \"string\",\n          \"id\": \"string\",\n          \"start_time\": \"string\",\n          \"end_time\": \"string\",\n          \"scm_author_name\": \"string\",\n          \"scm_author_email\": \"string\",\n          \"policy_domain_username\": \"string\"\n        },\n        \"node_count\": 9556,\n        \"latest_run_successful_count\": 1700,\n        \"latest_run_errored_count\": 8572,\n        \"source_link\": \"string\",\n        \"build_link\": \"string\"\n      },\n      \"previous_rollouts\": [\n        {\n          \"rollout\": {\n            \"policy_name\": \"string\",\n            \"policy_node_group\": \"string\",\n            \"policy_revision_id\": \"string\",\n            \"policy_domain_url\": \"string\",\n            \"scm_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"scm_web_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"policy_scm_url\": \"string\",\n            \"policy_scm_web_url\": \"string\",\n            \"policy_scm_commit\": \"string\",\n            \"description\": \"string\",\n            \"ci_job_url\": \"string\",\n            \"ci_job_id\": \"string\",\n            \"id\": \"string\",\n            \"start_time\": \"string\",\n            \"end_time\": \"string\",\n            \"scm_author_name\": \"string\",\n            \"scm_author_email\": \"string\",\n            \"policy_domain_username\": \"string\"\n          },\n          \"latest_run_node_count\": 587,\n          \"source_link\": \"string\",\n          \"build_link\": \"string\"\n        },\n        {\n          \"rollout\": {\n            \"policy_name\": \"string\",\n            \"policy_node_group\": \"string\",\n            \"policy_revision_id\": \"string\",\n            \"policy_domain_url\": \"string\",\n            \"scm_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"scm_web_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"policy_scm_url\": \"string\",\n            \"policy_scm_web_url\": \"string\",\n            \"policy_scm_commit\": \"string\",\n            \"description\": \"string\",\n            \"ci_job_url\": \"string\",\n            \"ci_job_id\": \"string\",\n            \"id\": \"string\",\n            \"start_time\": \"string\",\n            \"end_time\": \"string\",\n            \"scm_author_name\": \"string\",\n            \"scm_author_email\": \"string\",\n            \"policy_domain_username\": \"string\"\n          },\n          \"latest_run_node_count\": 5776,\n          \"source_link\": \"string\",\n          \"build_link\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "41d63ec0-fc77-4c25-aef2-5bf091ab1828",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "beta",
+                    "cfgmgmt",
+                    "rollouts",
+                    "progress_by_node_segment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0cc40f56-a9f3-41a5-8add-e4c129074566",
+          "name": "GetRolloutById",
+          "request": {
+            "name": "GetRolloutById",
+            "description": {
+              "content": "Returns the rollout with the given Id\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "beta",
+                "cfgmgmt",
+                "rollouts",
+                "rollout",
+                ":rollout_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "rollout_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4465c24c-1258-481a-b757-f2b1b956391c",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "beta",
+                    "cfgmgmt",
+                    "rollouts",
+                    "rollout",
+                    ":rollout_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "rollout_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"policy_name\": \"string\",\n  \"policy_node_group\": \"string\",\n  \"policy_revision_id\": \"string\",\n  \"policy_domain_url\": \"string\",\n  \"scm_type\": \"SCM_TYPE_UNSPECIFIED\",\n  \"scm_web_type\": \"SCM_WEB_TYPE_UNSPECIFIED\",\n  \"policy_scm_url\": \"string\",\n  \"policy_scm_web_url\": \"string\",\n  \"policy_scm_commit\": \"string\",\n  \"description\": \"string\",\n  \"ci_job_url\": \"string\",\n  \"ci_job_id\": \"string\",\n  \"id\": \"string\",\n  \"start_time\": \"string\",\n  \"end_time\": \"string\",\n  \"scm_author_name\": \"string\",\n  \"scm_author_email\": \"string\",\n  \"policy_domain_username\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3fac1da9-5fe3-4d19-9636-a2ad10477b6e",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "beta",
+                    "cfgmgmt",
+                    "rollouts",
+                    "rollout",
+                    ":rollout_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "rollout_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "954c5e50-8dc8-463b-92ec-ca537c1d65dd",
+          "name": "CreateRolloutTest",
+          "request": {
+            "name": "CreateRolloutTest",
+            "description": {
+              "content": "CreateRolloutTest is a no-op endpoint that has the same auth requirements as\nCreateRollout. It can be used to verify end-to-end config/connectivity for\nclients\n\nAuthorization Action:\n```\ningest:unifiedEvents:create\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "beta",
+                "cfgmgmt",
+                "rollouts",
+                "test_create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b63d32e8-f01b-4979-a2d4-0aabde9b069c",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "beta",
+                    "cfgmgmt",
+                    "rollouts",
+                    "test_create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4c6e458c-95c0-4b5f-b837-e5670eaa1b52",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "beta",
+                    "cfgmgmt",
+                    "rollouts",
+                    "test_create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8bbe1085-a3de-4b9a-92a8-03854ceb1485",
+          "name": "List Errors",
+          "request": {
+            "name": "List Errors",
+            "description": {
+              "content": "Returns a list of the most common errors reported for infra nodes' most recent Chef Infra Client runs.\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "errors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<integer>",
+                  "description": "The number of results to return.\nIf set to zero, the default size of 10 will be used. Set to a negative\nvalue for unlimited results."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters in the request select the nodes from which the errors are\ncollected. The same filters may be specified for this request as for other\nNodes requests, with the exception of 'status' which is not valid for this\nrequest."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters in the request select the nodes from which the errors are\ncollected. The same filters may be specified for this request as for other\nNodes requests, with the exception of 'status' which is not valid for this\nrequest."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1a042186-8827-4d04-a814-b99b0ebc0471",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"count\": 1111,\n      \"type\": \"string\",\n      \"error_message\": \"string\"\n    },\n    {\n      \"count\": 9357,\n      \"type\": \"string\",\n      \"error_message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7a85f6f3-1ee4-453d-97b0-241f13674a73",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c19cf7a9-1977-4156-afd2-3c9ef713e586",
+          "name": "GetNodeMetadataCounts",
+          "request": {
+            "name": "GetNodeMetadataCounts",
+            "description": {
+              "content": "For each type of field requested this returns distinct values the amount of each. For example, \nif the 'platform' field is requested 'windows' 10, 'redhat' 5, and 'ubuntu' 8 could be returned. \nThe number next to each represents the number of nodes with that type of platform.\n\nExample:\nrequest\n```\ncfgmgmt/node_metadata_counts?type=platform&type=status\n```\nresponse\n```\n{\n\"types\": [\n{\n\"values\": [\n{\n\"value\": \"mac_os_x 10.11.5\",\n\"count\": 28\n},\n{\n\"value\": \"linux 8.9\",\n\"count\": 1\n},\n{\n\"value\": \"macos 8.9\",\n\"count\": 1\n},\n{\n\"value\": \"windows 8.9\",\n\"count\": 1\n}\n],\n\"type\": \"platform\"\n},\n{\n\"value\": [\n{\n\"value\": \"missing\",\n\"count\": 29\n},\n{\n\"value\": \"failure\",\n\"count\": 2\n}\n],\n\"type\": \"status\"\n}\n]\n}\n```\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "node_metadata_counts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Types of node fields to collect value counts for."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Types of node fields to collect value counts for."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters to apply to the counts returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters to apply to the counts returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "Earliest most recent check-in node information to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<string>",
+                  "description": "Latest most recent check-in node information to return."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0b2a5a86-d82a-4241-a858-3a4fd08a4dec",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "node_metadata_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"types\": [\n    {\n      \"values\": [\n        {\n          \"value\": \"string\",\n          \"count\": 9138\n        },\n        {\n          \"value\": \"string\",\n          \"count\": 1081\n        }\n      ],\n      \"type\": \"string\"\n    },\n    {\n      \"values\": [\n        {\n          \"value\": \"string\",\n          \"count\": 457\n        },\n        {\n          \"value\": \"string\",\n          \"count\": 171\n        }\n      ],\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5211bb73-0154-4311-b781-fd87a84b63e5",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "node_metadata_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3698b76b-4096-4fcd-9beb-46272cddd3e4",
+          "name": "GetNodeRunsDailyStatusTimeSeries",
+          "request": {
+            "name": "GetNodeRunsDailyStatusTimeSeries",
+            "description": {
+              "content": "Provides the status of runs for each 24-hour duration. For multiple runs in one 24-hour duration, \nthe most recent failed run will be returned. If there are no failed runs the most recent successful \nrun will be returned. If no runs are found in the 24-hour duration, the status will be \"missing\" \nand no run information will be returned.\n\nExample:\nrequest\n```\ncfgmgmt/node_runs_daily_status_time_series?node_id=507bd518-5c18-4c2d-a445-60fe7dde9961&days_ago=3\n```\nresponse\n```\n{\n\"durations\": [\n{\n\"start\": \"2020-04-25T19:00:00Z\",\n\"end\": \"2020-04-26T18:59:59Z\",\n\"status\": \"missing\",\n\"run_id\": \"\"\n},\n{\n\"start\": \"2020-04-26T19:00:00Z\",\n\"end\": \"2020-04-27T18:59:59Z\",\n\"status\": \"missing\",\n\"run_id\": \"\"\n},\n{\n\"start\": \"2020-04-27T19:00:00Z\",\n\"end\": \"2020-04-28T18:59:59Z\",\n\"status\": \"failure\",\n\"run_id\": \"b7904f41-68b5-44ec-9da6-cf2481ff8600\"\n}\n]\n}\n```\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "node_runs_daily_status_time_series"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "node_id",
+                  "value": "<string>",
+                  "description": "Node ID of the runs."
+                },
+                {
+                  "disabled": false,
+                  "key": "days_ago",
+                  "value": "<integer>",
+                  "description": "Number of past days."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5b8eb13d-e522-42fb-b932-7fc0e8cb76e8",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "node_runs_daily_status_time_series"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "node_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "days_ago",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"durations\": [\n    {\n      \"start\": \"string\",\n      \"end\": \"string\",\n      \"status\": \"string\",\n      \"run_id\": \"string\"\n    },\n    {\n      \"start\": \"string\",\n      \"end\": \"string\",\n      \"status\": \"string\",\n      \"run_id\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c513383d-f83f-4e78-82b0-f538726a75e3",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "node_runs_daily_status_time_series"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "node_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "days_ago",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a59fd808-f586-416a-9c49-2d1b29913925",
+          "name": "List Checked-in Nodes",
+          "request": {
+            "name": "List Checked-in Nodes",
+            "description": {
+              "content": "Returns a list of infra nodes that have checked in to Automate.\nAdding a filter makes a list of all nodes that meet the filter criteria.\nFilters for the same field are ORd together, while filters across different fields are ANDed together.\nSupports pagination, filtering (with wildcard support), and sorting.\nMax return payload size is 4MB, use pagination to fetch remaining data.\n\nExample:\n```\ncfgmgmt/nodes?pagination.page=1&pagination.size=100&sorting.field=name&sorting.order=ASC&filter=name:mySO*&filter=platform:ubun*\n```\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "nodes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters to apply to the request for nodes list."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters to apply to the request for nodes list."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination.page",
+                  "value": "<integer>",
+                  "description": "Page number of the results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination.size",
+                  "value": "<integer>",
+                  "description": "Amount of results to include per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting.field",
+                  "value": "<string>",
+                  "description": "Field to sort the list results on."
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting.order",
+                  "value": "ASC",
+                  "description": "Order the results should be returned in."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "Earliest most recent check-in node information to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<string>",
+                  "description": "Latest most recent check-in node information to return."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0b79a572-afa6-4fb6-8814-c6990b8d1262",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "nodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sorting.field",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting.order",
+                      "value": "ASC"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fbe1727a-7269-46a6-9b5f-390969a28594",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "nodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sorting.field",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting.order",
+                      "value": "ASC"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23e24f38-b6ee-48c7-91e0-8dccc602621b",
+          "name": "Show Attributes",
+          "request": {
+            "name": "Show Attributes",
+            "description": {
+              "content": "Returns the latest reported attributes for the provided node ID.\n\nAuthorization Action:\n```\ninfra:nodes:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "nodes",
+                ":node_id",
+                "attribute"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "node_id",
+                  "description": "(Required) Chef guid for the requested node."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "baae570a-8cc8-4c34-b8b1-99637d2de128",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "nodes",
+                    ":node_id",
+                    "attribute"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "node_id",
+                      "description": "(Required) Chef guid for the requested node."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"node_id\": \"string\",\n  \"name\": \"string\",\n  \"run_list\": [\n    \"string\",\n    \"string\"\n  ],\n  \"chef_environment\": \"string\",\n  \"normal\": \"string\",\n  \"default\": \"string\",\n  \"override\": \"string\",\n  \"automatic\": \"string\",\n  \"normal_value_count\": 4302,\n  \"default_value_count\": 8731,\n  \"override_value_count\": 5013,\n  \"all_value_count\": 3573,\n  \"automatic_value_count\": 5151\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b3c693b4-587e-4a45-8c38-06ead4fa0636",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "nodes",
+                    ":node_id",
+                    "attribute"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "node_id",
+                      "description": "(Required) Chef guid for the requested node."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8d7db75c-9af7-4574-ae90-1c6b875c5d6b",
+          "name": "List Run Details",
+          "request": {
+            "name": "List Run Details",
+            "description": {
+              "content": "Returns a list of run metadata (id, start and end time, and status) for the provided node ID.\nSupports pagination.\nAccepts a `start` parameter to denote start date for the list and a filter of type `status`.\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "nodes",
+                ":node_id",
+                "runs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters to apply to the request for runs list."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters to apply to the request for runs list."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination.page",
+                  "value": "<integer>",
+                  "description": "Page number of the results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination.size",
+                  "value": "<integer>",
+                  "description": "Amount of results to include per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "Earliest (in history) run information to return for the runs list."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<string>",
+                  "description": "Latest (in history) run information to return for the runs list."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "node_id",
+                  "description": "(Required) Chef guid for the node."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0db61ccd-97fc-4315-b52b-1afaf58ed8da",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "nodes",
+                    ":node_id",
+                    "runs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "node_id",
+                      "description": "(Required) Chef guid for the node."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "345ea9d8-fed0-45a9-be4d-e52da6000851",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "nodes",
+                    ":node_id",
+                    "runs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "node_id",
+                      "description": "(Required) Chef guid for the node."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b4d72c3c-973d-4dd7-b449-e7e2b4ff0f65",
+          "name": "Show Node Run",
+          "request": {
+            "name": "Show Node Run",
+            "description": {
+              "content": "Returns the infra run report for the provided node ID and run ID.\n\nAuthorization Action:\n```\ninfra:nodes:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "nodes",
+                ":node_id",
+                "runs",
+                ":run_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "end_time",
+                  "value": "<dateTime>",
+                  "description": "End time on the node's run."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "node_id",
+                  "description": "(Required) Chef guid for the requested node."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "run_id",
+                  "description": "(Required) Run id for the node."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "377ba3b1-3181-4259-bd5e-98a84a521d74",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "nodes",
+                    ":node_id",
+                    "runs",
+                    ":run_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "end_time",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "node_id",
+                      "description": "(Required) Chef guid for the requested node."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "run_id",
+                      "description": "(Required) Run id for the node."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"node_id\": \"string\",\n  \"node_name\": \"string\",\n  \"organization\": \"string\",\n  \"start_time\": \"1992-10-14T11:19:56.150Z\",\n  \"end_time\": \"2019-05-02T05:03:16.490Z\",\n  \"source\": \"string\",\n  \"status\": \"string\",\n  \"total_resource_count\": 6586,\n  \"updated_resource_count\": 5642,\n  \"chef_version\": \"string\",\n  \"uptime_seconds\": 7572,\n  \"environment\": \"string\",\n  \"fqdn\": \"string\",\n  \"source_fqdn\": \"string\",\n  \"ipaddress\": \"string\",\n  \"resources\": [\n    {\n      \"type\": \"string\",\n      \"name\": \"string\",\n      \"id\": \"string\",\n      \"duration\": \"string\",\n      \"delta\": \"string\",\n      \"cookbook_name\": \"string\",\n      \"cookbook_version\": \"string\",\n      \"status\": \"string\",\n      \"recipe_name\": \"string\",\n      \"result\": \"string\",\n      \"conditional\": \"string\",\n      \"ignore_failure\": true,\n      \"error\": {\n        \"class\": \"string\",\n        \"message\": \"string\",\n        \"backtrace\": [\n          \"string\",\n          \"string\"\n        ],\n        \"description\": {\n          \"title\": \"string\"\n        }\n      }\n    },\n    {\n      \"type\": \"string\",\n      \"name\": \"string\",\n      \"id\": \"string\",\n      \"duration\": \"string\",\n      \"delta\": \"string\",\n      \"cookbook_name\": \"string\",\n      \"cookbook_version\": \"string\",\n      \"status\": \"string\",\n      \"recipe_name\": \"string\",\n      \"result\": \"string\",\n      \"conditional\": \"string\",\n      \"ignore_failure\": false,\n      \"error\": {\n        \"class\": \"string\",\n        \"message\": \"string\",\n        \"backtrace\": [\n          \"string\",\n          \"string\"\n        ],\n        \"description\": {\n          \"title\": \"string\"\n        }\n      }\n    }\n  ],\n  \"run_list\": [\n    \"string\",\n    \"string\"\n  ],\n  \"deprecations\": [\n    {\n      \"message\": \"string\",\n      \"url\": \"string\",\n      \"location\": \"string\"\n    },\n    {\n      \"message\": \"string\",\n      \"url\": \"string\",\n      \"location\": \"string\"\n    }\n  ],\n  \"error\": {\n    \"class\": \"string\",\n    \"message\": \"string\",\n    \"backtrace\": [\n      \"string\",\n      \"string\"\n    ],\n    \"description\": {\n      \"title\": \"string\"\n    }\n  },\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"resource_names\": [\n    \"string\",\n    \"string\"\n  ],\n  \"recipes\": [\n    \"string\",\n    \"string\"\n  ],\n  \"chef_tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"cookbooks\": [\n    \"string\",\n    \"string\"\n  ],\n  \"platform\": \"string\",\n  \"platform_family\": \"string\",\n  \"platform_version\": \"string\",\n  \"roles\": [\n    \"string\",\n    \"string\"\n  ],\n  \"policy_name\": \"string\",\n  \"policy_group\": \"string\",\n  \"policy_revision\": \"string\",\n  \"expanded_run_list\": {\n    \"id\": \"string\",\n    \"run_list\": [\n      {\n        \"type\": \"string\",\n        \"name\": \"string\",\n        \"version\": \"string\",\n        \"skipped\": false,\n        \"children\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/chef.automate.api.cfgmgmt.response.RunList detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/chef.automate.api.cfgmgmt.response.RunList detected>\"\n          }\n        ]\n      },\n      {\n        \"type\": \"string\",\n        \"name\": \"string\",\n        \"version\": \"string\",\n        \"skipped\": false,\n        \"children\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/chef.automate.api.cfgmgmt.response.RunList detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/chef.automate.api.cfgmgmt.response.RunList detected>\"\n          }\n        ]\n      }\n    ]\n  },\n  \"projects\": [\n    \"string\",\n    \"string\"\n  ],\n  \"versioned_cookbooks\": [\n    {\n      \"name\": \"string\",\n      \"version\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"version\": \"string\"\n    }\n  ],\n  \"ip6address\": \"string\",\n  \"timezone\": \"string\",\n  \"domain\": \"string\",\n  \"hostname\": \"string\",\n  \"memory_total\": \"string\",\n  \"macaddress\": \"string\",\n  \"dmi_system_serial_number\": \"string\",\n  \"dmi_system_manufacturer\": \"string\",\n  \"virtualization_role\": \"string\",\n  \"virtualization_system\": \"string\",\n  \"kernel_version\": \"string\",\n  \"kernel_release\": \"string\",\n  \"cloud_provider\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c7c7d5b7-6ccd-4a67-a1ae-25a6d1c67785",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "nodes",
+                    ":node_id",
+                    "runs",
+                    ":run_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "end_time",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "node_id",
+                      "description": "(Required) Chef guid for the requested node."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "run_id",
+                      "description": "(Required) Run id for the node."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c7642a4-fb87-4038-9783-aeb7a3b2e99a",
+          "name": "List Organizations",
+          "request": {
+            "name": "List Organizations",
+            "description": {
+              "content": "Returns a list of all organizations associated with nodes that have checked in to Automate.\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "organizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "111312ce-d586-4ce3-9c86-5b94825cce73",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "organizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "23766281-b79f-405a-b403-a6ae58c081cd",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "organizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc01d657-effa-4ea5-94e0-da1dbc45a149",
+          "name": "List Policy Cookbooks",
+          "request": {
+            "name": "List Policy Cookbooks",
+            "description": {
+              "content": "Returns Policy Names with a list of cookbook names and associated policy identifiers based on a policy revision ID. \nPolicy revision IDs are sent with an infra run report and identifies which instance of a policy the node used for this run.\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "policy_revision",
+                ":revision_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "revision_id",
+                  "description": "(Required) Revision id for the policy."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "020ff05b-eecf-435a-8b6b-bdd699068780",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "policy_revision",
+                    ":revision_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "revision_id",
+                      "description": "(Required) Revision id for the policy."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"policy_name\": \"string\",\n  \"cookbook_locks\": [\n    {\n      \"cookbook\": \"string\",\n      \"policy_identifier\": \"string\"\n    },\n    {\n      \"cookbook\": \"string\",\n      \"policy_identifier\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2a3d2b35-8da9-448b-ac63-7b58290a9383",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "policy_revision",
+                    ":revision_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "revision_id",
+                      "description": "(Required) Revision id for the policy."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "21f68d94-3209-4854-af42-97de0c3684f6",
+          "name": "List Associated Chef Infra Servers",
+          "request": {
+            "name": "List Associated Chef Infra Servers",
+            "description": {
+              "content": "Returns a list of all Chef Infra Servers associated with nodes that have checked in to Automate.\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "source_fqdns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "97bb88d0-9508-406a-a89e-a4c09e7eb962",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "source_fqdns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad7beba2-b6fa-4fd7-b94f-8a1f15f0bcc0",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "source_fqdns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0205dd3b-57d7-4760-8ddb-5ad2543cf486",
+          "name": "List Node Checkins",
+          "request": {
+            "name": "List Node Checkins",
+            "description": {
+              "content": "Returns a daily time series of unique node check-ins for the number of days requested.\nIf `days ago` value is empty, API will return the default 1 day ago results.\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "stats",
+                "checkin_counts_timeseries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "List of filters to be applied to the time series."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "List of filters to be applied to the time series."
+                },
+                {
+                  "disabled": false,
+                  "key": "days_ago",
+                  "value": "<integer>",
+                  "description": "Number of past days to create the time series."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "77923fd1-47a9-47ae-8577-ac6fc94b8c7c",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "stats",
+                    "checkin_counts_timeseries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "days_ago",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"counts\": [\n    {\n      \"start\": \"string\",\n      \"end\": \"string\",\n      \"count\": 9709,\n      \"total\": 2248\n    },\n    {\n      \"start\": \"string\",\n      \"end\": \"string\",\n      \"count\": 9852,\n      \"total\": 7922\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "014a01d7-5a06-47e0-a573-5fbd7ec475e3",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "stats",
+                    "checkin_counts_timeseries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "days_ago",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d6cc0fa6-b20f-449d-8227-435616129a3d",
+          "name": "List Missing Nodes Count",
+          "request": {
+            "name": "List Missing Nodes Count",
+            "description": {
+              "content": "Returns a count of missing nodes for the provided durations.\n\nExample:\n```\ncfgmgmt/stats/missing_node_duration_counts?durations=3d&durations=1w&durations=2w&durations=1M&durations=3M\n```\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "stats",
+                "missing_node_duration_counts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "durations",
+                  "value": "<string>",
+                  "description": "A valid duration is any number zero or greater with one of these characters 'h', 'd', 'w', or 'M'. \n'h' is hours\n'd' is days\n'w' is weeks\n'M' is months\nWill contain one or many."
+                },
+                {
+                  "disabled": false,
+                  "key": "durations",
+                  "value": "<string>",
+                  "description": "A valid duration is any number zero or greater with one of these characters 'h', 'd', 'w', or 'M'. \n'h' is hours\n'd' is days\n'w' is weeks\n'M' is months\nWill contain one or many."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "39f9bf87-ed4d-4912-bf2e-563d03ed126b",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "stats",
+                    "missing_node_duration_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "durations",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "durations",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"counted_durations\": [\n    {\n      \"duration\": \"string\",\n      \"count\": 3676\n    },\n    {\n      \"duration\": \"string\",\n      \"count\": 3570\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bd1517f2-63b5-4bbc-87b5-f4887a4c7fb3",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "stats",
+                    "missing_node_duration_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "durations",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "durations",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f480ced0-38f5-4937-8d63-21d91518e3d0",
+          "name": "List Node Status Counts",
+          "request": {
+            "name": "List Node Status Counts",
+            "description": {
+              "content": "Returns totals for failed, success, missing, and overall total infra nodes that have reported into Automate.\nSupports filtering.\n\nExample:\n```\ncfgmgmt/stats/node_counts?filter=name:mySO*&filter=platform:ubun*\n```\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "stats",
+                "node_counts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "List of filters to be applied to the node count results."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "List of filters to be applied to the node count results."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "Earliest node check-in."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<string>",
+                  "description": "Latest node check-in."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "efda71fd-ef47-4eaf-9232-086d48b9c690",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "stats",
+                    "node_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": 6795,\n  \"success\": 9784,\n  \"failure\": 134,\n  \"missing\": 2567\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ce253cd6-7b27-4192-b93f-3b7d16aaf5ba",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "stats",
+                    "node_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fdd3095d-2253-4012-9753-ab509e49f04d",
+          "name": "List Run Status Totals",
+          "request": {
+            "name": "List Run Status Totals",
+            "description": {
+              "content": "Returns totals for failed and successful runs given a `node_id`.\n\nExample:\n```\ncfgmgmt/stats/run_counts?node_id=821fff07-abc9-4160-96b1-83d68ae5cfdd&start=2019-11-02\n```\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "stats",
+                "run_counts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "List of filters to be applied to the run count results."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "List of filters to be applied to the run count results."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "Earliest (in history) run information to return for the run counts."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<string>",
+                  "description": "Latest (in history) run information to return for the run counts."
+                },
+                {
+                  "disabled": false,
+                  "key": "node_id",
+                  "value": "<string>",
+                  "description": "Node id associated with the run."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0df22918-3301-42c3-ab5a-d5358a41b68a",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "stats",
+                    "run_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "node_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": 2420,\n  \"success\": 1309,\n  \"failure\": 9183\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b49643b2-3596-4127-a5ed-86cd385e338e",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "stats",
+                    "run_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "node_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e55a736a-cf4e-4043-843d-8bc5bd26867b",
+          "name": "List Filter Suggestions",
+          "request": {
+            "name": "List Filter Suggestions",
+            "description": {
+              "content": "Returns possible filter values given a valid `type` parameter. All values returned until two or more characters are provided for the `text` parameter.\nSupports wildcard (* and ?).\n\nExample:\n```\ncfgmgmt/suggestions?type=environment&text=_d\n```\n\nAuthorization Action:\n```\ninfra:nodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "suggestions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Field for which suggestions are being returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "text",
+                  "value": "<string>",
+                  "description": "Text to search on for the type value."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters to be applied to the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Filters to be applied to the results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fb5f4f11-96a0-4d97-8174-2a3120688734",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "suggestions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "text",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "34cb5c47-d7a8-4df8-a86c-95f6f573af7e",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "suggestions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "text",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c543b9b2-8c9f-43a4-abed-74c58bc74a95",
+          "name": "GetNodesUsageCount",
+          "request": {
+            "name": "GetNodesUsageCount",
+            "description": {
+              "content": "Returns the count of unique nodes with lastRun in a given time.\nThe time duration can be between the last time Telemetry data sent and the day before the current date.\nIf the duration < 15 days --> 15 days\nduration > 15 days --> duration\nAuthorization Action:\n```\niam:introspect:getAll\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "telemetry",
+                "nodes",
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "414cc454-3f40-489a-bea8-2abf22e5b216",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "telemetry",
+                    "nodes",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"days_since_last_post\": \"string\",\n  \"node_cnt\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "970fac9c-bb8e-4a07-ac35-e6ac4c56d648",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "telemetry",
+                    "nodes",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b5c40671-3b79-4100-8acf-0b132b9c7464",
+          "name": "UpdateTelemetryReported\nAcknowledge API  to updates the last client run telemetry reported date in postgres\nAuthorization Action:\n```\niam:introspect:getAll\n```",
+          "request": {
+            "name": "UpdateTelemetryReported\nAcknowledge API  to updates the last client run telemetry reported date in postgres\nAuthorization Action:\n```\niam:introspect:getAll\n```",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "cfgmgmt",
+                "telemetry",
+                "nodes",
+                "count",
+                "updated"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"last_telemetry_reported_at\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "eda18cde-02dd-4da4-895b-0d89f7b477fb",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "telemetry",
+                    "nodes",
+                    "count",
+                    "updated"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"last_telemetry_reported_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b7b11dea-c5a3-446c-a37c-d3f88b7a72ba",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "cfgmgmt",
+                    "telemetry",
+                    "nodes",
+                    "count",
+                    "updated"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"last_telemetry_reported_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2957,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ddbf933a-1b9a-4b16-a237-b80d6e2ef731",
+    "name": "external/applications/applications.proto ApplicationsService ConfigMgmt API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

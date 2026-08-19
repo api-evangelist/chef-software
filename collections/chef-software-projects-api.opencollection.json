@@ -1,0 +1,97 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService projects API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lists all projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/projects"
+          },
+          "docs": "Lists all projects.\n\nAuthorization Action:\n```\niam:projects:list\n```"
+        },
+        {
+          "info": {
+            "name": "Creates a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/apis/iam/v2/projects"
+          },
+          "docs": "Creates a new project to be used in the policies that control permissions in Automate.\n\nA project defines the scope of resources in a policy statement. Resources can be in more than one project.\n\nWhen a project is created, the system also creates three policies associated with the new project,\none for each of the following roles: editor, viewer, and project owner.\nYou can optionally pass the `skip_policies` flag set to `true` to skip the creation of these policies.\n\nAuthorization Action:\n```\niam"
+        },
+        {
+          "info": {
+            "name": "Gets a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/projects/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the project."
+              }
+            ]
+          },
+          "docs": "Returns the details for a project.\n\nAuthorization Action:\n```\niam:projects:get\n```"
+        },
+        {
+          "info": {
+            "name": "Updates a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/apis/iam/v2/projects/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique ID. Cannot be changed."
+              }
+            ]
+          },
+          "docs": "Updates the name of an existing project.\n\nAuthorization Action:\n```\niam:projects:update\n```"
+        },
+        {
+          "info": {
+            "name": "Deletes a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/apis/iam/v2/projects/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the project."
+              }
+            ]
+          },
+          "docs": "Deletes a project from any resources tagged with it.\n\nAlso deletes this project from any project list in any policy statements.\nIf the resulting project list for a given statement is empty, it is deleted.\nIf the resulting policy has no statements, it is also deleted.\n\nAuthorization Action:\n```\niam:projects:delete\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

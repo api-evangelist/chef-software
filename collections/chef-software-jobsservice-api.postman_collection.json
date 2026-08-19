@@ -1,0 +1,966 @@
+{
+  "item": [
+    {
+      "id": "c3a75511-c312-4984-8ca9-9d225e52de4e",
+      "name": "JobsService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "89d9e78b-c5a8-461c-9c28-da63b0dd31e9",
+          "name": "Create a scan job",
+          "request": {
+            "name": "Create a scan job",
+            "description": {
+              "content": "Creates a scan job. A scan job executes Chef InSpec against the specified nodes.\nRequires a user-specified name. Type should be `detect` (checks if the node is reachable and reports the\nplatform information for the nodes) or `exec` (executes a set of profiles against the nodes).\nNodes to scan may be specified by including an array of node IDs to scan or a node manager ID along with some optional\nfiltering information.\nExec jobs require at least one profile to be used as part of the Chef InSpec scan.\nOptional recurrence schedules enable regularly scheduled (repeating) scans.\n\nExample:\n```\n{  \n\"name\": \"my testjob\",\n\"tags\": [],\n\"type\": \"exec\",\n\"nodes\": [\"i07uc612-7e97-43f2-9b19-256abh785820\"],\n\"profiles\": [\"https://github.com/dev-sec/linux-baseline/archive/master.tar.gz\", \"compliance://admin/ssh-baseline#2.2.0\"],\n\"retries\": 1,\n\"node_selectors\":[\n{\n\"manager_id\":\"e69dc612-7e67-43f2-9b19-256afd385820\",\n\"filters\":[{\"key\":\"name\",\"values\":[\"ins*\"],\"exclude\":false}]\n}\n],\n\"recurrence\":\"DTSTART=20191231T045100Z;FREQ=DAILY;INTERVAL=1\"\n}\n```\n\nAuthorization Action:\n\n```\ncompliance:scannerJobs:create\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "scanner",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"timeout\": \"<integer>\",\n  \"tags\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"start_time\": \"<dateTime>\",\n  \"end_time\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"retries\": \"<integer>\",\n  \"retries_left\": \"<integer>\",\n  \"results\": [\n    {\n      \"node_id\": \"<string>\",\n      \"report_id\": \"<string>\",\n      \"status\": \"<string>\",\n      \"result\": \"<string>\",\n      \"job_id\": \"<string>\",\n      \"start_time\": \"<dateTime>\",\n      \"end_time\": \"<dateTime>\"\n    },\n    {\n      \"node_id\": \"<string>\",\n      \"report_id\": \"<string>\",\n      \"status\": \"<string>\",\n      \"result\": \"<string>\",\n      \"job_id\": \"<string>\",\n      \"start_time\": \"<dateTime>\",\n      \"end_time\": \"<dateTime>\"\n    }\n  ],\n  \"nodes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"profiles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"node_count\": \"<integer>\",\n  \"profile_count\": \"<integer>\",\n  \"node_selectors\": [\n    {\n      \"manager_id\": \"<string>\",\n      \"filters\": [\n        {\n          \"key\": \"<string>\",\n          \"exclude\": \"<boolean>\",\n          \"values\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"exclude\": \"<boolean>\",\n          \"values\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    },\n    {\n      \"manager_id\": \"<string>\",\n      \"filters\": [\n        {\n          \"key\": \"<string>\",\n          \"exclude\": \"<boolean>\",\n          \"values\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"exclude\": \"<boolean>\",\n          \"values\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"scheduled_time\": \"<dateTime>\",\n  \"recurrence\": \"<string>\",\n  \"parent_id\": \"<string>\",\n  \"job_count\": \"<integer>\",\n  \"deleted\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7410aa65-15a4-445b-8d3e-ee584cbad846",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "scanner",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0da7d5dc-9337-477e-a7ff-517b0464409b",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "scanner",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2985,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7515de2b-bf24-4d64-8d72-04332c9e6758",
+          "name": "Read a scan job",
+          "request": {
+            "name": "Read a scan job",
+            "description": {
+              "content": "Read the details of a scan job given an ID.\n\nAuthorization Action:\n\n```\ncompliance:scannerJobs:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "scanner",
+                "jobs",
+                "id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Name of object."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique ID (UUID) assigned to object."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90e6e2f6-6918-4ac8-b8b8-fd8bc5c3fa38",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "scanner",
+                    "jobs",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique ID (UUID) assigned to object."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"timeout\": \"<integer>\",\n  \"tags\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"start_time\": \"<dateTime>\",\n  \"end_time\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"retries\": \"<integer>\",\n  \"retries_left\": \"<integer>\",\n  \"results\": [\n    {\n      \"node_id\": \"<string>\",\n      \"report_id\": \"<string>\",\n      \"status\": \"<string>\",\n      \"result\": \"<string>\",\n      \"job_id\": \"<string>\",\n      \"start_time\": \"<dateTime>\",\n      \"end_time\": \"<dateTime>\"\n    },\n    {\n      \"node_id\": \"<string>\",\n      \"report_id\": \"<string>\",\n      \"status\": \"<string>\",\n      \"result\": \"<string>\",\n      \"job_id\": \"<string>\",\n      \"start_time\": \"<dateTime>\",\n      \"end_time\": \"<dateTime>\"\n    }\n  ],\n  \"nodes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"profiles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"node_count\": \"<integer>\",\n  \"profile_count\": \"<integer>\",\n  \"node_selectors\": [\n    {\n      \"manager_id\": \"<string>\",\n      \"filters\": [\n        {\n          \"key\": \"<string>\",\n          \"exclude\": \"<boolean>\",\n          \"values\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"exclude\": \"<boolean>\",\n          \"values\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    },\n    {\n      \"manager_id\": \"<string>\",\n      \"filters\": [\n        {\n          \"key\": \"<string>\",\n          \"exclude\": \"<boolean>\",\n          \"values\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"exclude\": \"<boolean>\",\n          \"values\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"scheduled_time\": \"<dateTime>\",\n  \"recurrence\": \"<string>\",\n  \"parent_id\": \"<string>\",\n  \"job_count\": \"<integer>\",\n  \"deleted\": \"<boolean>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "20be9fb8-7378-4bad-b994-d393a2b94395",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "scanner",
+                    "jobs",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique ID (UUID) assigned to object."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2817,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39ab7352-d219-408f-8ce2-6589cc89d325",
+          "name": "Delete a scan job",
+          "request": {
+            "name": "Delete a scan job",
+            "description": {
+              "content": "Delete a scan job given an ID. Note this does not delete the report(s) generated by the scan job.\n\nAuthorization Action:\n\n```\ncompliance:scannerJobs:delete\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "scanner",
+                "jobs",
+                "id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Name of object."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique ID (UUID) assigned to object."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea607757-360c-4c0a-947b-1abddef95776",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "scanner",
+                    "jobs",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique ID (UUID) assigned to object."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cfb22f2c-7a25-417e-8ee0-75d1054dac87",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "scanner",
+                    "jobs",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique ID (UUID) assigned to object."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2817,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "89cf0706-d926-4c44-96f1-95521417dc79",
+          "name": "Update a job",
+          "request": {
+            "name": "Update a job",
+            "description": {
+              "content": "PUT operation to update the details for a scan job, such as the name, profiles, node set, or recurrence schedule.\nPlease note that this is a PUT operation, so all scan job details included in the create function\nshould be included in the PUT message to update.\t\n\nAuthorization Action:\n\n```\ncompliance:scannerJobs:update\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "scanner",
+                "jobs",
+                "id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique ID (UUID) of the scan job."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"timeout\": \"<integer>\",\n  \"tags\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"start_time\": \"<dateTime>\",\n  \"end_time\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"retries\": \"<integer>\",\n  \"retries_left\": \"<integer>\",\n  \"results\": [\n    {\n      \"node_id\": \"<string>\",\n      \"report_id\": \"<string>\",\n      \"status\": \"<string>\",\n      \"result\": \"<string>\",\n      \"job_id\": \"<string>\",\n      \"start_time\": \"<dateTime>\",\n      \"end_time\": \"<dateTime>\"\n    },\n    {\n      \"node_id\": \"<string>\",\n      \"report_id\": \"<string>\",\n      \"status\": \"<string>\",\n      \"result\": \"<string>\",\n      \"job_id\": \"<string>\",\n      \"start_time\": \"<dateTime>\",\n      \"end_time\": \"<dateTime>\"\n    }\n  ],\n  \"nodes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"profiles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"node_count\": \"<integer>\",\n  \"profile_count\": \"<integer>\",\n  \"node_selectors\": [\n    {\n      \"manager_id\": \"<string>\",\n      \"filters\": [\n        {\n          \"key\": \"<string>\",\n          \"exclude\": \"<boolean>\",\n          \"values\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"exclude\": \"<boolean>\",\n          \"values\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    },\n    {\n      \"manager_id\": \"<string>\",\n      \"filters\": [\n        {\n          \"key\": \"<string>\",\n          \"exclude\": \"<boolean>\",\n          \"values\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"key\": \"<string>\",\n          \"exclude\": \"<boolean>\",\n          \"values\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"scheduled_time\": \"<dateTime>\",\n  \"recurrence\": \"<string>\",\n  \"parent_id\": \"<string>\",\n  \"job_count\": \"<integer>\",\n  \"deleted\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "809d0508-4a40-43e7-9cdc-0b728a898233",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "scanner",
+                    "jobs",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique ID (UUID) of the scan job."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7750d16b-1dc9-4a28-8535-10bb8cd9edf3",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "scanner",
+                    "jobs",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique ID (UUID) of the scan job."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2817,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "739990af-61ae-494c-978e-77633ef0084a",
+          "name": "Rerun a scan job",
+          "request": {
+            "name": "Rerun a scan job",
+            "description": {
+              "content": "Does not create a new job in the database. Reads the job info given the job ID\nand runs a scan. The latest job information is then updated to reflect this latest run.\t\n\nAuthorization Action:\n\n```\ncompliance:scannerJobs:rerun\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "scanner",
+                "jobs",
+                "rerun",
+                "id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Name of object."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique ID (UUID) assigned to object."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c275cce-257f-452b-a13d-f920e9d63743",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "scanner",
+                    "jobs",
+                    "rerun",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique ID (UUID) assigned to object."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ddeef59a-39c2-49dd-be31-62fd29507aaa",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "scanner",
+                    "jobs",
+                    "rerun",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique ID (UUID) assigned to object."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2817,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ce8f5951-20fc-4dca-b616-2ba7f1230a43",
+          "name": "List of scan jobs",
+          "request": {
+            "name": "List of scan jobs",
+            "description": {
+              "content": "Returns a list of scan jobs matching the query.\nSupports filtering, sorting, and pagination.\nValid filtering fields: job_type, parent_job, status\nValid sorting fields: name, type, status, start_time, end_time\n\nExample:\n```\n{\n\"filters\":[\n{\"key\":\"job_type\",\"values\":[\"exec\"]},\n{\"key\":\"parent_job\",\"values\":[\"\"]}\n],\n\"page\":1,\n\"per_page\":100,\n\"sort\":\"end_time\",\n\"order\":\"DESC\"\n} \n```\n\nAuthorization Action:\n\n```\ncompliance:scannerJobs:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "scanner",
+                "jobs",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e23d4ab5-664c-41c7-be2f-ab64a3da11dd",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "scanner",
+                    "jobs",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobs\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"timeout\": \"<integer>\",\n      \"tags\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"start_time\": \"<dateTime>\",\n      \"end_time\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"retries\": \"<integer>\",\n      \"retries_left\": \"<integer>\",\n      \"results\": [\n        {\n          \"node_id\": \"<string>\",\n          \"report_id\": \"<string>\",\n          \"status\": \"<string>\",\n          \"result\": \"<string>\",\n          \"job_id\": \"<string>\",\n          \"start_time\": \"<dateTime>\",\n          \"end_time\": \"<dateTime>\"\n        },\n        {\n          \"node_id\": \"<string>\",\n          \"report_id\": \"<string>\",\n          \"status\": \"<string>\",\n          \"result\": \"<string>\",\n          \"job_id\": \"<string>\",\n          \"start_time\": \"<dateTime>\",\n          \"end_time\": \"<dateTime>\"\n        }\n      ],\n      \"nodes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"profiles\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"node_count\": \"<integer>\",\n      \"profile_count\": \"<integer>\",\n      \"node_selectors\": [\n        {\n          \"manager_id\": \"<string>\",\n          \"filters\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"exclude\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"values\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"exclude\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"values\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"manager_id\": \"<string>\",\n          \"filters\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"exclude\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"values\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"exclude\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"values\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"scheduled_time\": \"<dateTime>\",\n      \"recurrence\": \"<string>\",\n      \"parent_id\": \"<string>\",\n      \"job_count\": \"<integer>\",\n      \"deleted\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"timeout\": \"<integer>\",\n      \"tags\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"start_time\": \"<dateTime>\",\n      \"end_time\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"retries\": \"<integer>\",\n      \"retries_left\": \"<integer>\",\n      \"results\": [\n        {\n          \"node_id\": \"<string>\",\n          \"report_id\": \"<string>\",\n          \"status\": \"<string>\",\n          \"result\": \"<string>\",\n          \"job_id\": \"<string>\",\n          \"start_time\": \"<dateTime>\",\n          \"end_time\": \"<dateTime>\"\n        },\n        {\n          \"node_id\": \"<string>\",\n          \"report_id\": \"<string>\",\n          \"status\": \"<string>\",\n          \"result\": \"<string>\",\n          \"job_id\": \"<string>\",\n          \"start_time\": \"<dateTime>\",\n          \"end_time\": \"<dateTime>\"\n        }\n      ],\n      \"nodes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"profiles\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"node_count\": \"<integer>\",\n      \"profile_count\": \"<integer>\",\n      \"node_selectors\": [\n        {\n          \"manager_id\": \"<string>\",\n          \"filters\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"exclude\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"values\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"exclude\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"values\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"manager_id\": \"<string>\",\n          \"filters\": [\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"exclude\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"values\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"key\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"exclude\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"values\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"scheduled_time\": \"<dateTime>\",\n      \"recurrence\": \"<string>\",\n      \"parent_id\": \"<string>\",\n      \"job_count\": \"<integer>\",\n      \"deleted\": \"<boolean>\"\n    }\n  ],\n  \"total\": 6940\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4d333173-58e7-4b60-b8bd-72f23307dd38",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "scanner",
+                    "jobs",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"key\": \"<string>\",\n      \"exclude\": \"<boolean>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 2817,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "74460f22-c795-4b7e-9ff2-42f8341dc528",
+    "name": "external/applications/applications.proto ApplicationsService JobsService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

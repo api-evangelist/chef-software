@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService UserSettingsService API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "UserSettingsService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetUserSettings returns all of the preferences for a given user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/user-settings/:user.name/:user.connector",
+            "params": [
+              {
+                "name": "user.name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "user.connector",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetUserSettings returns all of the preferences for a given user"
+        },
+        {
+          "info": {
+            "name": "PutUserSettings upserts all of the preferences for a given user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/user-settings/:user.name/:user.connector",
+            "params": [
+              {
+                "name": "user.name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "user.connector",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "PutUserSettings upserts all of the preferences for a given user"
+        },
+        {
+          "info": {
+            "name": "DeleteUserSettings deletes all settings for a given user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/user-settings/:user.name/:user.connector",
+            "params": [
+              {
+                "name": "user.name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "user.connector",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteUserSettings deletes all settings for a given user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

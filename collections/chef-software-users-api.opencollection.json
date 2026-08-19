@@ -1,0 +1,116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService users API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update self (as user)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/apis/iam/v2/self/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the user. Cannot be changed. Used to sign in."
+              }
+            ]
+          },
+          "docs": "Updates a local user's own name or password.\nIf changing the password, both \"password\" and \"previous_password\" are required.\n\nAuthorization Action:\n```\niam:usersSelf:update\n```"
+        },
+        {
+          "info": {
+            "name": "List all users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/users"
+          },
+          "docs": "Lists all local users.\n\nAuthorization Action:\n```\niam:users:list\n```"
+        },
+        {
+          "info": {
+            "name": "Create a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/apis/iam/v2/users"
+          },
+          "docs": "Creates a local user that can sign in to Automate and be a member of IAM teams\nand IAM policies.\n\nAuthorization Action:\n```\niam:users:create\n```"
+        },
+        {
+          "info": {
+            "name": "Get a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the user."
+              }
+            ]
+          },
+          "docs": "Returns the details for a local user.\n\nAuthorization Action:\n```\niam:users:get\n```"
+        },
+        {
+          "info": {
+            "name": "Update a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/apis/iam/v2/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the user. Cannot be changed. Used to sign in."
+              }
+            ]
+          },
+          "docs": "Updates a local user's name or password.\n\nAuthorization Action:\n```\niam:users:update\n```"
+        },
+        {
+          "info": {
+            "name": "Delete a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/apis/iam/v2/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the user."
+              }
+            ]
+          },
+          "docs": "Deletes a local user.\n\nAuthorization Action:\n```\niam:users:delete\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

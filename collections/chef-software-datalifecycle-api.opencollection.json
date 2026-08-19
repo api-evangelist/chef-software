@@ -1,0 +1,181 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService DataLifecycle API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DataLifecycle",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "SetComplianceConfig configures the compliance data lifecycle scheduler and jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/compliance/config"
+          },
+          "docs": "SetComplianceConfig configures the compliance data lifecycle scheduler and jobs"
+        },
+        {
+          "info": {
+            "name": "RunCompliance runs the compliance data lifecycle jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/compliance/run"
+          },
+          "docs": "RunCompliance runs the compliance data lifecycle jobs"
+        },
+        {
+          "info": {
+            "name": "GetComplianceStatus returns the compliance job scheduler status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/compliance/status"
+          },
+          "docs": "GetComplianceStatus returns the compliance job scheduler status"
+        },
+        {
+          "info": {
+            "name": "SetConfig provides a singular endpoint for configuring all data lifecycle jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/config"
+          },
+          "docs": "SetConfig provides a singular endpoint for configuring all data lifecycle jobs"
+        },
+        {
+          "info": {
+            "name": "SetEventFeedConfig configures the event feed data lifecycle scheduler and jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/event-feed/config"
+          },
+          "docs": "SetEventFeedConfig configures the event feed data lifecycle scheduler and jobs"
+        },
+        {
+          "info": {
+            "name": "RunEventFeed runs the event feed data lifecycle jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/event-feed/run"
+          },
+          "docs": "RunEventFeed runs the event feed data lifecycle jobs"
+        },
+        {
+          "info": {
+            "name": "GetEventFeedStatus returns the event feed job scheduler status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/event-feed/status"
+          },
+          "docs": "GetEventFeedStatus returns the event feed job scheduler status"
+        },
+        {
+          "info": {
+            "name": "SetInfraConfig configures the infra data lifecycle scheduler and jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/infra/config"
+          },
+          "docs": "SetInfraConfig configures the infra data lifecycle scheduler and jobs"
+        },
+        {
+          "info": {
+            "name": "RunInfra runs the infra data lifecycle jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/infra/run"
+          },
+          "docs": "RunInfra runs the infra data lifecycle jobs"
+        },
+        {
+          "info": {
+            "name": "GetInfraStatus returns the infra job scheduler status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/infra/status"
+          },
+          "docs": "GetInfraStatus returns the infra job scheduler status"
+        },
+        {
+          "info": {
+            "name": "Run runs all data lifecycle actions across all data lifecycle jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/run"
+          },
+          "docs": "Run runs all data lifecycle actions across all data lifecycle jobs"
+        },
+        {
+          "info": {
+            "name": "DataLifecycle_SetServicesConfig",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/services/config"
+          }
+        },
+        {
+          "info": {
+            "name": "DataLifecycle_RunServices",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/services/run"
+          }
+        },
+        {
+          "info": {
+            "name": "Services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/services/status"
+          },
+          "docs": "Services"
+        },
+        {
+          "info": {
+            "name": "GetStatus returns the aggregate status across all data lifecycle jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/data-lifecycle/status"
+          },
+          "docs": "GetStatus returns the aggregate status across all data lifecycle jobs"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

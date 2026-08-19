@@ -1,0 +1,1652 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService InfraProxy API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "InfraProxy",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "InfraProxy_GetServers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers"
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_CreateServer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/infra/servers"
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetServerStatus",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/server_status",
+            "params": [
+              {
+                "name": "fqdn",
+                "value": "",
+                "type": "query",
+                "description": "Server FQDN."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetServer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_UpdateServer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_DeleteServer",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetOrgs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_CreateOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:id",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_UpdateOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:id",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_DeleteOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:id",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_ResetOrgAdminKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:id/reset-key",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetClients",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/clients",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "search_query.q",
+                "value": "",
+                "type": "query",
+                "description": "The search query used to identify a list of items."
+              },
+              {
+                "name": "search_query.page",
+                "value": "",
+                "type": "query",
+                "description": "Starting page for the results."
+              },
+              {
+                "name": "search_query.per_page",
+                "value": "",
+                "type": "query",
+                "description": "The number of results on each page."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_CreateClient",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/clients",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetClient",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/clients/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Client name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_DeleteClient",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/clients/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Client name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_ResetClientKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/clients/:name/reset",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Client name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetCookbooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/cookbooks",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Server"
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Org."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetCookbookVersions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/cookbooks/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Server."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Org."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Name of the cookbook."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetCookbook",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/cookbooks/:name/:version",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Server."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Org."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Name of the cookbook."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "Version of the cookbook."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetCookbookFileContent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/cookbooks/:name/:version/file-content",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the server."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the org."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Name of the cookbook."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "Version of the cookbook."
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "Cookbook data file URL."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetDataBags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/data_bags",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_CreateDataBag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/data_bags",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetDataBagItems",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/data_bags/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Data bag name."
+              },
+              {
+                "name": "search_query.q",
+                "value": "",
+                "type": "query",
+                "description": "The search query used to identify a list of items."
+              },
+              {
+                "name": "search_query.page",
+                "value": "",
+                "type": "query",
+                "description": "Starting page for the results."
+              },
+              {
+                "name": "search_query.per_page",
+                "value": "",
+                "type": "query",
+                "description": "The number of results on each page."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_CreateDataBagItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/data_bags/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Data bag name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_DeleteDataBag",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/data_bags/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Data bag name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_UpdateDataBagItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/data_bags/:name/:item_id",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Data bag name."
+              },
+              {
+                "name": "item_id",
+                "value": "",
+                "type": "path",
+                "description": "Data bag item ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetDataBagItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/data_bags/:name/:item",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Data bag name."
+              },
+              {
+                "name": "item",
+                "value": "",
+                "type": "path",
+                "description": "Data bag item name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_DeleteDataBagItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/data_bags/:name/:item",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Data bag name."
+              },
+              {
+                "name": "item",
+                "value": "",
+                "type": "path",
+                "description": "Data bag item name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetEnvironments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/environments",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "search_query.q",
+                "value": "",
+                "type": "query",
+                "description": "The search query used to identify a list of items."
+              },
+              {
+                "name": "search_query.page",
+                "value": "",
+                "type": "query",
+                "description": "Starting page for the results."
+              },
+              {
+                "name": "search_query.per_page",
+                "value": "",
+                "type": "query",
+                "description": "The number of results on each page."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_CreateEnvironment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/environments",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetEnvironment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/environments/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Environment name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_UpdateEnvironment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/environments/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Environment name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_DeleteEnvironment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/environments/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Environment name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetEnvironmentRecipes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/environments/:name/recipes",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Environment name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetNodeExpandedRunList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/node/:name/runlist/:environment",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Node name."
+              },
+              {
+                "name": "environment",
+                "value": "",
+                "type": "path",
+                "description": "Node environment."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetNodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/nodes",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "search_query.q",
+                "value": "",
+                "type": "query",
+                "description": "The search query used to identify a list of items."
+              },
+              {
+                "name": "search_query.page",
+                "value": "",
+                "type": "query",
+                "description": "Starting page for the results."
+              },
+              {
+                "name": "search_query.per_page",
+                "value": "",
+                "type": "query",
+                "description": "The number of results on each page."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetNode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/nodes/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Node name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_UpdateNode",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/nodes/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Node name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_DeleteNode",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/nodes/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Node name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_UpdateNodeAttributes",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/nodes/:name/attributes",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Node name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_UpdateNodeEnvironment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/nodes/:name/environment",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Node name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_UpdateNodeTags",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/nodes/:name/tags",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Node name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetPolicyfiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/policyfiles",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Organization ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetPolicyfile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/policyfiles/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Policyfile name."
+              },
+              {
+                "name": "revision_id",
+                "value": "",
+                "type": "query",
+                "description": "Policyfile revision ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_DeletePolicyfile",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/policyfiles/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Policyfile name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetPolicyfileRevisions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/policyfiles/:name/revisions",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Policyfile name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetPolicygroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/policygroups/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Policygroup name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetRoles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/roles",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "search_query.q",
+                "value": "",
+                "type": "query",
+                "description": "The search query used to identify a list of items."
+              },
+              {
+                "name": "search_query.page",
+                "value": "",
+                "type": "query",
+                "description": "Starting page for the results."
+              },
+              {
+                "name": "search_query.per_page",
+                "value": "",
+                "type": "query",
+                "description": "The number of results on each page."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_CreateRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/roles",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/roles/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Role name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_UpdateRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/roles/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Role name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_DeleteRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/roles/:name",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Role name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetRoleEnvironments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/roles/:name/environments",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Role name."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetRoleExpandedRunList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/roles/:name/runlist/:environment",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef organization ID."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Role name."
+              },
+              {
+                "name": "environment",
+                "value": "",
+                "type": "path",
+                "description": "Role environment."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetOrgUsersList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/orgs/:org_id/users",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              },
+              {
+                "name": "org_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Organization ID."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "InfraProxy_GetServerUsersList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/infra/servers/:server_id/users",
+            "params": [
+              {
+                "name": "server_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef Infra Server ID."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

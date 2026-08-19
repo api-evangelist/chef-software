@@ -1,0 +1,1511 @@
+{
+  "item": [
+    {
+      "id": "21fcd2da-9be6-4161-b56d-c51c9f93c831",
+      "name": "service_groups",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d715cc1f-e8ae-477f-b29d-1c881b7f9179",
+          "name": "Remove Disconnected Services",
+          "request": {
+            "name": "Remove Disconnected Services",
+            "description": {
+              "content": "Removes services marked as disconnected based on the `threshold_seconds` setting.\nThis function is not used by the API or CLI and is here for testing purposes.\nThe functionality is currently covered by a periodically running job that can be configured using `UpdateDeleteDisconnectedServicesConfig`.\n\nAuthorization Action:\n```\napplications:serviceGroups:delete\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "applications",
+                "delete_disconnected_services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"threshold_seconds\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4b185b5b-110e-4fdd-bbbf-847e354d5952",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "delete_disconnected_services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"threshold_seconds\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"services\": [\n    {\n      \"supervisor_id\": \"string\",\n      \"release\": \"string\",\n      \"group\": \"string\",\n      \"health_check\": \"OK\",\n      \"application\": \"string\",\n      \"environment\": \"string\",\n      \"fqdn\": \"string\",\n      \"channel\": \"string\",\n      \"update_strategy\": \"string\",\n      \"site\": \"string\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"string\",\n      \"health_updated_at\": \"2015-09-09T00:46:33.858Z\",\n      \"disconnected\": false,\n      \"last_event_occurred_at\": \"2000-04-13T02:09:22.572Z\",\n      \"last_event_since\": \"string\",\n      \"health_check_result\": {\n        \"stdout\": \"string\",\n        \"stderr\": \"string\",\n        \"exit_status\": 1139\n      },\n      \"id\": \"string\"\n    },\n    {\n      \"supervisor_id\": \"string\",\n      \"release\": \"string\",\n      \"group\": \"string\",\n      \"health_check\": \"OK\",\n      \"application\": \"string\",\n      \"environment\": \"string\",\n      \"fqdn\": \"string\",\n      \"channel\": \"string\",\n      \"update_strategy\": \"string\",\n      \"site\": \"string\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"string\",\n      \"health_updated_at\": \"1977-05-12T06:50:23.838Z\",\n      \"disconnected\": false,\n      \"last_event_occurred_at\": \"1967-04-11T09:06:28.603Z\",\n      \"last_event_since\": \"string\",\n      \"health_check_result\": {\n        \"stdout\": \"string\",\n        \"stderr\": \"string\",\n        \"exit_status\": 952\n      },\n      \"id\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d2e96439-037c-40fa-90c6-f6b3589c58cf",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "delete_disconnected_services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"threshold_seconds\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7909,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0c98876-4de7-4bd9-af20-384aad3f4996",
+          "name": "Delete the services with the given IDs",
+          "request": {
+            "name": "Delete the services with the given IDs",
+            "description": {
+              "content": "Authorization Action:\n```\napplications:serviceGroups:delete\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "applications",
+                "delete_services_by_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "da6cadbe-a034-494b-8f2c-1897bf039084",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "delete_services_by_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"services\": [\n    {\n      \"supervisor_id\": \"string\",\n      \"release\": \"string\",\n      \"group\": \"string\",\n      \"health_check\": \"OK\",\n      \"application\": \"string\",\n      \"environment\": \"string\",\n      \"fqdn\": \"string\",\n      \"channel\": \"string\",\n      \"update_strategy\": \"string\",\n      \"site\": \"string\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"string\",\n      \"health_updated_at\": \"2024-12-17T06:44:14.985Z\",\n      \"disconnected\": true,\n      \"last_event_occurred_at\": \"2005-07-05T05:31:26.338Z\",\n      \"last_event_since\": \"string\",\n      \"health_check_result\": {\n        \"stdout\": \"string\",\n        \"stderr\": \"string\",\n        \"exit_status\": 6580\n      },\n      \"id\": \"string\"\n    },\n    {\n      \"supervisor_id\": \"string\",\n      \"release\": \"string\",\n      \"group\": \"string\",\n      \"health_check\": \"OK\",\n      \"application\": \"string\",\n      \"environment\": \"string\",\n      \"fqdn\": \"string\",\n      \"channel\": \"string\",\n      \"update_strategy\": \"string\",\n      \"site\": \"string\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"string\",\n      \"health_updated_at\": \"1982-06-20T18:07:15.987Z\",\n      \"disconnected\": true,\n      \"last_event_occurred_at\": \"1991-03-31T20:04:31.914Z\",\n      \"last_event_since\": \"string\",\n      \"health_check_result\": {\n        \"stdout\": \"string\",\n        \"stderr\": \"string\",\n        \"exit_status\": 6533\n      },\n      \"id\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eabbd92a-9a51-46d5-8373-80970b55c8af",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "delete_services_by_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7020,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dbf4c761-5a9d-43cb-96ed-bc28b7c12bc3",
+          "name": "Mark Services as Disconnected",
+          "request": {
+            "name": "Mark Services as Disconnected",
+            "description": {
+              "content": "Marks services as disconnected based on the `threshold_seconds` setting.\nThis function is not used by the API or CLI and is here for testing purposes.\nThe functionality is currently covered by a periodically running job that can be configured\nby utilizing the `UpdateDisconnectedServicesConfig` endpoint.\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "applications",
+                "disconnected_services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "threshold_seconds",
+                  "value": "<integer>",
+                  "description": "Threshold for marking services disconnected in seconds."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "904e7d26-810f-4572-bbca-3f00859c5abf",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "disconnected_services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "threshold_seconds",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"services\": [\n    {\n      \"supervisor_id\": \"string\",\n      \"release\": \"string\",\n      \"group\": \"string\",\n      \"health_check\": \"OK\",\n      \"application\": \"string\",\n      \"environment\": \"string\",\n      \"fqdn\": \"string\",\n      \"channel\": \"string\",\n      \"update_strategy\": \"string\",\n      \"site\": \"string\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"string\",\n      \"health_updated_at\": \"2024-12-17T06:44:14.985Z\",\n      \"disconnected\": true,\n      \"last_event_occurred_at\": \"2005-07-05T05:31:26.338Z\",\n      \"last_event_since\": \"string\",\n      \"health_check_result\": {\n        \"stdout\": \"string\",\n        \"stderr\": \"string\",\n        \"exit_status\": 6580\n      },\n      \"id\": \"string\"\n    },\n    {\n      \"supervisor_id\": \"string\",\n      \"release\": \"string\",\n      \"group\": \"string\",\n      \"health_check\": \"OK\",\n      \"application\": \"string\",\n      \"environment\": \"string\",\n      \"fqdn\": \"string\",\n      \"channel\": \"string\",\n      \"update_strategy\": \"string\",\n      \"site\": \"string\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"string\",\n      \"health_updated_at\": \"1982-06-20T18:07:15.987Z\",\n      \"disconnected\": true,\n      \"last_event_occurred_at\": \"1991-03-31T20:04:31.914Z\",\n      \"last_event_since\": \"string\",\n      \"health_check_result\": {\n        \"stdout\": \"string\",\n        \"stderr\": \"string\",\n        \"exit_status\": 6533\n      },\n      \"id\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ee3aa57d-16ea-4ff0-b3f1-64c240777be4",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "disconnected_services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "threshold_seconds",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7020,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d3682b29-30af-4a2d-9031-a580c97b57bb",
+          "name": "List Service Groups",
+          "request": {
+            "name": "List Service Groups",
+            "description": {
+              "content": "Lists service groups with name, health information, and application, environment, package, release metadata.\nAccepts pagination, sorting, search, and status filters.\n\nExample:\n```\napplications/service-groups?sorting.field=percent_ok&sorting.order=ASC&pagination.page=1&pagination.size=25\n```\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "applications",
+                "service-groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Applies search and status filters, in the format of `fieldname:value` or `status:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine the service group results by a service's\n most recent connected/disconnected state or healthcheck result.\n\n Valid status filter parameters are:\n* `status:disconnected`: returns service groups with at least one service in a disconnected state\n* `status:critical`: returns service groups with a with at least one service in a \"critical\" healthcheck result\n* `status:unknown`: returns service groups with at least one service with an \"unknown\" healthcheck result\n* `status:warning`: returns service groups with at least one service with a \"warning\" healthcheck result\n* `status:ok`: returns service groups with at least one service with an \"ok\" health check result"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Applies search and status filters, in the format of `fieldname:value` or `status:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine the service group results by a service's\n most recent connected/disconnected state or healthcheck result.\n\n Valid status filter parameters are:\n* `status:disconnected`: returns service groups with at least one service in a disconnected state\n* `status:critical`: returns service groups with a with at least one service in a \"critical\" healthcheck result\n* `status:unknown`: returns service groups with at least one service with an \"unknown\" healthcheck result\n* `status:warning`: returns service groups with at least one service with a \"warning\" healthcheck result\n* `status:ok`: returns service groups with at least one service with an \"ok\" health check result"
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination.page",
+                  "value": "<integer>",
+                  "description": "Page number of the results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination.size",
+                  "value": "<integer>",
+                  "description": "Amount of results to include per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting.field",
+                  "value": "<string>",
+                  "description": "Field to sort the list results on."
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting.order",
+                  "value": "ASC",
+                  "description": "Order the results should be returned in."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e84da6f8-521d-465e-ab00-13f5dbb29c88",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "service-groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sorting.field",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting.order",
+                      "value": "ASC"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"service_groups\": [\n    {\n      \"name\": \"string\",\n      \"release\": \"string\",\n      \"status\": \"OK\",\n      \"health_percentage\": 8574,\n      \"services_health_counts\": {\n        \"total\": 6559,\n        \"ok\": 4168,\n        \"warning\": 8897,\n        \"critical\": 1638,\n        \"unknown\": 6828,\n        \"disconnected\": 6655\n      },\n      \"id\": \"string\",\n      \"application\": \"string\",\n      \"environment\": \"string\",\n      \"package\": \"string\",\n      \"disconnected_count\": 8555\n    },\n    {\n      \"name\": \"string\",\n      \"release\": \"string\",\n      \"status\": \"OK\",\n      \"health_percentage\": 4929,\n      \"services_health_counts\": {\n        \"total\": 1875,\n        \"ok\": 4945,\n        \"warning\": 6134,\n        \"critical\": 8401,\n        \"unknown\": 437,\n        \"disconnected\": 4102\n      },\n      \"id\": \"string\",\n      \"application\": \"string\",\n      \"environment\": \"string\",\n      \"package\": \"string\",\n      \"disconnected_count\": 3893\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8c0982e5-e1dd-497d-b07e-28eea7cd587b",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "service-groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sorting.field",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting.order",
+                      "value": "ASC"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7020,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9da6230a-2cd0-4435-9994-76991e4508f4",
+          "name": "List Services for a Service Group",
+          "request": {
+            "name": "List Services for a Service Group",
+            "description": {
+              "content": "List the services for a service group with health status and service metadata.\nUses the service group ID generated by Chef Automate instead of the Chef Habitat- provided ID.\nSupports pagination and filtering.\n\nExample:\n```\napplications/service-groups/1dfff679054c60a10c51d059b6dbf81a765c46f8d3e8ce0752b22ffe8d4d9716?pagination.page=1&pagination.size=25\n```\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "applications",
+                "service-groups",
+                ":service_group_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pagination.page",
+                  "value": "<integer>",
+                  "description": "Page number of the results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination.size",
+                  "value": "<integer>",
+                  "description": "Amount of results to include per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting.field",
+                  "value": "<string>",
+                  "description": "Field to sort the list results on."
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting.order",
+                  "value": "ASC",
+                  "description": "Order the results should be returned in."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "service_group_id",
+                  "description": "(Required) Service group ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c0637139-3621-472b-a232-86c5ceef6b18",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "service-groups",
+                    ":service_group_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sorting.field",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting.order",
+                      "value": "ASC"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "service_group_id",
+                      "description": "(Required) Service group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"group\": \"string\",\n  \"services\": [\n    {\n      \"supervisor_id\": \"string\",\n      \"release\": \"string\",\n      \"group\": \"string\",\n      \"health_check\": \"OK\",\n      \"application\": \"string\",\n      \"environment\": \"string\",\n      \"fqdn\": \"string\",\n      \"channel\": \"string\",\n      \"update_strategy\": \"string\",\n      \"site\": \"string\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"string\",\n      \"health_updated_at\": \"1960-05-18T09:15:19.137Z\",\n      \"disconnected\": true,\n      \"last_event_occurred_at\": \"1977-01-15T23:34:36.825Z\",\n      \"last_event_since\": \"string\",\n      \"health_check_result\": {\n        \"stdout\": \"string\",\n        \"stderr\": \"string\",\n        \"exit_status\": 9249\n      },\n      \"id\": \"string\"\n    },\n    {\n      \"supervisor_id\": \"string\",\n      \"release\": \"string\",\n      \"group\": \"string\",\n      \"health_check\": \"OK\",\n      \"application\": \"string\",\n      \"environment\": \"string\",\n      \"fqdn\": \"string\",\n      \"channel\": \"string\",\n      \"update_strategy\": \"string\",\n      \"site\": \"string\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"string\",\n      \"health_updated_at\": \"1951-03-31T12:19:26.988Z\",\n      \"disconnected\": true,\n      \"last_event_occurred_at\": \"2002-01-09T06:05:47.948Z\",\n      \"last_event_since\": \"string\",\n      \"health_check_result\": {\n        \"stdout\": \"string\",\n        \"stderr\": \"string\",\n        \"exit_status\": 1772\n      },\n      \"id\": \"string\"\n    }\n  ],\n  \"services_health_counts\": {\n    \"total\": 1706,\n    \"ok\": 1415,\n    \"warning\": 2915,\n    \"critical\": 5292,\n    \"unknown\": 2891,\n    \"disconnected\": 7801\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7a82595b-798f-4c5c-8e39-4adec5c87964",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "service-groups",
+                    ":service_group_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sorting.field",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting.order",
+                      "value": "ASC"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "service_group_id",
+                      "description": "(Required) Service group ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7020,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99b68752-4c59-4cf0-8cc8-023c7f56ae96",
+          "name": "List Service Groups Health Counts",
+          "request": {
+            "name": "List Service Groups Health Counts",
+            "description": {
+              "content": "Lists the total service group health reports by critical, warning, ok and unknown responses. Supports search and status filtering.\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "applications",
+                "service_groups_health_counts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Applies search filters, in the format of `fieldname:value`.\nSee the documentation for ServiceGroupsReq for valid filter parameters."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Applies search filters, in the format of `fieldname:value`.\nSee the documentation for ServiceGroupsReq for valid filter parameters."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30865cba-6654-4b31-b7f1-d53e25e7d3a0",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "service_groups_health_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": 8910,\n  \"ok\": 4007,\n  \"warning\": 4705,\n  \"critical\": 1836,\n  \"unknown\": 4306,\n  \"disconnected\": 7948\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "effb2790-0da9-4b32-b0a9-cff85a045b6b",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "service_groups_health_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7020,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07fafab9-f9d7-499e-9016-9f735c6325d5",
+          "name": "List Services",
+          "request": {
+            "name": "List Services",
+            "description": {
+              "content": "Lists service health status and service metadata for services.\nSupports pagination and search and status filtering. For a list of services for a specific service-group see \"List Services for a Service Group\" (GetServicesBySG endpoint).\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "applications",
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Applies search filters, in the format of `fieldname:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine service results by a service's\n current state or most recent healthcheck result.\n Disconnected services keep their last healthcheck result\n until their reports are removed by Chef Automate.\n When you apply a healthcheck filter, the report includes\n all recently disconnected services.\n Valid status filter parameters are:\n* `status:disconnected`: returns services in a disconnected state\n* `status:critical`: returns services with a \"critical\" healthcheck result\n* `status:unknown`: returns services with an \"unknown\" healthcheck result\n* `status:warning`: returns services with a \"warning\" healthcheck result\n* `status:ok`: returns services with an  \"ok\" health check result"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Applies search filters, in the format of `fieldname:value`.\n\nValid filter fieldnames are:\n* `origin`: origin component of the service's package identifier\n* `service`: the name component of the service's package identifier\n* `version`: the version number component of the service's package identifier\n* `buildstamp`: the build timestamp (also called \"release\") of the service's package identifier\n* `channel`: the package channel to which the service subscribes for updates\n* `application`: the application field of the service's event-stream metadata\n* `environment`: the environment field of the service's event-stream metadata\n* `site`: the site field of the service's event-stream metadata\n* `group`: the suffix of the service group name\n\n`status` filters refine service results by a service's\n current state or most recent healthcheck result.\n Disconnected services keep their last healthcheck result\n until their reports are removed by Chef Automate.\n When you apply a healthcheck filter, the report includes\n all recently disconnected services.\n Valid status filter parameters are:\n* `status:disconnected`: returns services in a disconnected state\n* `status:critical`: returns services with a \"critical\" healthcheck result\n* `status:unknown`: returns services with an \"unknown\" healthcheck result\n* `status:warning`: returns services with a \"warning\" healthcheck result\n* `status:ok`: returns services with an  \"ok\" health check result"
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination.page",
+                  "value": "<integer>",
+                  "description": "Page number of the results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "pagination.size",
+                  "value": "<integer>",
+                  "description": "Amount of results to include per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting.field",
+                  "value": "<string>",
+                  "description": "Field to sort the list results on."
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting.order",
+                  "value": "ASC",
+                  "description": "Order the results should be returned in."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "24837fe3-a4e4-43f4-8ed7-b06d5f51623c",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sorting.field",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting.order",
+                      "value": "ASC"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"services\": [\n    {\n      \"supervisor_id\": \"string\",\n      \"release\": \"string\",\n      \"group\": \"string\",\n      \"health_check\": \"OK\",\n      \"application\": \"string\",\n      \"environment\": \"string\",\n      \"fqdn\": \"string\",\n      \"channel\": \"string\",\n      \"update_strategy\": \"string\",\n      \"site\": \"string\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"string\",\n      \"health_updated_at\": \"2024-12-17T06:44:14.985Z\",\n      \"disconnected\": true,\n      \"last_event_occurred_at\": \"2005-07-05T05:31:26.338Z\",\n      \"last_event_since\": \"string\",\n      \"health_check_result\": {\n        \"stdout\": \"string\",\n        \"stderr\": \"string\",\n        \"exit_status\": 6580\n      },\n      \"id\": \"string\"\n    },\n    {\n      \"supervisor_id\": \"string\",\n      \"release\": \"string\",\n      \"group\": \"string\",\n      \"health_check\": \"OK\",\n      \"application\": \"string\",\n      \"environment\": \"string\",\n      \"fqdn\": \"string\",\n      \"channel\": \"string\",\n      \"update_strategy\": \"string\",\n      \"site\": \"string\",\n      \"previous_health_check\": \"OK\",\n      \"current_health_since\": \"string\",\n      \"health_updated_at\": \"1982-06-20T18:07:15.987Z\",\n      \"disconnected\": true,\n      \"last_event_occurred_at\": \"1991-03-31T20:04:31.914Z\",\n      \"last_event_since\": \"string\",\n      \"health_check_result\": {\n        \"stdout\": \"string\",\n        \"stderr\": \"string\",\n        \"exit_status\": 6533\n      },\n      \"id\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "03ed3c0a-011c-4f0e-9653-9ed33698f374",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pagination.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination.size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sorting.field",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting.order",
+                      "value": "ASC"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7020,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7f96268a-1950-483c-815e-37fd70b4ed24",
+          "name": "List Filter Values",
+          "request": {
+            "name": "List Filter Values",
+            "description": {
+              "content": "Lists all of the possible filter values for a given valid field.\nLimit the returned values by providing at one or more characters in the `query_fragment` parameter.\nSupports wildcard (* and ?)\n\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "applications",
+                "services-distinct-values"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "field_name",
+                  "value": "<string>",
+                  "description": "Field name of service values."
+                },
+                {
+                  "disabled": false,
+                  "key": "query_fragment",
+                  "value": "<string>",
+                  "description": "Query value, supports wildcards (* and ?)."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Applies filters, in the format of `fieldname:value`.\nSee documentation for ServicesReq for valid filter parameters."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "348a285b-ed39-48a1-8c6b-02d9e23b02d6",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "services-distinct-values"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "field_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query_fragment",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"values\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1b9222bf-ad24-4b17-97bd-c8bd433ec500",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "services-distinct-values"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "field_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query_fragment",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7020,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a4a78d3a-facb-49f8-a5b5-c4154431f075",
+          "name": "Show Summary",
+          "request": {
+            "name": "Show Summary",
+            "description": {
+              "content": "Shows a summary of service-groups, services, deployments, and supervisors.\nUsed for telemetry.\nDoes not support filtering.\n\nAuthorization Action:\n```\napplications:serviceGroups:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "applications",
+                "stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "886eaec5-66e4-403e-99f2-7fa8c5c9bd7a",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_service_groups\": 7049,\n  \"total_services\": 7336,\n  \"total_supervisors\": 6687,\n  \"total_deployments\": 348\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c6db12ea-4012-4c9e-a309-f948b28d299c",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "applications",
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7020,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7befb67f-100a-40a0-aeb7-d0068427ccf6",
+    "name": "external/applications/applications.proto ApplicationsService service_groups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService ProfilesService API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ProfilesService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show an available profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/compliance/market/read/:name/version/:version",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Name of the profile."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "Version of the profile."
+              },
+              {
+                "name": "owner",
+                "value": "",
+                "type": "query",
+                "description": "Automate user associated with the profile."
+              }
+            ]
+          },
+          "docs": "Show the details of an un-installed profile using the profile name and version.\nin the UI, these are the profiles under the \"Available\" tab.\nThese profiles are created and maintained by Chef, shipped with Chef Automate.\n\n\nAuthorization Action:\n```\ncompliance:marketProfiles:get\n```"
+        },
+        {
+          "info": {
+            "name": "Check if one or multiple profiles exist in the metadata database.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/compliance/profiles/metasearch"
+          },
+          "docs": "The endpoint takes an array of compliance profile sha256 IDs and returns the ones that the backend\ndoesn't have metadata (profile title, copyright, controls title, code, tags, etc) for.\nThis is useful when deciding if a compliance report can be sent for ingestion without the associated profile metadata.\n\nAuthorization Action:\n```\ncompliance:profiles:list\n```"
+        },
+        {
+          "info": {
+            "name": "Show an installed profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/compliance/profiles/read/:owner/:name/version/:version",
+            "params": [
+              {
+                "name": "owner",
+                "value": "",
+                "type": "path",
+                "description": "Automate user associated with the profile."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Name of the profile."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "Version of the profile."
+              }
+            ]
+          },
+          "docs": "Show the details of an installed profile given the profile name, owner (Automate user associated with the profile), and version.\n\n\nAuthorization Action:\n```\ncompliance:profiles:get\n```"
+        },
+        {
+          "info": {
+            "name": "List all available profiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/compliance/profiles/search"
+          },
+          "docs": "Lists all profiles available for the Automate instance.\nEmpty params return all \"market\" profiles.\nSpecifying the `owner` field returns all profiles installed for the specified user.\n\nSupports pagination, sorting, and filtering (wildcard supported).\n\nSupported sort fields: title, name (default: title)\nSupported filter fields: name, version, title\n\nExample:\n```\n{\n\"filters\":[\n{\"type\": \"title\", \"values\": [ \"Dev*\"]}\n],\n\"page\": 1,\n\"per_page\": 3,\n\"owner\": \"admin\"\n}\n```\n\n\nAuthorization Action:\n```\ncomp"
+        },
+        {
+          "info": {
+            "name": "Delete an installed profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/compliance/profiles/:owner/:name/version/:version",
+            "params": [
+              {
+                "name": "owner",
+                "value": "",
+                "type": "path",
+                "description": "Automate user associated with the profile."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Name of the profile."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "Version of the profile."
+              }
+            ]
+          },
+          "docs": "Delete an installed profile given the profile name, owner (Automate user associated with the profile), and version.\nNote: this action \"uninstalls\" the profile. This has no impact on the market profiles.\n\n\nAuthorization Action:\n```\ncompliance:profiles:delete\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

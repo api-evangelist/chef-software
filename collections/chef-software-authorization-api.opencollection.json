@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService Authorization API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authorization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Authorization_IntrospectAll",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/introspect"
+          }
+        },
+        {
+          "info": {
+            "name": "Authorization_Introspect",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/apis/iam/v2/introspect"
+          }
+        },
+        {
+          "info": {
+            "name": "Authorization_IntrospectSome",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/apis/iam/v2/introspect_some"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

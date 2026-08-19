@@ -1,0 +1,97 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService roles API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "roles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lists all roles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/roles"
+          },
+          "docs": "Lists all *Chef-managed* and *Custom* roles.\n\nAuthorization Action:\n```\niam:roles:list\n```"
+        },
+        {
+          "info": {
+            "name": "Creates a custom role",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/apis/iam/v2/roles"
+          },
+          "docs": "Creates a new role to be used in the policies that control permissions in Automate.\n\nA role defines the scope of actions in a policy statement.\n\nAuthorization Action:\n```\niam:roles:create\n```"
+        },
+        {
+          "info": {
+            "name": "Gets a role",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apis/iam/v2/roles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the role."
+              }
+            ]
+          },
+          "docs": "Returns the details for a role.\n\nAuthorization Action:\n```\niam:roles:get\n```"
+        },
+        {
+          "info": {
+            "name": "Updates a custom role",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/apis/iam/v2/roles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique ID. Cannot be changed."
+              }
+            ]
+          },
+          "docs": "This operation overwrites all fields excepting ID,\nincluding those omitted from the request, so be sure to specify all properties.\nProperties that you do not include are reset to empty values.\n\nAuthorization Action:\n```\niam:roles:update\n```"
+        },
+        {
+          "info": {
+            "name": "Deletes a custom role",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/apis/iam/v2/roles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the role."
+              }
+            ]
+          },
+          "docs": "Deletes a specified custom role (you cannot delete Chef-managed roles) and remove it from any statements that may have been using it.\nIf such a statement has no other associated actions, the statement is deleted as well.\nSimilarly, if that statement removal results in a policy with no other statements,\nthat policy is removed as well.\n\nAuthorization Action:\n```\niam:roles:delete\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

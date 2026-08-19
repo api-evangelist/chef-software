@@ -1,0 +1,1224 @@
+{
+  "item": [
+    {
+      "id": "56baf29d-4ff9-4adc-ae89-8e7cfcb52076",
+      "name": "rules",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e08262d1-ca0d-41c6-b5e6-0cbf81b03d4b",
+          "name": "Get the status of a project update",
+          "request": {
+            "name": "Get the status of a project update",
+            "description": {
+              "content": "Returns details about a project update operation.\n\nYou can poll this endpoint during a project update to monitor progress.\nQuerying this endpoint when there is no update in progress will return details\nabout the completion status of the most recent update.\n\nAuthorization Action:\n```\niam:rules:status\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "iam",
+                "v2",
+                "apply-rules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "58b14e65-463f-4318-9f93-6a96b5673610",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "apply-rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"state\": \"running\",\n  \"estimated_time_complete\": \"2020-03-20T19:24:55Z\",\n  \"percentage_complete\": 0.5,\n  \"failed\": false,\n  \"failure_message\": \"\",\n  \"cancelled\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5a0ee6d6-249f-49ec-808d-fc59775fe4fb",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "apply-rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 5827,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef6d15c4-d08a-4493-ad6b-4a25c3f95e9f",
+          "name": "Cancel project update",
+          "request": {
+            "name": "Cancel project update",
+            "description": {
+              "content": "Cancels an ongoing project update.\n\nWarning! This action leaves the system in an unknown state that only another\nsuccessful project update can rectify.\n\nThis command exists really just for one scenario: you started a project update\nbut shortly thereafter discovered that you had one more change to include in the\nbatch of updates to be done.\n\nAuthorization Action:\n```\niam:rules:cancel\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "iam",
+                "v2",
+                "apply-rules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bd92f7c1-bdc2-44fa-b59b-1c5606c771db",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "apply-rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bdbdb559-0127-41c7-b3ae-9260ac6a4133",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "apply-rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7456,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef000f3c-615d-4638-8166-2086fb0b8050",
+          "name": "Start project update",
+          "request": {
+            "name": "Start project update",
+            "description": {
+              "content": "Any changes to a project's rules are staged first. They do not take effect until\nall projects are updated.\n\nUpdating all projects begins an operation that applies all pending rule edits\nand then moves ingested resources into the correct projects according to those latest changes.\n\nWith a large amount of historical compliance data, rule application can take a considerable amount of time.\nIt’s best to batch up rule changes and apply them all at once.\n\nAuthorization Action:\n```\niam:rules:apply\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "iam",
+                "v2",
+                "apply-rules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be53160b-d3c4-4110-af5a-8a5a8f4d615b",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "apply-rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5320f562-1e64-4303-9c6e-633ad9a504a0",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "apply-rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7456,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2d411a1-d9d7-4129-a9dc-f22e90a83dd0",
+          "name": "List a project's rules",
+          "request": {
+            "name": "List a project's rules",
+            "description": {
+              "content": "Lists all of the project rules of a specific project.\n\nAuthorization Action:\n```\niam:projects:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "iam",
+                "v2",
+                "projects",
+                ":id",
+                "rules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) ID of the project."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fc390719-2c23-4411-b2f4-be9b56f8a966",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "projects",
+                    ":id",
+                    "rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) ID of the project."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"rules\": [\n    {\n      \"id\": \"string\",\n      \"project_id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"RULE_TYPE_UNSET\",\n      \"conditions\": [\n        {\n          \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n          \"values\": [\n            \"string\",\n            \"string\"\n          ],\n          \"operator\": \"CONDITION_OPERATOR_UNSET\"\n        },\n        {\n          \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n          \"values\": [\n            \"string\",\n            \"string\"\n          ],\n          \"operator\": \"CONDITION_OPERATOR_UNSET\"\n        }\n      ],\n      \"status\": \"RULE_STATUS_UNSET\"\n    },\n    {\n      \"id\": \"string\",\n      \"project_id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"RULE_TYPE_UNSET\",\n      \"conditions\": [\n        {\n          \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n          \"values\": [\n            \"string\",\n            \"string\"\n          ],\n          \"operator\": \"CONDITION_OPERATOR_UNSET\"\n        },\n        {\n          \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n          \"values\": [\n            \"string\",\n            \"string\"\n          ],\n          \"operator\": \"CONDITION_OPERATOR_UNSET\"\n        }\n      ],\n      \"status\": \"RULE_STATUS_UNSET\"\n    }\n  ],\n  \"status\": \"PROJECT_RULES_STATUS_UNSET\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "494d06ce-0f49-42a8-9f3d-194fab2e322f",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "projects",
+                    ":id",
+                    "rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) ID of the project."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7456,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db22759e-1ef4-4176-b0a5-1f5f58f3fcec",
+          "name": "Create a project rule",
+          "request": {
+            "name": "Create a project rule",
+            "description": {
+              "content": "Creates a new project rule to move ingested resources into projects.\n\nA project rule contains conditions that determine if an ingested resource should be moved into the rule’s project.\n\nEach condition specifies one or more values to match for a particular attribute on an ingested resource.\n\nThe choice of attributes depends on the rule type.\nFor NODE type, specify any of the available attributes.\nFor EVENT type, specify either CHEF_ORGANIZATION or CHEF_SERVER.\n\nThe choice of operator depends on how many values you provide.\nIf you wish to match one among a group of values, set the operator to MEMBER_OF.\nFor a single value, use EQUALS.\n\nAuthorization Action:\n```\niam:projects:update\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "iam",
+                "v2",
+                "projects",
+                ":project_id",
+                "rules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project_id",
+                  "description": "(Required) Unique ID of the project this rule belongs to. Cannot be changed."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"RULE_TYPE_UNSET\",\n  \"conditions\": [\n    {\n      \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"operator\": \"CONDITION_OPERATOR_UNSET\"\n    },\n    {\n      \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"operator\": \"CONDITION_OPERATOR_UNSET\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b9e00ede-d7a7-402f-a4fa-d998499a2de7",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "projects",
+                    ":project_id",
+                    "rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Unique ID of the project this rule belongs to. Cannot be changed."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"RULE_TYPE_UNSET\",\n  \"conditions\": [\n    {\n      \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"operator\": \"CONDITION_OPERATOR_UNSET\"\n    },\n    {\n      \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"operator\": \"CONDITION_OPERATOR_UNSET\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"project-id\": \"example-project\",\n  \"name\": \"My Example Rule\",\n  \"type\": \"NODE\",\n  \"conditions\": [\n    {\n      \"attribute\": \"CHEF_SERVER\",\n      \"operator\": \"MEMBER_OF\",\n      \"values\": [\n        \"example.co\",\n        \"example.io\"\n      ]\n    }\n  ],\n  \"status\": \"STAGED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d1936081-5abb-4956-b89f-84043ad6868e",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "projects",
+                    ":project_id",
+                    "rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Unique ID of the project this rule belongs to. Cannot be changed."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"RULE_TYPE_UNSET\",\n  \"conditions\": [\n    {\n      \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"operator\": \"CONDITION_OPERATOR_UNSET\"\n    },\n    {\n      \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"operator\": \"CONDITION_OPERATOR_UNSET\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7456,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b35adee-d4b7-4950-847e-2b7dd0a6f889",
+          "name": "Get a project rule",
+          "request": {
+            "name": "Get a project rule",
+            "description": {
+              "content": "Returns the details for a project rule.\n\nAuthorization Action:\n```\niam:projects:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "iam",
+                "v2",
+                "projects",
+                ":project_id",
+                "rules",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project_id",
+                  "description": "(Required) ID of the project the rule belongs to."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) ID of the project rule."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b8b1345e-9d1e-448c-bdca-801e90a2494d",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "projects",
+                    ":project_id",
+                    "rules",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) ID of the project the rule belongs to."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) ID of the project rule."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"project-id\": \"example-project\",\n  \"name\": \"My Applied Rule\",\n  \"type\": \"NODE\",\n  \"conditions\": [\n    {\n      \"attribute\": \"CHEF_SERVER\",\n      \"operator\": \"EQUALS\",\n      \"values\": [\n        \"example.co\"\n      ]\n    }\n  ],\n  \"status\": \"APPLIED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b58e6ec-3faf-4e57-b0e2-4ed971081b5e",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "projects",
+                    ":project_id",
+                    "rules",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) ID of the project the rule belongs to."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) ID of the project rule."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7456,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5a418b3-e577-44f4-862d-2b279f81d897",
+          "name": "Delete a project rule",
+          "request": {
+            "name": "Delete a project rule",
+            "description": {
+              "content": "The resulting change to the project's resources does not take effect immediately.\nUpdates to project rules must be applied to ingested resources by a project update.\n\nAuthorization Action:\n```\niam:projects:update\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "iam",
+                "v2",
+                "projects",
+                ":project_id",
+                "rules",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project_id",
+                  "description": "(Required) ID of the project the rule belongs to."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) ID of the project rule."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6f92b208-1034-49cf-bf99-9ec81457f6d3",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "projects",
+                    ":project_id",
+                    "rules",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) ID of the project the rule belongs to."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) ID of the project rule."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "53ece9ea-2bf2-4b90-8623-c170c7a16dea",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "projects",
+                    ":project_id",
+                    "rules",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) ID of the project the rule belongs to."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) ID of the project rule."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7456,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f618c739-09d2-4fdf-a60c-2ed5cfb94123",
+          "name": "Update a project rule",
+          "request": {
+            "name": "Update a project rule",
+            "description": {
+              "content": "Updates the name and conditions of an existing project rule.\nNew conditions can be added. Existing conditions can be updated or removed.\n\nThis operation overwrites all fields excluding ID and Type,\nincluding those omitted from the request, so be sure to specify all properties.\nProperties that you do not include are reset to empty values.\n\nThe resulting change to the project's resources does not take effect immediately.\nUpdates to project rules must be applied to ingested resources by a project update.\n\nAuthorization Action:\n```\niam:projects:update\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "iam",
+                "v2",
+                "projects",
+                ":project_id",
+                "rules",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project_id",
+                  "description": "(Required) Unique ID of the project this rule belongs to. Cannot be changed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique ID. Cannot be changed."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"RULE_TYPE_UNSET\",\n  \"conditions\": [\n    {\n      \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"operator\": \"CONDITION_OPERATOR_UNSET\"\n    },\n    {\n      \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"operator\": \"CONDITION_OPERATOR_UNSET\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7b2ae2fb-3aa0-49ec-939e-66f125ac4efe",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "projects",
+                    ":project_id",
+                    "rules",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Unique ID of the project this rule belongs to. Cannot be changed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique ID. Cannot be changed."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"RULE_TYPE_UNSET\",\n  \"conditions\": [\n    {\n      \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"operator\": \"CONDITION_OPERATOR_UNSET\"\n    },\n    {\n      \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"operator\": \"CONDITION_OPERATOR_UNSET\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"project-id\": \"example-project\",\n  \"name\": \"My Updated Rule\",\n  \"type\": \"NODE\",\n  \"conditions\": [\n    {\n      \"attribute\": \"CHEF_SERVER\",\n      \"operator\": \"EQUALS\",\n      \"values\": [\n        \"example.co\"\n      ]\n    }\n  ],\n  \"status\": \"STAGED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8e7d8f74-7092-4cc2-9c43-488d7cfe797f",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "iam",
+                    "v2",
+                    "projects",
+                    ":project_id",
+                    "rules",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Unique ID of the project this rule belongs to. Cannot be changed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique ID. Cannot be changed."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"RULE_TYPE_UNSET\",\n  \"conditions\": [\n    {\n      \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"operator\": \"CONDITION_OPERATOR_UNSET\"\n    },\n    {\n      \"attribute\": \"CONDITION_ATTRIBUTE_UNSET\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"operator\": \"CONDITION_OPERATOR_UNSET\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7456,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cd3bad57-19d0-4e13-9feb-c6aef462966f",
+    "name": "external/applications/applications.proto ApplicationsService rules API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

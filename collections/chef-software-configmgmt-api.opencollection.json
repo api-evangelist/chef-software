@@ -1,0 +1,570 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService ConfigMgmt API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ConfigMgmt",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "CreateRollout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/beta/cfgmgmt/rollouts/create"
+          },
+          "docs": "Creates a Rollout record. A rollout represents the process of nodes acquiring\nthe latest policy revision pushed to a policy group.\n\nAuthorization Action:\n```\ningest:unifiedEvents:create\n```"
+        },
+        {
+          "info": {
+            "name": "GetRolloutForChefRun",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/beta/cfgmgmt/rollouts/find",
+            "params": [
+              {
+                "name": "policy_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "policy_group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "policy_revision_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the rollout for the given Chef Server/org, policy group, policy name, and policy revision\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "GetRollouts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/beta/cfgmgmt/rollouts/list",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters to apply to the request for the rollouts list."
+              }
+            ]
+          },
+          "docs": "Gives a list of rollouts\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "ConfigMgmt_ListNodeSegmentsWithRolloutProgress",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/beta/cfgmgmt/rollouts/progress_by_node_segment",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters to apply to the request for the node segments list."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetRolloutById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/beta/cfgmgmt/rollouts/rollout/:rollout_id",
+            "params": [
+              {
+                "name": "rollout_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the rollout with the given Id\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "CreateRolloutTest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/beta/cfgmgmt/rollouts/test_create"
+          },
+          "docs": "CreateRolloutTest is a no-op endpoint that has the same auth requirements as\nCreateRollout. It can be used to verify end-to-end config/connectivity for\nclients\n\nAuthorization Action:\n```\ningest:unifiedEvents:create\n```"
+        },
+        {
+          "info": {
+            "name": "List Errors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/errors",
+            "params": [
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results to return.\nIf set to zero, the default size of 10 will be used. Set to a negative\nvalue for unlimited results."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters in the request select the nodes from which the errors are\ncollected. The same filters may be specified for this request as for other\nNodes requests, with the exception of 'status' which is not valid for this\nrequest."
+              }
+            ]
+          },
+          "docs": "Returns a list of the most common errors reported for infra nodes' most recent Chef Infra Client runs.\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "GetNodeMetadataCounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/node_metadata_counts",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Types of node fields to collect value counts for."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters to apply to the counts returned."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Earliest most recent check-in node information to return."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Latest most recent check-in node information to return."
+              }
+            ]
+          },
+          "docs": "For each type of field requested this returns distinct values the amount of each. For example, \nif the 'platform' field is requested 'windows' 10, 'redhat' 5, and 'ubuntu' 8 could be returned. \nThe number next to each represents the number of nodes with that type of platform.\n\nExample:\nrequest\n```\ncfgmgmt/node_metadata_counts?type=platform&type=status\n```\nresponse\n```\n{\n\"types\": [\n{\n\"values\": [\n{\n\"value\": \"mac_os_x 10.11.5\",\n\"count\": 28\n},\n{\n\"value\": \"linux 8.9\",\n\"count\": 1\n},\n{\n\"value\": \"macos "
+        },
+        {
+          "info": {
+            "name": "GetNodeRunsDailyStatusTimeSeries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/node_runs_daily_status_time_series",
+            "params": [
+              {
+                "name": "node_id",
+                "value": "",
+                "type": "query",
+                "description": "Node ID of the runs."
+              },
+              {
+                "name": "days_ago",
+                "value": "",
+                "type": "query",
+                "description": "Number of past days."
+              }
+            ]
+          },
+          "docs": "Provides the status of runs for each 24-hour duration. For multiple runs in one 24-hour duration, \nthe most recent failed run will be returned. If there are no failed runs the most recent successful \nrun will be returned. If no runs are found in the 24-hour duration, the status will be \"missing\" \nand no run information will be returned.\n\nExample:\nrequest\n```\ncfgmgmt/node_runs_daily_status_time_series?node_id=507bd518-5c18-4c2d-a445-60fe7dde9961&days_ago=3\n```\nresponse\n```\n{\n\"durations\": [\n{\n\"sta"
+        },
+        {
+          "info": {
+            "name": "List Checked-in Nodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/nodes",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters to apply to the request for nodes list."
+              },
+              {
+                "name": "pagination.page",
+                "value": "",
+                "type": "query",
+                "description": "Page number of the results to return."
+              },
+              {
+                "name": "pagination.size",
+                "value": "",
+                "type": "query",
+                "description": "Amount of results to include per page."
+              },
+              {
+                "name": "sorting.field",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort the list results on."
+              },
+              {
+                "name": "sorting.order",
+                "value": "",
+                "type": "query",
+                "description": "Order the results should be returned in."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Earliest most recent check-in node information to return."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Latest most recent check-in node information to return."
+              }
+            ]
+          },
+          "docs": "Returns a list of infra nodes that have checked in to Automate.\nAdding a filter makes a list of all nodes that meet the filter criteria.\nFilters for the same field are ORd together, while filters across different fields are ANDed together.\nSupports pagination, filtering (with wildcard support), and sorting.\nMax return payload size is 4MB, use pagination to fetch remaining data.\n\nExample:\n```\ncfgmgmt/nodes?pagination.page=1&pagination.size=100&sorting.field=name&sorting.order=ASC&filter=name:mySO"
+        },
+        {
+          "info": {
+            "name": "Show Attributes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/nodes/:node_id/attribute",
+            "params": [
+              {
+                "name": "node_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef guid for the requested node."
+              }
+            ]
+          },
+          "docs": "Returns the latest reported attributes for the provided node ID.\n\nAuthorization Action:\n```\ninfra:nodes:get\n```"
+        },
+        {
+          "info": {
+            "name": "List Run Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/nodes/:node_id/runs",
+            "params": [
+              {
+                "name": "node_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef guid for the node."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters to apply to the request for runs list."
+              },
+              {
+                "name": "pagination.page",
+                "value": "",
+                "type": "query",
+                "description": "Page number of the results to return."
+              },
+              {
+                "name": "pagination.size",
+                "value": "",
+                "type": "query",
+                "description": "Amount of results to include per page."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Earliest (in history) run information to return for the runs list."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Latest (in history) run information to return for the runs list."
+              }
+            ]
+          },
+          "docs": "Returns a list of run metadata (id, start and end time, and status) for the provided node ID.\nSupports pagination.\nAccepts a `start` parameter to denote start date for the list and a filter of type `status`.\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "Show Node Run",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/nodes/:node_id/runs/:run_id",
+            "params": [
+              {
+                "name": "node_id",
+                "value": "",
+                "type": "path",
+                "description": "Chef guid for the requested node."
+              },
+              {
+                "name": "run_id",
+                "value": "",
+                "type": "path",
+                "description": "Run id for the node."
+              },
+              {
+                "name": "end_time",
+                "value": "",
+                "type": "query",
+                "description": "End time on the node's run."
+              }
+            ]
+          },
+          "docs": "Returns the infra run report for the provided node ID and run ID.\n\nAuthorization Action:\n```\ninfra:nodes:get\n```"
+        },
+        {
+          "info": {
+            "name": "List Organizations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/organizations"
+          },
+          "docs": "Returns a list of all organizations associated with nodes that have checked in to Automate.\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Policy Cookbooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/policy_revision/:revision_id",
+            "params": [
+              {
+                "name": "revision_id",
+                "value": "",
+                "type": "path",
+                "description": "Revision id for the policy."
+              }
+            ]
+          },
+          "docs": "Returns Policy Names with a list of cookbook names and associated policy identifiers based on a policy revision ID. \nPolicy revision IDs are sent with an infra run report and identifies which instance of a policy the node used for this run.\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Associated Chef Infra Servers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/source_fqdns"
+          },
+          "docs": "Returns a list of all Chef Infra Servers associated with nodes that have checked in to Automate.\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Node Checkins",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/stats/checkin_counts_timeseries",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "List of filters to be applied to the time series."
+              },
+              {
+                "name": "days_ago",
+                "value": "",
+                "type": "query",
+                "description": "Number of past days to create the time series."
+              }
+            ]
+          },
+          "docs": "Returns a daily time series of unique node check-ins for the number of days requested.\nIf `days ago` value is empty, API will return the default 1 day ago results.\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Missing Nodes Count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/stats/missing_node_duration_counts",
+            "params": [
+              {
+                "name": "durations",
+                "value": "",
+                "type": "query",
+                "description": "A valid duration is any number zero or greater with one of these characters 'h', 'd', 'w', or 'M'. \n'h' is hours\n'd' is days\n'w' is weeks\n'M' is months\nWill contain one or many."
+              }
+            ]
+          },
+          "docs": "Returns a count of missing nodes for the provided durations.\n\nExample:\n```\ncfgmgmt/stats/missing_node_duration_counts?durations=3d&durations=1w&durations=2w&durations=1M&durations=3M\n```\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Node Status Counts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/stats/node_counts",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "List of filters to be applied to the node count results."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Earliest node check-in."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Latest node check-in."
+              }
+            ]
+          },
+          "docs": "Returns totals for failed, success, missing, and overall total infra nodes that have reported into Automate.\nSupports filtering.\n\nExample:\n```\ncfgmgmt/stats/node_counts?filter=name:mySO*&filter=platform:ubun*\n```\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Run Status Totals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/stats/run_counts",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "List of filters to be applied to the run count results."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Earliest (in history) run information to return for the run counts."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Latest (in history) run information to return for the run counts."
+              },
+              {
+                "name": "node_id",
+                "value": "",
+                "type": "query",
+                "description": "Node id associated with the run."
+              }
+            ]
+          },
+          "docs": "Returns totals for failed and successful runs given a `node_id`.\n\nExample:\n```\ncfgmgmt/stats/run_counts?node_id=821fff07-abc9-4160-96b1-83d68ae5cfdd&start=2019-11-02\n```\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "List Filter Suggestions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/suggestions",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Field for which suggestions are being returned."
+              },
+              {
+                "name": "text",
+                "value": "",
+                "type": "query",
+                "description": "Text to search on for the type value."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filters to be applied to the results."
+              }
+            ]
+          },
+          "docs": "Returns possible filter values given a valid `type` parameter. All values returned until two or more characters are provided for the `text` parameter.\nSupports wildcard (* and ?).\n\nExample:\n```\ncfgmgmt/suggestions?type=environment&text=_d\n```\n\nAuthorization Action:\n```\ninfra:nodes:list\n```"
+        },
+        {
+          "info": {
+            "name": "GetNodesUsageCount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/telemetry/nodes/count"
+          },
+          "docs": "Returns the count of unique nodes with lastRun in a given time.\nThe time duration can be between the last time Telemetry data sent and the day before the current date.\nIf the duration < 15 days --> 15 days\nduration > 15 days --> duration\nAuthorization Action:\n```\niam:introspect:getAll\n```"
+        },
+        {
+          "info": {
+            "name": "UpdateTelemetryReported\nAcknowledge API  to updates the last client run telemetry reported date in postgres\nAuthorization Action:\n```\niam:introspect:getAll\n```",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/cfgmgmt/telemetry/nodes/count/updated"
+          },
+          "docs": "UpdateTelemetryReported\nAcknowledge API  to updates the last client run telemetry reported date in postgres\nAuthorization Action:\n```\niam:introspect:getAll\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

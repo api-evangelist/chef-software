@@ -1,0 +1,211 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService NodeManagerService API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NodeManagerService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a Node Manager",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/nodemanagers"
+          },
+          "docs": "Creates a node manager given a name, credential id *or* credential data, and type.\n\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:create\n```"
+        },
+        {
+          "info": {
+            "name": "View a Node Manager",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/nodemanagers/id/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "UUID for the node manager."
+              }
+            ]
+          },
+          "docs": "List the details of a node manager.\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:get\n```"
+        },
+        {
+          "info": {
+            "name": "Update a Node Manager",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v0/nodemanagers/id/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "UUID for the nodemanager."
+              }
+            ]
+          },
+          "docs": "Update a node manager's metadata, such as its name, associated credential id, or data.\nThis is a PUT operation and it overwrites ALL of the existing node manager metadata. Include all fields, because a PUT operation overwrites any missing fields to empty (\"\").\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:update\n```"
+        },
+        {
+          "info": {
+            "name": "Delete a Node Manager",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/nodemanagers/id/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "UUID for the node manager."
+              }
+            ]
+          },
+          "docs": "Delete a single node manager. This deletes the node manager itself and\nreassigns its associated nodes to the Automate node manager.\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:delete\n```"
+        },
+        {
+          "info": {
+            "name": "Delete a Node Manager and Stop Nodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/nodemanagers/id/:id/with-node-state/stopped",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "UUID for the node manager."
+              }
+            ]
+          },
+          "docs": "Delete a node manager and update its associated nodes to `stopped`.\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:delete\n```"
+        },
+        {
+          "info": {
+            "name": "Delete a Node Manager and Terminate Nodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/nodemanagers/id/:id/with-node-state/terminated",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "UUID for the node manager."
+              }
+            ]
+          },
+          "docs": "Delete a node manager and update its associated nodes to `terminated`.\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:delete\n```"
+        },
+        {
+          "info": {
+            "name": "Delete a Node Manager and Delete Nodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v0/nodemanagers/id/:id/with-nodes",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "UUID for the node manager."
+              }
+            ]
+          },
+          "docs": "Delete a node manager and all of its associated nodes.\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:delete\n```"
+        },
+        {
+          "info": {
+            "name": "Search Node Fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/nodemanagers/id/:node_manager_id/search-fields",
+            "params": [
+              {
+                "name": "node_manager_id",
+                "value": "",
+                "type": "path",
+                "description": "Node manager ID."
+              }
+            ]
+          },
+          "docs": "Searches the available values for a given field across all nodes associated with the nodemanager id.\n\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:list\n```"
+        },
+        {
+          "info": {
+            "name": "Search nodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/nodemanagers/id/:node_manager_id/search-nodes",
+            "params": [
+              {
+                "name": "node_manager_id",
+                "value": "",
+                "type": "path",
+                "description": "Node manager ID."
+              }
+            ]
+          },
+          "docs": "Searches the available nodes for a single node manager by id.\n\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:list\n```"
+        },
+        {
+          "info": {
+            "name": "Connect",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/nodemanagers/rerun/id/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "UUID for the node manager."
+              }
+            ]
+          },
+          "docs": "Attempts to reach the API for the given nodemanager id to validate the\ncredentials associated with the nodemanager.\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:rerun\n```"
+        },
+        {
+          "info": {
+            "name": "List all Node Managers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/nodemanagers/search"
+          },
+          "docs": "Returns a list of node managers.\nSupports filtering, sorting, and pagination.\n\nValid filtering fields: manager_type\n\n\nAuthorization Action:\n\n```\ninfra:nodeManagers:list\n```"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

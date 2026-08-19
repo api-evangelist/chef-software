@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "80fec31e-b9f5-4474-b8e0-782bf08ecdc3",
+      "name": "ReportManagerService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b2bea773-0e73-4a8f-b12e-532b5c8c214c",
+          "name": "List Download Report Requests",
+          "request": {
+            "name": "List Download Report Requests",
+            "description": {
+              "content": "Returns the details of the download report requests placed by the user.\n\nAuthorization Action:\n```\nreportmanager:requests:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "reportmanager",
+                "requests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "888c2b2a-3b68-4869-b199-972598c999d0",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "reportmanager",
+                    "requests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"acknowledgement_id\": \"string\",\n      \"status\": \"string\",\n      \"report_size\": \"string\",\n      \"err_message\": \"string\",\n      \"created_at\": \"1997-06-03T05:41:35.577Z\",\n      \"ended_at\": \"2012-11-02T14:28:46.096Z\",\n      \"duration\": \"string\",\n      \"report_type\": \"string\"\n    },\n    {\n      \"acknowledgement_id\": \"string\",\n      \"status\": \"string\",\n      \"report_size\": \"string\",\n      \"err_message\": \"string\",\n      \"created_at\": \"1963-07-22T03:29:11.035Z\",\n      \"ended_at\": \"1979-05-21T04:45:36.638Z\",\n      \"duration\": \"string\",\n      \"report_type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b8bc713-adef-415c-9774-951493b83698",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "reportmanager",
+                    "requests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 7285,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b9825ce7-6be6-4855-a7c3-85755ab80a22",
+    "name": "external/applications/applications.proto ApplicationsService ReportManagerService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

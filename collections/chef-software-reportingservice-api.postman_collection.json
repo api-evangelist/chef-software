@@ -1,0 +1,1724 @@
+{
+  "item": [
+    {
+      "id": "8264fd64-8232-4e72-aa68-a4d7293fb513",
+      "name": "ReportingService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "996f1fa1-21c6-40c9-bc07-4e6d4f90ef40",
+          "name": "List Controls",
+          "request": {
+            "name": "List Controls",
+            "description": {
+              "content": "Lists controls from the last run, with optional filtering.\nSupports filtering,pagination but not sorting.\nLimited to 100 results by default.\n\nAuthorization Action:\n```\ncompliance:controlItems:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "controls"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"page_number\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "77781497-fa46-492d-a46d-2a6670932975",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "controls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"control_items\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"profile\": {\n        \"name\": \"string\",\n        \"title\": \"string\",\n        \"id\": \"string\",\n        \"version\": \"string\",\n        \"status\": \"string\"\n      },\n      \"impact\": 1420.9138527734056,\n      \"end_time\": \"2005-03-19T16:38:22.439Z\",\n      \"control_summary\": {\n        \"total\": 3091,\n        \"passed\": {\n          \"total\": 2949\n        },\n        \"skipped\": {\n          \"total\": 8080\n        },\n        \"failed\": {\n          \"total\": 966,\n          \"minor\": 4491,\n          \"major\": 4388,\n          \"critical\": 6952\n        },\n        \"waived\": {\n          \"total\": 1596\n        }\n      },\n      \"waivers\": [\n        {\n          \"waived_str\": \"string\",\n          \"expiration_date\": \"string\",\n          \"justification\": \"string\",\n          \"waiver_summary\": {\n            \"total\": 1232,\n            \"passed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"skipped\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"failed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"waived\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"waived_str\": \"string\",\n          \"expiration_date\": \"string\",\n          \"justification\": \"string\",\n          \"waiver_summary\": {\n            \"total\": 78,\n            \"passed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"skipped\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"failed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"waived\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"profile\": {\n        \"name\": \"string\",\n        \"title\": \"string\",\n        \"id\": \"string\",\n        \"version\": \"string\",\n        \"status\": \"string\"\n      },\n      \"impact\": 5380.181852631836,\n      \"end_time\": \"1984-05-20T16:53:08.404Z\",\n      \"control_summary\": {\n        \"total\": 4925,\n        \"passed\": {\n          \"total\": 1507\n        },\n        \"skipped\": {\n          \"total\": 8568\n        },\n        \"failed\": {\n          \"total\": 5541,\n          \"minor\": 4009,\n          \"major\": 1929,\n          \"critical\": 6866\n        },\n        \"waived\": {\n          \"total\": 8414\n        }\n      },\n      \"waivers\": [\n        {\n          \"waived_str\": \"string\",\n          \"expiration_date\": \"string\",\n          \"justification\": \"string\",\n          \"waiver_summary\": {\n            \"total\": 1244,\n            \"passed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"skipped\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"failed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"waived\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"waived_str\": \"string\",\n          \"expiration_date\": \"string\",\n          \"justification\": \"string\",\n          \"waiver_summary\": {\n            \"total\": 2702,\n            \"passed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"skipped\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"failed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"waived\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ]\n    }\n  ],\n  \"control_summary_totals\": {\n    \"total\": 2689,\n    \"passed\": {\n      \"total\": 5780\n    },\n    \"skipped\": {\n      \"total\": 488\n    },\n    \"failed\": {\n      \"total\": 7225,\n      \"minor\": 7405,\n      \"major\": 9117,\n      \"critical\": 3399\n    },\n    \"waived\": {\n      \"total\": 1646\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dfddf126-a1c8-4de7-ac9f-587623babbf9",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "controls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 6413,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca6bed88-6b4f-4588-a6b1-3d848d303f29",
+          "name": "List Controls Search",
+          "request": {
+            "name": "List Controls Search",
+            "description": {
+              "content": "Lists controls from the last run, with optional filtering.\nSupports filtering,pagination but not sorting.\nLimited to 100 results by default.\nGets the summary of each control.\n\nThe API supports date range filters when `end_time` is the current time\nand `start_time` is any time in last 90 days. In case, the `end_time` is any\ndate other than the current date, the API would return data only for the `end_time`.\n\nExample:\n```\n{\"filters\":\n[\n{\"type\":\"start_time\",\"values\":[\"2019-09-09T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-09-11T23:59:59Z\"]}\n],\n\"page_number\":1, \"size\": 3,\n}\n```\n\nAuthorization Action:\n```\ncompliance:controlItems:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "controls",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"page_number\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "370a433e-0889-4398-a64b-15a154ec04b6",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "controls",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"control_items\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"profile\": {\n        \"name\": \"string\",\n        \"title\": \"string\",\n        \"id\": \"string\",\n        \"version\": \"string\",\n        \"status\": \"string\"\n      },\n      \"impact\": 5413.263582843259,\n      \"end_time\": \"1973-08-22T07:18:29.143Z\",\n      \"control_summary\": {\n        \"total\": 8591,\n        \"passed\": {\n          \"total\": 8925\n        },\n        \"skipped\": {\n          \"total\": 6848\n        },\n        \"failed\": {\n          \"total\": 1692,\n          \"minor\": 884,\n          \"major\": 7,\n          \"critical\": 1008\n        },\n        \"waived\": {\n          \"total\": 195\n        }\n      },\n      \"waivers\": [\n        {\n          \"waived_str\": \"string\",\n          \"expiration_date\": \"string\",\n          \"justification\": \"string\",\n          \"waiver_summary\": {\n            \"total\": 6740,\n            \"passed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"skipped\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"failed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"waived\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"waived_str\": \"string\",\n          \"expiration_date\": \"string\",\n          \"justification\": \"string\",\n          \"waiver_summary\": {\n            \"total\": 3720,\n            \"passed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"skipped\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"failed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"waived\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"profile\": {\n        \"name\": \"string\",\n        \"title\": \"string\",\n        \"id\": \"string\",\n        \"version\": \"string\",\n        \"status\": \"string\"\n      },\n      \"impact\": 1049.5443912502722,\n      \"end_time\": \"2016-07-16T11:12:22.534Z\",\n      \"control_summary\": {\n        \"total\": 9530,\n        \"passed\": {\n          \"total\": 243\n        },\n        \"skipped\": {\n          \"total\": 4793\n        },\n        \"failed\": {\n          \"total\": 8274,\n          \"minor\": 1692,\n          \"major\": 6906,\n          \"critical\": 2117\n        },\n        \"waived\": {\n          \"total\": 1691\n        }\n      },\n      \"waivers\": [\n        {\n          \"waived_str\": \"string\",\n          \"expiration_date\": \"string\",\n          \"justification\": \"string\",\n          \"waiver_summary\": {\n            \"total\": 8645,\n            \"passed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"skipped\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"failed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"waived\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"waived_str\": \"string\",\n          \"expiration_date\": \"string\",\n          \"justification\": \"string\",\n          \"waiver_summary\": {\n            \"total\": 2367,\n            \"passed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"skipped\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"failed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"waived\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ]\n    }\n  ],\n  \"control_summary_totals\": {\n    \"total\": 1547,\n    \"passed\": {\n      \"total\": 3858\n    },\n    \"skipped\": {\n      \"total\": 9476\n    },\n    \"failed\": {\n      \"total\": 9120,\n      \"minor\": 1574,\n      \"major\": 7011,\n      \"critical\": 2943\n    },\n    \"waived\": {\n      \"total\": 7353\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a4a50d7d-179d-4252-b269-c2e5f47ce771",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "controls",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8057,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b35374a3-3485-477c-8fac-c36f62a09bb7",
+          "name": "Show Node Header Info From Report ID",
+          "request": {
+            "name": "Show Node Header Info From Report ID",
+            "description": {
+              "content": "Show specific details about node, report and metadate provided the report ID.\nSupports filtering, but not pagination or sorting.\n\nAuthorization Action:\n```\ncompliance:nodeheader:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "nodeheader",
+                "id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "039bc759-1dea-4747-af6d-a7ce360bda74",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "nodeheader",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"node_id\": \"string\",\n  \"node_name\": \"string\",\n  \"end_time\": \"1966-08-09T09:02:25.914Z\",\n  \"status\": \"string\",\n  \"environment\": \"string\",\n  \"version\": \"string\",\n  \"platform\": {\n    \"name\": \"string\",\n    \"release\": \"string\",\n    \"full\": \"string\"\n  },\n  \"profiles\": [\n    {\n      \"name\": \"string\",\n      \"status\": \"string\",\n      \"status_message\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"status\": \"string\",\n      \"status_message\": \"string\"\n    }\n  ],\n  \"roles\": [\n    \"string\",\n    \"string\"\n  ],\n  \"status_message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "221b7916-7ead-4d89-927c-bf0af32e1a54",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "nodeheader",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8057,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5486b115-5c3f-4bd7-b6c4-9ebb277506b8",
+          "name": "Show Node by ID",
+          "request": {
+            "name": "Show Node by ID",
+            "description": {
+              "content": "Show a specific node by ID.\nSupports filtering by profile or control.\nDoes not support pagination or sorting.\n\nAuthorization Action:\n```\ncompliance:reportNodes:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "nodes",
+                "id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "247184cb-42b2-4511-aec3-0303dd8a647e",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "nodes",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"platform\": {\n    \"name\": \"string\",\n    \"release\": \"string\",\n    \"full\": \"string\"\n  },\n  \"environment\": \"string\",\n  \"latest_report\": {\n    \"id\": \"string\",\n    \"end_time\": \"2009-02-06T02:51:55.223Z\",\n    \"status\": \"string\",\n    \"controls\": {\n      \"total\": 8303,\n      \"passed\": {\n        \"total\": 3377\n      },\n      \"skipped\": {\n        \"total\": 1640\n      },\n      \"failed\": {\n        \"total\": 224,\n        \"minor\": 4192,\n        \"major\": 8753,\n        \"critical\": 7429\n      },\n      \"waived\": {\n        \"total\": 2554\n      }\n    }\n  },\n  \"tags\": [\n    {\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"profiles\": [\n    {\n      \"name\": \"string\",\n      \"version\": \"string\",\n      \"id\": \"string\",\n      \"status\": \"string\",\n      \"full\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"version\": \"string\",\n      \"id\": \"string\",\n      \"status\": \"string\",\n      \"full\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "300d9b64-fb2d-497a-a095-1656e4356e91",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "nodes",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8057,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6e2819a4-b8b3-40b3-8488-f331ac0a28a1",
+          "name": "List Nodes",
+          "request": {
+            "name": "List Nodes",
+            "description": {
+              "content": "List all nodes, with optional filtering, pagination, and sorting.\nMax return payload size is 4MB, use pagination to fetch remaining data.\n| Sort parameter | Sort value |\n| --- | --- |\n| environment | environment.lower |\n| latest_report.controls.failed.critical | controls_sums.failed.critical |\n| latest_report.controls.failed.total | controls_sums.failed.total |\n| latest_report.end_time (default) | end_time |\n| latest_report.status | status |\n| name | node_name.lower |\n| platform | platform.full |\n| status | status |\n\nThe API supports date range filters when `end_time` is the current time\nand `start_time` is any time in last 90 days. In case, the `end_time` is any\ndate other than the current date, the API would return data only for the `end_time`.\n\nExample:\n```\n{\n\"filters\":[\n{\"type\":\"environment\",\"values\":[\"dev*\"]},\n{\"type\":\"start_time\",\"values\":[\"2019-10-26T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-11-05T23:59:59Z\"]}\n],\n\"page\":1,\"per_page\":100,\n\"sort\":\"environment\",\"order\":\"ASC\"\n}\n```\n\nAuthorization Action:\n```\ncompliance:reportNodes:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "nodes",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2a3beb99-16f2-4d13-913d-73032544b264",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "nodes",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"nodes\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"platform\": {\n        \"name\": \"string\",\n        \"release\": \"string\",\n        \"full\": \"string\"\n      },\n      \"environment\": \"string\",\n      \"latest_report\": {\n        \"id\": \"string\",\n        \"end_time\": \"1995-12-07T03:20:37.798Z\",\n        \"status\": \"string\",\n        \"controls\": {\n          \"total\": 151,\n          \"passed\": {\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"skipped\": {\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"failed\": {\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"major\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"critical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"waived\": {\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"tags\": [\n        {\n          \"key\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"key\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"profiles\": [\n        {\n          \"name\": \"string\",\n          \"version\": \"string\",\n          \"id\": \"string\",\n          \"status\": \"string\",\n          \"full\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"version\": \"string\",\n          \"id\": \"string\",\n          \"status\": \"string\",\n          \"full\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"platform\": {\n        \"name\": \"string\",\n        \"release\": \"string\",\n        \"full\": \"string\"\n      },\n      \"environment\": \"string\",\n      \"latest_report\": {\n        \"id\": \"string\",\n        \"end_time\": \"1980-09-29T06:00:54.145Z\",\n        \"status\": \"string\",\n        \"controls\": {\n          \"total\": 586,\n          \"passed\": {\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"skipped\": {\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"failed\": {\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"minor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"major\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"critical\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"waived\": {\n            \"total\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"tags\": [\n        {\n          \"key\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"key\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"profiles\": [\n        {\n          \"name\": \"string\",\n          \"version\": \"string\",\n          \"id\": \"string\",\n          \"status\": \"string\",\n          \"full\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"version\": \"string\",\n          \"id\": \"string\",\n          \"status\": \"string\",\n          \"full\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"total\": 9764,\n  \"total_passed\": 1821,\n  \"total_failed\": 6472,\n  \"total_skipped\": 3364,\n  \"total_waived\": 518\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e7f20e7-812f-401e-ad70-2c43d6f658ad",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "nodes",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8057,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51bcae5b-12d3-435b-a3a9-263af6c65cf9",
+          "name": "List Profiles",
+          "request": {
+            "name": "List Profiles",
+            "description": {
+              "content": "List all profiles in use, with optional filtering.\nSupports pagination, filtering, and sorting.\nValid sort fields: name, title\n\nThe API supports date range filters when `end_time` is the current time\nand `start_time` is any time in last 90 days. In case, the `end_time` is any\ndate other than the current date, the API would return data only for the `end_time`.\n\nExample:\n```\n{\"filters\":\n[\n{\"type\":\"start_time\",\"values\":[\"2019-09-09T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-09-11T23:59:59Z\"]}\n],\n\"page\":1, \"per_page\": 3,\n}\n```\nAuthorization Action:\n```\ncompliance:reportProfiles:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "profiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "93b8f255-9234-44e4-ad5a-228c6eca7afb",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"profiles\": [\n    {\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"id\": \"string\",\n      \"version\": \"string\",\n      \"status\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"id\": \"string\",\n      \"version\": \"string\",\n      \"status\": \"string\"\n    }\n  ],\n  \"counts\": {\n    \"total\": 3950,\n    \"failed\": 9098,\n    \"skipped\": 2032,\n    \"passed\": 8272,\n    \"waived\": 2521\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da4a1065-a374-40fd-a552-708a05fcc6d9",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8057,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bdf61acf-8a80-4138-b001-691e09fb8f68",
+          "name": "List Report IDs",
+          "request": {
+            "name": "List Report IDs",
+            "description": {
+              "content": "List all IDs for the latest report for each node, with optional filtering.\nSupports filtering, but not pagination or sorting.\nIncluding more than one value for `profile_id`, or `profile_name` is not allowed.\nIncluding values for both `profile_id` and `profile_name` in one request is not allowed.\nMax return payload size is 4MB.\n\nAuthorization Action:\n```\ncompliance:reportids:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "report-ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3b3d2a35-a776-41cc-9400-5e56ace978f6",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "report-ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"report_data\": [\n    {\n      \"id\": \"string\",\n      \"end_time\": \"1992-12-31T08:04:30.211Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"end_time\": \"1980-10-14T19:09:44.634Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6145d399-af62-4bb9-b866-908c27104c04",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "report-ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8057,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4f0c8cf4-7218-46e3-b1bf-c964d671b179",
+          "name": "List Control Info",
+          "request": {
+            "name": "List Control Info",
+            "description": {
+              "content": "Lists controls from the last run, with optional filtering.\nSupports filtering and pagination. Maximum 100 search can be \nmade when specifying the pagination from and size. Sum of from+size\nshould be less that 100. By default 10 results will be returned.\nAuthorization Action:\n```\ncompliance:ControlElements:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "reportcontrols",
+                "id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "87d01915-de34-4330-a67c-9ac3480d4413",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "reportcontrols",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"control_elements\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"profile\": \"string\",\n      \"impact\": 3057.4084100762834,\n      \"results\": 5391,\n      \"status\": \"string\",\n      \"profile_id\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"profile\": \"string\",\n      \"impact\": 4624.281955778485,\n      \"results\": 9229,\n      \"status\": \"string\",\n      \"profile_id\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4523489a-c2c6-42c2-9d62-6734256003c6",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "reportcontrols",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8057,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cb168482-ad2a-4f8f-9b63-f808949fb2cf",
+          "name": "Export reports",
+          "request": {
+            "name": "Export reports",
+            "description": {
+              "content": "Export multiple reports.\nSupports filtering by profile or control. API returns an acknowledgement ID.\n\nAuthorization Action:\n```\ncompliance:reports:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "reportmanager",
+                "export"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3161113d-9518-4ed4-b330-6bf4bfdce2e0",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "reportmanager",
+                    "export"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"acknowledgement_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8a1a876-596a-4e9f-93c5-f89a4cd1a2c0",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "reportmanager",
+                    "export"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8057,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae51225d-8a95-48c5-ad63-7aed59c154ab",
+          "name": "List Reports",
+          "request": {
+            "name": "List Reports",
+            "description": {
+              "content": "Makes a list of reports. Adding a filter makes a list of all node reports that meet the filter criteria.\nSupports pagination, filtering, and sorting.\nMax return payload size is 4MB, use pagination to fetch remaining data.\n\nValid sort fields: latest_report.controls.failed.critical, latest_report.controls.failed.total, latest_report.end_time, latest_report.status, node_name\n\nExample:\n```\n{\"filters\":\n[\n{\"type\":\"start_time\",\"values\":[\"2019-09-09T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-09-11T23:59:59Z\"]}\n],\n\"page\":1, \"per_page\": 3,\n\"sort\": \"latest_report.status\", \"order\": \"ASC\"\n}\n```\n\nAuthorization Action:\n```\ncompliance:reports:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "reports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "65527108-f980-466b-8e45-9ba3e2c0b42e",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "reports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reports\": [\n    {\n      \"id\": \"string\",\n      \"node_id\": \"string\",\n      \"node_name\": \"string\",\n      \"end_time\": \"1982-09-27T09:09:57.281Z\",\n      \"status\": \"string\",\n      \"controls\": {\n        \"total\": 9493,\n        \"passed\": {\n          \"total\": 1415\n        },\n        \"skipped\": {\n          \"total\": 1341\n        },\n        \"failed\": {\n          \"total\": 5163,\n          \"minor\": 7677,\n          \"major\": 6578,\n          \"critical\": 3198\n        },\n        \"waived\": {\n          \"total\": 3215\n        }\n      },\n      \"ipaddress\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"node_id\": \"string\",\n      \"node_name\": \"string\",\n      \"end_time\": \"2003-10-08T09:53:44.193Z\",\n      \"status\": \"string\",\n      \"controls\": {\n        \"total\": 5779,\n        \"passed\": {\n          \"total\": 7075\n        },\n        \"skipped\": {\n          \"total\": 4765\n        },\n        \"failed\": {\n          \"total\": 8097,\n          \"minor\": 7032,\n          \"major\": 3873,\n          \"critical\": 7192\n        },\n        \"waived\": {\n          \"total\": 5046\n        }\n      },\n      \"ipaddress\": \"string\"\n    }\n  ],\n  \"total\": 4493\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "69d665f0-1c8f-496b-bbab-c90d7add7c78",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "reports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8057,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e776509-d8de-41fe-b56d-b9ab57493a82",
+          "name": "Show Report by ID",
+          "request": {
+            "name": "Show Report by ID",
+            "description": {
+              "content": "Show a specific report by ID. Supports filtering, but not pagination or sorting.\nIncluding more than one value for `profile_id`, or `profile_name` is not allowed.\nIncluding values for both `profile_id` and `profile_name` in one request is not allowed.\n\nAuthorization Action:\n```\ncompliance:reports:get\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "reports",
+                "id",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"order\": \"ASC\",\n  \"sort\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"per_page\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7c4f2294-1de0-48aa-a9c1-77586932037b",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "reports",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"node_id\": \"string\",\n  \"node_name\": \"string\",\n  \"end_time\": \"1979-03-09T23:38:20.479Z\",\n  \"status\": \"string\",\n  \"controls\": {\n    \"total\": 3782,\n    \"passed\": {\n      \"total\": 9702\n    },\n    \"skipped\": {\n      \"total\": 66\n    },\n    \"failed\": {\n      \"total\": 6906,\n      \"minor\": 5646,\n      \"major\": 4279,\n      \"critical\": 8931\n    },\n    \"waived\": {\n      \"total\": 7884\n    }\n  },\n  \"environment\": \"string\",\n  \"version\": \"string\",\n  \"platform\": {\n    \"name\": \"string\",\n    \"release\": \"string\",\n    \"full\": \"string\"\n  },\n  \"statistics\": {\n    \"duration\": 7473.36726502146\n  },\n  \"profiles\": [\n    {\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"maintainer\": \"string\",\n      \"copyright\": \"string\",\n      \"copyright_email\": \"string\",\n      \"license\": \"string\",\n      \"summary\": \"string\",\n      \"version\": \"string\",\n      \"owner\": \"string\",\n      \"full\": \"string\",\n      \"supports\": [\n        {\n          \"os_name\": \"string\",\n          \"os_family\": \"string\",\n          \"release\": \"string\",\n          \"inspec_version\": \"string\",\n          \"platform\": \"string\"\n        },\n        {\n          \"os_name\": \"string\",\n          \"os_family\": \"string\",\n          \"release\": \"string\",\n          \"inspec_version\": \"string\",\n          \"platform\": \"string\"\n        }\n      ],\n      \"depends\": [\n        {\n          \"name\": \"string\",\n          \"url\": \"string\",\n          \"path\": \"string\",\n          \"git\": \"string\",\n          \"branch\": \"string\",\n          \"tag\": \"string\",\n          \"commit\": \"string\",\n          \"version\": \"string\",\n          \"supermarket\": \"string\",\n          \"github\": \"string\",\n          \"compliance\": \"string\",\n          \"status\": \"string\",\n          \"skip_message\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"url\": \"string\",\n          \"path\": \"string\",\n          \"git\": \"string\",\n          \"branch\": \"string\",\n          \"tag\": \"string\",\n          \"commit\": \"string\",\n          \"version\": \"string\",\n          \"supermarket\": \"string\",\n          \"github\": \"string\",\n          \"compliance\": \"string\",\n          \"status\": \"string\",\n          \"skip_message\": \"string\"\n        }\n      ],\n      \"sha256\": \"string\",\n      \"groups\": [\n        {\n          \"id\": \"string\",\n          \"title\": \"string\",\n          \"controls\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"id\": \"string\",\n          \"title\": \"string\",\n          \"controls\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"controls\": [\n        {\n          \"id\": \"string\",\n          \"code\": \"string\",\n          \"desc\": \"string\",\n          \"impact\": 7378.4975566559615,\n          \"title\": \"string\",\n          \"source_location\": {\n            \"ref\": \"string\",\n            \"line\": 4796\n          },\n          \"results\": [\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"tags\": \"string\",\n          \"waived_str\": \"string\",\n          \"waiver_data\": {\n            \"expiration_date\": \"string\",\n            \"justification\": \"string\",\n            \"run\": false,\n            \"skipped_due_to_waiver\": true,\n            \"message\": \"string\"\n          },\n          \"removed_results_counts\": {\n            \"failed\": 4063,\n            \"skipped\": 2237,\n            \"passed\": 6844\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"code\": \"string\",\n          \"desc\": \"string\",\n          \"impact\": 8299.932217910786,\n          \"title\": \"string\",\n          \"source_location\": {\n            \"ref\": \"string\",\n            \"line\": 6516\n          },\n          \"results\": [\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"tags\": \"string\",\n          \"waived_str\": \"string\",\n          \"waiver_data\": {\n            \"expiration_date\": \"string\",\n            \"justification\": \"string\",\n            \"run\": true,\n            \"skipped_due_to_waiver\": true,\n            \"message\": \"string\"\n          },\n          \"removed_results_counts\": {\n            \"failed\": 6934,\n            \"skipped\": 220,\n            \"passed\": 8331\n          }\n        }\n      ],\n      \"attributes\": [\n        {\n          \"name\": \"string\",\n          \"options\": {\n            \"description\": \"string\",\n            \"default\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"options\": {\n            \"description\": \"string\",\n            \"default\": \"string\"\n          }\n        }\n      ],\n      \"latest_version\": \"string\",\n      \"status\": \"string\",\n      \"skip_message\": \"string\",\n      \"status_message\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"maintainer\": \"string\",\n      \"copyright\": \"string\",\n      \"copyright_email\": \"string\",\n      \"license\": \"string\",\n      \"summary\": \"string\",\n      \"version\": \"string\",\n      \"owner\": \"string\",\n      \"full\": \"string\",\n      \"supports\": [\n        {\n          \"os_name\": \"string\",\n          \"os_family\": \"string\",\n          \"release\": \"string\",\n          \"inspec_version\": \"string\",\n          \"platform\": \"string\"\n        },\n        {\n          \"os_name\": \"string\",\n          \"os_family\": \"string\",\n          \"release\": \"string\",\n          \"inspec_version\": \"string\",\n          \"platform\": \"string\"\n        }\n      ],\n      \"depends\": [\n        {\n          \"name\": \"string\",\n          \"url\": \"string\",\n          \"path\": \"string\",\n          \"git\": \"string\",\n          \"branch\": \"string\",\n          \"tag\": \"string\",\n          \"commit\": \"string\",\n          \"version\": \"string\",\n          \"supermarket\": \"string\",\n          \"github\": \"string\",\n          \"compliance\": \"string\",\n          \"status\": \"string\",\n          \"skip_message\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"url\": \"string\",\n          \"path\": \"string\",\n          \"git\": \"string\",\n          \"branch\": \"string\",\n          \"tag\": \"string\",\n          \"commit\": \"string\",\n          \"version\": \"string\",\n          \"supermarket\": \"string\",\n          \"github\": \"string\",\n          \"compliance\": \"string\",\n          \"status\": \"string\",\n          \"skip_message\": \"string\"\n        }\n      ],\n      \"sha256\": \"string\",\n      \"groups\": [\n        {\n          \"id\": \"string\",\n          \"title\": \"string\",\n          \"controls\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"id\": \"string\",\n          \"title\": \"string\",\n          \"controls\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"controls\": [\n        {\n          \"id\": \"string\",\n          \"code\": \"string\",\n          \"desc\": \"string\",\n          \"impact\": 6812.071739775674,\n          \"title\": \"string\",\n          \"source_location\": {\n            \"ref\": \"string\",\n            \"line\": 8603\n          },\n          \"results\": [\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"tags\": \"string\",\n          \"waived_str\": \"string\",\n          \"waiver_data\": {\n            \"expiration_date\": \"string\",\n            \"justification\": \"string\",\n            \"run\": false,\n            \"skipped_due_to_waiver\": false,\n            \"message\": \"string\"\n          },\n          \"removed_results_counts\": {\n            \"failed\": 3363,\n            \"skipped\": 8483,\n            \"passed\": 5289\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"code\": \"string\",\n          \"desc\": \"string\",\n          \"impact\": 3504.0597090441793,\n          \"title\": \"string\",\n          \"source_location\": {\n            \"ref\": \"string\",\n            \"line\": 8411\n          },\n          \"results\": [\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"status\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"code_desc\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"run_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"start_time\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"skip_message\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"refs\": [\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"url\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ref\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"tags\": \"string\",\n          \"waived_str\": \"string\",\n          \"waiver_data\": {\n            \"expiration_date\": \"string\",\n            \"justification\": \"string\",\n            \"run\": false,\n            \"skipped_due_to_waiver\": true,\n            \"message\": \"string\"\n          },\n          \"removed_results_counts\": {\n            \"failed\": 9454,\n            \"skipped\": 7609,\n            \"passed\": 3624\n          }\n        }\n      ],\n      \"attributes\": [\n        {\n          \"name\": \"string\",\n          \"options\": {\n            \"description\": \"string\",\n            \"default\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"options\": {\n            \"description\": \"string\",\n            \"default\": \"string\"\n          }\n        }\n      ],\n      \"latest_version\": \"string\",\n      \"status\": \"string\",\n      \"skip_message\": \"string\",\n      \"status_message\": \"string\"\n    }\n  ],\n  \"job_id\": \"string\",\n  \"ipaddress\": \"string\",\n  \"fqdn\": \"string\",\n  \"chef_server\": \"string\",\n  \"chef_organization\": \"string\",\n  \"roles\": [\n    \"string\",\n    \"string\"\n  ],\n  \"chef_tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"projects\": [\n    \"string\",\n    \"string\"\n  ],\n  \"status_message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7fe40e16-40d5-4f29-b90b-e928ba2c70d6",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "reports",
+                    "id",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8057,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "00b6a5b7-64c3-48b3-acff-a6f5ed5367a4",
+          "name": "List Reporting Suggestions",
+          "request": {
+            "name": "List Reporting Suggestions",
+            "description": {
+              "content": "Get suggestions for compliance reporting resources based on matching text substrings.\nSupports filtering, but not pagination or sorting.\n`type` parameter is required. It must be one of the parameters from the following table.\n\n| Suggestion type parameter | Suggestion type value |\n| --- | --- |\n| chef_server | source_fqdn |\n| chef_tags | chef_tags |\n| control | profiles.controls.title |\n| control_tag_key | profiles.controls.string_tags.key |\n| control_tag_value | profiles.controls.string_tags.values |\n| environment | environment |\n| inspec_version | version |\n| node | node_name |\n| organization | organization_name |\n| platform | platform.name |\n| platform_with_version | platform.full |\n| policy_group | policy_group |\n| policy_name | policy_name |\n| profile | profiles.title |\n| profile_with_version | profiles.full |\n| recipe | recipes |\n| role | roles |\n\nExample:\n```\n{\n\"type\":\"environment\",\n\"text\":\"aws*\",\n\"filters\":[\n{\"type\":\"start_time\",\"values\":[\"2019-10-26T00:00:00Z\"]},\n{\"type\":\"end_time\",\"values\":[\"2019-11-05T23:59:59Z\"]}\n]\n}\n```\n\nAuthorization Action:\n```\ncompliance:reportSuggestions:list\n```",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "compliance",
+                "reporting",
+                "suggestions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\",\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"type_key\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "979ac11e-03f3-43d7-8f10-58b190e9a60f",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "suggestions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"type_key\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"suggestions\": [\n    {\n      \"text\": \"string\",\n      \"id\": \"string\",\n      \"score\": 5649.202304893784,\n      \"version\": \"string\"\n    },\n    {\n      \"text\": \"string\",\n      \"id\": \"string\",\n      \"score\": 7042.8712972047715,\n      \"version\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "133f25c0-1416-40be-b5e6-1f49a0a7658a",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "compliance",
+                    "reporting",
+                    "suggestions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"text\": \"<string>\",\n  \"size\": \"<integer>\",\n  \"filters\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    },\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"type\": \"<string>\"\n    }\n  ],\n  \"type_key\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"code\": 8057,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f11671ae-9ce3-42ab-994e-193212336ea6",
+    "name": "external/applications/applications.proto ApplicationsService ReportingService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

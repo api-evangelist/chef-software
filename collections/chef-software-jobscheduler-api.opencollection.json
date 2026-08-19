@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "external/applications/applications.proto ApplicationsService JobScheduler API",
+    "version": "version not set"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "JobScheduler",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "JobScheduler_ConfigureDeleteNodesScheduler",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/retention/nodes/delete-nodes/config"
+          }
+        },
+        {
+          "info": {
+            "name": "JobScheduler_ConfigureMissingNodesForDeletionScheduler",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/retention/nodes/missing-nodes-deletion/config"
+          }
+        },
+        {
+          "info": {
+            "name": "JobScheduler_ConfigureNodesMissingScheduler",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v0/retention/nodes/missing-nodes/config"
+          }
+        },
+        {
+          "info": {
+            "name": "JobScheduler_GetStatusJobScheduler",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v0/retention/nodes/status"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

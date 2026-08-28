@@ -13,6 +13,18 @@ description: >-
   api-token HTTP header. Chef also ships a deep open-source ecosystem of Ruby
   client tooling (chef-client, InSpec, Ohai, Berkshelf, chef-cli, knife)
   distributed on RubyGems, all developed in the open on the chef GitHub org.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve

@@ -58,7 +58,6 @@ tags:
 - Infrastructure as Code
 - Cloud
 - Continuous Compliance
-- Node Management
 tags_raw:
 - Company
 - DevOps
@@ -110,7 +109,7 @@ apis:
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
   tags:
-  - Cds
+  - CDS
   tags_raw:
   - Cds
   properties:
@@ -238,7 +237,7 @@ apis:
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
   tags:
-  - JobScheduler
+  - Job Scheduler
   tags_raw:
   - JobScheduler
   properties:
@@ -403,7 +402,7 @@ apis:
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
   tags:
-  - rules
+  - Rules
   tags_raw:
   - rules
   properties:
@@ -432,7 +431,8 @@ apis:
   description: The service_groups API from Chef Software — 9 operation(s) for service_groups.
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
-  tags: []
+  tags:
+  - Service Groups
   tags_raw:
   - service_groups
   properties:

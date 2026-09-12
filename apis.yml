@@ -520,6 +520,8 @@ apis:
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
 common:
+- type: Website
+  url: https://www.chef.io/
 - type: CapabilityMap
   url: capabilities/chef-software-capability-edges.yml
   name: Chef Software Business Capability Map

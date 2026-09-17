@@ -232,22 +232,6 @@ apis:
     url: https://docs.chef.io/automate/api/
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
-- aid: chef-software:chef-software-jobscheduler-api
-  name: Chef Software JobScheduler API
-  description: The JobScheduler API from Chef Software — 4 operation(s) for jobscheduler.
-  humanURL: https://docs.chef.io/automate/api/
-  baseURL: https://automate.chef.io/api/v0
-  tags:
-  - Job Scheduler
-  tags_raw:
-  - JobScheduler
-  properties:
-  - type: OpenAPI
-    url: openapi/chef-software-jobscheduler-api-openapi.yml
-  - type: Documentation
-    url: https://docs.chef.io/automate/api/
-  - type: Authentication
-    url: https://docs.chef.io/automate/api_tokens/
 - aid: chef-software:chef-software-jobsservice-api
   name: Chef Software JobsService API
   description: The JobsService API from Chef Software — 4 operation(s) for jobsservice.
@@ -515,6 +499,20 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/chef-software-usersettingsservice-api-openapi.yml
+  - type: Documentation
+    url: https://docs.chef.io/automate/api/
+  - type: Authentication
+    url: https://docs.chef.io/automate/api_tokens/
+- aid: chef-software:chef-software-job-scheduler-api
+  name: Chef Software Job Scheduler API
+  description: The Job Scheduler API from Chef Software — 4 operation(s) for job scheduler.
+  humanURL: https://docs.chef.io/automate/api/
+  baseURL: https://automate.chef.io/api/v0
+  tags:
+  - Job Scheduler
+  properties:
+  - type: OpenAPI
+    url: openapi/chef-software-job-scheduler-api-openapi.yml
   - type: Documentation
     url: https://docs.chef.io/automate/api/
   - type: Authentication

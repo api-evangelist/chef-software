@@ -1,11 +1,7 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: external/applications/applications.proto ApplicationsService DataLifecycle API
+  title: external/data_lifecycle/data_lifecycle.proto Data Lifecycle…
   version: version not set
-consumes:
-- application/json
-produces:
-- application/json
 tags:
 - name: DataLifecycle
 paths:
@@ -16,20 +12,24 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.SetComplianceConfigResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetComplianceConfigResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
-      parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.SetComplianceConfigRequest'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetComplianceConfigRequest'
+        required: true
   /api/v0/data-lifecycle/compliance/run:
     post:
       summary: RunCompliance runs the compliance data lifecycle jobs
@@ -37,20 +37,24 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.RunComplianceResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.RunComplianceResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
-      parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.RunComplianceRequest'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/chef.automate.api.data_lifecycle.RunComplianceRequest'
+        required: true
   /api/v0/data-lifecycle/compliance/status:
     get:
       summary: GetComplianceStatus returns the compliance job scheduler status
@@ -58,12 +62,16 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.GetComplianceStatusResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetComplianceStatusResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
   /api/v0/data-lifecycle/config:
@@ -73,20 +81,24 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.SetConfigResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetConfigResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
-      parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.SetConfigRequest'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetConfigRequest'
+        required: true
   /api/v0/data-lifecycle/event-feed/config:
     put:
       summary: SetEventFeedConfig configures the event feed data lifecycle scheduler and jobs
@@ -94,20 +106,24 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.SetEventFeedConfigResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetEventFeedConfigResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
-      parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.SetEventFeedConfigRequest'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetEventFeedConfigRequest'
+        required: true
   /api/v0/data-lifecycle/event-feed/run:
     post:
       summary: RunEventFeed runs the event feed data lifecycle jobs
@@ -115,20 +131,24 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.RunEventFeedResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.RunEventFeedResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
-      parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.RunEventFeedRequest'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/chef.automate.api.data_lifecycle.RunEventFeedRequest'
+        required: true
   /api/v0/data-lifecycle/event-feed/status:
     get:
       summary: GetEventFeedStatus returns the event feed job scheduler status
@@ -136,12 +156,16 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.GetEventFeedStatusResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetEventFeedStatusResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
   /api/v0/data-lifecycle/infra/config:
@@ -151,20 +175,24 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.SetInfraConfigResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetInfraConfigResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
-      parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.SetInfraConfigRequest'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetInfraConfigRequest'
+        required: true
   /api/v0/data-lifecycle/infra/run:
     post:
       summary: RunInfra runs the infra data lifecycle jobs
@@ -172,20 +200,24 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.RunInfraResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.RunInfraResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
-      parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.RunInfraRequest'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/chef.automate.api.data_lifecycle.RunInfraRequest'
+        required: true
   /api/v0/data-lifecycle/infra/status:
     get:
       summary: GetInfraStatus returns the infra job scheduler status
@@ -193,12 +225,16 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.GetInfraStatusResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetInfraStatusResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
   /api/v0/data-lifecycle/run:
@@ -208,60 +244,76 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.RunResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.RunResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
-      parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.RunRequest'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/chef.automate.api.data_lifecycle.RunRequest'
+        required: true
   /api/v0/data-lifecycle/services/config:
     put:
       operationId: DataLifecycle_SetServicesConfig
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.SetServicesConfigResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetServicesConfigResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
-      parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.SetServicesConfigRequest'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetServicesConfigRequest'
+        required: true
+      summary: Data lifecycle set services config
+      x-summary-source: derived
   /api/v0/data-lifecycle/services/run:
     post:
       operationId: DataLifecycle_RunServices
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.RunServicesResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.RunServicesResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
-      parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.RunServicesRequest'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/chef.automate.api.data_lifecycle.RunServicesRequest'
+        required: true
+      summary: Data lifecycle run services
+      x-summary-source: derived
   /api/v0/data-lifecycle/services/status:
     get:
       summary: Services
@@ -269,12 +321,16 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.GetServicesStatusResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetServicesStatusResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
   /api/v0/data-lifecycle/status:
@@ -284,248 +340,253 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.data_lifecycle.GetStatusResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetStatusResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - DataLifecycle
-definitions:
-  chef.automate.api.data_lifecycle.SetComplianceConfigRequest:
-    type: object
-    properties:
-      job_settings:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.JobSettings'
-  chef.automate.api.data_lifecycle.GetServicesStatusResponse:
-    type: object
-    properties:
-      jobs:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.JobStatus'
-  chef.automate.api.data_lifecycle.RunServicesResponse:
-    type: object
-  chef.automate.api.data_lifecycle.SetInfraConfigRequest:
-    type: object
-    properties:
-      job_settings:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.JobSettings'
-  chef.automate.api.data_lifecycle.PgPolicy:
-    type: object
-    properties:
-      name:
-        type: string
-      disabled:
-        type: boolean
-  chef.automate.api.data_lifecycle.RunEventFeedResponse:
-    type: object
-  chef.automate.api.data_lifecycle.PgPolicyUpdate:
-    type: object
-    properties:
-      policy_name:
-        type: string
-      disabled:
-        type: boolean
-  google.protobuf.Any:
-    type: object
-    properties:
-      type_url:
-        type: string
-      value:
-        type: string
-        format: byte
-  chef.automate.api.data_lifecycle.RunResponse:
-    type: object
-  chef.automate.api.data_lifecycle.SetServicesConfigRequest:
-    type: object
-    properties:
-      job_settings:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.JobSettings'
-  chef.automate.api.data_lifecycle.SetComplianceConfigResponse:
-    type: object
-  chef.automate.api.data_lifecycle.RunServicesRequest:
-    type: object
-  chef.automate.api.data_lifecycle.RunInfraRequest:
-    type: object
-  chef.automate.api.data_lifecycle.RunRequest:
-    type: object
-  grpc.gateway.runtime.Error:
-    type: object
-    properties:
-      error:
-        type: string
-      code:
-        type: integer
-        format: int32
-      message:
-        type: string
-      details:
-        type: array
-        items:
-          $ref: '#/definitions/google.protobuf.Any'
-  chef.automate.api.data_lifecycle.GetInfraStatusResponse:
-    type: object
-    properties:
-      jobs:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.JobStatus'
-  chef.automate.api.data_lifecycle.PurgePolicyUpdate:
-    type: object
-    properties:
-      elasticsearch:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.EsPolicyUpdate'
-      postgres:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.PgPolicyUpdate'
-    title: PurgePolicyUpdate is purge policy configuration update
-  chef.automate.api.data_lifecycle.EsPolicyUpdate:
-    type: object
-    properties:
-      policy_name:
-        type: string
-      disabled:
-        type: boolean
-      older_than_days:
-        type: integer
-        format: int32
-  chef.automate.api.data_lifecycle.GetComplianceStatusResponse:
-    type: object
-    properties:
-      jobs:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.JobStatus'
-  chef.automate.api.data_lifecycle.RunComplianceResponse:
-    type: object
-  chef.automate.api.data_lifecycle.JobStatus:
-    type: object
-    properties:
-      name:
-        type: string
-      disabled:
-        type: boolean
-      recurrence:
-        type: string
-      threshold:
-        type: string
-      purge_policies:
-        $ref: '#/definitions/chef.automate.api.data_lifecycle.PurgePolicies'
-      last_elapsed:
-        type: string
-      next_due_at:
-        type: string
-        format: date-time
-      last_enqueued_at:
-        type: string
-        format: date-time
-      last_started_at:
-        type: string
-        format: date-time
-      last_ended_at:
-        type: string
-        format: date-time
-    description: 'JobStatus presents the current configuration of job, when it will be executed,
+components:
+  schemas:
+    chef.automate.api.data_lifecycle.GetStatusResponse:
+      type: object
+      properties:
+        infra:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetInfraStatusResponse'
+        compliance:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetComplianceStatusResponse'
+        event_feed:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetEventFeedStatusResponse'
+        services:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetServicesStatusResponse'
+    chef.automate.api.data_lifecycle.RunEventFeedRequest:
+      type: object
+    chef.automate.api.data_lifecycle.RunComplianceRequest:
+      type: object
+    chef.automate.api.data_lifecycle.SetConfigResponse:
+      type: object
+    chef.automate.api.data_lifecycle.PurgePolicies:
+      type: object
+      properties:
+        elasticsearch:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.EsPolicy'
+        postgres:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.PgPolicy'
+      title: PurgePolicies are data lifecycle purge policies
+    chef.automate.api.data_lifecycle.RunInfraRequest:
+      type: object
+    chef.automate.api.data_lifecycle.SetConfigRequest:
+      type: object
+      properties:
+        infra:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetInfraConfigRequest'
+        compliance:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetComplianceConfigRequest'
+        event_feed:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetEventFeedConfigRequest'
+        services:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetServicesConfigRequest'
+    google.protobuf.Any:
+      type: object
+      properties:
+        type_url:
+          type: string
+        value:
+          type: string
+          format: byte
+    chef.automate.api.data_lifecycle.GetComplianceStatusResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobStatus'
+    chef.automate.api.data_lifecycle.RunEventFeedResponse:
+      type: object
+    chef.automate.api.data_lifecycle.EsPolicyUpdate:
+      type: object
+      properties:
+        policy_name:
+          type: string
+        disabled:
+          type: boolean
+        older_than_days:
+          type: integer
+          format: int32
+    chef.automate.api.data_lifecycle.SetInfraConfigRequest:
+      type: object
+      properties:
+        job_settings:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobSettings'
+    chef.automate.api.data_lifecycle.SetEventFeedConfigResponse:
+      type: object
+    chef.automate.api.data_lifecycle.SetComplianceConfigRequest:
+      type: object
+      properties:
+        job_settings:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobSettings'
+    chef.automate.api.data_lifecycle.GetServicesStatusResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobStatus'
+    chef.automate.api.data_lifecycle.SetEventFeedConfigRequest:
+      type: object
+      properties:
+        job_settings:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobSettings'
+    chef.automate.api.data_lifecycle.RunResponse:
+      type: object
+    chef.automate.api.data_lifecycle.JobStatus:
+      type: object
+      properties:
+        name:
+          type: string
+        disabled:
+          type: boolean
+        recurrence:
+          type: string
+        threshold:
+          type: string
+        purge_policies:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.PurgePolicies'
+        last_elapsed:
+          type: string
+        next_due_at:
+          type: string
+          format: date-time
+        last_enqueued_at:
+          type: string
+          format: date-time
+        last_started_at:
+          type: string
+          format: date-time
+        last_ended_at:
+          type: string
+          format: date-time
+      description: 'JobStatus presents the current configuration of job, when it will be executed,
 
-      and details about it''s most recent execution.'
-  chef.automate.api.data_lifecycle.GetEventFeedStatusResponse:
-    type: object
-    properties:
-      jobs:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.JobStatus'
-  chef.automate.api.data_lifecycle.RunInfraResponse:
-    type: object
-  chef.automate.api.data_lifecycle.GetStatusResponse:
-    type: object
-    properties:
-      infra:
-        $ref: '#/definitions/chef.automate.api.data_lifecycle.GetInfraStatusResponse'
-      compliance:
-        $ref: '#/definitions/chef.automate.api.data_lifecycle.GetComplianceStatusResponse'
-      event_feed:
-        $ref: '#/definitions/chef.automate.api.data_lifecycle.GetEventFeedStatusResponse'
-      services:
-        $ref: '#/definitions/chef.automate.api.data_lifecycle.GetServicesStatusResponse'
-  chef.automate.api.data_lifecycle.SetInfraConfigResponse:
-    type: object
-  chef.automate.api.data_lifecycle.JobSettings:
-    type: object
-    properties:
-      name:
-        type: string
-      disabled:
-        type: boolean
-      recurrence:
-        type: string
-      threshold:
-        type: string
-      purge_policies:
-        $ref: '#/definitions/chef.automate.api.data_lifecycle.PurgePolicyUpdate'
-    title: JobSettings are a job configuration setting update
-  chef.automate.api.data_lifecycle.SetConfigResponse:
-    type: object
-  chef.automate.api.data_lifecycle.RunComplianceRequest:
-    type: object
-  chef.automate.api.data_lifecycle.SetServicesConfigResponse:
-    type: object
-  chef.automate.api.data_lifecycle.PurgePolicies:
-    type: object
-    properties:
-      elasticsearch:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.EsPolicy'
-      postgres:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.PgPolicy'
-    title: PurgePolicies are data lifecycle purge policies
-  chef.automate.api.data_lifecycle.SetEventFeedConfigResponse:
-    type: object
-  chef.automate.api.data_lifecycle.SetEventFeedConfigRequest:
-    type: object
-    properties:
-      job_settings:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.data_lifecycle.JobSettings'
-  chef.automate.api.data_lifecycle.RunEventFeedRequest:
-    type: object
-  chef.automate.api.data_lifecycle.EsPolicy:
-    type: object
-    properties:
-      name:
-        type: string
-      index:
-        type: string
-      older_than_days:
-        type: integer
-        format: int32
-      custom_purge_field:
-        type: string
-      disabled:
-        type: boolean
-  chef.automate.api.data_lifecycle.SetConfigRequest:
-    type: object
-    properties:
-      infra:
-        $ref: '#/definitions/chef.automate.api.data_lifecycle.SetInfraConfigRequest'
-      compliance:
-        $ref: '#/definitions/chef.automate.api.data_lifecycle.SetComplianceConfigRequest'
-      event_feed:
-        $ref: '#/definitions/chef.automate.api.data_lifecycle.SetEventFeedConfigRequest'
-      services:
-        $ref: '#/definitions/chef.automate.api.data_lifecycle.SetServicesConfigRequest'
+        and details about it''s most recent execution.'
+    chef.automate.api.data_lifecycle.SetServicesConfigRequest:
+      type: object
+      properties:
+        job_settings:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobSettings'
+    grpc.gateway.runtime.Error:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/google.protobuf.Any'
+    chef.automate.api.data_lifecycle.PgPolicy:
+      type: object
+      properties:
+        name:
+          type: string
+        disabled:
+          type: boolean
+    chef.automate.api.data_lifecycle.PurgePolicyUpdate:
+      type: object
+      properties:
+        elasticsearch:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.EsPolicyUpdate'
+        postgres:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.PgPolicyUpdate'
+      title: PurgePolicyUpdate is purge policy configuration update
+    chef.automate.api.data_lifecycle.RunComplianceResponse:
+      type: object
+    chef.automate.api.data_lifecycle.PgPolicyUpdate:
+      type: object
+      properties:
+        policy_name:
+          type: string
+        disabled:
+          type: boolean
+    chef.automate.api.data_lifecycle.RunInfraResponse:
+      type: object
+    chef.automate.api.data_lifecycle.JobSettings:
+      type: object
+      properties:
+        name:
+          type: string
+        disabled:
+          type: boolean
+        recurrence:
+          type: string
+        threshold:
+          type: string
+        purge_policies:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.PurgePolicyUpdate'
+      title: JobSettings are a job configuration setting update
+    chef.automate.api.data_lifecycle.RunServicesRequest:
+      type: object
+    chef.automate.api.data_lifecycle.GetInfraStatusResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobStatus'
+    chef.automate.api.data_lifecycle.EsPolicy:
+      type: object
+      properties:
+        name:
+          type: string
+        index:
+          type: string
+        older_than_days:
+          type: integer
+          format: int32
+        custom_purge_field:
+          type: string
+        disabled:
+          type: boolean
+    chef.automate.api.data_lifecycle.GetEventFeedStatusResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobStatus'
+    chef.automate.api.data_lifecycle.SetComplianceConfigResponse:
+      type: object
+    chef.automate.api.data_lifecycle.RunRequest:
+      type: object
+    chef.automate.api.data_lifecycle.SetInfraConfigResponse:
+      type: object
+    chef.automate.api.data_lifecycle.SetServicesConfigResponse:
+      type: object
+    chef.automate.api.data_lifecycle.RunServicesResponse:
+      type: object

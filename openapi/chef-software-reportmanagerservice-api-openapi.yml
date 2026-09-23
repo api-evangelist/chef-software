@@ -1,11 +1,7 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: external/applications/applications.proto ApplicationsService ReportManagerService API
+  title: external/report_manager/report_manager.proto Report Manager…
   version: version not set
-consumes:
-- application/json
-produces:
-- application/json
 tags:
 - name: ReportManagerService
 paths:
@@ -26,63 +22,68 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/chef.automate.api.report_manager.ListDownloadReportRequestsResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/chef.automate.api.report_manager.ListDownloadReportRequestsResponse'
         default:
           description: An unexpected error response.
-          schema:
-            $ref: '#/definitions/grpc.gateway.runtime.Error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/grpc.gateway.runtime.Error'
       tags:
       - ReportManagerService
-definitions:
-  chef.automate.api.report_manager.ListDownloadReportRequestsResponse:
-    type: object
-    properties:
-      data:
-        type: array
-        items:
-          $ref: '#/definitions/chef.automate.api.report_manager.DownloadRequestResponse'
-  chef.automate.api.report_manager.DownloadRequestResponse:
-    type: object
-    properties:
-      acknowledgement_id:
-        type: string
-      status:
-        type: string
-      report_size:
-        type: string
-        format: int64
-      err_message:
-        type: string
-      created_at:
-        type: string
-        format: date-time
-      ended_at:
-        type: string
-        format: date-time
-      duration:
-        type: string
-      report_type:
-        type: string
-  google.protobuf.Any:
-    type: object
-    properties:
-      type_url:
-        type: string
-      value:
-        type: string
-        format: byte
-  grpc.gateway.runtime.Error:
-    type: object
-    properties:
-      error:
-        type: string
-      code:
-        type: integer
-        format: int32
-      message:
-        type: string
-      details:
-        type: array
-        items:
-          $ref: '#/definitions/google.protobuf.Any'
+components:
+  schemas:
+    grpc.gateway.runtime.Error:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/google.protobuf.Any'
+    google.protobuf.Any:
+      type: object
+      properties:
+        type_url:
+          type: string
+        value:
+          type: string
+          format: byte
+    chef.automate.api.report_manager.ListDownloadReportRequestsResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.report_manager.DownloadRequestResponse'
+    chef.automate.api.report_manager.DownloadRequestResponse:
+      type: object
+      properties:
+        acknowledgement_id:
+          type: string
+        status:
+          type: string
+        report_size:
+          type: string
+          format: int64
+        err_message:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        ended_at:
+          type: string
+          format: date-time
+        duration:
+          type: string
+        report_type:
+          type: string

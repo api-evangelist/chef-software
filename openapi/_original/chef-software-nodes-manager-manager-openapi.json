@@ -533,7 +533,7 @@
         "credential_data": [
           {
             "key": "AWS_ACCESS_KEY_ID",
-            "value": "AKIAIOSFODNN7EXAMPLE"
+            "value": "REDACTED_AWS_ACCESS_KEY_ID"
           },
           {
             "key": "AWS_SECRET_ACCESS_KEY",

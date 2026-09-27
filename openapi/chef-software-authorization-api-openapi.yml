@@ -92,19 +92,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/google.protobuf.Any'
-    chef.automate.api.iam.v2.MethodsAllowed:
+    chef.automate.api.iam.v2.IntrospectResp:
       type: object
       properties:
-        get:
-          type: boolean
-        put:
-          type: boolean
-        post:
-          type: boolean
-        delete:
-          type: boolean
-        patch:
-          type: boolean
+        endpoints:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/chef.automate.api.iam.v2.MethodsAllowed'
     chef.automate.api.iam.v2.IntrospectReq:
       type: object
       properties:
@@ -114,13 +108,6 @@ components:
           type: array
           items:
             type: string
-    chef.automate.api.iam.v2.IntrospectResp:
-      type: object
-      properties:
-        endpoints:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/chef.automate.api.iam.v2.MethodsAllowed'
     google.protobuf.Any:
       type: object
       properties:
@@ -139,3 +126,16 @@ components:
           type: array
           items:
             type: string
+    chef.automate.api.iam.v2.MethodsAllowed:
+      type: object
+      properties:
+        get:
+          type: boolean
+        put:
+          type: boolean
+        post:
+          type: boolean
+        delete:
+          type: boolean
+        patch:
+          type: boolean

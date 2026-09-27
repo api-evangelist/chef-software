@@ -105,43 +105,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    chef.automate.api.ingest.request.SchedulerConfig:
-      type: object
-      properties:
-        every:
-          type: string
-        threshold:
-          type: string
-        running:
-          type: boolean
-      description: 'SchedulerConfig
-
-        The job message to configure the Delete Node Job
-
-        every - It accepts ''1h30m'', ''1m'', ''2h30m'', ...'
-    grpc.gateway.runtime.Error:
-      type: object
-      properties:
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/google.protobuf.Any'
-    chef.automate.api.ingest.response.JobSchedulerStatus:
-      type: object
-      properties:
-        running:
-          type: boolean
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.ingest.response.Job'
     chef.automate.api.ingest.response.Job:
       type: object
       properties:
@@ -161,9 +124,39 @@ components:
           type: string
         threshold:
           type: string
+    grpc.gateway.runtime.Error:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/google.protobuf.Any'
+    chef.automate.api.ingest.request.SchedulerConfig:
+      type: object
+      properties:
+        every:
+          type: string
+        threshold:
+          type: string
+        running:
+          type: boolean
+      description: 'SchedulerConfig
+
+        The job message to configure the Delete Node Job
+
+        every - It accepts ''1h30m'', ''1m'', ''2h30m'', ...'
     chef.automate.api.ingest.response.ConfigureNodesMissingScheduler:
       type: object
     chef.automate.api.ingest.response.ConfigureMissingNodesForDeletionScheduler:
+      type: object
+    chef.automate.api.ingest.response.ConfigureDeleteNodesScheduler:
       type: object
     google.protobuf.Any:
       type: object
@@ -173,5 +166,12 @@ components:
         value:
           type: string
           format: byte
-    chef.automate.api.ingest.response.ConfigureDeleteNodesScheduler:
+    chef.automate.api.ingest.response.JobSchedulerStatus:
       type: object
+      properties:
+        running:
+          type: boolean
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.ingest.response.Job'

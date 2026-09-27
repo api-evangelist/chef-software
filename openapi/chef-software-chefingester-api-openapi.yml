@@ -157,35 +157,44 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    chef.automate.api.ingest.request.Delete:
+    chef.automate.api.ingest.request.Deprecation:
       type: object
       properties:
-        id:
-          type: string
-          title: ID of the action message itself
-        node_name:
-          type: string
-        organization_name:
-          type: string
-        remote_hostname:
-          type: string
-        service_hostname:
-          type: string
-        node_id:
-          type: string
-    chef.automate.api.ingest.request.Error:
-      type: object
-      properties:
-        class:
-          type: string
         message:
           type: string
-        backtrace:
+        url:
+          type: string
+        location:
+          type: string
+    grpc.gateway.runtime.Error:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
           type: array
           items:
-            type: string
-        description:
-          $ref: '#/components/schemas/chef.automate.api.ingest.request.Description'
+            $ref: '#/components/schemas/google.protobuf.Any'
+    chef.automate.api.ingest.request.RunList:
+      type: object
+      properties:
+        type:
+          type: string
+        name:
+          type: string
+        version:
+          type: string
+        skipped:
+          type: boolean
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.ingest.request.RunList'
     chef.automate.api.ingest.request.Liveness:
       type: object
       properties:
@@ -203,6 +212,39 @@ components:
           type: string
         node_name:
           type: string
+    chef.automate.api.ingest.response.ProcessNodeDeleteResponse:
+      type: object
+    chef.automate.api.ingest.request.MultipleNodeDeleteRequest:
+      type: object
+      properties:
+        node_ids:
+          type: array
+          items:
+            type: string
+    chef.automate.api.ingest.request.Error:
+      type: object
+      properties:
+        class:
+          type: string
+        message:
+          type: string
+        backtrace:
+          type: array
+          items:
+            type: string
+        description:
+          $ref: '#/components/schemas/chef.automate.api.ingest.request.Description'
+    chef.automate.api.ingest.response.ProcessChefActionResponse:
+      type: object
+    chef.automate.api.ingest.request.ExpandedRunList:
+      type: object
+      properties:
+        id:
+          type: string
+        run_list:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.ingest.request.RunList'
     chef.automate.api.common.version.VersionInfo:
       type: object
       properties:
@@ -214,118 +256,6 @@ components:
           type: string
         built:
           type: string
-    chef.automate.api.ingest.request.ExpandedRunList:
-      type: object
-      properties:
-        id:
-          type: string
-        run_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.ingest.request.RunList'
-    google.protobuf.Any:
-      type: object
-      properties:
-        type_url:
-          type: string
-        value:
-          type: string
-          format: byte
-    chef.automate.api.ingest.response.ProcessNodeDeleteResponse:
-      type: object
-    chef.automate.api.ingest.response.ProcessChefActionResponse:
-      type: object
-    chef.automate.api.ingest.request.Resource:
-      type: object
-      properties:
-        type:
-          type: string
-        name:
-          type: string
-        id:
-          type: string
-        after:
-          type: object
-        before:
-          type: object
-        duration:
-          type: string
-        delta:
-          type: string
-        cookbook_name:
-          type: string
-        cookbook_version:
-          type: string
-        status:
-          type: string
-        recipe_name:
-          type: string
-        ignore_failure:
-          type: object
-        conditional:
-          type: string
-        result:
-          type: string
-        error:
-          $ref: '#/components/schemas/chef.automate.api.ingest.request.Error'
-    chef.automate.api.ingest.request.Action:
-      type: object
-      properties:
-        id:
-          type: string
-          title: ID of the action message itself
-        message_type:
-          type: string
-        message_version:
-          type: string
-        entity_name:
-          type: string
-        entity_type:
-          type: string
-        task:
-          type: string
-        organization_name:
-          type: string
-        remote_hostname:
-          type: string
-        run_id:
-          type: string
-        content:
-          type: string
-          format: byte
-          description: 'This new field called ''content'' is being used to send the entire raw JSON
-
-            message in bytes, this field is heavily used by the gateway for the DataCollector
-
-            Func Handler that will send the Action message to the (receiver) ingest-service
-
-            that will manually unmarshal the message from this field if it is provided.
-
-            The main purpose of this field it to improve the performance of ingestion when
-
-            the requests comes in REST/HTTP format.'
-        node_id:
-          type: string
-        recorded_at:
-          type: string
-        remote_request_id:
-          type: string
-        request_id:
-          type: string
-        requestor_name:
-          type: string
-        requestor_type:
-          type: string
-        service_hostname:
-          type: string
-        user_agent:
-          type: string
-        parent_type:
-          type: string
-        parent_name:
-          type: string
-        revision_id:
-          type: string
     chef.automate.api.ingest.request.Description:
       type: object
       properties:
@@ -335,31 +265,22 @@ components:
           type: array
           items:
             type: object
-    grpc.gateway.runtime.Error:
+    chef.automate.api.ingest.request.Delete:
       type: object
       properties:
-        error:
+        id:
           type: string
-        code:
-          type: integer
-          format: int32
-        message:
+          title: ID of the action message itself
+        node_name:
           type: string
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/google.protobuf.Any'
-    chef.automate.api.ingest.request.Deprecation:
-      type: object
-      properties:
-        message:
+        organization_name:
           type: string
-        url:
+        remote_hostname:
           type: string
-        location:
+        service_hostname:
           type: string
-    chef.automate.api.ingest.response.ProcessMultipleNodeDeleteResponse:
-      type: object
+        node_id:
+          type: string
     chef.automate.api.ingest.request.Run:
       type: object
       properties:
@@ -436,29 +357,108 @@ components:
           type: array
           items:
             type: string
-    chef.automate.api.ingest.request.MultipleNodeDeleteRequest:
+    chef.automate.api.ingest.response.ProcessLivenessResponse:
+      type: object
+    chef.automate.api.ingest.response.ProcessMultipleNodeDeleteResponse:
+      type: object
+    google.protobuf.Any:
       type: object
       properties:
-        node_ids:
-          type: array
-          items:
-            type: string
-    chef.automate.api.ingest.response.ProcessChefRunResponse:
+        type_url:
+          type: string
+        value:
+          type: string
+          format: byte
+    chef.automate.api.ingest.request.Action:
       type: object
-    chef.automate.api.ingest.request.RunList:
+      properties:
+        id:
+          type: string
+          title: ID of the action message itself
+        message_type:
+          type: string
+        message_version:
+          type: string
+        entity_name:
+          type: string
+        entity_type:
+          type: string
+        task:
+          type: string
+        organization_name:
+          type: string
+        remote_hostname:
+          type: string
+        run_id:
+          type: string
+        content:
+          type: string
+          format: byte
+          description: 'This new field called ''content'' is being used to send the entire raw JSON
+
+            message in bytes, this field is heavily used by the gateway for the DataCollector
+
+            Func Handler that will send the Action message to the (receiver) ingest-service
+
+            that will manually unmarshal the message from this field if it is provided.
+
+            The main purpose of this field it to improve the performance of ingestion when
+
+            the requests comes in REST/HTTP format.'
+        node_id:
+          type: string
+        recorded_at:
+          type: string
+        remote_request_id:
+          type: string
+        request_id:
+          type: string
+        requestor_name:
+          type: string
+        requestor_type:
+          type: string
+        service_hostname:
+          type: string
+        user_agent:
+          type: string
+        parent_type:
+          type: string
+        parent_name:
+          type: string
+        revision_id:
+          type: string
+    chef.automate.api.ingest.request.Resource:
       type: object
       properties:
         type:
           type: string
         name:
           type: string
-        version:
+        id:
           type: string
-        skipped:
-          type: boolean
-        children:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.ingest.request.RunList'
-    chef.automate.api.ingest.response.ProcessLivenessResponse:
+        after:
+          type: object
+        before:
+          type: object
+        duration:
+          type: string
+        delta:
+          type: string
+        cookbook_name:
+          type: string
+        cookbook_version:
+          type: string
+        status:
+          type: string
+        recipe_name:
+          type: string
+        ignore_failure:
+          type: object
+        conditional:
+          type: string
+        result:
+          type: string
+        error:
+          $ref: '#/components/schemas/chef.automate.api.ingest.request.Error'
+    chef.automate.api.ingest.response.ProcessChefRunResponse:
       type: object

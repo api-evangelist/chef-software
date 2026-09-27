@@ -498,80 +498,6 @@ paths:
       - Service Groups
 components:
   schemas:
-    chef.automate.api.applications.DisconnectedServicesReq:
-      type: object
-      properties:
-        threshold_seconds:
-          type: integer
-          format: int32
-          description: Threshold for marking services disconnected in seconds.
-      description: Request message for GetDisconnectedServices.
-    chef.automate.api.applications.ServicesRes:
-      type: object
-      properties:
-        services:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.applications.Service'
-          description: List of services.
-      description: Response message for GetServices.
-    grpc.gateway.runtime.Error:
-      type: object
-      properties:
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/google.protobuf.Any'
-    chef.automate.api.applications.HealthCounts:
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int32
-        ok:
-          type: integer
-          format: int32
-        warning:
-          type: integer
-          format: int32
-        critical:
-          type: integer
-          format: int32
-        unknown:
-          type: integer
-          format: int32
-        disconnected:
-          type: integer
-          format: int32
-      description: Combined count values from the health status and disconnected status reports.
-    chef.automate.api.applications.HealthCheckResult:
-      type: object
-      properties:
-        stdout:
-          type: string
-        stderr:
-          type: string
-        exit_status:
-          type: integer
-          format: int32
-      title: 'HealthCheckResult aggregates the stdout output, stderr output and process
-
-        exit status of a habitat health check'
-    chef.automate.api.applications.DeleteServicesByIDReq:
-      type: object
-      properties:
-        ids:
-          type: array
-          items:
-            type: string
-          description: List of the database IDs of the services to be deleted.
     chef.automate.api.applications.ServicesBySGRes:
       type: object
       properties:
@@ -587,6 +513,44 @@ components:
           $ref: '#/components/schemas/chef.automate.api.applications.HealthCounts'
           description: Intentionally blank.
       description: Response message for GetServicesBySG.
+    grpc.gateway.runtime.Error:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/google.protobuf.Any'
+    chef.automate.api.applications.HealthStatus:
+      type: string
+      enum:
+      - OK
+      - WARNING
+      - CRITICAL
+      - UNKNOWN
+      - NONE
+      default: OK
+      description: 'The HealthStatus enumerable matches the Chef Habitat implementation for health-check status:
+
+        => https://www.habitat.sh/docs/reference/#health-check
+
+        For a health status within a service group.
+
+        *critical* means that one or more services are in critical condition.
+
+        *warning* means that one or more services have a warning, but none are in critical condition.
+
+        *unknown* means that one or more services have not responded, but all of the remaining nodes responded to the health check as "OK".
+
+        *OK* means that all of the services are OK and all have responded to the health check.
+
+        *none* means that there is no health check information.'
     chef.automate.api.applications.ServiceGroups:
       type: object
       properties:
@@ -596,26 +560,6 @@ components:
             $ref: '#/components/schemas/chef.automate.api.applications.ServiceGroup'
           description: List of service groups.
       description: List of service groups.
-    chef.automate.api.applications.ServicesStatsRes:
-      type: object
-      properties:
-        total_service_groups:
-          type: integer
-          format: int32
-          description: Total number of service groups reporting to Chef Automate.
-        total_services:
-          type: integer
-          format: int32
-          description: Total number of services reporting to Chef Automate, counts both connected and disconnected services.
-        total_supervisors:
-          type: integer
-          format: int32
-          description: Total number of supervisors reporting to Chef Automate.
-        total_deployments:
-          type: integer
-          format: int32
-          description: Total number of deployments reporting to Chef Automate.
-      description: Response message for ServicesStats.
     chef.automate.api.applications.ServiceGroup:
       type: object
       properties:
@@ -660,50 +604,6 @@ components:
       description: 'A service group message is the representation of an individual service group that
 
         is internally generated by aggregating all of its services.'
-    chef.automate.api.applications.ServicesDistinctValuesRes:
-      type: object
-      properties:
-        values:
-          type: array
-          items:
-            type: string
-          description: List of distinct values fitting query_fragment and filters.
-      description: Response message for GetServicesDistinctValues.
-    google.protobuf.Any:
-      type: object
-      properties:
-        type_url:
-          type: string
-          description: "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
-        value:
-          type: string
-          format: byte
-          description: Must be a valid serialized protocol buffer of the above specified type.
-      description: "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(&foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\n Example 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\n Example 4: Pack and unpack a message in Go\n\n     foo := &pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := &pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n====\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": <string>,\n      \"lastName\": <string>\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
-    chef.automate.api.applications.HealthStatus:
-      type: string
-      enum:
-      - OK
-      - WARNING
-      - CRITICAL
-      - UNKNOWN
-      - NONE
-      default: OK
-      description: 'The HealthStatus enumerable matches the Chef Habitat implementation for health-check status:
-
-        => https://www.habitat.sh/docs/reference/#health-check
-
-        For a health status within a service group.
-
-        *critical* means that one or more services are in critical condition.
-
-        *warning* means that one or more services have a warning, but none are in critical condition.
-
-        *unknown* means that one or more services have not responded, but all of the remaining nodes responded to the health check as "OK".
-
-        *OK* means that all of the services are OK and all have responded to the health check.
-
-        *none* means that there is no health check information.'
     chef.automate.api.applications.Service:
       type: object
       properties:
@@ -767,3 +667,103 @@ components:
         id:
           type: string
           title: Internal ID
+    chef.automate.api.applications.HealthCounts:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+        ok:
+          type: integer
+          format: int32
+        warning:
+          type: integer
+          format: int32
+        critical:
+          type: integer
+          format: int32
+        unknown:
+          type: integer
+          format: int32
+        disconnected:
+          type: integer
+          format: int32
+      description: Combined count values from the health status and disconnected status reports.
+    google.protobuf.Any:
+      type: object
+      properties:
+        type_url:
+          type: string
+          description: "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+        value:
+          type: string
+          format: byte
+          description: Must be a valid serialized protocol buffer of the above specified type.
+      description: "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(&foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\n Example 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\n Example 4: Pack and unpack a message in Go\n\n     foo := &pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := &pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n====\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": <string>,\n      \"lastName\": <string>\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
+    chef.automate.api.applications.HealthCheckResult:
+      type: object
+      properties:
+        stdout:
+          type: string
+        stderr:
+          type: string
+        exit_status:
+          type: integer
+          format: int32
+      title: 'HealthCheckResult aggregates the stdout output, stderr output and process
+
+        exit status of a habitat health check'
+    chef.automate.api.applications.ServicesDistinctValuesRes:
+      type: object
+      properties:
+        values:
+          type: array
+          items:
+            type: string
+          description: List of distinct values fitting query_fragment and filters.
+      description: Response message for GetServicesDistinctValues.
+    chef.automate.api.applications.DisconnectedServicesReq:
+      type: object
+      properties:
+        threshold_seconds:
+          type: integer
+          format: int32
+          description: Threshold for marking services disconnected in seconds.
+      description: Request message for GetDisconnectedServices.
+    chef.automate.api.applications.DeleteServicesByIDReq:
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+          description: List of the database IDs of the services to be deleted.
+    chef.automate.api.applications.ServicesRes:
+      type: object
+      properties:
+        services:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.applications.Service'
+          description: List of services.
+      description: Response message for GetServices.
+    chef.automate.api.applications.ServicesStatsRes:
+      type: object
+      properties:
+        total_service_groups:
+          type: integer
+          format: int32
+          description: Total number of service groups reporting to Chef Automate.
+        total_services:
+          type: integer
+          format: int32
+          description: Total number of services reporting to Chef Automate, counts both connected and disconnected services.
+        total_supervisors:
+          type: integer
+          format: int32
+          description: Total number of supervisors reporting to Chef Automate.
+        total_deployments:
+          type: integer
+          format: int32
+          description: Total number of deployments reporting to Chef Automate.
+      description: Response message for ServicesStats.

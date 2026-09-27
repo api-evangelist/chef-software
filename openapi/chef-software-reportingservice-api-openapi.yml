@@ -693,287 +693,6 @@ paths:
         required: true
 components:
   schemas:
-    chef.automate.api.compliance.reporting.v1.RemovedResultsCounts:
-      type: object
-      properties:
-        failed:
-          type: integer
-          format: int32
-          title: The number of results with status of `failed` that have been trimmed (removed) from a control
-        skipped:
-          type: integer
-          format: int32
-          title: The number of results with status of `skipped` that have been trimmed (removed) from a control
-        passed:
-          type: integer
-          format: int32
-          title: The number of results with status of `passed` that have been trimmed (removed) from a control
-    chef.automate.api.compliance.reporting.v1.Node:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The node ID.
-        name:
-          type: string
-          description: The name assigned to the node.
-        platform:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Platform'
-          description: Intentionally blank.
-        environment:
-          type: string
-          description: The environment assigned to the node.
-        latest_report:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.LatestReportSummary'
-          description: A summary of the information contained in the latest report for this node.
-        tags:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Kv'
-          description: The tags assigned to this node.
-        profiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ProfileMeta'
-          description: A minimal representation of the compliance profiles run against the node.
-    chef.automate.api.compliance.reporting.v1.SuggestionRequest:
-      type: object
-      properties:
-        type:
-          type: string
-          description: The type of resource to get suggestions for.
-        text:
-          type: string
-          description: The term to use to match resources on.
-        size:
-          type: integer
-          format: int32
-          description: The maximum number of suggestions to return.
-        filters:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ListFilter'
-          description: The criteria used to filter the suggestions returned.
-        type_key:
-          type: string
-          description: The key (e.g. control_tag_key) to use for the type search.
-    chef.automate.api.compliance.reporting.v1.NodeHeaderInfo:
-      type: object
-      properties:
-        node_id:
-          type: string
-          description: The reporting node's unique ID.
-        node_name:
-          type: string
-          description: The reporting node name.
-        end_time:
-          type: string
-          format: date-time
-          description: The time that the report was completed.
-        status:
-          type: string
-          description: The status of the run the report was made from.
-        environment:
-          type: string
-          description: The environment of the node making the report.
-        version:
-          type: string
-          description: The version of the report.
-        platform:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Platform'
-          description: Intentionally blank.
-        profiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.NodeHeaderProfileInfo'
-          description: The profiles run as part of this report.
-        roles:
-          type: array
-          items:
-            type: string
-          description: The Roles associated with the node.
-        status_message:
-          type: string
-          description: The status message of the report.
-    chef.automate.api.compliance.reporting.v1.Platform:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the node's operating system.
-        release:
-          type: string
-          description: The version of the node's operating system.
-        full:
-          type: string
-          description: The combined name and version of the node's operating system.
-      description: The name and version of the node's operating system.
-    chef.automate.api.compliance.reporting.v1.OrigWaiverData:
-      type: object
-      properties:
-        expiration_date:
-          type: string
-        justification:
-          type: string
-        run:
-          type: boolean
-        skipped_due_to_waiver:
-          type: boolean
-        message:
-          type: string
-      title: 'OrigWaiverData as it originally came from the InSpec report
-
-        Will supplement this with waived_str to make consumption easier'
-    chef.automate.api.compliance.reporting.v1.ReportData:
-      type: object
-      properties:
-        id:
-          type: string
-          title: The report run_uuid
-        end_time:
-          type: string
-          format: date-time
-          title: The time in UTC that the scan was completed
-    chef.automate.api.compliance.reporting.v1.ProfileCounts:
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int32
-          description: The total number of nodes matching the filters.
-        failed:
-          type: integer
-          format: int32
-          description: The total number of failed nodes matching the filters.
-        skipped:
-          type: integer
-          format: int32
-          description: The total number of skipped nodes matching the filters.
-        passed:
-          type: integer
-          format: int32
-          description: The total number of passing nodes matching the filters.
-        waived:
-          type: integer
-          format: int32
-          description: The total number of waived nodes matching the filters.
-      description: Stats on the statuses of nodes matching the filters.
-    chef.automate.api.compliance.reporting.v1.Support:
-      type: object
-      properties:
-        os_name:
-          type: string
-          description: The name of the supported operating system.
-        os_family:
-          type: string
-          description: The wider category of supported platform (e.g., linux, windows).
-        release:
-          type: string
-          description: The specific operating system release number this profile supports.
-        inspec_version:
-          type: string
-          description: The supported inspec version for this profile.
-        platform:
-          type: string
-          description: The platform name and version combined.
-    chef.automate.api.compliance.reporting.v1.CustomReportResponse:
-      type: object
-      properties:
-        acknowledgement_id:
-          type: string
-    chef.automate.api.compliance.reporting.v1.WaiverData:
-      type: object
-      properties:
-        waived_str:
-          type: string
-          description: 'The waived state of the control item. Possible values: `yes`, `yes_run`, `no`, `no_expired`.'
-        expiration_date:
-          type: string
-          description: The expiration date for the waiver. After this date, the control is no longer waived.
-        justification:
-          type: string
-          description: The reason for the waiver.
-        waiver_summary:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlSummary'
-          description: Intentionally blank.
-    google.protobuf.Any:
-      type: object
-      properties:
-        type_url:
-          type: string
-          description: "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
-        value:
-          type: string
-          format: byte
-          description: Must be a valid serialized protocol buffer of the above specified type.
-      description: "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(&foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\n Example 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\n Example 4: Pack and unpack a message in Go\n\n     foo := &pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := &pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n====\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": <string>,\n      \"lastName\": <string>\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
-    chef.automate.api.compliance.reporting.v1.ReportIds:
-      type: object
-      properties:
-        ids:
-          type: array
-          items:
-            type: string
-          description: The list of unique report identifiers found matching the query.
-        report_data:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ReportData'
-          description: The list of unique report identifiers with their respective end_time, found matching the query.
-    chef.automate.api.compliance.reporting.v1.ProfileMeta:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the profile.
-        version:
-          type: string
-          description: The profile version.
-        id:
-          type: string
-          description: The profile unique ID.
-        status:
-          type: string
-          description: The status of the profile run against the node.
-        full:
-          type: string
-          description: The combined name and version of the profile.
-    chef.automate.api.compliance.reporting.v1.Failed:
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int32
-          description: The total number of failed controls.
-        minor:
-          type: integer
-          format: int32
-          description: The number of failed controls with minor severity.
-        major:
-          type: integer
-          format: int32
-          description: The number of failed controls with major severity.
-        critical:
-          type: integer
-          format: int32
-          description: The number of failed controls with critical severity.
-      description: Stats of failed controls.
-    chef.automate.api.compliance.reporting.v1.Option:
-      type: object
-      properties:
-        description:
-          type: string
-          description: The description of the attribute.
-        default:
-          type: string
-          description: The default value of the attribute.
-    chef.automate.api.compliance.reporting.v1.Query.OrderType:
-      type: string
-      enum:
-      - ASC
-      - DESC
-      default: ASC
-      description: Sort the results in ascending or descending order.
     chef.automate.api.compliance.reporting.v1.Suggestion:
       type: object
       properties:
@@ -990,41 +709,36 @@ components:
         version:
           type: string
           description: The version of the suggestion.
-    chef.automate.api.compliance.reporting.v1.ReportsSummaryLevelOne:
+    chef.automate.api.compliance.reporting.v1.Query.OrderType:
+      type: string
+      enum:
+      - ASC
+      - DESC
+      default: ASC
+      description: Sort the results in ascending or descending order.
+    chef.automate.api.compliance.reporting.v1.Kv:
       type: object
       properties:
-        reports:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ReportSummaryLevelOne'
-          description: Paginated results of summary level reports matching the filters.
-        total:
+        key:
+          type: string
+          description: The key of the tag.
+        value:
+          type: string
+          description: The value of the tag.
+    grpc.gateway.runtime.Error:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
           type: integer
           format: int32
-          description: Total number of reports matching the filters.
-      title: ReportsSummaryLevelOne used for ListReports call
-    chef.automate.api.compliance.reporting.v1.ControlElements:
-      type: object
-      properties:
-        control_elements:
+        message:
+          type: string
+        details:
           type: array
           items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlElement'
-          title: List of control elements
-    chef.automate.api.compliance.reporting.v1.Group:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The name of the file the controls are defined in.
-        title:
-          type: string
-          description: The title of control group.
-        controls:
-          type: array
-          items:
-            type: string
-          description: The ids of the controls defined in this file.
+            $ref: '#/components/schemas/google.protobuf.Any'
     chef.automate.api.compliance.reporting.v1.Dependency:
       type: object
       properties:
@@ -1067,76 +781,6 @@ components:
         skip_message:
           type: string
           description: The reason this profile was skipped in the generated report, if any.
-    chef.automate.api.compliance.reporting.v1.ControlElement:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The control's unique ID.
-        title:
-          type: string
-          description: The control's compact description.
-        profile:
-          type: string
-          description: Profile name.
-        impact:
-          type: number
-          format: float
-          description: The severity of the control.
-        results:
-          type: integer
-          format: int32
-          description: The total number of results.
-        status:
-          type: string
-          title: The control's status
-        profile_id:
-          type: string
-          title: Profile id
-    chef.automate.api.compliance.reporting.v1.ReportSummaryLevelOne:
-      type: object
-      properties:
-        id:
-          type: string
-          description: A unique report identifier.
-        node_id:
-          type: string
-          description: The reporting node's unique ID.
-        node_name:
-          type: string
-          description: The reporting node name.
-        end_time:
-          type: string
-          format: date-time
-          description: The time that the report was completed.
-        status:
-          type: string
-          description: The status of the run the report was made from.
-        controls:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlSummary'
-          description: Intentionally blank.
-        ipaddress:
-          type: string
-          description: The reporting node IP address.
-    chef.automate.api.compliance.reporting.v1.ProfileMin:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the profile.
-        title:
-          type: string
-          description: The profile title.
-        id:
-          type: string
-          description: The profile ID.
-        version:
-          type: string
-          description: The profile version.
-        status:
-          type: string
-          description: The aggregated status of the profile across the nodes it has been run on.
-      description: Minimal representation of a profile.
     chef.automate.api.compliance.reporting.v1.Statistics:
       type: object
       properties:
@@ -1145,226 +789,6 @@ components:
           format: float
           description: The duration of the report's generation time.
       description: Statistics of the report's run.
-    chef.automate.api.compliance.reporting.v1.ControlSummary:
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int32
-          description: The total number of controls in the report.
-        passed:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Total'
-          description: Intentionally blank.
-        skipped:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Total'
-          description: Intentionally blank.
-        failed:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Failed'
-          description: Intentionally blank.
-        waived:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Total'
-          description: Intentionally blank.
-      description: A minimal representation of the statuses of the controls in the report.
-    chef.automate.api.compliance.reporting.v1.SourceLocation:
-      type: object
-      properties:
-        ref:
-          type: string
-          description: The source code file the control is defined in.
-        line:
-          type: integer
-          format: int32
-          description: The line number the control is defined on.
-    chef.automate.api.compliance.reporting.v1.Kv:
-      type: object
-      properties:
-        key:
-          type: string
-          description: The key of the tag.
-        value:
-          type: string
-          description: The value of the tag.
-    chef.automate.api.compliance.reporting.v1.Total:
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int32
-          description: The total number of controls.
-      description: A subtotal of controls.
-    grpc.gateway.runtime.Error:
-      type: object
-      properties:
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/google.protobuf.Any'
-    chef.automate.api.compliance.reporting.v1.Query:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier.
-        type:
-          type: string
-          description: File type, either JSON or CSV.
-        filters:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ListFilter'
-          description: Filters applied to the report results.
-        order:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Query.OrderType'
-        sort:
-          type: string
-          description: Sort the list of results by a field.
-        page:
-          type: integer
-          format: int32
-          description: The offset for paginating requests. An offset defines a place in the results in order to show the next page of the results.
-        per_page:
-          type: integer
-          format: int32
-          description: The number of results on each paginated request page.
-    chef.automate.api.compliance.reporting.v1.Attribute:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the attribute.
-        options:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Option'
-          description: The options defined for the attribute.
-    chef.automate.api.compliance.reporting.v1.Control:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique ID of this control.
-        code:
-          type: string
-          description: The full ruby code of the control defined in the profile.
-        desc:
-          type: string
-          description: The full description of the control.
-        impact:
-          type: number
-          format: float
-          description: The severity of the control.
-        title:
-          type: string
-          description: The compact description of the control.
-        source_location:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.SourceLocation'
-          description: Intentionally blank.
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Result'
-          description: The results of running all tests defined in the control against the node.
-        refs:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Ref'
-          description: External supporting documents for the control.
-        tags:
-          type: string
-          description: Metadata defined on the control in key-value format.
-        waived_str:
-          type: string
-          title: Indicates if the control has been waived or not
-        waiver_data:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.OrigWaiverData'
-          title: Additional details for waived controls
-        removed_results_counts:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.RemovedResultsCounts'
-          description: When the control results are removed to reduce the size of the report, this summarize the status of the trimmed results.
-    chef.automate.api.compliance.reporting.v1.LatestReportSummary:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The latest report ID.
-        end_time:
-          type: string
-          format: date-time
-          description: The time the report was submitted at.
-        status:
-          type: string
-          description: The status of the run the report was made from.
-        controls:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlSummary'
-          description: Intentionally blank.
-      description: A summary of the latest report for this node.
-    chef.automate.api.compliance.reporting.v1.NodeHeaderProfileInfo:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the profile. Must be unique.
-        status:
-          type: string
-          description: The status of the profile in the generated report.
-        status_message:
-          type: string
-          description: A message to detail the reason why a profile is skipped or failed in the generated report.
-    chef.automate.api.compliance.reporting.v1.ProfileMins:
-      type: object
-      properties:
-        profiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ProfileMin'
-          description: Minimal representations of the profiles matching the filters.
-        counts:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ProfileCounts'
-          description: Intentionally blank.
-    chef.automate.api.compliance.reporting.v1.ControlItem:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The control's unique ID.
-        title:
-          type: string
-          description: The control's compact description.
-        profile:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ProfileMin'
-          description: Intentionally blank.
-        impact:
-          type: number
-          format: float
-          description: The severity of the control.
-        end_time:
-          type: string
-          format: date-time
-          description: The time the report using the control was submitted at.
-        control_summary:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlSummary'
-          description: Intentionally blank.
-        waivers:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.WaiverData'
-          description: A list of waivers for the nodes affected by this control.
-    chef.automate.api.compliance.reporting.v1.ControlItems:
-      type: object
-      properties:
-        control_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlItem'
-          description: The paginated results of controls matching the filters.
-        control_summary_totals:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlSummary'
-          title: The summary totals for this list of control items
     chef.automate.api.compliance.reporting.v1.Nodes:
       type: object
       properties:
@@ -1393,6 +817,291 @@ components:
           type: integer
           format: int32
           description: The total number of waived nodes matching the filters.
+    chef.automate.api.compliance.reporting.v1.ReportsSummaryLevelOne:
+      type: object
+      properties:
+        reports:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ReportSummaryLevelOne'
+          description: Paginated results of summary level reports matching the filters.
+        total:
+          type: integer
+          format: int32
+          description: Total number of reports matching the filters.
+      title: ReportsSummaryLevelOne used for ListReports call
+    chef.automate.api.compliance.reporting.v1.ProfileCounts:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          description: The total number of nodes matching the filters.
+        failed:
+          type: integer
+          format: int32
+          description: The total number of failed nodes matching the filters.
+        skipped:
+          type: integer
+          format: int32
+          description: The total number of skipped nodes matching the filters.
+        passed:
+          type: integer
+          format: int32
+          description: The total number of passing nodes matching the filters.
+        waived:
+          type: integer
+          format: int32
+          description: The total number of waived nodes matching the filters.
+      description: Stats on the statuses of nodes matching the filters.
+    chef.automate.api.compliance.reporting.v1.ControlItems:
+      type: object
+      properties:
+        control_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlItem'
+          description: The paginated results of controls matching the filters.
+        control_summary_totals:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlSummary'
+          title: The summary totals for this list of control items
+    chef.automate.api.compliance.reporting.v1.Attribute:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the attribute.
+        options:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Option'
+          description: The options defined for the attribute.
+    chef.automate.api.compliance.reporting.v1.ListFilter:
+      type: object
+      properties:
+        values:
+          type: array
+          items:
+            type: string
+          description: Filters applied to the list.
+        type:
+          type: string
+          description: The field to filter on.
+    chef.automate.api.compliance.reporting.v1.NodeHeaderProfileInfo:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the profile. Must be unique.
+        status:
+          type: string
+          description: The status of the profile in the generated report.
+        status_message:
+          type: string
+          description: A message to detail the reason why a profile is skipped or failed in the generated report.
+    chef.automate.api.compliance.reporting.v1.Report:
+      type: object
+      properties:
+        id:
+          type: string
+          description: A unique report identifier.
+        node_id:
+          type: string
+          description: The reporting node's unique ID.
+        node_name:
+          type: string
+          description: The reporting node name.
+        end_time:
+          type: string
+          format: date-time
+          description: The time that the report was completed.
+        status:
+          type: string
+          description: The status of the run the report was made from.
+        controls:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlSummary'
+          description: Intentionally blank.
+        environment:
+          type: string
+          description: The environment of the node making the report.
+        version:
+          type: string
+          description: The version of the report.
+        platform:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Platform'
+          description: Intentionally blank.
+        statistics:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Statistics'
+          description: Intentionally blank.
+        profiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Profile'
+          description: The profiles run as part of this report.
+        job_id:
+          type: string
+          description: The compliance scan job ID associated with the report.
+        ipaddress:
+          type: string
+          description: The reporting node IP address.
+        fqdn:
+          type: string
+          description: The FQDN (fully qualified domain name) of the node making the report.
+        chef_server:
+          type: string
+          description: The Chef Infra Server that manages the node making the report.
+        chef_organization:
+          type: string
+          description: The Organization the node belongs to.
+        roles:
+          type: array
+          items:
+            type: string
+          description: The Roles associated with the node.
+        chef_tags:
+          type: array
+          items:
+            type: string
+          description: The Chef Tags associated with the node.
+        projects:
+          type: array
+          items:
+            type: string
+          description: The projects the node is assigned to.
+        status_message:
+          type: string
+          description: The status message of the report.
+    chef.automate.api.compliance.reporting.v1.Suggestions:
+      type: object
+      properties:
+        suggestions:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Suggestion'
+          description: The list of returned suggestions.
+    chef.automate.api.compliance.reporting.v1.SuggestionRequest:
+      type: object
+      properties:
+        type:
+          type: string
+          description: The type of resource to get suggestions for.
+        text:
+          type: string
+          description: The term to use to match resources on.
+        size:
+          type: integer
+          format: int32
+          description: The maximum number of suggestions to return.
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ListFilter'
+          description: The criteria used to filter the suggestions returned.
+        type_key:
+          type: string
+          description: The key (e.g. control_tag_key) to use for the type search.
+    chef.automate.api.compliance.reporting.v1.ProfileMin:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the profile.
+        title:
+          type: string
+          description: The profile title.
+        id:
+          type: string
+          description: The profile ID.
+        version:
+          type: string
+          description: The profile version.
+        status:
+          type: string
+          description: The aggregated status of the profile across the nodes it has been run on.
+      description: Minimal representation of a profile.
+    chef.automate.api.compliance.reporting.v1.Ref:
+      type: object
+      properties:
+        url:
+          type: string
+          description: The external document URL.
+        ref:
+          type: string
+          description: A description of the external document.
+    chef.automate.api.compliance.reporting.v1.Platform:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the node's operating system.
+        release:
+          type: string
+          description: The version of the node's operating system.
+        full:
+          type: string
+          description: The combined name and version of the node's operating system.
+      description: The name and version of the node's operating system.
+    chef.automate.api.compliance.reporting.v1.Failed:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          description: The total number of failed controls.
+        minor:
+          type: integer
+          format: int32
+          description: The number of failed controls with minor severity.
+        major:
+          type: integer
+          format: int32
+          description: The number of failed controls with major severity.
+        critical:
+          type: integer
+          format: int32
+          description: The number of failed controls with critical severity.
+      description: Stats of failed controls.
+    chef.automate.api.compliance.reporting.v1.RemovedResultsCounts:
+      type: object
+      properties:
+        failed:
+          type: integer
+          format: int32
+          title: The number of results with status of `failed` that have been trimmed (removed) from a control
+        skipped:
+          type: integer
+          format: int32
+          title: The number of results with status of `skipped` that have been trimmed (removed) from a control
+        passed:
+          type: integer
+          format: int32
+          title: The number of results with status of `passed` that have been trimmed (removed) from a control
+    chef.automate.api.compliance.reporting.v1.ProfileMeta:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the profile.
+        version:
+          type: string
+          description: The profile version.
+        id:
+          type: string
+          description: The profile unique ID.
+        status:
+          type: string
+          description: The status of the profile run against the node.
+        full:
+          type: string
+          description: The combined name and version of the profile.
+    chef.automate.api.compliance.reporting.v1.ReportData:
+      type: object
+      properties:
+        id:
+          type: string
+          title: The report run_uuid
+        end_time:
+          type: string
+          format: date-time
+          title: The time in UTC that the scan was completed
     chef.automate.api.compliance.reporting.v1.Profile:
       type: object
       properties:
@@ -1466,14 +1175,257 @@ components:
         status_message:
           type: string
           description: A message to detail the reason why a profile is skipped or failed in the generated report.
-    chef.automate.api.compliance.reporting.v1.Suggestions:
+    chef.automate.api.compliance.reporting.v1.Option:
       type: object
       properties:
-        suggestions:
+        description:
+          type: string
+          description: The description of the attribute.
+        default:
+          type: string
+          description: The default value of the attribute.
+    chef.automate.api.compliance.reporting.v1.ControlItemRequest:
+      type: object
+      properties:
+        text:
+          type: string
+          description: The term to use to match resources on.
+        size:
+          type: integer
+          format: int32
+          description: The maximum number of controls to return (Default 100).
+        page_number:
+          type: integer
+          format: int32
+          title: The offset for paginating requests. An offset defines a place in the results in order to show the next page of the results. (Default 1)
+        filters:
           type: array
           items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Suggestion'
-          description: The list of returned suggestions.
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ListFilter'
+          description: The criteria used to filter the controls returned.
+    chef.automate.api.compliance.reporting.v1.NodeHeaderInfo:
+      type: object
+      properties:
+        node_id:
+          type: string
+          description: The reporting node's unique ID.
+        node_name:
+          type: string
+          description: The reporting node name.
+        end_time:
+          type: string
+          format: date-time
+          description: The time that the report was completed.
+        status:
+          type: string
+          description: The status of the run the report was made from.
+        environment:
+          type: string
+          description: The environment of the node making the report.
+        version:
+          type: string
+          description: The version of the report.
+        platform:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Platform'
+          description: Intentionally blank.
+        profiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.NodeHeaderProfileInfo'
+          description: The profiles run as part of this report.
+        roles:
+          type: array
+          items:
+            type: string
+          description: The Roles associated with the node.
+        status_message:
+          type: string
+          description: The status message of the report.
+    chef.automate.api.compliance.reporting.v1.ControlSummary:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          description: The total number of controls in the report.
+        passed:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Total'
+          description: Intentionally blank.
+        skipped:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Total'
+          description: Intentionally blank.
+        failed:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Failed'
+          description: Intentionally blank.
+        waived:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Total'
+          description: Intentionally blank.
+      description: A minimal representation of the statuses of the controls in the report.
+    google.protobuf.Any:
+      type: object
+      properties:
+        type_url:
+          type: string
+          description: "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+        value:
+          type: string
+          format: byte
+          description: Must be a valid serialized protocol buffer of the above specified type.
+      description: "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(&foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\n Example 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\n Example 4: Pack and unpack a message in Go\n\n     foo := &pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := &pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n====\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": <string>,\n      \"lastName\": <string>\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
+    chef.automate.api.compliance.reporting.v1.ReportSummaryLevelOne:
+      type: object
+      properties:
+        id:
+          type: string
+          description: A unique report identifier.
+        node_id:
+          type: string
+          description: The reporting node's unique ID.
+        node_name:
+          type: string
+          description: The reporting node name.
+        end_time:
+          type: string
+          format: date-time
+          description: The time that the report was completed.
+        status:
+          type: string
+          description: The status of the run the report was made from.
+        controls:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlSummary'
+          description: Intentionally blank.
+        ipaddress:
+          type: string
+          description: The reporting node IP address.
+    chef.automate.api.compliance.reporting.v1.ControlElements:
+      type: object
+      properties:
+        control_elements:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlElement'
+          title: List of control elements
+    chef.automate.api.compliance.reporting.v1.Support:
+      type: object
+      properties:
+        os_name:
+          type: string
+          description: The name of the supported operating system.
+        os_family:
+          type: string
+          description: The wider category of supported platform (e.g., linux, windows).
+        release:
+          type: string
+          description: The specific operating system release number this profile supports.
+        inspec_version:
+          type: string
+          description: The supported inspec version for this profile.
+        platform:
+          type: string
+          description: The platform name and version combined.
+    chef.automate.api.compliance.reporting.v1.Node:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The node ID.
+        name:
+          type: string
+          description: The name assigned to the node.
+        platform:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Platform'
+          description: Intentionally blank.
+        environment:
+          type: string
+          description: The environment assigned to the node.
+        latest_report:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.LatestReportSummary'
+          description: A summary of the information contained in the latest report for this node.
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Kv'
+          description: The tags assigned to this node.
+        profiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ProfileMeta'
+          description: A minimal representation of the compliance profiles run against the node.
+    chef.automate.api.compliance.reporting.v1.ProfileMins:
+      type: object
+      properties:
+        profiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ProfileMin'
+          description: Minimal representations of the profiles matching the filters.
+        counts:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ProfileCounts'
+          description: Intentionally blank.
+    chef.automate.api.compliance.reporting.v1.Group:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The name of the file the controls are defined in.
+        title:
+          type: string
+          description: The title of control group.
+        controls:
+          type: array
+          items:
+            type: string
+          description: The ids of the controls defined in this file.
+    chef.automate.api.compliance.reporting.v1.WaiverData:
+      type: object
+      properties:
+        waived_str:
+          type: string
+          description: 'The waived state of the control item. Possible values: `yes`, `yes_run`, `no`, `no_expired`.'
+        expiration_date:
+          type: string
+          description: The expiration date for the waiver. After this date, the control is no longer waived.
+        justification:
+          type: string
+          description: The reason for the waiver.
+        waiver_summary:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlSummary'
+          description: Intentionally blank.
+    chef.automate.api.compliance.reporting.v1.Query:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier.
+        type:
+          type: string
+          description: File type, either JSON or CSV.
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ListFilter'
+          description: Filters applied to the report results.
+        order:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Query.OrderType'
+        sort:
+          type: string
+          description: Sort the list of results by a field.
+        page:
+          type: integer
+          format: int32
+          description: The offset for paginating requests. An offset defines a place in the results in order to show the next page of the results.
+        per_page:
+          type: integer
+          format: int32
+          description: The number of results on each paginated request page.
+    chef.automate.api.compliance.reporting.v1.Total:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          description: The total number of controls.
+      description: A subtotal of controls.
     chef.automate.api.compliance.reporting.v1.Result:
       type: object
       properties:
@@ -1496,114 +1448,162 @@ components:
         skip_message:
           type: string
           description: The reason the test was skipped, if any.
-    chef.automate.api.compliance.reporting.v1.ControlItemRequest:
+    chef.automate.api.compliance.reporting.v1.ReportIds:
       type: object
       properties:
-        text:
-          type: string
-          description: The term to use to match resources on.
-        size:
-          type: integer
-          format: int32
-          description: The maximum number of controls to return (Default 100).
-        page_number:
-          type: integer
-          format: int32
-          title: The offset for paginating requests. An offset defines a place in the results in order to show the next page of the results. (Default 1)
-        filters:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ListFilter'
-          description: The criteria used to filter the controls returned.
-    chef.automate.api.compliance.reporting.v1.Ref:
-      type: object
-      properties:
-        url:
-          type: string
-          description: The external document URL.
-        ref:
-          type: string
-          description: A description of the external document.
-    chef.automate.api.compliance.reporting.v1.ListFilter:
-      type: object
-      properties:
-        values:
+        ids:
           type: array
           items:
             type: string
-          description: Filters applied to the list.
-        type:
-          type: string
-          description: The field to filter on.
-    chef.automate.api.compliance.reporting.v1.Report:
+          description: The list of unique report identifiers found matching the query.
+        report_data:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ReportData'
+          description: The list of unique report identifiers with their respective end_time, found matching the query.
+    chef.automate.api.compliance.reporting.v1.Control:
       type: object
       properties:
         id:
           type: string
-          description: A unique report identifier.
-        node_id:
+          description: The unique ID of this control.
+        code:
           type: string
-          description: The reporting node's unique ID.
-        node_name:
+          description: The full ruby code of the control defined in the profile.
+        desc:
           type: string
-          description: The reporting node name.
+          description: The full description of the control.
+        impact:
+          type: number
+          format: float
+          description: The severity of the control.
+        title:
+          type: string
+          description: The compact description of the control.
+        source_location:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.SourceLocation'
+          description: Intentionally blank.
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Result'
+          description: The results of running all tests defined in the control against the node.
+        refs:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Ref'
+          description: External supporting documents for the control.
+        tags:
+          type: string
+          description: Metadata defined on the control in key-value format.
+        waived_str:
+          type: string
+          title: Indicates if the control has been waived or not
+        waiver_data:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.OrigWaiverData'
+          title: Additional details for waived controls
+        removed_results_counts:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.RemovedResultsCounts'
+          description: When the control results are removed to reduce the size of the report, this summarize the status of the trimmed results.
+    chef.automate.api.compliance.reporting.v1.OrigWaiverData:
+      type: object
+      properties:
+        expiration_date:
+          type: string
+        justification:
+          type: string
+        run:
+          type: boolean
+        skipped_due_to_waiver:
+          type: boolean
+        message:
+          type: string
+      title: 'OrigWaiverData as it originally came from the InSpec report
+
+        Will supplement this with waived_str to make consumption easier'
+    chef.automate.api.compliance.reporting.v1.SourceLocation:
+      type: object
+      properties:
+        ref:
+          type: string
+          description: The source code file the control is defined in.
+        line:
+          type: integer
+          format: int32
+          description: The line number the control is defined on.
+    chef.automate.api.compliance.reporting.v1.ControlItem:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The control's unique ID.
+        title:
+          type: string
+          description: The control's compact description.
+        profile:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ProfileMin'
+          description: Intentionally blank.
+        impact:
+          type: number
+          format: float
+          description: The severity of the control.
         end_time:
           type: string
           format: date-time
-          description: The time that the report was completed.
+          description: The time the report using the control was submitted at.
+        control_summary:
+          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlSummary'
+          description: Intentionally blank.
+        waivers:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.WaiverData'
+          description: A list of waivers for the nodes affected by this control.
+    chef.automate.api.compliance.reporting.v1.CustomReportResponse:
+      type: object
+      properties:
+        acknowledgement_id:
+          type: string
+    chef.automate.api.compliance.reporting.v1.ControlElement:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The control's unique ID.
+        title:
+          type: string
+          description: The control's compact description.
+        profile:
+          type: string
+          description: Profile name.
+        impact:
+          type: number
+          format: float
+          description: The severity of the control.
+        results:
+          type: integer
+          format: int32
+          description: The total number of results.
+        status:
+          type: string
+          title: The control's status
+        profile_id:
+          type: string
+          title: Profile id
+    chef.automate.api.compliance.reporting.v1.LatestReportSummary:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The latest report ID.
+        end_time:
+          type: string
+          format: date-time
+          description: The time the report was submitted at.
         status:
           type: string
           description: The status of the run the report was made from.
         controls:
           $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.ControlSummary'
           description: Intentionally blank.
-        environment:
-          type: string
-          description: The environment of the node making the report.
-        version:
-          type: string
-          description: The version of the report.
-        platform:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Platform'
-          description: Intentionally blank.
-        statistics:
-          $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Statistics'
-          description: Intentionally blank.
-        profiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.reporting.v1.Profile'
-          description: The profiles run as part of this report.
-        job_id:
-          type: string
-          description: The compliance scan job ID associated with the report.
-        ipaddress:
-          type: string
-          description: The reporting node IP address.
-        fqdn:
-          type: string
-          description: The FQDN (fully qualified domain name) of the node making the report.
-        chef_server:
-          type: string
-          description: The Chef Infra Server that manages the node making the report.
-        chef_organization:
-          type: string
-          description: The Organization the node belongs to.
-        roles:
-          type: array
-          items:
-            type: string
-          description: The Roles associated with the node.
-        chef_tags:
-          type: array
-          items:
-            type: string
-          description: The Chef Tags associated with the node.
-        projects:
-          type: array
-          items:
-            type: string
-          description: The projects the node is assigned to.
-        status_message:
-          type: string
-          description: The status message of the report.
+      description: A summary of the latest report for this node.

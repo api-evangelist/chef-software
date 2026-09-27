@@ -266,6 +266,24 @@ paths:
       - ProfilesService
 components:
   schemas:
+    chef.automate.api.compliance.profiles.v1.Support:
+      type: object
+      properties:
+        os_name:
+          type: string
+          description: OS name supported by the profile.
+        os_family:
+          type: string
+          description: OS family supported by the profile.
+        release:
+          type: string
+          description: OS release supported by the profile.
+        inspec_version:
+          type: string
+          description: Minimum InSpec version required for the profile.
+        platform:
+          type: string
+          description: Platform supported by the profile.
     chef.automate.api.compliance.profiles.v1.ListFilter:
       type: object
       properties:
@@ -277,6 +295,53 @@ components:
         type:
           type: string
           description: The field to filter on.
+    grpc.gateway.runtime.Error:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/google.protobuf.Any'
+    chef.automate.api.compliance.profiles.v1.Group:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        controls:
+          type: array
+          items:
+            type: string
+    chef.automate.api.compliance.profiles.v1.Result:
+      type: object
+      properties:
+        status:
+          type: string
+          description: Status of the test results (passed, failed, skipped).
+        code_desc:
+          type: string
+          description: The code (test) executed.
+        run_time:
+          type: number
+          format: float
+          description: The amount of time it took to execute the test.
+        start_time:
+          type: string
+          description: The time the test started.
+        message:
+          type: string
+          description: The failure message.
+        skip_message:
+          type: string
+          description: Reason for skipping the test.
     chef.automate.api.compliance.profiles.v1.Ref:
       type: object
       properties:
@@ -286,6 +351,50 @@ components:
         ref:
           type: string
           description: Ref for the control.
+    chef.automate.api.compliance.profiles.v1.Attribute:
+      type: object
+      properties:
+        name:
+          type: string
+        options:
+          $ref: '#/components/schemas/chef.automate.api.compliance.profiles.v1.Option'
+    chef.automate.api.compliance.profiles.v1.Control:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the control.
+        code:
+          type: string
+          description: The code (test) for the control.
+        desc:
+          type: string
+          description: The description of the control.
+        impact:
+          type: number
+          format: float
+          description: The impact of the control.
+        title:
+          type: string
+          description: The title of the control.
+        source_location:
+          $ref: '#/components/schemas/chef.automate.api.compliance.profiles.v1.SourceLocation'
+          description: Intentionally blank.
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.profiles.v1.Result'
+          description: The results of the control tests.
+        refs:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.profiles.v1.Ref'
+          description: The refs associated with the control.
+        tags:
+          type: object
+          additionalProperties:
+            type: string
+          description: The tags associated with the control.
     chef.automate.api.compliance.profiles.v1.Query:
       type: object
       properties:
@@ -317,46 +426,21 @@ components:
         version:
           type: string
           description: Version of the profile (as defined in `inspec.yml`).
-    chef.automate.api.compliance.profiles.v1.SourceLocation:
+    chef.automate.api.compliance.profiles.v1.Option:
       type: object
       properties:
-        ref:
+        description:
           type: string
-        line:
-          type: integer
-          format: int32
-    chef.automate.api.compliance.profiles.v1.Support:
+        default:
+          type: string
+    google.protobuf.Any:
       type: object
       properties:
-        os_name:
+        type_url:
           type: string
-          description: OS name supported by the profile.
-        os_family:
+        value:
           type: string
-          description: OS family supported by the profile.
-        release:
-          type: string
-          description: OS release supported by the profile.
-        inspec_version:
-          type: string
-          description: Minimum InSpec version required for the profile.
-        platform:
-          type: string
-          description: Platform supported by the profile.
-    grpc.gateway.runtime.Error:
-      type: object
-      properties:
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/google.protobuf.Any'
+          format: byte
     chef.automate.api.compliance.profiles.v1.Dependency:
       type: object
       properties:
@@ -405,20 +489,6 @@ components:
           type: integer
           format: int32
           description: Total count of profiles matching the query.
-    chef.automate.api.compliance.profiles.v1.Sha256:
-      type: object
-      properties:
-        sha256:
-          type: array
-          items:
-            type: string
-          description: An array of profile sha256 IDs.
-    chef.automate.api.compliance.profiles.v1.Query.OrderType:
-      type: string
-      enum:
-      - ASC
-      - DESC
-      default: ASC
     chef.automate.api.compliance.profiles.v1.Missing:
       type: object
       properties:
@@ -427,87 +497,6 @@ components:
           items:
             type: string
           description: An array of profile sha256 IDs that are missing from the backend metadata store.
-    chef.automate.api.compliance.profiles.v1.Result:
-      type: object
-      properties:
-        status:
-          type: string
-          description: Status of the test results (passed, failed, skipped).
-        code_desc:
-          type: string
-          description: The code (test) executed.
-        run_time:
-          type: number
-          format: float
-          description: The amount of time it took to execute the test.
-        start_time:
-          type: string
-          description: The time the test started.
-        message:
-          type: string
-          description: The failure message.
-        skip_message:
-          type: string
-          description: Reason for skipping the test.
-    chef.automate.api.compliance.profiles.v1.Control:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID of the control.
-        code:
-          type: string
-          description: The code (test) for the control.
-        desc:
-          type: string
-          description: The description of the control.
-        impact:
-          type: number
-          format: float
-          description: The impact of the control.
-        title:
-          type: string
-          description: The title of the control.
-        source_location:
-          $ref: '#/components/schemas/chef.automate.api.compliance.profiles.v1.SourceLocation'
-          description: Intentionally blank.
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.profiles.v1.Result'
-          description: The results of the control tests.
-        refs:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.profiles.v1.Ref'
-          description: The refs associated with the control.
-        tags:
-          type: object
-          additionalProperties:
-            type: string
-          description: The tags associated with the control.
-    chef.automate.api.compliance.profiles.v1.Option:
-      type: object
-      properties:
-        description:
-          type: string
-        default:
-          type: string
-    chef.automate.api.compliance.profiles.v1.Attribute:
-      type: object
-      properties:
-        name:
-          type: string
-        options:
-          $ref: '#/components/schemas/chef.automate.api.compliance.profiles.v1.Option'
-    google.protobuf.Any:
-      type: object
-      properties:
-        type_url:
-          type: string
-        value:
-          type: string
-          format: byte
     chef.automate.api.compliance.profiles.v1.Profile:
       type: object
       properties:
@@ -568,14 +557,25 @@ components:
         latest_version:
           type: string
           description: The latest version of the profile.
-    chef.automate.api.compliance.profiles.v1.Group:
+    chef.automate.api.compliance.profiles.v1.Query.OrderType:
+      type: string
+      enum:
+      - ASC
+      - DESC
+      default: ASC
+    chef.automate.api.compliance.profiles.v1.Sha256:
       type: object
       properties:
-        id:
-          type: string
-        title:
-          type: string
-        controls:
+        sha256:
           type: array
           items:
             type: string
+          description: An array of profile sha256 IDs.
+    chef.automate.api.compliance.profiles.v1.SourceLocation:
+      type: object
+      properties:
+        ref:
+          type: string
+        line:
+          type: integer
+          format: int32

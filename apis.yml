@@ -205,7 +205,7 @@ apis:
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
 - aid: chef-software:chef-software-hidden-api
-  name: Chef Software hidden API
+  name: Chef Software Hidden API
   description: The hidden API from Chef Software — 5 operation(s) for hidden.
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
@@ -275,7 +275,7 @@ apis:
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
 - aid: chef-software:chef-software-policies-api
-  name: Chef Software policies API
+  name: Chef Software Policies API
   description: The policies API from Chef Software — 6 operation(s) for policies.
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
@@ -305,7 +305,7 @@ apis:
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
 - aid: chef-software:chef-software-projects-api
-  name: Chef Software projects API
+  name: Chef Software Projects API
   description: The projects API from Chef Software — 2 operation(s) for projects.
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
@@ -350,7 +350,7 @@ apis:
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
 - aid: chef-software:chef-software-retention-api
-  name: Chef Software retention API
+  name: Chef Software Retention API
   description: The retention API from Chef Software — 4 operation(s) for retention.
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
@@ -366,7 +366,7 @@ apis:
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
 - aid: chef-software:chef-software-roles-api
-  name: Chef Software roles API
+  name: Chef Software Roles API
   description: The roles API from Chef Software — 2 operation(s) for roles.
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
@@ -382,7 +382,7 @@ apis:
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
 - aid: chef-software:chef-software-rules-api
-  name: Chef Software rules API
+  name: Chef Software Rules API
   description: The rules API from Chef Software — 4 operation(s) for rules.
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
@@ -412,7 +412,7 @@ apis:
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
 - aid: chef-software:chef-software-service-groups-api
-  name: Chef Software service_groups API
+  name: Chef Software Service Groups API
   description: The service_groups API from Chef Software — 9 operation(s) for service_groups.
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
@@ -442,7 +442,7 @@ apis:
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
 - aid: chef-software:chef-software-teams-api
-  name: Chef Software teams API
+  name: Chef Software Teams API
   description: The teams API from Chef Software — 6 operation(s) for teams.
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
@@ -458,7 +458,7 @@ apis:
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
 - aid: chef-software:chef-software-tokens-api
-  name: Chef Software tokens API
+  name: Chef Software Tokens API
   description: The tokens API from Chef Software — 2 operation(s) for tokens.
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0
@@ -474,7 +474,7 @@ apis:
   - type: Authentication
     url: https://docs.chef.io/automate/api_tokens/
 - aid: chef-software:chef-software-users-api
-  name: Chef Software users API
+  name: Chef Software Users API
   description: The users API from Chef Software — 3 operation(s) for users.
   humanURL: https://docs.chef.io/automate/api/
   baseURL: https://automate.chef.io/api/v0

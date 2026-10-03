@@ -36,6 +36,20 @@ paths:
       - ReportManagerService
 components:
   schemas:
+    grpc.gateway.runtime.Error:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/google.protobuf.Any'
     chef.automate.api.report_manager.DownloadRequestResponse:
       type: object
       properties:
@@ -66,20 +80,6 @@ components:
         value:
           type: string
           format: byte
-    grpc.gateway.runtime.Error:
-      type: object
-      properties:
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/google.protobuf.Any'
     chef.automate.api.report_manager.ListDownloadReportRequestsResponse:
       type: object
       properties:

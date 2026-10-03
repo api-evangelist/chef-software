@@ -337,6 +337,14 @@ paths:
         required: true
 components:
   schemas:
+    google.protobuf.Any:
+      type: object
+      properties:
+        type_url:
+          type: string
+        value:
+          type: string
+          format: byte
     grpc.gateway.runtime.Error:
       type: object
       properties:
@@ -351,13 +359,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/google.protobuf.Any'
-    chef.automate.api.compliance.scanner.jobs.v1.Query.OrderType:
-      type: string
-      enum:
-      - ASC
-      - DESC
-      default: ASC
-      description: Return the results in ascending or descending order.
     chef.automate.api.compliance.scanner.jobs.v1.ResultsRow:
       type: object
       properties:
@@ -384,49 +385,6 @@ components:
           type: string
           format: date-time
           description: End time of the scan.
-    chef.automate.api.compliance.scanner.jobs.v1.Jobs:
-      type: object
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.compliance.scanner.jobs.v1.Job'
-          description: List of jobs.
-        total:
-          type: integer
-          format: int32
-          description: Total number of jobs in the system.
-    chef.automate.api.common.query.Kv:
-      type: object
-      properties:
-        key:
-          type: string
-          description: Tag key.
-        value:
-          type: string
-          description: Tag value.
-    chef.automate.api.compliance.scanner.jobs.v1.ManagerFilter:
-      type: object
-      properties:
-        manager_id:
-          type: string
-          description: Unique ID of a node manager.
-        filters:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.common.query.Filter'
-          description: Use filters to limit the set of items returned.
-    chef.automate.api.compliance.scanner.jobs.v1.Id:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique ID (UUID) assigned to object.
-        name:
-          type: string
-          description: Name of object.
-    chef.automate.api.compliance.scanner.jobs.v1.RerunResponse:
-      type: object
     chef.automate.api.common.query.Filter:
       type: object
       properties:
@@ -441,14 +399,43 @@ components:
           items:
             type: string
           description: Field values to filter on.
-    google.protobuf.Any:
+    chef.automate.api.compliance.scanner.jobs.v1.Id:
       type: object
       properties:
-        type_url:
+        id:
           type: string
-        value:
+          description: Unique ID (UUID) assigned to object.
+        name:
           type: string
-          format: byte
+          description: Name of object.
+    chef.automate.api.compliance.scanner.jobs.v1.Query:
+      type: object
+      properties:
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.common.query.Filter'
+          description: Use filters to limit the set of items returned.
+        order:
+          $ref: '#/components/schemas/chef.automate.api.compliance.scanner.jobs.v1.Query.OrderType'
+        sort:
+          type: string
+          description: Sort the results on a specific field.
+        page:
+          type: integer
+          format: int32
+          description: Starting page for the results.
+        per_page:
+          type: integer
+          format: int32
+          description: The number of results on each page.
+    chef.automate.api.compliance.scanner.jobs.v1.Query.OrderType:
+      type: string
+      enum:
+      - ASC
+      - DESC
+      default: ASC
+      description: Return the results in ascending or descending order.
     chef.automate.api.compliance.scanner.jobs.v1.Job:
       type: object
       properties:
@@ -534,24 +521,37 @@ components:
         deleted:
           type: boolean
           description: Boolean used to denote the job has been marked as "deleted" by the user.
-    chef.automate.api.compliance.scanner.jobs.v1.Query:
+    chef.automate.api.common.query.Kv:
       type: object
       properties:
+        key:
+          type: string
+          description: Tag key.
+        value:
+          type: string
+          description: Tag value.
+    chef.automate.api.compliance.scanner.jobs.v1.Jobs:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.compliance.scanner.jobs.v1.Job'
+          description: List of jobs.
+        total:
+          type: integer
+          format: int32
+          description: Total number of jobs in the system.
+    chef.automate.api.compliance.scanner.jobs.v1.RerunResponse:
+      type: object
+    chef.automate.api.compliance.scanner.jobs.v1.ManagerFilter:
+      type: object
+      properties:
+        manager_id:
+          type: string
+          description: Unique ID of a node manager.
         filters:
           type: array
           items:
             $ref: '#/components/schemas/chef.automate.api.common.query.Filter'
           description: Use filters to limit the set of items returned.
-        order:
-          $ref: '#/components/schemas/chef.automate.api.compliance.scanner.jobs.v1.Query.OrderType'
-        sort:
-          type: string
-          description: Sort the results on a specific field.
-        page:
-          type: integer
-          format: int32
-          description: Starting page for the results.
-        per_page:
-          type: integer
-          format: int32
-          description: The number of results on each page.

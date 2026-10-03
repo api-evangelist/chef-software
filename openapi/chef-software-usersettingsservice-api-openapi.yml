@@ -101,6 +101,28 @@ paths:
         required: true
 components:
   schemas:
+    google.protobuf.Any:
+      type: object
+      properties:
+        type_url:
+          type: string
+        value:
+          type: string
+          format: byte
+    chef.automate.api.user_settings.GetUserSettingsResponse:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/chef.automate.api.user_settings.User'
+        settings:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/chef.automate.api.user_settings.UserSettingValue'
+    chef.automate.api.user_settings.PutUserSettingsResponse:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/chef.automate.api.user_settings.User'
     grpc.gateway.runtime.Error:
       type: object
       properties:
@@ -115,6 +137,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/google.protobuf.Any'
+    chef.automate.api.user_settings.PutUserSettingsRequest:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/chef.automate.api.user_settings.User'
+          description: ID of the user. Cannot be changed. Used to sign in.
+        settings:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/chef.automate.api.user_settings.UserSettingValue'
+          description: The user settings to persist.
     chef.automate.api.user_settings.UserSettingValue:
       type: object
       properties:
@@ -132,39 +165,6 @@ components:
           items:
             type: string
           description: Valid values for this setting.
-    chef.automate.api.user_settings.GetUserSettingsResponse:
-      type: object
-      properties:
-        user:
-          $ref: '#/components/schemas/chef.automate.api.user_settings.User'
-        settings:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/chef.automate.api.user_settings.UserSettingValue'
-    chef.automate.api.user_settings.PutUserSettingsResponse:
-      type: object
-      properties:
-        user:
-          $ref: '#/components/schemas/chef.automate.api.user_settings.User'
-    google.protobuf.Any:
-      type: object
-      properties:
-        type_url:
-          type: string
-        value:
-          type: string
-          format: byte
-    chef.automate.api.user_settings.PutUserSettingsRequest:
-      type: object
-      properties:
-        user:
-          $ref: '#/components/schemas/chef.automate.api.user_settings.User'
-          description: ID of the user. Cannot be changed. Used to sign in.
-        settings:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/chef.automate.api.user_settings.UserSettingValue'
-          description: The user settings to persist.
     chef.automate.api.user_settings.User:
       type: object
       properties:

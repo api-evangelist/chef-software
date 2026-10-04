@@ -1276,63 +1276,56 @@ paths:
         required: true
 components:
   schemas:
-    chef.automate.api.cfgmgmt.response.CookbookLock:
+    chef.automate.api.cfgmgmt.response.Resource:
       type: object
       properties:
-        cookbook:
+        type:
           type: string
-          description: Cookbook name.
-        policy_identifier:
+          description: Resource type.
+        name:
           type: string
-          description: Policy identifier for the cookbook lock.
-    chef.automate.api.cfgmgmt.response.MissingNodeDurationCounts:
+          description: Name for the resource.
+        id:
+          type: string
+          description: Id of the resource.
+        duration:
+          type: string
+          description: Duration of the resource processing.
+        delta:
+          type: string
+          description: Change diff for the resource (if it was changed during the run).
+        cookbook_name:
+          type: string
+          description: Cookbook name associated with the resource.
+        cookbook_version:
+          type: string
+          description: Version of the cookbook associated with the resource.
+        status:
+          type: string
+          description: Status of the resource (e.g. 'up-to-date').
+        recipe_name:
+          type: string
+          description: Name of the recipe associated with the resource.
+        result:
+          type: string
+          description: String result of the resource.
+        conditional:
+          type: string
+          description: Conditional rule associated with the resource.
+        ignore_failure:
+          type: boolean
+          description: Boolean that denotes whether or not the resource failure should be ignored.
+        error:
+          $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.ChefError'
+          description: Chef Error information, available on failed runs.
+    chef.automate.api.cfgmgmt.response.CheckInCountsTimeSeries:
       type: object
       properties:
-        counted_durations:
+        counts:
           type: array
           items:
-            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.CountedDuration'
-          title: List of counted durations
-    chef.automate.api.cfgmgmt.response.ValueCount:
-      type: object
-      properties:
-        value:
-          type: string
-          title: The value counted
-        count:
-          type: integer
-          format: int32
-          title: The number of this distinct value
-    chef.automate.api.cfgmgmt.request.SCMWebType:
-      type: string
-      enum:
-      - SCM_WEB_TYPE_UNSPECIFIED
-      - SCM_WEB_TYPE_UNKNOWN_SCM_WEB
-      - SCM_WEB_TYPE_GITHUB
-      default: SCM_WEB_TYPE_UNSPECIFIED
-    chef.automate.api.cfgmgmt.response.RunsCounts:
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int32
-          description: Total count of run reports that have landed in Automate for the node.
-        success:
-          type: integer
-          format: int32
-          description: Total count of successful run reports that have landed in Automate for the node.
-        failure:
-          type: integer
-          format: int32
-          description: Total count of failed run reports that have landed in Automate for the node.
-    chef.automate.api.cfgmgmt.response.NodeRunsDailyStatusTimeSeries:
-      type: object
-      properties:
-        durations:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.RunDurationStatus'
-          title: runs status of a 24-hour duration
+            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.CheckInCounts'
+          title: List of daily checkin counts
     chef.automate.api.cfgmgmt.response.CheckInCounts:
       type: object
       properties:
@@ -1346,28 +1339,36 @@ components:
         total:
           type: integer
           format: int32
-    chef.automate.api.cfgmgmt.response.Description:
+    chef.automate.api.cfgmgmt.response.ValueCount:
       type: object
       properties:
-        title:
+        value:
           type: string
-          description: Title for the error description.
-        sections:
-          type: array
-          items:
-            type: object
-          description: More information about the error.
-    chef.automate.api.cfgmgmt.response.TypeCount:
+          title: The value counted
+        count:
+          type: integer
+          format: int32
+          title: The number of this distinct value
+    chef.automate.api.cfgmgmt.response.GetNodesUsageCountResponse:
       type: object
       properties:
-        values:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.ValueCount'
-          title: Values of the field type with a count for each
-        type:
+        days_since_last_post:
           type: string
-          title: The field type counted
+          format: int64
+          title: number of days since telematics was last posted
+        node_cnt:
+          type: string
+          format: int64
+          title: unique nodes count in a duration
+    chef.automate.api.cfgmgmt.response.VersionedCookbook:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the cookbook.
+        version:
+          type: string
+          description: Version of the cookbook.
     chef.automate.api.cfgmgmt.response.Run:
       type: object
       properties:
@@ -1531,234 +1532,6 @@ components:
           type: string
         cloud_provider:
           type: string
-    chef.automate.api.cfgmgmt.request.SCMType:
-      type: string
-      enum:
-      - SCM_TYPE_UNSPECIFIED
-      - SCM_TYPE_UNKNOWN_SCM
-      - SCM_TYPE_GIT
-      default: SCM_TYPE_UNSPECIFIED
-    chef.automate.api.cfgmgmt.response.Errors:
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.ErrorCount'
-      description: 'Errors contains a list of the most common Chef Infra error type/message
-
-        combinations among nodes in the active project as filtered according to the
-
-        request.'
-    chef.automate.api.cfgmgmt.response.UpdateTelemetryReportedResponse:
-      type: object
-    chef.automate.api.cfgmgmt.response.ExpandedRunList:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Id of the run list collection.
-        run_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.RunList'
-          description: Intentionally blank.
-    google.protobuf.Any:
-      type: object
-      properties:
-        type_url:
-          type: string
-          description: "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
-        value:
-          type: string
-          format: byte
-          description: Must be a valid serialized protocol buffer of the above specified type.
-      description: "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(&foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\n Example 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\n Example 4: Pack and unpack a message in Go\n\n     foo := &pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := &pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n====\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": <string>,\n      \"lastName\": <string>\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
-    chef.automate.api.cfgmgmt.response.Rollouts:
-      type: object
-      properties:
-        rollouts:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.Rollout'
-    chef.automate.api.cfgmgmt.response.NodeMetadataCounts:
-      type: object
-      properties:
-        types:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.TypeCount'
-          title: Field Types for a node with value counts
-    chef.automate.api.cfgmgmt.request.CreateRollout:
-      type: object
-      properties:
-        policy_name:
-          type: string
-        policy_node_group:
-          type: string
-        policy_revision_id:
-          type: string
-        policy_domain_url:
-          type: string
-        scm_type:
-          $ref: '#/components/schemas/chef.automate.api.cfgmgmt.request.SCMType'
-        scm_web_type:
-          $ref: '#/components/schemas/chef.automate.api.cfgmgmt.request.SCMWebType'
-        policy_scm_url:
-          type: string
-        policy_scm_web_url:
-          type: string
-        policy_scm_commit:
-          type: string
-        description:
-          type: string
-        ci_job_url:
-          type: string
-        ci_job_id:
-          type: string
-        scm_author_name:
-          type: string
-        scm_author_email:
-          type: string
-        policy_domain_username:
-          type: string
-      description: 'CreateRollout is a request to create a new Rollout. All
-
-        fields have the same meaning as with the response Rollout
-
-        type.'
-    chef.automate.api.cfgmgmt.response.RunList:
-      type: object
-      properties:
-        type:
-          type: string
-          description: Type of run list item (e.g. 'recipe').
-        name:
-          type: string
-          description: Name of run list item.
-        version:
-          type: string
-          description: Version of run list item.
-        skipped:
-          type: boolean
-          description: Boolean denoting whether or not the run list item was skipped.
-        children:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.RunList'
-          description: Intentionally blank.
-    chef.automate.api.cfgmgmt.response.CheckInCountsTimeSeries:
-      type: object
-      properties:
-        counts:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.CheckInCounts'
-          title: List of daily checkin counts
-    chef.automate.api.cfgmgmt.response.NodeSegmentsWithRolloutProgress:
-      type: object
-      properties:
-        node_segment_rollout_progress:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.NodeSegmentRolloutProgress'
-          description: 'The NodeSegmentRolloutProgress are sorted by policy group, policy
-
-            name, then domain URL.'
-      description: 'A Node Segment is the set of Chef Infra nodes with a shared policy_name,
-
-        policy_node_group, and policy_domain_url.
-
-
-        NodeSegmentsWithRolloutProgress lists all of the node segments matching the
-
-        request with information about the progress and status of the code rollouts for each segment.'
-      title: NodeSegmentsWithRolloutProgress
-    chef.automate.api.cfgmgmt.response.NodeSegmentRolloutProgress:
-      type: object
-      properties:
-        policy_name:
-          type: string
-          title: 'policy_name, policy_node_group, policy_domain_url make up a "compound
-
-            id" for the node segment'
-        policy_node_group:
-          type: string
-        policy_domain_url:
-          type: string
-        total_nodes:
-          type: integer
-          format: int32
-          title: total nodes in elasticsearch in the node segment
-        current_rollout_progress:
-          $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.CurrentRolloutProgress'
-        previous_rollouts:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.PastRolloutProgress'
-          title: 'This is the last, say 2 or 4 rollouts before the current one (to give a
-
-            total of 3 or 5)'
-    chef.automate.api.cfgmgmt.response.PastRolloutProgress:
-      type: object
-      properties:
-        rollout:
-          $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.Rollout'
-          description: Rollout is the full rollout object, but we can change this to be a subset only.
-        latest_run_node_count:
-          type: integer
-          format: int32
-          description: 'The number of nodes in the node segment for which the last recorded CCR
-
-            was part of this rollout. Note that no breakdown of success/errored is
-
-            provided, since some nodes may have moved on to the current rollout and
-
-            are not included in the count.'
-        source_link:
-          type: string
-        build_link:
-          type: string
-    chef.automate.api.cfgmgmt.response.RunDurationStatus:
-      type: object
-      properties:
-        start:
-          type: string
-          title: Start of the duration (RFC3339)
-        end:
-          type: string
-          title: End of the duration (RFC3339)
-        status:
-          type: string
-          title: Prominent Run's status
-        run_id:
-          type: string
-          title: Prominent Run's ID
-    chef.automate.api.cfgmgmt.response.Deprecation:
-      type: object
-      properties:
-        message:
-          type: string
-          description: Message for the deprecation.
-        url:
-          type: string
-          description: Url reference for the deprecation.
-        location:
-          type: string
-          description: Location of the deprecated code.
-    chef.automate.api.cfgmgmt.response.ErrorCount:
-      type: object
-      properties:
-        count:
-          type: integer
-          format: int32
-        type:
-          type: string
-        error_message:
-          type: string
-      title: 'ErrorCount gives the number of occurrences (count) of the error specified by
-
-        the type and message among the nodes included by the request parameters'
     chef.automate.api.cfgmgmt.response.PolicyCookbooks:
       type: object
       properties:
@@ -1772,8 +1545,20 @@ components:
           description: Intentionally blank.
     chef.automate.api.cfgmgmt.request.CreateRolloutTest:
       type: object
-    chef.automate.api.cfgmgmt.response.CreateRolloutTest:
+    grpc.gateway.runtime.Error:
       type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/google.protobuf.Any'
     chef.automate.api.cfgmgmt.response.Rollout:
       type: object
       properties:
@@ -1923,98 +1708,31 @@ components:
         segment at a time. Rollouts track the changes to which revision of the code is
 
         applied to the node segments over time.'
-    chef.automate.api.cfgmgmt.response.ChefError:
+    chef.automate.api.cfgmgmt.response.NodeSegmentRolloutProgress:
       type: object
       properties:
-        class:
+        policy_name:
           type: string
-          description: Class for the error.
-        message:
+          title: 'policy_name, policy_node_group, policy_domain_url make up a "compound
+
+            id" for the node segment'
+        policy_node_group:
           type: string
-          description: Error message for the failed run.
-        backtrace:
+        policy_domain_url:
+          type: string
+        total_nodes:
+          type: integer
+          format: int32
+          title: total nodes in elasticsearch in the node segment
+        current_rollout_progress:
+          $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.CurrentRolloutProgress'
+        previous_rollouts:
           type: array
           items:
-            type: string
-          description: Stacktrace for the failure.
-        description:
-          $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.Description'
-          description: Description for the error.
-    grpc.gateway.runtime.Error:
-      type: object
-      properties:
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/google.protobuf.Any'
-    chef.automate.api.cfgmgmt.response.NodesCounts:
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int32
-          description: Total count of nodes that have reported in to Automate.
-        success:
-          type: integer
-          format: int32
-          description: Total count of nodes that have reported in to Automate whose last run was successful.
-        failure:
-          type: integer
-          format: int32
-          description: Total count of nodes that have reported in to Automate whose last run was failed.
-        missing:
-          type: integer
-          format: int32
-          description: Total count of nodes that have been labeled as 'missing' as determined by node lifecycle settings.
-    chef.automate.api.cfgmgmt.response.Resource:
-      type: object
-      properties:
-        type:
-          type: string
-          description: Resource type.
-        name:
-          type: string
-          description: Name for the resource.
-        id:
-          type: string
-          description: Id of the resource.
-        duration:
-          type: string
-          description: Duration of the resource processing.
-        delta:
-          type: string
-          description: Change diff for the resource (if it was changed during the run).
-        cookbook_name:
-          type: string
-          description: Cookbook name associated with the resource.
-        cookbook_version:
-          type: string
-          description: Version of the cookbook associated with the resource.
-        status:
-          type: string
-          description: Status of the resource (e.g. 'up-to-date').
-        recipe_name:
-          type: string
-          description: Name of the recipe associated with the resource.
-        result:
-          type: string
-          description: String result of the resource.
-        conditional:
-          type: string
-          description: Conditional rule associated with the resource.
-        ignore_failure:
-          type: boolean
-          description: Boolean that denotes whether or not the resource failure should be ignored.
-        error:
-          $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.ChefError'
-          description: Chef Error information, available on failed runs.
+            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.PastRolloutProgress'
+          title: 'This is the last, say 2 or 4 rollouts before the current one (to give a
+
+            total of 3 or 5)'
     chef.automate.api.cfgmgmt.response.CountedDuration:
       type: object
       properties:
@@ -2025,28 +1743,24 @@ components:
           type: integer
           format: int32
           title: The number of nodes for this duration
-    chef.automate.api.cfgmgmt.request.UpdateTelemetryReportedRequest:
-      type: object
-      properties:
-        last_telemetry_reported_at:
-          type: string
-          title: last client run telemetry reported date
-    chef.automate.api.cfgmgmt.response.SCMWebType:
+    chef.automate.api.cfgmgmt.request.SCMType:
       type: string
       enum:
-      - SCM_WEB_TYPE_UNSPECIFIED
-      - SCM_WEB_TYPE_UNKNOWN_SCM_WEB
-      - SCM_WEB_TYPE_GITHUB
-      default: SCM_WEB_TYPE_UNSPECIFIED
-    chef.automate.api.cfgmgmt.response.VersionedCookbook:
+      - SCM_TYPE_UNSPECIFIED
+      - SCM_TYPE_UNKNOWN_SCM
+      - SCM_TYPE_GIT
+      default: SCM_TYPE_UNSPECIFIED
+    chef.automate.api.cfgmgmt.response.Description:
       type: object
       properties:
-        name:
+        title:
           type: string
-          description: Name of the cookbook.
-        version:
-          type: string
-          description: Version of the cookbook.
+          description: Title for the error description.
+        sections:
+          type: array
+          items:
+            type: object
+          description: More information about the error.
     chef.automate.api.cfgmgmt.response.CurrentRolloutProgress:
       type: object
       properties:
@@ -2068,6 +1782,207 @@ components:
           type: string
         build_link:
           type: string
+    chef.automate.api.cfgmgmt.request.UpdateTelemetryReportedRequest:
+      type: object
+      properties:
+        last_telemetry_reported_at:
+          type: string
+          title: last client run telemetry reported date
+    chef.automate.api.cfgmgmt.response.PastRolloutProgress:
+      type: object
+      properties:
+        rollout:
+          $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.Rollout'
+          description: Rollout is the full rollout object, but we can change this to be a subset only.
+        latest_run_node_count:
+          type: integer
+          format: int32
+          description: 'The number of nodes in the node segment for which the last recorded CCR
+
+            was part of this rollout. Note that no breakdown of success/errored is
+
+            provided, since some nodes may have moved on to the current rollout and
+
+            are not included in the count.'
+        source_link:
+          type: string
+        build_link:
+          type: string
+    chef.automate.api.cfgmgmt.response.NodeRunsDailyStatusTimeSeries:
+      type: object
+      properties:
+        durations:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.RunDurationStatus'
+          title: runs status of a 24-hour duration
+    chef.automate.api.cfgmgmt.request.CreateRollout:
+      type: object
+      properties:
+        policy_name:
+          type: string
+        policy_node_group:
+          type: string
+        policy_revision_id:
+          type: string
+        policy_domain_url:
+          type: string
+        scm_type:
+          $ref: '#/components/schemas/chef.automate.api.cfgmgmt.request.SCMType'
+        scm_web_type:
+          $ref: '#/components/schemas/chef.automate.api.cfgmgmt.request.SCMWebType'
+        policy_scm_url:
+          type: string
+        policy_scm_web_url:
+          type: string
+        policy_scm_commit:
+          type: string
+        description:
+          type: string
+        ci_job_url:
+          type: string
+        ci_job_id:
+          type: string
+        scm_author_name:
+          type: string
+        scm_author_email:
+          type: string
+        policy_domain_username:
+          type: string
+      description: 'CreateRollout is a request to create a new Rollout. All
+
+        fields have the same meaning as with the response Rollout
+
+        type.'
+    chef.automate.api.cfgmgmt.request.SCMWebType:
+      type: string
+      enum:
+      - SCM_WEB_TYPE_UNSPECIFIED
+      - SCM_WEB_TYPE_UNKNOWN_SCM_WEB
+      - SCM_WEB_TYPE_GITHUB
+      default: SCM_WEB_TYPE_UNSPECIFIED
+    chef.automate.api.cfgmgmt.response.MissingNodeDurationCounts:
+      type: object
+      properties:
+        counted_durations:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.CountedDuration'
+          title: List of counted durations
+    google.protobuf.Any:
+      type: object
+      properties:
+        type_url:
+          type: string
+          description: "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+        value:
+          type: string
+          format: byte
+          description: Must be a valid serialized protocol buffer of the above specified type.
+      description: "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n    Foo foo = ...;\n    Any any;\n    any.PackFrom(foo);\n    ...\n    if (any.UnpackTo(&foo)) {\n      ...\n    }\n\nExample 2: Pack and unpack a message in Java.\n\n    Foo foo = ...;\n    Any any = Any.pack(foo);\n    ...\n    if (any.is(Foo.class)) {\n      foo = any.unpack(Foo.class);\n    }\n\n Example 3: Pack and unpack a message in Python.\n\n    foo = Foo(...)\n    any = Any()\n    any.Pack(foo)\n    ...\n    if any.Is(Foo.DESCRIPTOR):\n      any.Unpack(foo)\n      ...\n\n Example 4: Pack and unpack a message in Go\n\n     foo := &pb.Foo{...}\n     any, err := anypb.New(foo)\n     if err != nil {\n       ...\n     }\n     ...\n     foo := &pb.Foo{}\n     if err := any.UnmarshalTo(foo); err != nil {\n       ...\n     }\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n====\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n    package google.profile;\n    message Person {\n      string first_name = 1;\n      string last_name = 2;\n    }\n\n    {\n      \"@type\": \"type.googleapis.com/google.profile.Person\",\n      \"firstName\": <string>,\n      \"lastName\": <string>\n    }\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n    {\n      \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n      \"value\": \"1.212s\"\n    }"
+    chef.automate.api.cfgmgmt.response.ChefError:
+      type: object
+      properties:
+        class:
+          type: string
+          description: Class for the error.
+        message:
+          type: string
+          description: Error message for the failed run.
+        backtrace:
+          type: array
+          items:
+            type: string
+          description: Stacktrace for the failure.
+        description:
+          $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.Description'
+          description: Description for the error.
+    chef.automate.api.cfgmgmt.response.SCMType:
+      type: string
+      enum:
+      - SCM_TYPE_UNSPECIFIED
+      - SCM_TYPE_UNKNOWN_SCM
+      - SCM_TYPE_GIT
+      default: SCM_TYPE_UNSPECIFIED
+    chef.automate.api.cfgmgmt.response.Deprecation:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Message for the deprecation.
+        url:
+          type: string
+          description: Url reference for the deprecation.
+        location:
+          type: string
+          description: Location of the deprecated code.
+    chef.automate.api.cfgmgmt.response.CookbookLock:
+      type: object
+      properties:
+        cookbook:
+          type: string
+          description: Cookbook name.
+        policy_identifier:
+          type: string
+          description: Policy identifier for the cookbook lock.
+    chef.automate.api.cfgmgmt.response.Rollouts:
+      type: object
+      properties:
+        rollouts:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.Rollout'
+    chef.automate.api.cfgmgmt.response.NodeSegmentsWithRolloutProgress:
+      type: object
+      properties:
+        node_segment_rollout_progress:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.NodeSegmentRolloutProgress'
+          description: 'The NodeSegmentRolloutProgress are sorted by policy group, policy
+
+            name, then domain URL.'
+      description: 'A Node Segment is the set of Chef Infra nodes with a shared policy_name,
+
+        policy_node_group, and policy_domain_url.
+
+
+        NodeSegmentsWithRolloutProgress lists all of the node segments matching the
+
+        request with information about the progress and status of the code rollouts for each segment.'
+      title: NodeSegmentsWithRolloutProgress
+    chef.automate.api.cfgmgmt.response.RunDurationStatus:
+      type: object
+      properties:
+        start:
+          type: string
+          title: Start of the duration (RFC3339)
+        end:
+          type: string
+          title: End of the duration (RFC3339)
+        status:
+          type: string
+          title: Prominent Run's status
+        run_id:
+          type: string
+          title: Prominent Run's ID
+    chef.automate.api.cfgmgmt.response.RunsCounts:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          description: Total count of run reports that have landed in Automate for the node.
+        success:
+          type: integer
+          format: int32
+          description: Total count of successful run reports that have landed in Automate for the node.
+        failure:
+          type: integer
+          format: int32
+          description: Total count of failed run reports that have landed in Automate for the node.
+    chef.automate.api.cfgmgmt.response.CreateRolloutTest:
+      type: object
     chef.automate.api.cfgmgmt.response.NodeAttribute:
       type: object
       properties:
@@ -2117,21 +2032,106 @@ components:
           type: integer
           format: int32
           description: Count of automatic attributes on the node.
-    chef.automate.api.cfgmgmt.response.GetNodesUsageCountResponse:
+    chef.automate.api.cfgmgmt.response.UpdateTelemetryReportedResponse:
+      type: object
+    chef.automate.api.cfgmgmt.response.ErrorCount:
       type: object
       properties:
-        days_since_last_post:
+        count:
+          type: integer
+          format: int32
+        type:
           type: string
-          format: int64
-          title: number of days since telematics was last posted
-        node_cnt:
+        error_message:
           type: string
-          format: int64
-          title: unique nodes count in a duration
-    chef.automate.api.cfgmgmt.response.SCMType:
+      title: 'ErrorCount gives the number of occurrences (count) of the error specified by
+
+        the type and message among the nodes included by the request parameters'
+    chef.automate.api.cfgmgmt.response.SCMWebType:
       type: string
       enum:
-      - SCM_TYPE_UNSPECIFIED
-      - SCM_TYPE_UNKNOWN_SCM
-      - SCM_TYPE_GIT
-      default: SCM_TYPE_UNSPECIFIED
+      - SCM_WEB_TYPE_UNSPECIFIED
+      - SCM_WEB_TYPE_UNKNOWN_SCM_WEB
+      - SCM_WEB_TYPE_GITHUB
+      default: SCM_WEB_TYPE_UNSPECIFIED
+    chef.automate.api.cfgmgmt.response.TypeCount:
+      type: object
+      properties:
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.ValueCount'
+          title: Values of the field type with a count for each
+        type:
+          type: string
+          title: The field type counted
+    chef.automate.api.cfgmgmt.response.Errors:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.ErrorCount'
+      description: 'Errors contains a list of the most common Chef Infra error type/message
+
+        combinations among nodes in the active project as filtered according to the
+
+        request.'
+    chef.automate.api.cfgmgmt.response.NodesCounts:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          description: Total count of nodes that have reported in to Automate.
+        success:
+          type: integer
+          format: int32
+          description: Total count of nodes that have reported in to Automate whose last run was successful.
+        failure:
+          type: integer
+          format: int32
+          description: Total count of nodes that have reported in to Automate whose last run was failed.
+        missing:
+          type: integer
+          format: int32
+          description: Total count of nodes that have been labeled as 'missing' as determined by node lifecycle settings.
+    chef.automate.api.cfgmgmt.response.NodeMetadataCounts:
+      type: object
+      properties:
+        types:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.TypeCount'
+          title: Field Types for a node with value counts
+    chef.automate.api.cfgmgmt.response.RunList:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Type of run list item (e.g. 'recipe').
+        name:
+          type: string
+          description: Name of run list item.
+        version:
+          type: string
+          description: Version of run list item.
+        skipped:
+          type: boolean
+          description: Boolean denoting whether or not the run list item was skipped.
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.RunList'
+          description: Intentionally blank.
+    chef.automate.api.cfgmgmt.response.ExpandedRunList:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Id of the run list collection.
+        run_list:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.cfgmgmt.response.RunList'
+          description: Intentionally blank.

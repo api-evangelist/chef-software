@@ -2259,114 +2259,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    chef.automate.api.infra_proxy.response.RoleEnvironments:
-      type: object
-      properties:
-        environments:
-          type: array
-          items:
-            type: string
-          description: Role environment list.
-    chef.automate.api.infra_proxy.response.PolicyfileRevision:
-      type: object
-      properties:
-        revision_id:
-          type: string
-          title: policyfile revision
-    chef.automate.api.infra_proxy.request.CreateDataBag:
-      type: object
-      properties:
-        org_id:
-          type: string
-          description: Chef organization ID.
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
-        name:
-          type: string
-          description: Data bag name.
-    chef.automate.api.infra_proxy.response.CookbookVersion:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the cookbook.
-        version:
-          type: string
-          description: Version of the cookbook.
-    chef.automate.api.infra_proxy.response.ClientListItem:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Client name.
-        validator:
-          type: boolean
-          description: Boolean indicates client type is validator or not.
-    chef.automate.api.infra_proxy.response.UpdateServer:
-      type: object
-      properties:
-        server:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Server'
-          description: Chef Infra Server.
-    chef.automate.api.infra_proxy.response.UsersListItem:
-      type: object
-      properties:
-        username:
-          type: string
-          title: User username
-        first_name:
-          type: string
-          title: User first name
-        last_name:
-          type: string
-          title: User Last name
-        email:
-          type: string
-          title: User email
-    chef.automate.api.infra_proxy.response.GetServerStatus:
-      type: object
-      properties:
-        status:
-          type: string
-          title: Chef Server Status
-        upstreams:
-          type: object
-          additionalProperties:
-            type: string
-          title: Chef Server Upstream
-        keygen:
-          type: object
-          additionalProperties:
-            type: integer
-            format: int32
-          title: Chef Server Keygem
-    chef.automate.api.infra_proxy.response.DataBagItem:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Data bag name.
-        id:
-          type: string
-          description: Data bag item ID.
-        data:
-          type: string
-          description: Stringified json of data bag item.
-    chef.automate.api.infra_proxy.response.RoleListItem:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the role.
-        description:
-          type: string
-          description: Desscription of the role.
-        environments:
-          type: array
-          items:
-            type: string
-          description: Environment for the role.
     chef.automate.api.infra_proxy.request.UpdateOrg:
       type: object
       properties:
@@ -2387,14 +2279,112 @@ components:
           items:
             type: string
           description: List of projects this chef organization belongs to. May be empty.
-    chef.automate.api.infra_proxy.response.Clients:
+    chef.automate.api.infra_proxy.response.PolicyfileListItem:
       type: object
       properties:
-        clients:
+        name:
+          type: string
+          description: Policyfile name.
+        revision_id:
+          type: string
+          description: Policyfile Revision ID.
+        policy_group:
+          type: string
+          description: Policyfile policy group.
+    chef.automate.api.infra_proxy.request.NodeDetails:
+      type: object
+      properties:
+        org_id:
+          type: string
+          description: Chef organization ID.
+        server_id:
+          type: string
+          description: Chef Infra Server ID.
+        name:
+          type: string
+          description: Node name.
+        environment:
+          type: string
+          description: Node environment.
+        policy_name:
+          type: string
+          description: Node policy name.
+        policy_group:
+          type: string
+          description: Node policy group.
+        run_list:
           type: array
           items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.ClientListItem'
-          description: Client list.
+            type: string
+          description: Node run-list.
+        automatic_attributes:
+          type: object
+          description: Node automatic attributes JSON.
+        default_attributes:
+          type: object
+          description: Node default attributes JSON.
+        normal_attributes:
+          type: object
+          description: Node normal attributes JSON.
+        override_attributes:
+          type: object
+          description: Node override attributes JSON.
+    chef.automate.api.infra_proxy.response.PolicyfileRevision:
+      type: object
+      properties:
+        revision_id:
+          type: string
+          title: policyfile revision
+    chef.automate.api.infra_proxy.request.ServerUsers:
+      type: object
+      properties:
+        server_id:
+          type: string
+          description: Chef Infra Server ID.
+        admin_name:
+          type: string
+          description: Chef Infra server admin name.
+        admin_key:
+          type: string
+          description: Chef Infra server admin key.
+    chef.automate.api.infra_proxy.response.CookbookFileContent:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Cookbook data file content.
+    chef.automate.api.infra_proxy.request.CreateClient:
+      type: object
+      properties:
+        org_id:
+          type: string
+          description: Chef organization ID.
+        server_id:
+          type: string
+          description: Chef Infra Server ID.
+        name:
+          type: string
+          description: Client name.
+        validator:
+          type: boolean
+          description: Boolean indicates client type is validator or not.
+        create_key:
+          type: boolean
+          description: Boolean indicates whether it's required to create a key or not.
+    chef.automate.api.infra_proxy.response.DeletePolicyfile:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Policyfile name.
+    chef.automate.api.infra_proxy.response.Roles:
+      type: object
+      properties:
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.RoleListItem'
+          description: List of the roles item.
         page:
           type: integer
           format: int32
@@ -2403,6 +2393,67 @@ components:
           type: integer
           format: int32
           description: Total number of records.
+    chef.automate.api.infra_proxy.response.Client:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Client name.
+        client_name:
+          type: string
+          description: Client name return by Chef Infra Server API.
+        org_name:
+          type: string
+          description: Chef organization name.
+        validator:
+          type: boolean
+          description: Boolean indicates client type is validator or not.
+        json_class:
+          type: string
+          description: Client JSON class.
+        chef_type:
+          type: string
+          description: Chef object type.
+        client_key:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.ClientAccessKey'
+          description: Client key detail.
+    chef.automate.api.infra_proxy.response.ServerUsers:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.UsersListItem'
+          title: Users list
+    chef.automate.api.infra_proxy.request.UpdateEnvironment:
+      type: object
+      properties:
+        org_id:
+          type: string
+          description: Chef organization ID.
+        server_id:
+          type: string
+          description: Chef Infra Server ID.
+        name:
+          type: string
+          description: Environment name.
+        description:
+          type: string
+          description: Environment description.
+        json_class:
+          type: string
+          description: Class name.
+        cookbook_versions:
+          type: object
+          additionalProperties:
+            type: string
+          description: Environment versioned cookbooks constraints.
+        default_attributes:
+          type: object
+          description: Environment default attributes JSON.
+        override_attributes:
+          type: object
+          description: Environment override attributes JSON.
     chef.automate.api.infra_proxy.request.CreateOrg:
       type: object
       properties:
@@ -2426,23 +2477,460 @@ components:
           items:
             type: string
           description: List of projects this chef organization belongs to. May be empty.
-    chef.automate.api.infra_proxy.response.UpdateNodeEnvironment:
+    chef.automate.api.infra_proxy.response.NodeExpandedRunList:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID of the run list collection.
+        run_list:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.RunList'
+          description: List of the run list.
+    chef.automate.api.infra_proxy.response.UpdateNodeTags:
+      type: object
+      properties:
+        tags:
+          type: array
+          items:
+            type: string
+          description: Node tags.
+    chef.automate.api.infra_proxy.request.CreateServer:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Chef Infra Server ID.
+        name:
+          type: string
+          description: Chef Infra Server name.
+        fqdn:
+          type: string
+          description: Chef Infra Server FQDN.
+        ip_address:
+          type: string
+          description: Chef Infra Server IP address.
+    chef.automate.api.infra_proxy.response.UpdateOrg:
+      type: object
+      properties:
+        org:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Org'
+          description: Chef organization.
+    chef.automate.api.infra_proxy.response.OrgUsers:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.UsersListItem'
+          title: Users list
+    chef.automate.api.infra_proxy.response.NamedRunList:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Run list name.
+        run_list:
+          type: array
+          items:
+            type: string
+          description: Run list associated with the policy.
+    chef.automate.api.infra_proxy.response.DepedenciesData:
+      type: object
+      properties:
+        name:
+          type: string
+          description: cookbook name.
+        version:
+          type: string
+          description: cookbook version.
+    chef.automate.api.infra_proxy.response.CreateOrg:
+      type: object
+      properties:
+        org:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Org'
+          description: Chef organization.
+    chef.automate.api.infra_proxy.response.CookbookVersions:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the cookbook.
+        versions:
+          type: array
+          items:
+            type: string
+          description: List of all versions available for cookbook.
+    grpc.gateway.runtime.Error:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/google.protobuf.Any'
+    chef.automate.api.infra_proxy.request.CreateEnvironment:
+      type: object
+      properties:
+        org_id:
+          type: string
+          description: Chef organization ID.
+        server_id:
+          type: string
+          description: Chef Infra Server ID.
+        name:
+          type: string
+          description: Environment name.
+        description:
+          type: string
+          description: Environment description.
+        json_class:
+          type: string
+          description: Class name.
+        cookbook_versions:
+          type: object
+          additionalProperties:
+            type: string
+          description: Environment versioned cookbooks constraints.
+        default_attributes:
+          type: object
+          description: Environment default attributes JSON.
+        override_attributes:
+          type: object
+          description: Environment override attributes JSON.
+    chef.automate.api.infra_proxy.response.GroupPolicy:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Policyfile name.
+        revision_id:
+          type: string
+          description: Policyfile Revision ID.
+    chef.automate.api.infra_proxy.response.PolicyfileRevisions:
+      type: object
+      properties:
+        revisions:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.PolicyfileRevision'
+          description: Policyfile revisions.
+    chef.automate.api.infra_proxy.response.Policygroup:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Policygroup name.
+        policies:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.GroupPolicy'
+          description: Policygroup policyfiles.
+        uri:
+          type: string
+          description: policygroup uri.
+    chef.automate.api.infra_proxy.response.DataBags:
+      type: object
+      properties:
+        data_bags:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.DataBagListItem'
+          description: Data bags item list.
+    chef.automate.api.infra_proxy.response.CookbookLock:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Cookbook name.
+        version:
+          type: string
+          description: Cookbook version.
+        identifier:
+          type: string
+          description: Cookbook identifier.
+        dotted_identifier:
+          type: string
+          description: Cookbook decimal number identifier.
+        source:
+          type: string
+          description: Cookbook source.
+        cache_key:
+          type: string
+          description: Cookbook cache key.
+        SCMDetail:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.SCMDetail'
+          description: SCM detail.
+        source_options:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.SourceOptions'
+          description: Cookbook source path.
+    chef.automate.api.infra_proxy.response.SolutionDependencies:
+      type: object
+      properties:
+        name:
+          type: string
+          description: cookbook name.
+        version:
+          type: string
+          description: cookbook version.
+        dependencies:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.DepedenciesData'
+          title: cookbook dependencies
+    chef.automate.api.infra_proxy.request.CreateDataBag:
+      type: object
+      properties:
+        org_id:
+          type: string
+          description: Chef organization ID.
+        server_id:
+          type: string
+          description: Chef Infra Server ID.
+        name:
+          type: string
+          description: Data bag name.
+    chef.automate.api.infra_proxy.response.GetServer:
+      type: object
+      properties:
+        server:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Server'
+          description: Chef Infra Server.
+    chef.automate.api.infra_proxy.response.RoleListItem:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the role.
+        description:
+          type: string
+          description: Desscription of the role.
+        environments:
+          type: array
+          items:
+            type: string
+          description: Environment for the role.
+    chef.automate.api.infra_proxy.response.DeleteNode:
       type: object
       properties:
         name:
           type: string
           description: Node name.
-        environment:
-          type: string
-          description: Node environment name.
-    chef.automate.api.infra_proxy.response.EnvironmentRecipesList:
+    chef.automate.api.infra_proxy.response.DataBag:
       type: object
       properties:
-        recipes:
+        name:
+          type: string
+          description: Data bag name.
+    chef.automate.api.infra_proxy.request.EnvRunList:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Environment name.
+        run_list:
           type: array
           items:
             type: string
-          description: Environment recipes list.
+          description: Role run list.
+    chef.automate.api.infra_proxy.response.ExpandedRunList:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID of the run list collection.
+        run_list:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.RunList'
+          description: List of the run list.
+    chef.automate.api.infra_proxy.request.ClientKey:
+      type: object
+      properties:
+        org_id:
+          type: string
+          description: Chef organization ID.
+        server_id:
+          type: string
+          description: Chef Infra Server ID.
+        name:
+          type: string
+          description: Client name.
+        key:
+          type: string
+          description: Client key name.
+    chef.automate.api.infra_proxy.response.CookbookAccess:
+      type: object
+      properties:
+        read:
+          type: boolean
+        create:
+          type: boolean
+        grant:
+          type: boolean
+        update:
+          type: boolean
+        delete:
+          type: boolean
+    chef.automate.api.infra_proxy.response.Server:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Chef Infra Server ID.
+        name:
+          type: string
+          description: Chef Infra Server name.
+        fqdn:
+          type: string
+          description: Chef Infra Server FQDN.
+        ip_address:
+          type: string
+          description: Chef Infra Server IP address.
+        orgs_count:
+          type: integer
+          format: int32
+          description: Chef organizations count associated with Chef Infra Server.
+    chef.automate.api.infra_proxy.response.DeleteServer:
+      type: object
+      properties:
+        server:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Server'
+          description: Chef Infra Server.
+    chef.automate.api.infra_proxy.response.UpdateServer:
+      type: object
+      properties:
+        server:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Server'
+          description: Chef Infra Server.
+    chef.automate.api.infra_proxy.response.ClientKey:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Client key name.
+        public_key:
+          type: string
+          description: Client public key.
+        expiration_date:
+          type: string
+          description: Client key expiration date string.
+        private_key:
+          type: string
+          description: Client private key.
+    chef.automate.api.infra_proxy.response.Org:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Chef organization ID.
+        name:
+          type: string
+          description: Chef organization name.
+        admin_user:
+          type: string
+          description: Chef organization admin user.
+        credential_id:
+          type: string
+          description: Chef organization credential ID.
+        server_id:
+          type: string
+          description: Chef Infra Server ID.
+        projects:
+          type: array
+          items:
+            type: string
+          description: List of projects this chef organization belongs to. May be empty.
+    chef.automate.api.infra_proxy.response.RoleEnvironments:
+      type: object
+      properties:
+        environments:
+          type: array
+          items:
+            type: string
+          description: Role environment list.
+    chef.automate.api.infra_proxy.response.CookbookItem:
+      type: object
+      properties:
+        url:
+          type: string
+        path:
+          type: string
+        name:
+          type: string
+        checksum:
+          type: string
+        specificity:
+          type: string
+    chef.automate.api.infra_proxy.response.Clients:
+      type: object
+      properties:
+        clients:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.ClientListItem'
+          description: Client list.
+        page:
+          type: integer
+          format: int32
+          description: Starting page for the results.
+        total:
+          type: integer
+          format: int32
+          description: Total number of records.
+    chef.automate.api.infra_proxy.response.ClientListItem:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Client name.
+        validator:
+          type: boolean
+          description: Boolean indicates client type is validator or not.
+    chef.automate.api.infra_proxy.request.UpdateNodeTags:
+      type: object
+      properties:
+        org_id:
+          type: string
+          description: Chef organization ID.
+        server_id:
+          type: string
+          description: Chef Infra Server ID.
+        name:
+          type: string
+          description: Node name.
+        action:
+          type: string
+          description: Node tags action (e.g. 'add', 'delete', 'set').
+        tags:
+          type: array
+          items:
+            type: string
+          description: Node tags.
+    google.protobuf.Any:
+      type: object
+      properties:
+        type_url:
+          type: string
+        value:
+          type: string
+          format: byte
+    chef.automate.api.infra_proxy.response.UpdateNodeAttributes:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Node name.
+        attributes:
+          type: string
+          description: Node attributes JSON.
     chef.automate.api.infra_proxy.response.IncludedPolicyLock:
       type: object
       properties:
@@ -2455,16 +2943,90 @@ components:
         source_options:
           $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.SourceOptions'
           description: Included policyfile source options.
-    chef.automate.api.infra_proxy.response.EnvironmentListItem:
+    chef.automate.api.infra_proxy.response.UpdateDataBagItem:
       type: object
       properties:
         name:
           type: string
-          description: Environment name.
+          description: Data bag name.
+        item_id:
+          type: string
+          description: Data bag item ID.
+    chef.automate.api.infra_proxy.response.Policyfile:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Policyfile name.
+        policy_group:
+          type: string
+          description: Policy group name.
+        revision_id:
+          type: string
+          description: Policy revision ID.
+        run_list:
+          type: array
+          items:
+            type: string
+          description: Run-list associated with the policy.
+        named_run_list:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.NamedRunList'
+          description: Named run-list associated with the policy.
+        included_policy_locks:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.IncludedPolicyLock'
+          description: Included policy locks files.
+        cookbook_locks:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.CookbookLock'
+          description: List of cookbook locks under this policy.
+        default_attributes:
+          type: string
+          description: Policyfile default attributes JSON.
+        override_attributes:
+          type: string
+          description: Policyfile override attributes JSON.
+        expanded_run_list:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.ExpandedRunList'
+          description: Expanded run-list associated with the policy.
+        solution_dependecies:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.SolutionDependencies'
+          description: Solution Dependencies versions.
+    chef.automate.api.infra_proxy.response.Role:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the role.
+        chef_type:
+          type: string
+          description: Type of the chef object.
         description:
           type: string
-          description: Environment description.
-    chef.automate.api.infra_proxy.request.CreateRole:
+          description: Descrption of the role.
+        default_attributes:
+          type: string
+          description: Role default attributes JSON.
+        override_attributes:
+          type: string
+          description: Role override attributes JSON.
+        json_class:
+          type: string
+          description: Json class name.
+        run_list:
+          type: array
+          items:
+            type: string
+          description: Run list for the role.
+    chef.automate.api.infra_proxy.request.CreateDataBagItem:
       type: object
       properties:
         org_id:
@@ -2475,57 +3037,19 @@ components:
           description: Chef Infra Server ID.
         name:
           type: string
-          description: Role name.
-        description:
-          type: string
-          description: Role description.
-        default_attributes:
+          description: Data bag name.
+        data:
           type: object
-          description: Role default attributes JSON.
-        override_attributes:
-          type: object
-          description: Role override attributes JSON.
-        run_list:
-          type: array
-          items:
-            type: string
-          description: Role run list.
-        env_run_lists:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.request.EnvRunList'
-          description: Environment based run list.
-    chef.automate.api.infra_proxy.response.DataBagListItem:
+          description: Data bag item JSON data.
+    chef.automate.api.infra_proxy.response.CookbookVersion:
       type: object
       properties:
         name:
           type: string
-          description: Data bag item name.
-    chef.automate.api.infra_proxy.response.CookbookMeta:
-      type: object
-      properties:
-        name:
-          type: string
+          description: Name of the cookbook.
         version:
           type: string
-        description:
-          type: string
-        long_description:
-          type: string
-        maintainer:
-          type: string
-        maintainer_email:
-          type: string
-        license:
-          type: string
-    chef.automate.api.infra_proxy.response.DataBags:
-      type: object
-      properties:
-        data_bags:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.DataBagListItem'
-          description: Data bags item list.
+          description: Version of the cookbook.
     chef.automate.api.infra_proxy.response.Nodes:
       type: object
       properties:
@@ -2542,6 +3066,69 @@ components:
           type: integer
           format: int32
           description: Total number of records.
+    chef.automate.api.infra_proxy.response.ResetClient:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Client name.
+        client_key:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.ClientKey'
+          description: Client key detail.
+    chef.automate.api.infra_proxy.request.UpdateNodeEnvironment:
+      type: object
+      properties:
+        org_id:
+          type: string
+          description: Chef organization ID.
+        server_id:
+          type: string
+          description: Chef Infra Server ID.
+        name:
+          type: string
+          description: Node name.
+        environment:
+          type: string
+          description: Node environment name.
+    chef.automate.api.infra_proxy.response.GetOrg:
+      type: object
+      properties:
+        org:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Org'
+          description: Chef organization.
+    chef.automate.api.infra_proxy.response.DataBagItem:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Data bag name.
+        id:
+          type: string
+          description: Data bag item ID.
+        data:
+          type: string
+          description: Stringified json of data bag item.
+    chef.automate.api.infra_proxy.request.UpdateServer:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Chef Infra Server ID.
+        name:
+          type: string
+          description: Chef Infra Server name.
+        fqdn:
+          type: string
+          description: Chef Infra Server FQDN.
+        ip_address:
+          type: string
+          description: Chef Infra Server IP address.
+    chef.automate.api.infra_proxy.response.DeleteOrg:
+      type: object
+      properties:
+        org:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Org'
+          description: Chef organization.
     chef.automate.api.infra_proxy.response.RunList:
       type: object
       properties:
@@ -2569,52 +3156,46 @@ components:
           items:
             $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.RunList'
           description: List of the run list.
-    chef.automate.api.infra_proxy.request.UpdateRole:
+    chef.automate.api.infra_proxy.response.Node:
       type: object
       properties:
-        org_id:
+        node_id:
           type: string
-          description: Chef organization ID.
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
+          description: Node ID.
         name:
           type: string
-          description: Role name.
-        description:
+          description: Node name.
+        environment:
           type: string
-          description: Role description.
-        default_attributes:
-          type: object
-          description: Role default attributes JSON.
-        override_attributes:
-          type: object
-          description: Role override attributes JSON.
+          description: Node environment.
+        policy_name:
+          type: string
+          description: Node policy name.
+        policy_group:
+          type: string
+          description: Node policy group.
         run_list:
           type: array
           items:
             type: string
-          description: Role run list.
-        env_run_lists:
+          description: Node run-list.
+        tags:
           type: array
           items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.request.EnvRunList'
-          description: Environment based run list.
-    chef.automate.api.infra_proxy.request.UpdateServer:
-      type: object
-      properties:
-        id:
+            type: string
+          description: Node tags.
+        automatic_attributes:
           type: string
-          description: Chef Infra Server ID.
-        name:
+          description: Node automatic attributes JSON.
+        default_attributes:
           type: string
-          description: Chef Infra Server name.
-        fqdn:
+          description: Node default attributes JSON.
+        normal_attributes:
           type: string
-          description: Chef Infra Server FQDN.
-        ip_address:
+          description: Node normal attributes JSON.
+        override_attributes:
           type: string
-          description: Chef Infra Server IP address.
+          description: Node override attributes JSON.
     chef.automate.api.infra_proxy.request.UpdateDataBagItem:
       type: object
       properties:
@@ -2633,6 +3214,63 @@ components:
         data:
           type: object
           description: Data bag item JSON data.
+    chef.automate.api.infra_proxy.response.Environments:
+      type: object
+      properties:
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.EnvironmentListItem'
+          description: Environments list.
+        page:
+          type: integer
+          format: int32
+          description: Starting page for the results.
+        total:
+          type: integer
+          format: int32
+          description: Total number of records.
+    chef.automate.api.infra_proxy.response.CreateDataBag:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Data bag name.
+    chef.automate.api.infra_proxy.response.CreateDataBagItem:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Data bag name.
+        id:
+          type: string
+          description: Data bag item ID.
+    chef.automate.api.infra_proxy.response.DataBagListItem:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Data bag item name.
+    chef.automate.api.infra_proxy.response.GetOrgs:
+      type: object
+      properties:
+        orgs:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Org'
+          description: Chef organization list.
+    chef.automate.api.infra_proxy.response.ClientAccessKey:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Client key name.
+        public_key:
+          type: string
+          description: Client public key.
+        expiration_date:
+          type: string
+          description: Client key expiration date string.
     chef.automate.api.infra_proxy.response.Cookbook:
       type: object
       properties:
@@ -2688,330 +3326,100 @@ components:
           $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.CookbookMeta'
         access:
           $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.CookbookAccess'
-    google.protobuf.Any:
+    chef.automate.api.infra_proxy.response.EnvironmentRecipesList:
       type: object
       properties:
-        type_url:
-          type: string
-        value:
-          type: string
-          format: byte
-    chef.automate.api.infra_proxy.response.ClientKey:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Client key name.
-        public_key:
-          type: string
-          description: Client public key.
-        expiration_date:
-          type: string
-          description: Client key expiration date string.
-        private_key:
-          type: string
-          description: Client private key.
-    chef.automate.api.infra_proxy.response.OrgUsers:
-      type: object
-      properties:
-        users:
+        recipes:
           type: array
           items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.UsersListItem'
-          title: Users list
-    chef.automate.api.infra_proxy.response.UpdateNodeAttributes:
+            type: string
+          description: Environment recipes list.
+    chef.automate.api.infra_proxy.response.Cookbooks:
       type: object
       properties:
-        name:
-          type: string
-          description: Node name.
-        attributes:
-          type: string
-          description: Node attributes JSON.
-    chef.automate.api.infra_proxy.response.Server:
+        cookbooks:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.CookbookVersion'
+          description: List of cookbooks with name and version.
+    chef.automate.api.infra_proxy.response.GetServerStatus:
       type: object
       properties:
-        id:
+        status:
+          type: string
+          title: Chef Server Status
+        upstreams:
+          type: object
+          additionalProperties:
+            type: string
+          title: Chef Server Upstream
+        keygen:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int32
+          title: Chef Server Keygem
+    chef.automate.api.infra_proxy.request.UpdateNodeAttributes:
+      type: object
+      properties:
+        org_id:
+          type: string
+          description: Chef organization ID.
+        server_id:
           type: string
           description: Chef Infra Server ID.
         name:
           type: string
-          description: Chef Infra Server name.
-        fqdn:
-          type: string
-          description: Chef Infra Server FQDN.
-        ip_address:
-          type: string
-          description: Chef Infra Server IP address.
-        orgs_count:
-          type: integer
-          format: int32
-          description: Chef organizations count associated with Chef Infra Server.
-    chef.automate.api.infra_proxy.response.CookbookItem:
+          description: Node name.
+        attributes:
+          type: object
+          description: Node attributes JSON.
+    chef.automate.api.infra_proxy.response.GetServers:
       type: object
       properties:
-        url:
-          type: string
-        path:
-          type: string
-        name:
-          type: string
-        checksum:
-          type: string
-        specificity:
-          type: string
-    chef.automate.api.infra_proxy.response.UpdateOrg:
-      type: object
-      properties:
-        org:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Org'
-          description: Chef organization.
-    chef.automate.api.infra_proxy.response.DeletePolicyfile:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Policyfile name.
+        servers:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Server'
+          description: List of Chef Infra Servers.
     chef.automate.api.infra_proxy.response.SourceOptions:
       type: object
       properties:
         path:
           type: string
           description: Source options path.
-    chef.automate.api.infra_proxy.request.CreateClient:
+    chef.automate.api.infra_proxy.response.EnvironmentListItem:
       type: object
       properties:
-        org_id:
-          type: string
-          description: Chef organization ID.
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
-        name:
-          type: string
-          description: Client name.
-        validator:
-          type: boolean
-          description: Boolean indicates client type is validator or not.
-        create_key:
-          type: boolean
-          description: Boolean indicates whether it's required to create a key or not.
-    chef.automate.api.infra_proxy.response.GetOrgs:
-      type: object
-      properties:
-        orgs:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Org'
-          description: Chef organization list.
-    chef.automate.api.infra_proxy.response.ExpandedRunList:
-      type: object
-      properties:
-        id:
-          type: string
-          description: ID of the run list collection.
-        run_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.RunList'
-          description: List of the run list.
-    chef.automate.api.infra_proxy.request.ServerUsers:
-      type: object
-      properties:
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
-        admin_name:
-          type: string
-          description: Chef Infra server admin name.
-        admin_key:
-          type: string
-          description: Chef Infra server admin key.
-    chef.automate.api.infra_proxy.response.SolutionDependencies:
-      type: object
-      properties:
-        name:
-          type: string
-          description: cookbook name.
-        version:
-          type: string
-          description: cookbook version.
-        dependencies:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.DepedenciesData'
-          title: cookbook dependencies
-    chef.automate.api.infra_proxy.response.CreateDataBag:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Data bag name.
-    chef.automate.api.infra_proxy.response.Environments:
-      type: object
-      properties:
-        environments:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.EnvironmentListItem'
-          description: Environments list.
-        page:
-          type: integer
-          format: int32
-          description: Starting page for the results.
-        total:
-          type: integer
-          format: int32
-          description: Total number of records.
-    chef.automate.api.infra_proxy.request.CreateEnvironment:
-      type: object
-      properties:
-        org_id:
-          type: string
-          description: Chef organization ID.
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
         name:
           type: string
           description: Environment name.
         description:
           type: string
           description: Environment description.
-        json_class:
-          type: string
-          description: Class name.
-        cookbook_versions:
-          type: object
-          additionalProperties:
-            type: string
-          description: Environment versioned cookbooks constraints.
-        default_attributes:
-          type: object
-          description: Environment default attributes JSON.
-        override_attributes:
-          type: object
-          description: Environment override attributes JSON.
-    chef.automate.api.infra_proxy.response.PolicyfileRevisions:
+    chef.automate.api.infra_proxy.response.Policyfiles:
       type: object
       properties:
-        revisions:
+        policies:
           type: array
           items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.PolicyfileRevision'
-          description: Policyfile revisions.
-    chef.automate.api.infra_proxy.response.NodeExpandedRunList:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.PolicyfileListItem'
+          description: Policyfiles list.
+    chef.automate.api.infra_proxy.response.UsersListItem:
       type: object
       properties:
-        id:
+        username:
           type: string
-          description: ID of the run list collection.
-        run_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.RunList'
-          description: List of the run list.
-    chef.automate.api.infra_proxy.response.Node:
-      type: object
-      properties:
-        node_id:
+          title: User username
+        first_name:
           type: string
-          description: Node ID.
-        name:
+          title: User first name
+        last_name:
           type: string
-          description: Node name.
-        environment:
+          title: User Last name
+        email:
           type: string
-          description: Node environment.
-        policy_name:
-          type: string
-          description: Node policy name.
-        policy_group:
-          type: string
-          description: Node policy group.
-        run_list:
-          type: array
-          items:
-            type: string
-          description: Node run-list.
-        tags:
-          type: array
-          items:
-            type: string
-          description: Node tags.
-        automatic_attributes:
-          type: string
-          description: Node automatic attributes JSON.
-        default_attributes:
-          type: string
-          description: Node default attributes JSON.
-        normal_attributes:
-          type: string
-          description: Node normal attributes JSON.
-        override_attributes:
-          type: string
-          description: Node override attributes JSON.
-    chef.automate.api.infra_proxy.request.UpdateNodeTags:
-      type: object
-      properties:
-        org_id:
-          type: string
-          description: Chef organization ID.
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
-        name:
-          type: string
-          description: Node name.
-        action:
-          type: string
-          description: Node tags action (e.g. 'add', 'delete', 'set').
-        tags:
-          type: array
-          items:
-            type: string
-          description: Node tags.
-    chef.automate.api.infra_proxy.response.GetOrg:
-      type: object
-      properties:
-        org:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Org'
-          description: Chef organization.
-    chef.automate.api.infra_proxy.response.DepedenciesData:
-      type: object
-      properties:
-        name:
-          type: string
-          description: cookbook name.
-        version:
-          type: string
-          description: cookbook version.
-    chef.automate.api.infra_proxy.response.Role:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the role.
-        chef_type:
-          type: string
-          description: Type of the chef object.
-        description:
-          type: string
-          description: Descrption of the role.
-        default_attributes:
-          type: string
-          description: Role default attributes JSON.
-        override_attributes:
-          type: string
-          description: Role override attributes JSON.
-        json_class:
-          type: string
-          description: Json class name.
-        run_list:
-          type: array
-          items:
-            type: string
-          description: Run list for the role.
+          title: User email
     chef.automate.api.infra_proxy.response.DataBagItems:
       type: object
       properties:
@@ -3031,65 +3439,16 @@ components:
           type: integer
           format: int32
           description: Total number of records.
-    chef.automate.api.infra_proxy.response.DeleteNode:
+    chef.automate.api.infra_proxy.response.UpdateNodeEnvironment:
       type: object
       properties:
-        name:
-          type: string
-          description: Node name.
-    chef.automate.api.infra_proxy.response.ResetOrgAdminKey:
-      type: object
-      properties:
-        org:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Org'
-          description: Chef organization.
-    chef.automate.api.infra_proxy.request.NodeDetails:
-      type: object
-      properties:
-        org_id:
-          type: string
-          description: Chef organization ID.
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
         name:
           type: string
           description: Node name.
         environment:
           type: string
-          description: Node environment.
-        policy_name:
-          type: string
-          description: Node policy name.
-        policy_group:
-          type: string
-          description: Node policy group.
-        run_list:
-          type: array
-          items:
-            type: string
-          description: Node run-list.
-        automatic_attributes:
-          type: object
-          description: Node automatic attributes JSON.
-        default_attributes:
-          type: object
-          description: Node default attributes JSON.
-        normal_attributes:
-          type: object
-          description: Node normal attributes JSON.
-        override_attributes:
-          type: object
-          description: Node override attributes JSON.
-    chef.automate.api.infra_proxy.response.UpdateNodeTags:
-      type: object
-      properties:
-        tags:
-          type: array
-          items:
-            type: string
-          description: Node tags.
-    chef.automate.api.infra_proxy.response.ResetClient:
+          description: Node environment name.
+    chef.automate.api.infra_proxy.response.CreateClient:
       type: object
       properties:
         name:
@@ -3098,103 +3457,23 @@ components:
         client_key:
           $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.ClientKey'
           description: Client key detail.
-    chef.automate.api.infra_proxy.response.CookbookAccess:
-      type: object
-      properties:
-        read:
-          type: boolean
-        create:
-          type: boolean
-        grant:
-          type: boolean
-        update:
-          type: boolean
-        delete:
-          type: boolean
-    grpc.gateway.runtime.Error:
-      type: object
-      properties:
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/google.protobuf.Any'
-    chef.automate.api.infra_proxy.request.CreateServer:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Chef Infra Server ID.
-        name:
-          type: string
-          description: Chef Infra Server name.
-        fqdn:
-          type: string
-          description: Chef Infra Server FQDN.
-        ip_address:
-          type: string
-          description: Chef Infra Server IP address.
-    chef.automate.api.infra_proxy.response.PolicyfileListItem:
+    chef.automate.api.infra_proxy.response.CookbookMeta:
       type: object
       properties:
         name:
           type: string
-          description: Policyfile name.
-        revision_id:
+        version:
           type: string
-          description: Policyfile Revision ID.
-        policy_group:
+        description:
           type: string
-          description: Policyfile policy group.
-    chef.automate.api.infra_proxy.response.Policygroup:
-      type: object
-      properties:
-        name:
+        long_description:
           type: string
-          description: Policygroup name.
-        policies:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.GroupPolicy'
-          description: Policygroup policyfiles.
-        uri:
+        maintainer:
           type: string
-          description: policygroup uri.
-    chef.automate.api.infra_proxy.response.DataBag:
-      type: object
-      properties:
-        name:
+        maintainer_email:
           type: string
-          description: Data bag name.
-    chef.automate.api.infra_proxy.response.SCMDetail:
-      type: object
-      properties:
-        name:
+        license:
           type: string
-          description: SCM name.
-        remote:
-          type: string
-          description: SCM remote location.
-        revision:
-          type: string
-          description: SCM revision detail.
-        working_tree_clean:
-          type: boolean
-          description: Boolean that denotes if the working tree is clean or not.
-        published:
-          type: boolean
-          description: Source's published information.
-        synchronized_remote_branches:
-          type: array
-          items:
-            type: string
-          description: Synchronized remote branches list.
     chef.automate.api.infra_proxy.response.NodeAttribute:
       type: object
       properties:
@@ -3225,138 +3504,6 @@ components:
         ip_address:
           type: string
           description: Node IP address.
-    chef.automate.api.infra_proxy.request.EnvRunList:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Environment name.
-        run_list:
-          type: array
-          items:
-            type: string
-          description: Role run list.
-    chef.automate.api.infra_proxy.response.GetServer:
-      type: object
-      properties:
-        server:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Server'
-          description: Chef Infra Server.
-    chef.automate.api.infra_proxy.response.CreateServer:
-      type: object
-      properties:
-        server:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Server'
-          description: Chef Infra Server.
-    chef.automate.api.infra_proxy.response.DeleteOrg:
-      type: object
-      properties:
-        org:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Org'
-          description: Chef organization.
-    chef.automate.api.infra_proxy.response.DeleteServer:
-      type: object
-      properties:
-        server:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Server'
-          description: Chef Infra Server.
-    chef.automate.api.infra_proxy.response.GroupPolicy:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Policyfile name.
-        revision_id:
-          type: string
-          description: Policyfile Revision ID.
-    chef.automate.api.infra_proxy.response.CookbookLock:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Cookbook name.
-        version:
-          type: string
-          description: Cookbook version.
-        identifier:
-          type: string
-          description: Cookbook identifier.
-        dotted_identifier:
-          type: string
-          description: Cookbook decimal number identifier.
-        source:
-          type: string
-          description: Cookbook source.
-        cache_key:
-          type: string
-          description: Cookbook cache key.
-        SCMDetail:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.SCMDetail'
-          description: SCM detail.
-        source_options:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.SourceOptions'
-          description: Cookbook source path.
-    chef.automate.api.infra_proxy.response.Policyfiles:
-      type: object
-      properties:
-        policies:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.PolicyfileListItem'
-          description: Policyfiles list.
-    chef.automate.api.infra_proxy.request.UpdateEnvironment:
-      type: object
-      properties:
-        org_id:
-          type: string
-          description: Chef organization ID.
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
-        name:
-          type: string
-          description: Environment name.
-        description:
-          type: string
-          description: Environment description.
-        json_class:
-          type: string
-          description: Class name.
-        cookbook_versions:
-          type: object
-          additionalProperties:
-            type: string
-          description: Environment versioned cookbooks constraints.
-        default_attributes:
-          type: object
-          description: Environment default attributes JSON.
-        override_attributes:
-          type: object
-          description: Environment override attributes JSON.
-    chef.automate.api.infra_proxy.response.Cookbooks:
-      type: object
-      properties:
-        cookbooks:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.CookbookVersion'
-          description: List of cookbooks with name and version.
-    chef.automate.api.infra_proxy.response.Roles:
-      type: object
-      properties:
-        roles:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.RoleListItem'
-          description: List of the roles item.
-        page:
-          type: integer
-          format: int32
-          description: Starting page for the results.
-        total:
-          type: integer
-          format: int32
-          description: Total number of records.
     chef.automate.api.infra_proxy.response.Environment:
       type: object
       properties:
@@ -3383,172 +3530,97 @@ components:
         override_attributes:
           type: string
           description: Environment override attributes JSON.
-    chef.automate.api.infra_proxy.response.CreateClient:
+    chef.automate.api.infra_proxy.request.CreateRole:
       type: object
       properties:
+        org_id:
+          type: string
+          description: Chef organization ID.
+        server_id:
+          type: string
+          description: Chef Infra Server ID.
         name:
           type: string
-          description: Client name.
-        client_key:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.ClientKey'
-          description: Client key detail.
-    chef.automate.api.infra_proxy.response.Policyfile:
-      type: object
-      properties:
-        name:
+          description: Role name.
+        description:
           type: string
-          description: Policyfile name.
-        policy_group:
-          type: string
-          description: Policy group name.
-        revision_id:
-          type: string
-          description: Policy revision ID.
-        run_list:
-          type: array
-          items:
-            type: string
-          description: Run-list associated with the policy.
-        named_run_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.NamedRunList'
-          description: Named run-list associated with the policy.
-        included_policy_locks:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.IncludedPolicyLock'
-          description: Included policy locks files.
-        cookbook_locks:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.CookbookLock'
-          description: List of cookbook locks under this policy.
+          description: Role description.
         default_attributes:
-          type: string
-          description: Policyfile default attributes JSON.
-        override_attributes:
-          type: string
-          description: Policyfile override attributes JSON.
-        expanded_run_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.ExpandedRunList'
-          description: Expanded run-list associated with the policy.
-        solution_dependecies:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.SolutionDependencies'
-          description: Solution Dependencies versions.
-    chef.automate.api.infra_proxy.response.CookbookFileContent:
-      type: object
-      properties:
-        content:
-          type: string
-          description: Cookbook data file content.
-    chef.automate.api.infra_proxy.response.Org:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Chef organization ID.
-        name:
-          type: string
-          description: Chef organization name.
-        admin_user:
-          type: string
-          description: Chef organization admin user.
-        credential_id:
-          type: string
-          description: Chef organization credential ID.
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
-        projects:
-          type: array
-          items:
-            type: string
-          description: List of projects this chef organization belongs to. May be empty.
-    chef.automate.api.infra_proxy.request.UpdateNodeAttributes:
-      type: object
-      properties:
-        org_id:
-          type: string
-          description: Chef organization ID.
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
-        name:
-          type: string
-          description: Node name.
-        attributes:
           type: object
-          description: Node attributes JSON.
-    chef.automate.api.infra_proxy.request.ClientKey:
-      type: object
-      properties:
-        org_id:
-          type: string
-          description: Chef organization ID.
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
-        name:
-          type: string
-          description: Client name.
-        key:
-          type: string
-          description: Client key name.
-    chef.automate.api.infra_proxy.response.UpdateDataBagItem:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Data bag name.
-        item_id:
-          type: string
-          description: Data bag item ID.
-    chef.automate.api.infra_proxy.response.NamedRunList:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Run list name.
+          description: Role default attributes JSON.
+        override_attributes:
+          type: object
+          description: Role override attributes JSON.
         run_list:
           type: array
           items:
             type: string
-          description: Run list associated with the policy.
-    chef.automate.api.infra_proxy.response.CreateOrg:
-      type: object
-      properties:
-        org:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Org'
-          description: Chef organization.
-    chef.automate.api.infra_proxy.response.Client:
+          description: Role run list.
+        env_run_lists:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.request.EnvRunList'
+          description: Environment based run list.
+    chef.automate.api.infra_proxy.response.SCMDetail:
       type: object
       properties:
         name:
           type: string
-          description: Client name.
-        client_name:
+          description: SCM name.
+        remote:
           type: string
-          description: Client name return by Chef Infra Server API.
-        org_name:
+          description: SCM remote location.
+        revision:
           type: string
-          description: Chef organization name.
-        validator:
+          description: SCM revision detail.
+        working_tree_clean:
           type: boolean
-          description: Boolean indicates client type is validator or not.
-        json_class:
+          description: Boolean that denotes if the working tree is clean or not.
+        published:
+          type: boolean
+          description: Source's published information.
+        synchronized_remote_branches:
+          type: array
+          items:
+            type: string
+          description: Synchronized remote branches list.
+    chef.automate.api.infra_proxy.response.CreateServer:
+      type: object
+      properties:
+        server:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Server'
+          description: Chef Infra Server.
+    chef.automate.api.infra_proxy.request.UpdateRole:
+      type: object
+      properties:
+        org_id:
           type: string
-          description: Client JSON class.
-        chef_type:
+          description: Chef organization ID.
+        server_id:
           type: string
-          description: Chef object type.
-        client_key:
-          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.ClientAccessKey'
-          description: Client key detail.
+          description: Chef Infra Server ID.
+        name:
+          type: string
+          description: Role name.
+        description:
+          type: string
+          description: Role description.
+        default_attributes:
+          type: object
+          description: Role default attributes JSON.
+        override_attributes:
+          type: object
+          description: Role override attributes JSON.
+        run_list:
+          type: array
+          items:
+            type: string
+          description: Role run list.
+        env_run_lists:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.infra_proxy.request.EnvRunList'
+          description: Environment based run list.
     chef.automate.api.infra_proxy.request.ResetOrgAdminKey:
       type: object
       properties:
@@ -3561,81 +3633,9 @@ components:
         admin_key:
           type: string
           description: Chef organization admin key.
-    chef.automate.api.infra_proxy.response.ServerUsers:
+    chef.automate.api.infra_proxy.response.ResetOrgAdminKey:
       type: object
       properties:
-        users:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.UsersListItem'
-          title: Users list
-    chef.automate.api.infra_proxy.request.UpdateNodeEnvironment:
-      type: object
-      properties:
-        org_id:
-          type: string
-          description: Chef organization ID.
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
-        name:
-          type: string
-          description: Node name.
-        environment:
-          type: string
-          description: Node environment name.
-    chef.automate.api.infra_proxy.request.CreateDataBagItem:
-      type: object
-      properties:
-        org_id:
-          type: string
-          description: Chef organization ID.
-        server_id:
-          type: string
-          description: Chef Infra Server ID.
-        name:
-          type: string
-          description: Data bag name.
-        data:
-          type: object
-          description: Data bag item JSON data.
-    chef.automate.api.infra_proxy.response.ClientAccessKey:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Client key name.
-        public_key:
-          type: string
-          description: Client public key.
-        expiration_date:
-          type: string
-          description: Client key expiration date string.
-    chef.automate.api.infra_proxy.response.GetServers:
-      type: object
-      properties:
-        servers:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Server'
-          description: List of Chef Infra Servers.
-    chef.automate.api.infra_proxy.response.CookbookVersions:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the cookbook.
-        versions:
-          type: array
-          items:
-            type: string
-          description: List of all versions available for cookbook.
-    chef.automate.api.infra_proxy.response.CreateDataBagItem:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Data bag name.
-        id:
-          type: string
-          description: Data bag item ID.
+        org:
+          $ref: '#/components/schemas/chef.automate.api.infra_proxy.response.Org'
+          description: Chef organization.

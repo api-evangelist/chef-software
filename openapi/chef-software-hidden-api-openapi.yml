@@ -164,17 +164,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    chef.automate.api.common.version.VersionInfo:
-      type: object
-      properties:
-        name:
-          type: string
-        version:
-          type: string
-        sha:
-          type: string
-        built:
-          type: string
     grpc.gateway.runtime.Error:
       type: object
       properties:
@@ -189,6 +178,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/google.protobuf.Any'
+    chef.automate.api.common.version.VersionInfo:
+      type: object
+      properties:
+        name:
+          type: string
+        version:
+          type: string
+        sha:
+          type: string
+        built:
+          type: string
     google.protobuf.Any:
       type: object
       properties:
@@ -224,6 +224,21 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/google.protobuf.Any'
+    chef.automate.api.iam.v2.Project:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name for the project.
+        id:
+          type: string
+          description: Unique ID. Cannot be changed.
+        type:
+          $ref: '#/components/schemas/chef.automate.api.iam.v2.Type'
+          description: Whether this policy is user created (`CUSTOM`) or chef managed (`CHEF_MANAGED`).
+        status:
+          $ref: '#/components/schemas/chef.automate.api.iam.v2.ProjectRulesStatus'
+          description: The current status of the rules for this project.
     chef.automate.api.iam.v2.ProjectRulesStatus:
       type: string
       enum:
@@ -251,21 +266,6 @@ components:
       - CHEF_MANAGED
       - CUSTOM
       default: CHEF_MANAGED
-    chef.automate.api.iam.v2.Project:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name for the project.
-        id:
-          type: string
-          description: Unique ID. Cannot be changed.
-        type:
-          $ref: '#/components/schemas/chef.automate.api.iam.v2.Type'
-          description: Whether this policy is user created (`CUSTOM`) or chef managed (`CHEF_MANAGED`).
-        status:
-          $ref: '#/components/schemas/chef.automate.api.iam.v2.ProjectRulesStatus'
-          description: The current status of the rules for this project.
 x-refined-from:
 - chef-software-applications-applications-openapi.json
 - chef-software-cfgmgmt-cfgmgmt-openapi.json

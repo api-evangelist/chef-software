@@ -1,0 +1,80 @@
+slug: chef-software
+provider: Chef Software
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 7
+edges:
+- tag: Policies
+  spec_file: chef-software-policies-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: GET /apis/iam/v2/policies  Policies_ListPolicies; POST /apis/iam/v2/policies/{id}/members:add  'Adds
+    policy members'; schema chef.automate.api.iam.v2.Policy
+  reason: IAM authorization policies and their member assignments — access management, not corporate policy
+    lifecycle (BC-130.20 would be a homograph trap).
+- tag: Roles
+  spec_file: chef-software-roles-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: GET /apis/iam/v2/roles  Policies_ListRoles  'Lists all roles'; schema chef.automate.api.iam.v2.Role
+  reason: IAM v2 role definitions used for authorization — Identity & Access Management.
+- tag: Teams
+  spec_file: chef-software-teams-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: GET /apis/iam/v2/teams/{id}/users  Teams_GetTeamMembership  'Gets local team membership'
+  reason: Local IAM teams and user membership grouping for access control — identity/access administration,
+    not HR org management.
+- tag: Users
+  spec_file: chef-software-users-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: POST /apis/iam/v2/users  Users_CreateUser  'Create a user'; schema chef.automate.api.iam.v2.User
+  reason: Local IAM user lifecycle CRUD within Chef Automate — identity administration, not HR employee
+    records.
+- tag: ConfigMgmt
+  spec_file: chef-software-configmgmt-api-openapi.yml
+  capability_id: BC-600.40
+  capability_id_l1: BC-600
+  capability_name: IT Operations Management
+  confidence: 0.8
+  evidence: GET /api/v0/cfgmgmt/nodes  'List Checked-in Nodes'; GET /api/v0/cfgmgmt/nodes/{node_id}/runs  'List
+    Run Details'; 'rollouts/progress_by_node_segment'
+  reason: Configuration management of infrastructure nodes — node check-ins, run histories, errors and
+    rollout progress. This is day-to-day IT operations monitoring and automation.
+- tag: InfraProxy
+  spec_file: chef-software-infraproxy-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: GET /api/v0/infra/servers  'Infra proxy get servers'; 'InfraProxy_CreateOrg'; schemas 'CookbookVersion',
+    'DataBagItem', 'EnvironmentListItem'
+  reason: Manages Chef Infra servers, orgs, cookbooks, roles, environments and data bags — i.e. infrastructure
+    estate management, mapping to IT Infrastructure Management.
+- tag: Tokens
+  spec_file: chef-software-tokens-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: POST /apis/iam/v2/tokens  Tokens_CreateToken  'Creates a token'; path /apis/iam/v2/tokens
+  reason: API token issuance under the IAM namespace — credential management, an access-management function.
+    Borderline authentication plumbing, hence moderate confidence.

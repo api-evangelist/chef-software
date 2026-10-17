@@ -354,48 +354,18 @@ paths:
       - DataLifecycle
 components:
   schemas:
-    chef.automate.api.data_lifecycle.PurgePolicies:
+    chef.automate.api.data_lifecycle.SetConfigRequest:
       type: object
       properties:
-        elasticsearch:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.EsPolicy'
-        postgres:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.PgPolicy'
-      title: PurgePolicies are data lifecycle purge policies
-    chef.automate.api.data_lifecycle.RunComplianceRequest:
-      type: object
-    chef.automate.api.data_lifecycle.RunEventFeedRequest:
-      type: object
-    chef.automate.api.data_lifecycle.SetConfigResponse:
-      type: object
-    grpc.gateway.runtime.Error:
-      type: object
-      properties:
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/google.protobuf.Any'
-    chef.automate.api.data_lifecycle.PgPolicy:
-      type: object
-      properties:
-        name:
-          type: string
-        disabled:
-          type: boolean
-    chef.automate.api.data_lifecycle.RunServicesResponse:
-      type: object
-    chef.automate.api.data_lifecycle.SetInfraConfigResponse:
+        infra:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetInfraConfigRequest'
+        compliance:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetComplianceConfigRequest'
+        event_feed:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetEventFeedConfigRequest'
+        services:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetServicesConfigRequest'
+    chef.automate.api.data_lifecycle.SetServicesConfigResponse:
       type: object
     chef.automate.api.data_lifecycle.PurgePolicyUpdate:
       type: object
@@ -409,16 +379,17 @@ components:
           items:
             $ref: '#/components/schemas/chef.automate.api.data_lifecycle.PgPolicyUpdate'
       title: PurgePolicyUpdate is purge policy configuration update
-    chef.automate.api.data_lifecycle.EsPolicyUpdate:
+    chef.automate.api.data_lifecycle.SetInfraConfigResponse:
+      type: object
+    chef.automate.api.data_lifecycle.SetComplianceConfigResponse:
+      type: object
+    chef.automate.api.data_lifecycle.SetComplianceConfigRequest:
       type: object
       properties:
-        policy_name:
-          type: string
-        disabled:
-          type: boolean
-        older_than_days:
-          type: integer
-          format: int32
+        job_settings:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobSettings'
     chef.automate.api.data_lifecycle.JobSettings:
       type: object
       properties:
@@ -435,26 +406,16 @@ components:
       title: JobSettings are a job configuration setting update
     chef.automate.api.data_lifecycle.RunRequest:
       type: object
-    chef.automate.api.data_lifecycle.RunEventFeedResponse:
-      type: object
-    chef.automate.api.data_lifecycle.RunInfraRequest:
-      type: object
-    chef.automate.api.data_lifecycle.SetServicesConfigRequest:
+    chef.automate.api.data_lifecycle.EsPolicyUpdate:
       type: object
       properties:
-        job_settings:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobSettings'
-    chef.automate.api.data_lifecycle.RunResponse:
-      type: object
-    chef.automate.api.data_lifecycle.GetEventFeedStatusResponse:
-      type: object
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobStatus'
+        policy_name:
+          type: string
+        disabled:
+          type: boolean
+        older_than_days:
+          type: integer
+          format: int32
     chef.automate.api.data_lifecycle.PgPolicyUpdate:
       type: object
       properties:
@@ -462,14 +423,48 @@ components:
           type: string
         disabled:
           type: boolean
-    chef.automate.api.data_lifecycle.SetInfraConfigRequest:
+    chef.automate.api.data_lifecycle.RunInfraRequest:
+      type: object
+    chef.automate.api.data_lifecycle.GetServicesStatusResponse:
       type: object
       properties:
-        job_settings:
+        jobs:
           type: array
           items:
-            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobSettings'
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobStatus'
+    chef.automate.api.data_lifecycle.GetStatusResponse:
+      type: object
+      properties:
+        infra:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetInfraStatusResponse'
+        compliance:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetComplianceStatusResponse'
+        event_feed:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetEventFeedStatusResponse'
+        services:
+          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetServicesStatusResponse'
+    chef.automate.api.data_lifecycle.GetInfraStatusResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobStatus'
+    chef.automate.api.data_lifecycle.PurgePolicies:
+      type: object
+      properties:
+        elasticsearch:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.EsPolicy'
+        postgres:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.PgPolicy'
+      title: PurgePolicies are data lifecycle purge policies
     chef.automate.api.data_lifecycle.RunInfraResponse:
+      type: object
+    chef.automate.api.data_lifecycle.SetConfigResponse:
       type: object
     google.protobuf.Any:
       type: object
@@ -479,12 +474,92 @@ components:
         value:
           type: string
           format: byte
-    chef.automate.api.data_lifecycle.RunServicesRequest:
+    chef.automate.api.data_lifecycle.SetInfraConfigRequest:
       type: object
-    chef.automate.api.data_lifecycle.SetServicesConfigResponse:
+      properties:
+        job_settings:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobSettings'
+    chef.automate.api.data_lifecycle.RunServicesResponse:
       type: object
     chef.automate.api.data_lifecycle.SetEventFeedConfigResponse:
       type: object
+    chef.automate.api.data_lifecycle.RunResponse:
+      type: object
+    chef.automate.api.data_lifecycle.RunComplianceResponse:
+      type: object
+    grpc.gateway.runtime.Error:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/google.protobuf.Any'
+    chef.automate.api.data_lifecycle.SetServicesConfigRequest:
+      type: object
+      properties:
+        job_settings:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobSettings'
+    chef.automate.api.data_lifecycle.RunEventFeedRequest:
+      type: object
+    chef.automate.api.data_lifecycle.RunServicesRequest:
+      type: object
+    chef.automate.api.data_lifecycle.PgPolicy:
+      type: object
+      properties:
+        name:
+          type: string
+        disabled:
+          type: boolean
+    chef.automate.api.data_lifecycle.EsPolicy:
+      type: object
+      properties:
+        name:
+          type: string
+        index:
+          type: string
+        older_than_days:
+          type: integer
+          format: int32
+        custom_purge_field:
+          type: string
+        disabled:
+          type: boolean
+    chef.automate.api.data_lifecycle.RunEventFeedResponse:
+      type: object
+    chef.automate.api.data_lifecycle.SetEventFeedConfigRequest:
+      type: object
+      properties:
+        job_settings:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobSettings'
+    chef.automate.api.data_lifecycle.RunComplianceRequest:
+      type: object
+    chef.automate.api.data_lifecycle.GetEventFeedStatusResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobStatus'
+    chef.automate.api.data_lifecycle.GetComplianceStatusResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobStatus'
     chef.automate.api.data_lifecycle.JobStatus:
       type: object
       properties:
@@ -515,78 +590,3 @@ components:
       description: 'JobStatus presents the current configuration of job, when it will be executed,
 
         and details about it''s most recent execution.'
-    chef.automate.api.data_lifecycle.SetConfigRequest:
-      type: object
-      properties:
-        infra:
-          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetInfraConfigRequest'
-        compliance:
-          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetComplianceConfigRequest'
-        event_feed:
-          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetEventFeedConfigRequest'
-        services:
-          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.SetServicesConfigRequest'
-    chef.automate.api.data_lifecycle.SetComplianceConfigResponse:
-      type: object
-    chef.automate.api.data_lifecycle.GetServicesStatusResponse:
-      type: object
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobStatus'
-    chef.automate.api.data_lifecycle.SetComplianceConfigRequest:
-      type: object
-      properties:
-        job_settings:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobSettings'
-    chef.automate.api.data_lifecycle.GetInfraStatusResponse:
-      type: object
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobStatus'
-    chef.automate.api.data_lifecycle.GetStatusResponse:
-      type: object
-      properties:
-        infra:
-          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetInfraStatusResponse'
-        compliance:
-          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetComplianceStatusResponse'
-        event_feed:
-          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetEventFeedStatusResponse'
-        services:
-          $ref: '#/components/schemas/chef.automate.api.data_lifecycle.GetServicesStatusResponse'
-    chef.automate.api.data_lifecycle.GetComplianceStatusResponse:
-      type: object
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobStatus'
-    chef.automate.api.data_lifecycle.SetEventFeedConfigRequest:
-      type: object
-      properties:
-        job_settings:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.data_lifecycle.JobSettings'
-    chef.automate.api.data_lifecycle.RunComplianceResponse:
-      type: object
-    chef.automate.api.data_lifecycle.EsPolicy:
-      type: object
-      properties:
-        name:
-          type: string
-        index:
-          type: string
-        older_than_days:
-          type: integer
-          format: int32
-        custom_purge_field:
-          type: string
-        disabled:
-          type: boolean

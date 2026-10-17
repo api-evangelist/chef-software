@@ -36,6 +36,21 @@ paths:
       - ReportManagerService
 components:
   schemas:
+    chef.automate.api.report_manager.ListDownloadReportRequestsResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/chef.automate.api.report_manager.DownloadRequestResponse'
+    google.protobuf.Any:
+      type: object
+      properties:
+        type_url:
+          type: string
+        value:
+          type: string
+          format: byte
     chef.automate.api.report_manager.DownloadRequestResponse:
       type: object
       properties:
@@ -72,18 +87,3 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/google.protobuf.Any'
-    google.protobuf.Any:
-      type: object
-      properties:
-        type_url:
-          type: string
-        value:
-          type: string
-          format: byte
-    chef.automate.api.report_manager.ListDownloadReportRequestsResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/chef.automate.api.report_manager.DownloadRequestResponse'

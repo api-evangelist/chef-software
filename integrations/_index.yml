@@ -53,3 +53,61 @@
     detected: '2026-10-15'
   status: not-a-workflow
   arazzo: null
+- slug: chef-software-rubygems
+  label: RubyGems
+  partner: rubygems
+  partner_name: RubyGems
+  category: official SDK (Ruby)
+  type: register
+  channel: package-registry
+  evidence: https://rubygems.org/gems/berkshelf
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: RubyGems (public registry JSON)
+    spec_file: null
+    language: Ruby
+    packages:
+    - name: berkshelf
+      version: 8.1.23
+      released: '2026-06-18'
+      released_field: version_created_at
+      lapsed: false
+      page: https://rubygems.org/gems/berkshelf
+      repo_leg: domain:chef.io
+      publisher_leg: org:chef
+      matched_by: domain
+    - name: chef
+      version: 19.3.15
+      released: '2026-05-22'
+      released_field: version_created_at
+      lapsed: false
+      page: https://rubygems.org/gems/chef
+      repo_leg: domain:chef.io
+      publisher_leg: org:chef
+      matched_by: domain
+    - name: chef-cli
+      version: 6.1.34
+      released: '2026-06-18'
+      released_field: version_created_at
+      lapsed: false
+      page: https://rubygems.org/gems/chef-cli
+      repo_leg: domain:chef.io
+      publisher_leg: org:chef
+      matched_by: domain
+    - name: ohai
+      version: 19.1.40
+      released: '2026-06-24'
+      released_field: version_created_at
+      lapsed: false
+      page: https://rubygems.org/gems/ohai
+      repo_leg: github-org:chef
+      publisher_leg: org:chef
+      matched_by: github-org
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null

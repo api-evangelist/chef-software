@@ -24,7 +24,7 @@ marketplace_apps:
   url: https://supermarket.chef.io/cookbooks
   app_count: 4075
   adapter: sweep-config-management-content-registries.py:sup
-  listed: 42
+  listed: 43
   note: 'Chef Supermarket: only publishers whose source-repo org / site links to a catalog provider (and passes
     the self-filed gate) are written, one edge per publisher'
 edges:
@@ -1088,6 +1088,41 @@ edges:
   first_seen: '2026-10-22'
   badges:
   - Verified publisher (GitHub domain-verified organization)
+- partner_name: Mezmo
+  partner: mezmo
+  partner_match: domain
+  partner_url: https://mezmo.com
+  partner_domain: mezmo.com
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/logdna
+  app: logdna
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: logdna
+    namespaces:
+    - logdna
+    source_orgs:
+    - logdna
+    matched_domain: mezmo.com
+    matched_by: domain
+    source_repos:
+    - https://github.com/logdna/chef-logdna
+    newest_update: '2018-05-14'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
 - partner_name: Microsoft
   partner: microsoft
   partner_match: domain+name-among-holders

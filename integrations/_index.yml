@@ -920,6 +920,38 @@
       repo claims it) and the namespace / org name names the provider
   status: not-a-workflow
   arazzo: null
+- slug: chef-software-mezmo
+  label: Mezmo
+  partner: mezmo
+  partner_name: Mezmo
+  category: configuration-management content listing (Chef cookbook)
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/logdna
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: logdna
+    namespaces:
+    - logdna
+    source_orgs:
+    - logdna
+    matched_domain: mezmo.com
+    matched_by: domain
+    source_repos:
+    - https://github.com/logdna/chef-logdna
+    newest_update: '2018-05-14'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+  status: not-a-workflow
+  arazzo: null
 - slug: chef-software-microsoft
   label: Microsoft
   partner: microsoft

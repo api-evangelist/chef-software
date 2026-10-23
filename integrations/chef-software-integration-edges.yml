@@ -12,7 +12,21 @@ checked:
 - https://registry.npmjs.org
 - https://repo1.maven.org/maven2
 - https://rubygems.org/api/v1
-marketplace_apps: []
+- https://landscape.cd.foundation/data/full.json
+- https://plugins.jenkins.io/api/plugin/
+- https://plugins.jenkins.io/api/plugins
+- https://supermarket.chef.io/api/v1/cookbooks/{name}
+- https://supermarket.chef.io/api/v1/cookbooks?start=N&items=100
+marketplace_apps:
+- marketplace: chef-supermarket
+  channel: partner-built
+  app: chef-software
+  url: https://supermarket.chef.io/cookbooks
+  app_count: 4075
+  adapter: sweep-config-management-content-registries.py:sup
+  listed: 42
+  note: 'Chef Supermarket: only publishers whose source-repo org / site links to a catalog provider (and passes
+    the self-filed gate) are written, one edge per publisher'
 edges:
 - partner_name: Microsoft Azure Marketplace
   partner: microsoft-azure
@@ -125,6 +139,1789 @@ edges:
     detected: '2026-10-19'
   detected_by: sweep-cloud-native.py
   first_seen: '2026-10-15'
+- partner_name: CD Foundation (Continuous Delivery Foundation landscape)
+  partner: continuous-delivery-foundation
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  category: Continuous delivery foundation membership / landscape
+  evidence: https://landscape.cd.foundation/
+  contract_reference:
+    register: CD Foundation landscape (landscape.cd.foundation/data/full.json)
+    spec_file: null
+    standard: Continuous Delivery Foundation
+    role: cdf-landscape-listed
+    registered_name: Chef
+    registered_names:
+    - Chef
+    website: https://www.chef.io/
+    matched_domain: chef.io
+    matched_by: domain
+    member_tier: null
+    landscape_categories:
+    - Config & Library Management / Configuration Management
+    cdf_projects: []
+    signal_note: 'participation only: CDF membership or a landscape listing is standard-participant evidence, never
+      depth; tier, categories and entries are context, never counted'
+    detected_by: sweep-jenkins-cd-foundation-plugins.py
+    detected: '2026-10-22'
+  detected_by: sweep-jenkins-cd-foundation-plugins.py
+  first_seen: '2026-10-22'
+- partner_name: Alteryx
+  partner: alteryx
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/alteryx-server
+  app: alteryx-server
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: alteryx_devops
+    namespaces:
+    - alteryx_devops
+    source_orgs:
+    - alteryx
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/alteryx/cookbook-alteryx-server
+    newest_update: '2018-09-19'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: Arista Networks
+  partner: arista-networks
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/eos
+  app: eos
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: arista
+    namespaces:
+    - arista
+    source_orgs:
+    - aristanetworks
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/aristanetworks/chef-eos
+    newest_update: '2016-11-29'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: Cask Data
+  partner: cask-data
+  partner_match: domain
+  partner_url: https://cdap.io
+  partner_domain: cdap.io
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/cdap
+  app: cdap
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: caskdata
+    namespaces:
+    - caskdata
+    source_orgs:
+    - cdapio
+    matched_domain: cdap.io
+    matched_by: domain
+    source_repos:
+    - https://github.com/cdapio/cdap_cookbook
+    newest_update: '2019-05-31'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: Ceph
+  partner: ceph
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/ceph
+  app: ceph
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 2
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: cloudm2, guilhemfr
+    namespaces:
+    - cloudm2
+    - guilhemfr
+    source_orgs:
+    - ceph
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/ceph/ceph-chef
+    - https://github.com/ceph/ceph-cookbooks
+    newest_update: '2018-02-13'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - ceph
+  - ceph-chef
+- partner_name: Cisco
+  partner: cisco
+  partner_match: domain+name-among-holders
+  partner_url: https://cisco.com
+  partner_domain: cisco.com
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/cisco-cookbook
+  app: cisco-cookbook
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: rahushen
+    namespaces:
+    - rahushen
+    source_orgs:
+    - cisco
+    matched_domain: cisco.com
+    matched_by: domain+name-among-holders
+    source_repos:
+    - https://github.com/cisco/cisco-network-chef-cookbook
+    newest_update: '2017-09-26'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: CrowdStrike
+  partner: crowdstrike
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/falcon
+  app: falcon
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: crowdstrike
+    namespaces:
+    - crowdstrike
+    source_orgs:
+    - crowdstrike
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/CrowdStrike/chef-falcon
+    newest_update: '2023-05-15'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Cumulus Networks
+  partner: cumulus-networks
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/cumulus
+  app: cumulus
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: cumulus
+    namespaces:
+    - cumulus
+    source_orgs:
+    - cumulusnetworks
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/CumulusNetworks/cumulus-linux-chef-modules
+    newest_update: '2015-10-30'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: CyberArk
+  partner: cyberark
+  partner_match: domain+name-among-holders
+  partner_url: https://cyberark.com
+  partner_domain: cyberark.com
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/cyberark
+  app: cyberark
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: cyberark
+    namespaces:
+    - cyberark
+    source_orgs:
+    - cyberark
+    matched_domain: cyberark.com
+    matched_by: domain+name-among-holders
+    source_repos:
+    - https://github.com/cyberark/cyberark-aim-chef
+    newest_update: '2019-03-14'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: Dark Sky
+  partner: dark-sky
+  partner_match: domain
+  partner_url: https://darksky.net
+  partner_domain: darksky.net
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/cdo
+  app: cdo
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 3
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: darksky
+    namespaces:
+    - darksky
+    source_orgs:
+    - darkskyapp
+    matched_domain: darksky.net
+    matched_by: domain
+    source_repos:
+    - https://github.com/darkskyapp/cdo-cookbook
+    - https://github.com/darkskyapp/ds_opencv-cookbook
+    - https://github.com/darkskyapp/ds_redis-cookbook
+    newest_update: '2020-05-11'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    deprecated:
+    - cdo
+    - ds_opencv
+    - ds_redis
+    all_deprecated: true
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - cdo
+  - ds_opencv
+  - ds_redis
+- partner_name: Datadog
+  partner: datadog
+  partner_match: domain+name-among-holders
+  partner_url: https://datadoghq.com
+  partner_domain: datadoghq.com
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/chef-datadog
+  app: chef-datadog
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 4
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: darron, datadoghq, kbogtob
+    namespaces:
+    - darron
+    - datadoghq
+    - kbogtob
+    source_orgs:
+    - datadog
+    matched_domain: datadoghq.com
+    matched_by: domain+name-among-holders
+    source_repos:
+    - https://github.com/DataDog/chef-datadog
+    - https://github.com/DataDog/kvexpress-cookbook
+    newest_update: '2026-03-11'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    deprecated:
+    - chef-datadog
+    - ddrelease
+    all_deprecated: false
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - chef-datadog
+  - datadog
+  - ddrelease
+  - kvexpress
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: DataSift (MediaSift Inc.)
+  partner: datasift-mediasift-inc
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/alternate_search
+  app: alternate_search
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: borntyping
+    namespaces:
+    - borntyping
+    source_orgs:
+    - datasift
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/datasift/alternate_search
+    newest_update: '2014-03-24'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: Delphix
+  partner: delphix
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/delphix
+  app: delphix
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: delphix
+    namespaces:
+    - delphix
+    source_orgs:
+    - delphix
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/delphix/chef
+    newest_update: '2018-04-05'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: DNSimple
+  partner: dnsimple
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/dnsimple
+  app: dnsimple
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 3
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: dnsimple
+    namespaces:
+    - dnsimple
+    source_orgs:
+    - dnsimple
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/dnsimple/chef-dnsimple
+    - https://github.com/dnsimple/chef-exabgp
+    - https://github.com/dnsimple/chef-pdns
+    newest_update: '2026-09-01'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    deprecated:
+    - exabgp
+    all_deprecated: false
+    up_for_adoption:
+    - exabgp
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - dnsimple
+  - exabgp
+  - pdns
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Dynatrace
+  partner: dynatrace
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/dynatrace
+  app: dynatrace
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 3
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: dynatrace
+    namespaces:
+    - dynatrace
+    source_orgs:
+    - dynatrace
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/Dynatrace/Dynatrace-AppMon-Chef
+    - https://github.com/Dynatrace/Dynatrace-Chef
+    - https://github.com/Dynatrace/Dynatrace-OneAgent-Chef
+    newest_update: '2021-05-18'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    deprecated:
+    - dynatrace
+    all_deprecated: false
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - dynatrace
+  - dynatrace-appmon
+  - dynatraceoneagent
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Esri
+  partner: esri
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/arcgis-desktop
+  app: arcgis-desktop
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 14
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: esri
+    namespaces:
+    - esri
+    source_orgs:
+    - esri
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/Esri/arcgis-cookbook
+    - https://github.com/esri/arcgis-cookbook
+    newest_update: '2026-06-04'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - arcgis-desktop
+  - arcgis-egdb
+  - arcgis-enterprise
+  - arcgis-geoevent
+  - arcgis-insights
+  - arcgis-license-manager
+  - arcgis-mission
+  - arcgis-notebooks
+  - arcgis-pro
+  - arcgis-repository
+  - arcgis-video
+  - arcgis-workflow-manager
+  - esri-iis
+  - esri-tomcat
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Google Cloud Platform
+  partner: google-cloud-platform
+  partner_match: domain+name-among-holders
+  partner_url: https://google.com
+  partner_domain: google.com
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/google-cloud
+  app: google-cloud
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 12
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: googlecloudplatform
+    namespaces:
+    - googlecloudplatform
+    source_orgs:
+    - googlecloudplatform
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    source_repos:
+    - https://github.com/GoogleCloudPlatform/chef-google
+    - https://github.com/GoogleCloudPlatform/chef-google-auth
+    - https://github.com/GoogleCloudPlatform/chef-google-compute
+    - https://github.com/GoogleCloudPlatform/chef-google-container
+    - https://github.com/GoogleCloudPlatform/chef-google-dns
+    - https://github.com/GoogleCloudPlatform/chef-google-iam
+    - https://github.com/GoogleCloudPlatform/chef-google-logging
+    - https://github.com/GoogleCloudPlatform/chef-google-pubsub
+    - https://github.com/GoogleCloudPlatform/chef-google-resourcemanager
+    - https://github.com/GoogleCloudPlatform/chef-google-spanner
+    newest_update: '2018-09-19'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - google-cloud
+  - google-gauth
+  - google-gcompute
+  - google-gcontainer
+  - google-gdns
+  - google-giam
+  - google-glogging
+  - google-gpubsub
+  - google-gresourcemanager
+  - google-gspanner
+  - google-gsql
+  - google-gstorage
+- partner_name: Graylog
+  partner: graylog
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/graylog2
+  app: graylog2
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: graylog2
+    namespaces:
+    - graylog2
+    source_orgs:
+    - graylog2
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/Graylog2/graylog2-cookbook
+    newest_update: '2021-08-20'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: Hewlett Packard Enterprise
+  partner: hpe
+  partner_match: domain+name-among-holders
+  partner_url: https://hpe.com
+  partner_domain: hpe.com
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/hpe3par
+  app: hpe3par
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 5
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: hpe
+    namespaces:
+    - hpe
+    source_orgs:
+    - hewlettpackard
+    matched_domain: hpe.com
+    matched_by: domain+name-among-holders
+    source_repos:
+    - https://github.com/HewlettPackard/chef-hprest-module
+    - https://github.com/HewlettPackard/chef-ilorest-module
+    - https://github.com/HewlettPackard/hpe3par_chef_cookbook
+    - https://github.com/HewlettPackard/ilo-chef
+    - https://github.com/HewlettPackard/oneview-chef
+    newest_update: '2021-07-13'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - hpe3par
+  - hprest
+  - ilo
+  - ilorest
+  - oneview
+- partner_name: Instana
+  partner: instana
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/instana-agent
+  app: instana-agent
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: instana
+    namespaces:
+    - instana
+    source_orgs:
+    - instana
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/instana/instana-agent-chef
+    newest_update: '2018-03-15'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: Lacework FortiCNAPP
+  partner: lacework
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/chef-lacework
+  app: chef-lacework
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: lacework
+    namespaces:
+    - lacework
+    source_orgs:
+    - lacework
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/lacework/chef-lacework
+    newest_update: '2022-01-10'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Lenovo
+  partner: lenovo
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/chef-cnos
+  app: chef-cnos
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 2
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: lenovonetworking, raghav40
+    namespaces:
+    - lenovonetworking
+    - raghav40
+    source_orgs:
+    - lenovo
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/lenovo/chef-cnos
+    - https://github.com/lenovo/chef.lenovo-lxca
+    newest_update: '2019-02-28'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - chef-cnos
+  - lxca
+- partner_name: Librato
+  partner: librato
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/librato
+  app: librato
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: librato
+    namespaces:
+    - librato
+    source_orgs:
+    - librato
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/librato/chef-librato
+    newest_update: '2016-12-20'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Microsoft
+  partner: microsoft
+  partner_match: domain+name-among-holders
+  partner_url: https://microsoft.com
+  partner_domain: microsoft.com
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/azure_pipelines_agent_macos
+  app: azure_pipelines_agent_macos
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 6
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: eahanl, ivadim, jzaval
+    namespaces:
+    - eahanl
+    - ivadim
+    - jzaval
+    source_orgs:
+    - microsoft
+    matched_domain: microsoft.com
+    matched_by: domain+name-among-holders
+    source_repos:
+    - https://github.com/Microsoft/azure-pipelines-agent-cookbook
+    - https://github.com/Microsoft/macos-cookbook
+    - https://github.com/Microsoft/snipe-it-api-cookbook
+    - https://github.com/Microsoft/snipe-it-cookbook
+    - https://github.com/Microsoft/vsts-build-agent-cookbook
+    - https://github.com/microsoft/azure-pipelines-agent-macos-cookbook
+    newest_update: '2025-06-25'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - azure_pipelines_agent_macos
+  - macos
+  - snipe-it
+  - snipeit_api
+  - vsts_agent
+  - vsts_build_agent
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Mondoo
+  partner: mondoo
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/mondoo
+  app: mondoo
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: mondoo
+    namespaces:
+    - mondoo
+    source_orgs:
+    - mondoohq
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/mondoohq/chef-mondoo
+    newest_update: '2026-06-28'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: New Relic
+  partner: new-relic
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/newrelic-infra
+  app: newrelic-infra
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 2
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: newrelic
+    namespaces:
+    - newrelic
+    source_orgs:
+    - newrelic
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/newrelic/chef-install
+    - https://github.com/newrelic/infrastructure-agent-chef
+    newest_update: '2026-10-02'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - newrelic-infra
+  - newrelic-install
+- partner_name: PagerDuty
+  partner: pagerduty
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/pd-feature
+  app: pd-feature
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: pagerduty
+    namespaces:
+    - pagerduty
+    source_orgs:
+    - pagerduty
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/PagerDuty/pd-feature-cookbook
+    newest_update: '2018-05-18'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: RabbitMQ
+  partner: rabbitmq
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/rabbitmq
+  app: rabbitmq
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: jjasghar
+    namespaces:
+    - jjasghar
+    source_orgs:
+    - rabbitmq
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/rabbitmq/chef-cookbook
+    newest_update: '2021-06-25'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Rapid7
+  partner: rapid7
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/github_connector
+  app: github_connector
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: blt04
+    namespaces:
+    - blt04
+    source_orgs:
+    - rapid7
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/rapid7/github-connector/tree/master/cookbook
+    newest_update: '2015-07-29'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Red Hat 3scale
+  partner: red-hat-3scale
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/chef-3scale
+  app: chef-3scale
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: 3scale
+    namespaces:
+    - 3scale
+    source_orgs:
+    - 3scale
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/3scale/chef-3scale
+    newest_update: '2018-05-08'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    deprecated:
+    - chef-3scale
+    all_deprecated: true
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: SAP
+  partner: sap
+  partner_match: domain+name-among-holders
+  partner_url: https://sap.com
+  partner_domain: sap.com
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/hana-client
+  app: hana-client
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 2
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: dan-joe
+    namespaces:
+    - dan-joe
+    source_orgs:
+    - sap
+    matched_domain: sap.com
+    matched_by: domain+name-among-holders
+    source_repos:
+    - https://github.com/SAP/hana-client-chef-cookbook
+    - https://github.com/sap/hana-studio-chef-cookbook
+    newest_update: '2020-12-18'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - hana-client
+  - hana-studio
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Sensu
+  partner: sensu
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/sensu
+  app: sensu
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 3
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: sensu
+    namespaces:
+    - sensu
+    source_orgs:
+    - sensu
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/sensu/sensu-chef
+    - https://github.com/sensu/sensu-go-chef
+    - https://github.com/sensu/uchiwa-chef
+    newest_update: '2021-04-02'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - sensu
+  - sensu-go
+  - uchiwa
+- partner_name: Signal Sciences
+  partner: signal-sciences
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/signalsciences
+  app: signalsciences
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: signalsciences
+    namespaces:
+    - signalsciences
+    source_orgs:
+    - signalsciences
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/signalsciences/signalsciences-cookbook
+    newest_update: '2017-11-13'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Socrata
+  partner: socrata
+  partner_match: domain
+  partner_url: https://socrata.com
+  partner_domain: socrata.com
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/bastion
+  app: bastion
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 14
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: socrata
+    namespaces:
+    - socrata
+    source_orgs:
+    - socrata-cookbooks
+    matched_domain: socrata.com
+    matched_by: domain
+    source_repos:
+    - https://github.com/socrata-cookbooks/bastion
+    - https://github.com/socrata-cookbooks/cronic
+    - https://github.com/socrata-cookbooks/dnsmasq-local
+    - https://github.com/socrata-cookbooks/openvpn_duo
+    - https://github.com/socrata-cookbooks/openvpn_okta
+    - https://github.com/socrata-cookbooks/samhain
+    - https://github.com/socrata-cookbooks/snoopy
+    - https://github.com/socrata-cookbooks/snu-sumologic
+    - https://github.com/socrata-cookbooks/snu_awscli
+    - https://github.com/socrata-cookbooks/snu_nginx
+    newest_update: '2021-01-26'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    deprecated:
+    - bastion
+    - cronic
+    - dnsmasq-local
+    - openvpn_okta
+    - samhain
+    - snu-sumologic
+    - snu_awscli
+    - snu_nginx
+    - snu_nginx_fips
+    - snu_python
+    all_deprecated: false
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - bastion
+  - cronic
+  - dnsmasq-local
+  - openvpn_duo
+  - openvpn_okta
+  - samhain
+  - snoopy
+  - snu-sumologic
+  - snu_awscli
+  - snu_nginx
+  - snu_nginx_fips
+  - snu_python
+  - x2go-client
+  - x2go-server
+- partner_name: SolarWinds
+  partner: solarwinds
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/swisnap
+  app: swisnap
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 4
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: poleszcz, solarwinds
+    namespaces:
+    - poleszcz
+    - solarwinds
+    source_orgs:
+    - solarwinds
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/solarwinds/swisnap-cookbook
+    - https://github.com/solarwinds/uamsclient-chef
+    newest_update: '2025-02-25'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - swisnap
+  - uams_client_installator
+  - uamsclient
+  - uamsclient_uninstall
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Sonatype
+  partner: sonatype
+  partner_match: domain+name-among-holders
+  partner_url: https://sonatype.com
+  partner_domain: sonatype.com
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/nexus_repository_manager
+  app: nexus_repository_manager
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: pobrien
+    namespaces:
+    - pobrien
+    source_orgs:
+    - sonatype
+    matched_domain: sonatype.com
+    matched_by: domain+name-among-holders
+    source_repos:
+    - https://github.com/sonatype/chef-nexus
+    newest_update: '2018-04-04'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Sophos
+  partner: sophos
+  partner_match: domain
+  partner_url: https://sophos.com
+  partner_domain: sophos.com
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/sophos
+  app: sophos
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: sophos-iaas
+    namespaces:
+    - sophos-iaas
+    source_orgs:
+    - sophos-iaas
+    matched_domain: sophos.com
+    matched_by: domain
+    source_repos:
+    - https://github.com/sophos-iaas/chef-sophos-sg
+    newest_update: '2017-08-16'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: Sumo Logic
+  partner: sumo-logic
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/sumologic-collector
+  app: sumologic-collector
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 2
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: sumologic
+    namespaces:
+    - sumologic
+    source_orgs:
+    - sumologic
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/SumoLogic/sumologic-collector-chef-cookbook
+    - https://github.com/SumoLogic/sumologic-otel-collector-packaging/tree/main/examples/chef
+    newest_update: '2026-04-07'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - sumologic-collector
+  - sumologic-otel-collector
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Threat Stack
+  partner: threat-stack
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/threatstack
+  app: threatstack
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: threatstack
+    namespaces:
+    - threatstack
+    source_orgs:
+    - threatstack
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/threatstack/threatstack-chef
+    newest_update: '2021-03-09'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: Treasure Data
+  partner: treasure-data
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/td-agent
+  app: td-agent
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: yyuu
+    namespaces:
+    - yyuu
+    source_orgs:
+    - treasure-data
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/treasure-data/chef-td-agent
+    newest_update: '2019-06-26'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+- partner_name: Tripwire
+  partner: tripwire
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/tripwire_agent
+  app: tripwire_agent
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: tripwire
+    namespaces:
+    - tripwire
+    source_orgs:
+    - tripwire
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/Tripwire/chef-tripwire_agent
+    newest_update: '2021-03-02'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: IBM WebSphere
+  partner: websphere
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/application_wlp
+  app: application_wlp
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 2
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: ibm-was
+    namespaces:
+    - ibm-was
+    source_orgs:
+    - wasdev
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/WASdev/ci.chef.wlp
+    - https://github.com/WASdev/ci.chef.wlp.application
+    newest_update: '2015-02-18'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  apps:
+  - application_wlp
+  - wlp
+- partner_name: ZeroTier
+  partner: zerotier
+  partner_match: register
+  partner_url: null
+  partner_domain: null
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/zerotier
+  app: zerotier
+  category: configuration-management content listing (Chef cookbook)
+  listing_count: 1
+  contract_reference:
+    register: Chef Supermarket
+    spec_file: null
+    role: chef-supermarket-publisher
+    registered_name: zerotier
+    namespaces:
+    - zerotier
+    source_orgs:
+    - zerotier
+    matched_domain: null
+    matched_by: github-org-pointer
+    source_repos:
+    - https://github.com/zerotier/chef-zerotier
+    newest_update: '2017-11-28'
+    detected_by: sweep-config-management-content-registries.py
+    detected: '2026-10-22'
+    signal_note: 'one edge per (provider, registry); listing alone = participation. Collection / cookbook counts
+      and Galaxy download counts are context, never counted. A GitHub domain-verified source org -> badges, read
+      only as publisher_verified (weight 0). No tier: neither public registry publishes one'
+    identity_note: the source-repo org is a GitHubOrganization pointer in this provider's apis.yml (no other live
+      repo claims it) and the namespace / org name names the provider
+  detected_by: sweep-config-management-content-registries.py
+  first_seen: '2026-10-22'
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
 source:
 - https://github.com/cncf/landscape
 - https://github.com/cncf/k8s-conformance

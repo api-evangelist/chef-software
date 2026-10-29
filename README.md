@@ -64,6 +64,184 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Chef Software is a company surfaced as a portfolio company of battery-ventures and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Chef Software is the DevOps automation company behind Chef Infra, Chef InSpec, Chef Habitat, and Chef Automate, now part of Progress Software. Chef pioneered infrastructure-as-code, letting teams define, deploy, and continuously enforce the configuration, compliance, and security posture of servers and applications across data centers and cloud at any scale. Chef Automate exposes a REST API (generated from gRPC service definitions via grpc-gateway) for managing compliance reporting, node management, configuration management, secrets, data feeds, event feeds, IAM (users, teams, tokens, policies, rules), and the application service catalog. Authentication is via API tokens presented in the api-token HTTP header. Chef also ships a deep open-source ecosystem of Ruby client tooling (chef-client, InSpec, Ohai, Berkshelf, chef-cli, knife) distributed on RubyGems, all developed in the open on the chef GitHub org.
 
-Backed by: battery-ventures
+**Areas:** Company · DevOps · Infrastructure Automation · Configuration Management · Compliance · Security · Infrastructure as Code · Cloud · Continuous Compliance
+
+## Chef Software on APIs.io
+
+Everything profiled for Chef Software is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/chef-software/](https://apis.io/providers/chef-software/)** — or go straight to one of the APIs or properties below.
+
+### APIs (30)
+
+- [Chef Software ApplicationsService API](https://apis.io/apis/chef-software/chef-software-applicationsservice-api/) — The ApplicationsService API from Chef Software — 2 operation(s) for applicationsservice.
+- [Chef Software Authorization API](https://apis.io/apis/chef-software/chef-software-authorization-api/) — The Authorization API from Chef Software — 2 operation(s) for authorization.
+- [Chef Software Cds API](https://apis.io/apis/chef-software/chef-software-cds-api/) — The Cds API from Chef Software — 4 operation(s) for cds.
+- [Chef Software ChefIngester API](https://apis.io/apis/chef-software/chef-software-chefingester-api/) — The ChefIngester API from Chef Software — 6 operation(s) for chefingester.
+- [Chef Software Comp_Assets API](https://apis.io/apis/chef-software/chef-software-comp-assets-api/) — The Comp_Assets API from Chef Software — 4 operation(s) for comp_assets.
+- [Chef Software ConfigMgmt API](https://apis.io/apis/chef-software/chef-software-configmgmt-api/) — The ConfigMgmt API from Chef Software — 23 operation(s) for configmgmt.
+- [Chef Software DatafeedService API](https://apis.io/apis/chef-software/chef-software-datafeedservice-api/) — The DatafeedService API from Chef Software — 6 operation(s) for datafeedservice.
+- [Chef Software DataLifecycle API](https://apis.io/apis/chef-software/chef-software-datalifecycle-api/) — The DataLifecycle API from Chef Software — 15 operation(s) for datalifecycle.
+- [Chef Software EventFeedService API](https://apis.io/apis/chef-software/chef-software-eventfeedservice-api/) — The EventFeedService API from Chef Software — 4 operation(s) for eventfeedservice.
+- [Chef Software Hidden API](https://apis.io/apis/chef-software/chef-software-hidden-api/) — The hidden API from Chef Software — 5 operation(s) for hidden.
+- [Chef Software InfraProxy API](https://apis.io/apis/chef-software/chef-software-infraproxy-api/) — The InfraProxy API from Chef Software — 36 operation(s) for infraproxy.
+- [Chef Software JobsService API](https://apis.io/apis/chef-software/chef-software-jobsservice-api/) — The JobsService API from Chef Software — 4 operation(s) for jobsservice.
+- [Chef Software NodeManagerService API](https://apis.io/apis/chef-software/chef-software-nodemanagerservice-api/) — The NodeManagerService API from Chef Software — 9 operation(s) for nodemanagerservice.
+- [Chef Software NodesService API](https://apis.io/apis/chef-software/chef-software-nodesservice-api/) — The NodesService API from Chef Software — 7 operation(s) for nodesservice.
+- [Chef Software Policies API](https://apis.io/apis/chef-software/chef-software-policies-api/) — The policies API from Chef Software — 6 operation(s) for policies.
+- [Chef Software ProfilesService API](https://apis.io/apis/chef-software/chef-software-profilesservice-api/) — The ProfilesService API from Chef Software — 5 operation(s) for profilesservice.
+- [Chef Software Projects API](https://apis.io/apis/chef-software/chef-software-projects-api/) — The projects API from Chef Software — 2 operation(s) for projects.
+- [Chef Software ReportingService API](https://apis.io/apis/chef-software/chef-software-reportingservice-api/) — The ReportingService API from Chef Software — 12 operation(s) for reportingservice.
+- [Chef Software ReportManagerService API](https://apis.io/apis/chef-software/chef-software-reportmanagerservice-api/) — The ReportManagerService API from Chef Software — 1 operation(s) for reportmanagerservice.
+- [Chef Software Retention API](https://apis.io/apis/chef-software/chef-software-retention-api/) — The retention API from Chef Software — 4 operation(s) for retention.
+- [Chef Software Roles API](https://apis.io/apis/chef-software/chef-software-roles-api/) — The roles API from Chef Software — 2 operation(s) for roles.
+- [Chef Software Rules API](https://apis.io/apis/chef-software/chef-software-rules-api/) — The rules API from Chef Software — 4 operation(s) for rules.
+- [Chef Software SecretsService API](https://apis.io/apis/chef-software/chef-software-secretsservice-api/) — The SecretsService API from Chef Software — 3 operation(s) for secretsservice.
+- [Chef Software Service Groups API](https://apis.io/apis/chef-software/chef-software-service-groups-api/) — The service_groups API from Chef Software — 9 operation(s) for service_groups.
+- [Chef Software StatsService API](https://apis.io/apis/chef-software/chef-software-statsservice-api/) — The StatsService API from Chef Software — 6 operation(s) for statsservice.
+- [Chef Software Teams API](https://apis.io/apis/chef-software/chef-software-teams-api/) — The teams API from Chef Software — 6 operation(s) for teams.
+- [Chef Software Tokens API](https://apis.io/apis/chef-software/chef-software-tokens-api/) — The tokens API from Chef Software — 2 operation(s) for tokens.
+- [Chef Software Users API](https://apis.io/apis/chef-software/chef-software-users-api/) — The users API from Chef Software — 3 operation(s) for users.
+- [Chef Software UserSettingsService API](https://apis.io/apis/chef-software/chef-software-usersettingsservice-api/) — The UserSettingsService API from Chef Software — 1 operation(s) for usersettingsservice.
+- [Chef Software Job Scheduler API](https://apis.io/apis/chef-software/chef-software-job-scheduler-api/) — The Job Scheduler API from Chef Software — 4 operation(s) for job scheduler.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Chef Software Data Feed Webhooks](https://apis.io/asyncapis/chef-software/chef-software-data-feed-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [chef-automate](https://apis.io/servers/chef-software/chef-automate/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Chef Software Agentic Access](https://apis.io/agentic-access/chef-software/chef-software-agentic-access/)
+
+#### Collections (60)
+
+Postman and Open Collection request collections.
+
+- [external/applications/applications.proto ApplicationsService API](https://apis.io/collections/chef-software/open-chef-software-applicationsservice-api/)
+- [external/applications/applications.proto ApplicationsService Authorization API](https://apis.io/collections/chef-software/open-chef-software-authorization-api/)
+- [external/applications/applications.proto ApplicationsService Cds API](https://apis.io/collections/chef-software/open-chef-software-cds-api/)
+- [external/applications/applications.proto ApplicationsService ChefIngester API](https://apis.io/collections/chef-software/open-chef-software-chefingester-api/)
+- [external/applications/applications.proto ApplicationsService Comp_Assets API](https://apis.io/collections/chef-software/open-chef-software-comp-assets-api/)
+- [external/applications/applications.proto ApplicationsService ConfigMgmt API](https://apis.io/collections/chef-software/open-chef-software-configmgmt-api/)
+- [external/applications/applications.proto ApplicationsService DatafeedService API](https://apis.io/collections/chef-software/open-chef-software-datafeedservice-api/)
+- [external/applications/applications.proto ApplicationsService DataLifecycle API](https://apis.io/collections/chef-software/open-chef-software-datalifecycle-api/)
+- [external/applications/applications.proto ApplicationsService EventFeedService API](https://apis.io/collections/chef-software/open-chef-software-eventfeedservice-api/)
+- [external/applications/applications.proto ApplicationsService hidden API](https://apis.io/collections/chef-software/open-chef-software-hidden-api/)
+- [external/applications/applications.proto ApplicationsService InfraProxy API](https://apis.io/collections/chef-software/open-chef-software-infraproxy-api/)
+- [external/applications/applications.proto ApplicationsService JobScheduler API](https://apis.io/collections/chef-software/open-chef-software-jobscheduler-api/)
+- [external/applications/applications.proto ApplicationsService JobsService API](https://apis.io/collections/chef-software/open-chef-software-jobsservice-api/)
+- [external/applications/applications.proto ApplicationsService NodeManagerService API](https://apis.io/collections/chef-software/open-chef-software-nodemanagerservice-api/)
+- [external/applications/applications.proto ApplicationsService NodesService API](https://apis.io/collections/chef-software/open-chef-software-nodesservice-api/)
+- [external/applications/applications.proto ApplicationsService policies API](https://apis.io/collections/chef-software/open-chef-software-policies-api/)
+- [external/applications/applications.proto ApplicationsService ProfilesService API](https://apis.io/collections/chef-software/open-chef-software-profilesservice-api/)
+- [external/applications/applications.proto ApplicationsService projects API](https://apis.io/collections/chef-software/open-chef-software-projects-api/)
+- [external/applications/applications.proto ApplicationsService ReportingService API](https://apis.io/collections/chef-software/open-chef-software-reportingservice-api/)
+- [external/applications/applications.proto ApplicationsService ReportManagerService API](https://apis.io/collections/chef-software/open-chef-software-reportmanagerservice-api/)
+- [external/applications/applications.proto ApplicationsService retention API](https://apis.io/collections/chef-software/open-chef-software-retention-api/)
+- [external/applications/applications.proto ApplicationsService roles API](https://apis.io/collections/chef-software/open-chef-software-roles-api/)
+- [external/applications/applications.proto ApplicationsService rules API](https://apis.io/collections/chef-software/open-chef-software-rules-api/)
+- [external/applications/applications.proto ApplicationsService SecretsService API](https://apis.io/collections/chef-software/open-chef-software-secretsservice-api/)
+- [external/applications/applications.proto ApplicationsService service_groups API](https://apis.io/collections/chef-software/open-chef-software-service-groups-api/)
+- …and 35 more published on APIs.io
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Chef Software Iam V2 Tokens Overlay](https://apis.io/overlays/chef-software/chef-software-iam-v2-tokens-overlay/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Chef Software Authentication](https://apis.io/security/chef-software/chef-software-authentication/)
+- [Chef Software Domain Security](https://apis.io/security/chef-software/chef-software-domain-security/)
+- [Chef Software Trust Center](https://apis.io/security/chef-software/chef-software-trust-center/)
+- [Chef Software Vulnerability Disclosure](https://apis.io/security/chef-software/chef-software-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.chef.io/)
+- [Documentation](https://docs.chef.io/)
+- [Getting started](https://docs.chef.io/automate/install/)
+- [API reference](https://docs.chef.io/automate/api/)
+- [Pricing](https://www.chef.io/pricing)
+- [Sign up](https://www.chef.io/pricing)
+- [Support](https://community.chef.io/)
+- [Blog](https://www.chef.io/blog)
+- [Compliance](https://www.progress.com/trust-center)
+- [Terms of service](https://www.chef.io/terms-of-service)
+- [Privacy policy](https://www.chef.io/privacy-policy)
+- [GitHub](https://github.com/chef)
+- [Status](https://status.chef.io)
+
+## API Evangelist rating
+
+**Kin Score 58.7** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 43.8 |
+| Contract governance | 4.5 |
+| Operational transparency | 60.5 |
+| Developer ergonomics | 74.4 |
+| Access clarity | 60.5 |
+
+**Agent readiness 22.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/chef-software/](https://apis.io/providers/chef-software/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Chef Software: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/chef-software/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
